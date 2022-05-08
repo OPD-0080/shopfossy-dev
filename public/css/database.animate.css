@@ -1,0 +1,67 @@
+@keyframes database-animate-1 {
+    0% {
+        top: -200px;
+        left: -200px;
+        opacity: 1;
+    }
+    20% {
+        z-index: 2;
+    }
+    50% {
+        top: -100px;
+        left: -100px;
+        transform: scale(0.5);
+        -webkit-transform: scale(0.4);
+        -moz-transform: scale(0.5);
+        -ms-transform: scale(0.5);
+        -o-transform: scale(0.5);
+    }
+    80% {
+        left: 200px;
+        top: 200px;
+    }
+    100% {
+        top: -200px;
+        left: -200px;
+        opacity: 0;
+    }
+}
+
+@keyframes database-animate-2 {
+    0% {
+        left: -1000px;
+        opacity: 0;
+        z-index: 1;
+    }
+    
+    50% {
+        left: -200px;
+        z-index: 2;
+        opacity: 1;
+    }
+    90% {
+        left: -200px;
+        z-index: 2;
+        opacity: 1;
+    }
+    100% {
+        left: -200px;
+        z-index: 4;
+        opacity: 1;
+    }
+}
+
+@keyframes database-animate-banner {
+    0% {
+        width: 500px;
+        height: 500px;
+    }
+    50% {
+        width: 300px;
+        height: 300px;
+    }
+    100% {
+        width: 500px;
+        height: 500px;
+    }
+}

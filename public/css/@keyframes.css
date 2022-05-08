@@ -1,0 +1,22 @@
+@-webkit-keyframes cartOverallMovement {
+  0% {
+    right: -100px;
+  }
+  50% {
+    right: 100px;
+  }
+  100% {
+    right: -100px;
+  }
+}
+@keyframes cartOverallMovement {
+  0% {
+    right: -100px;
+  }
+  50% {
+    right: 100px;
+  }
+  100% {
+    right: -100px;
+  }
+}

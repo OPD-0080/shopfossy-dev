@@ -1,0 +1,406 @@
+@import "./reset.scss";
+@import "./variables.scss";
+
+.sign-in-overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include shrink-in;
+    @include trans-01s;
+    opacity: 0;
+    visibility: hidden;
+
+    .signIn-wrapper {
+        position: relative;
+        width: 90%;
+        background: rgba(255, 255, 255, 0.389);
+        backdrop-filter: blur(10px);
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        div {
+            position: relative;
+        }
+
+        .sign-image-wrap {
+            position: relative;
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            @include border-circle;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            div {
+                position: relative;
+                top: 0px;
+                left: 0px;
+                @include border-circle;
+                width: 90px;
+                height: 90px;
+                background: grey;
+                font-size: 16px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                div {
+                    font-size: 40px;
+                    font-weight: 550;
+                }
+                .image-user {
+                    @include border-circle;
+                    @include background-initializer;
+                    background-size: cover;
+                }
+                .image-text {
+                    @include border-circle;
+                    @include background-initializer;
+                    background-size: cover;
+                    background-image: url("../img/svg/mail.svg");
+                }
+            }
+        }
+        .signIn-header {
+            font-size: $font-xl;
+            margin-top: $margin-vs;
+        }
+        .error-alert-wrap {
+            background: rgb(199, 3, 3);
+            padding: 5px;
+            font-size: $font-s;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            //margin-top: $margin-xvs;
+            opacity: 0;
+            visibility: hidden;
+            //display: none;
+            @include trans-05s;
+
+            div {
+                position: relative;
+            }
+            .alert-icon {
+                position: relative;
+                width: 30px;
+                height: 30px;
+                background: white;
+                margin-right: 10px;
+                @include background-initializer;
+                background-size: cover;
+                object-fit: cover;
+                background-image: url("../img/svg/error.svg");
+                @include border-circle;
+            }
+            .error-message {
+                margin-right: 10px;
+            }
+            .error-message::first-letter {
+                text-transform: uppercase;
+            }
+        }
+        .error-alert-wrap.color-change {
+            background: green;
+        }
+        .error-alert-wrap.show {
+            opacity: 1;
+            visibility: visible;
+            //display: block;
+            @include trans-05s;
+        }
+        .signIn-content {
+            margin-top: $margin-vs;
+            display: block;
+            ///display: none; // will be remove later
+            @include trans-05s;
+
+            .signIn-container {
+                position: relative;
+
+                div {
+                    position: relative;
+                    display: flex;
+                    justify-content: flex-start;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: 3px;
+                    overflow: hidden;
+                    box-sizing: border-box;
+
+                    .input {
+                        padding: 10px 50px;
+                        outline: none;
+                        border: none;
+                        font-size: 16px;
+                        font-weight: 550;
+                    }
+                    .input::first-letter {
+                        text-transform: uppercase;
+                    }
+                    .label-icon {
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        width: 35px;
+                        height: 100%;
+                        background: grey;
+                        margin-top: 0px;
+
+                        div {
+                            position: relative;
+                            width: 30px;
+                            height: 30px;
+                            @include background-initializer;
+                            background-size: cover;
+                            object-fit: cover;
+                        }
+                        .icon-user {
+                            background-image: url("../img/icons/user.png");
+                        }
+                        .icon-email {
+                            background-image: url("../img/icons/email.png");
+                        }
+                        .icon-password {
+                            background-image: url("../img/icons/key.png");
+                        }
+                    }
+                    .pass-error {
+                        font-size: $font-vs;
+                        background: red;
+                        padding: 5px;
+                    }
+                    .s-error {
+                        display: none;
+                    }
+                    .s-error.show {
+                        display: block;
+                    }
+                }
+                .alt-logIn-wrap {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: $margin-s;
+
+                    div {
+                        position: relative;
+                        margin-left: 30px;
+                    }
+                    .alt-btn {
+                        width: 30px;
+                        height: 30px;
+                        background: white;
+                        @include background-initializer;
+                        background-size: cover;
+                        object-fit: cover;
+                        @include border-circle;
+                        cursor: pointer;
+                    }
+                    .goggle-btn {
+                        background-image: url("../img/svg/goggle.svg")
+                    }
+                    .facebook-btn {
+                        background-image: url("../img/svg/facebook.svg");
+                    }
+                    .twitter-btn {
+                        background-image: url("../img/svg/twitter.svg");
+                    }
+                    .apple-btn {
+                        background-image: url("../img/svg/apple.svg");
+                    }
+                }
+                div:nth-child(6) {
+                    margin-top: $margin-vs;
+                }
+                div:nth-child(7) {
+                    margin-top: $margin-vs;
+                }
+                div:nth-child(8) {
+                    margin-top: $margin-vs;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: $font-vs;
+
+                    span {
+                        position: relative;
+                        margin: 5px;
+                    }
+                    .logIn-btn {
+                        padding: 10px;
+                        background: red;
+                        margin: 4px;
+                        @include border-20;
+                        box-sizing: border-box;
+                        cursor: pointer;
+                    } 
+                }
+            }
+        }
+        .signIn-content.collapse {
+            display: none;
+            @include trans-05s;
+        }
+        .logIn-content {
+            margin-top: $margin-vs;
+            display: none;
+            @include trans-05s;
+
+            .logIn-container {
+                position: relative;
+
+                div {
+                    position: relative;
+                    display: flex;
+                    justify-content: flex-start;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: 3px;
+                    overflow: hidden;
+                    box-sizing: border-box;
+
+                    .input {
+                        padding: 10px 50px;
+                        outline: none;
+                        border: none;
+                        font-size: 16px;
+                        font-weight: 550;
+                    }
+                    .input::first-letter {
+                        text-transform: uppercase;
+                    }
+                    .label-icon {
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        width: 35px;
+                        height: 100%;
+                        background: grey;
+                        margin-top: 0px;
+
+                        div {
+                            position: relative;
+                            width: 30px;
+                            height: 30px;
+                            @include background-initializer;
+                            background-size: cover;
+                            object-fit: cover;
+                        }
+                        .icon-email {
+                            background-image: url("../img/icons/email.png");
+                        }
+                        .icon-password {
+                            background-image: url("../img/icons/key.png");
+                        }
+                    }
+                }
+                .logIn-submit-wrap {
+                    margin-top: $margin-vs;
+                }
+                .reset-password-wrap {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: $margin-vs;
+
+                    div {
+                        position: relative;
+                        font-size: $font-vs;
+                    }
+                    .reset-pass-btn {
+                        background: red;
+                        padding: 10px;
+                        margin: 4px;
+                        @include border-20;
+                        box-sizing: border-box;
+                        cursor: pointer;
+                    }
+                }
+                .alt-logIn-wrap {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: $margin-s;
+
+                    div {
+                        position: relative;
+                        margin: 5px;
+                    }
+                    .alt-btn {
+                        width: 30px;
+                        height: 30px;
+                        background: white;
+                        @include background-initializer;
+                        background-size: cover;
+                        object-fit: cover;
+                        @include border-circle;
+                        cursor: pointer;
+                    }
+                    .goggle-btn {
+                        background-image: url("../img/svg/goggle.svg");
+                    }
+                    .facebook-btn {
+                        background-image: url("../img/svg/facebook.svg");
+                    }
+                    .twitter-btn {
+                        background-image: url("../img/svg/twitter.svg");
+                    }
+                    .apple-btn {
+                        background-image: url("../img/svg/apple.svg");
+                    }
+                }
+                .back-arrow-wrap {
+                    margin-top: $margin-s;
+                    width: 50px;
+                    height: 50px;
+                    background: white;
+                    @include border-circle;
+                    float: right;
+                    cursor: pointer;
+
+                    div {
+                        position: relative;
+                        width: 45px;
+                        height: 45px;
+                        background:grey;
+                        cursor: pointer;
+                        background-image: url("../img/icons/back-arrow.png");
+                        @include background-initializer;
+                        background-size: cover;
+                        object-fit: cover;
+                        @include rotate-right;
+                    }
+                }
+            }
+        }
+        .logIn-content.show {
+            display: block;
+            @include trans-05s;
+        }
+    }
+}
+.sign-in-overlay.collapse {
+    @include shrink-out;
+    @include trans-01s;
+    opacity: 1;
+    visibility: visible;
+}

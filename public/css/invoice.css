@@ -1,0 +1,427 @@
+*, html, body, ul, ol *::after, *::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.invoice-wrapper {
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.521);
+  z-index: 10;
+  overflow: hidden;
+  display: none;
+}
+
+.invoice-wrapper .invoice-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /*background: white;*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* background: peru;*/
+}
+
+.invoice-wrapper .invoice-container .invoice-content {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  background: white;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice {
+  position: relative;
+  /*background: green;*/
+  width: 95%;
+  height: 100%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container {
+  position: relative;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap {
+  position: relative;
+  padding: 35px;
+  border: 5px solid black;
+  margin-top: 10px;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div {
+  position: relative;
+  font-weight: bolder;
+  color: black;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div span {
+  font-weight: 500;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div:nth-child(1) {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div:nth-child(2) {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div:nth-child(3), .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div:nth-child(4) {
+  font-size: 18px;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-payment-wrap {
+  position: relative;
+  margin-top: 20px;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-payment-wrap div {
+  position: relative;
+  line-height: 1.1rem;
+  color: black;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-payment-wrap div span {
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-payment-wrap div:nth-child(1) {
+  font-size: 20px;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-payment-wrap div:nth-child(2) {
+  margin-top: 20px;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap {
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap div {
+  position: relative;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-table-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-table-header div {
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 18px;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-table-header div:nth-child(1) {
+  width: 40%;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap hr {
+  height: 1vh;
+  background: black;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-item-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-item-wrap .invoice-item-cell {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  background: #ececec;
+  padding: 2px;
+  margin: 2px;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-item-wrap .invoice-item-cell div {
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-item-wrap .invoice-item-cell div:nth-child(1) {
+  width: 40%;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-summation-wrap {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-summation-wrap div {
+  color: black;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-summation-wrap .summation-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-summation-wrap .summation-container div {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin: 5px;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-summation-wrap .summation-container div:nth-child(2) {
+  font-weight: bolder;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-summation-wrap .summation-container div:nth-child(3) {
+  font-size: 9px;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-summation-wrap .summation-footer div {
+  font-size: 11px;
+  line-height: 1.1rem;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-summation-wrap .summation-footer div:nth-child(1) {
+  margin-bottom: 5px;
+  margin-top: 10px;
+  font-weight: 550;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice-client-logo {
+  position: relative;
+  width: 40%;
+  height: 100vh;
+  background: #ececec;
+  overflow: hidden;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice-client-logo div {
+  position: relative;
+  color: black;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice-client-logo .logo-wrap {
+  position: relative;
+  padding: 20px;
+  /*background: red;*/
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 5px solid black;
+  top: 10px;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice-client-logo .logo-wrap div {
+  position: relative;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice-client-logo .logo-wrap div:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice-client-logo .client-wrapper {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice-client-logo .client-wrapper .client-container {
+  position: relative;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice-client-logo .client-wrapper .client-container div {
+  color: black;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice-client-logo .client-wrapper .client-container div span {
+  font-size: 13px;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice-client-logo .client-wrapper .client-container .client-name {
+  font-size: 20px;
+  font-weight: 550;
+  letter-spacing: .1px;
+  text-transform: uppercase;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice-client-logo .client-wrapper .client-container .client-tel {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice-client-logo .client-wrapper .client-container .client-others {
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.invoice-wrapper .invoice-container .invoice-content .invoice-client-logo .client-wrapper .client-container .client-others span {
+  line-height: 1.2rem;
+}
+
+.invoice-wrapper.on {
+  display: block;
+}

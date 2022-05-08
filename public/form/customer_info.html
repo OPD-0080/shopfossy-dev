@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> E-commence | Customer_Details </title>
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="../css/customer_details.css">
+    <link rel="stylesheet" href="../css/landing-page.css">
+    <link rel="stylesheet" href="../css/invoice.css">
+    <link rel="stylesheet" href="../css/@keyframes-landing.css">
+    <link rel="stylesheet" href="../css/@media_customer_details.css">
+</head>
+<body>
+    <!-------LANDING PAGE ------------>
+    <div class="landing-container">
+        <div class="landing-wrap">
+            <div class="loading">
+                <div class="loading-boxes"></div>
+                <div class="loading-boxes"></div>
+                <div class="loading-boxes"></div>
+            </div>
+        </div>
+    </div>
+    <!-------LANDING PAGE ------------>
+    <!-------FORM SECTION START ------------>
+    <div class="form-banner-container">
+        <div class="overlay">
+            <div class="logo"></div>
+            <div class="form-wrapper">
+                <!---------- CUSTOMER DETAILS START ------------>
+                <form action="" method="post" class="form-container">
+                    <div class="form-title">
+                        <div class="ok-wrap ok-1"></div>
+                        <div> Billed To </div>
+                        <div class="edited-wrap edit-1"></div>
+                    </div>
+                    <div class="form-alert"><div> Form Submitted </div></div>
+                    <!--------- CUSTOMER FORM START ------------>
+                    <div class="form-content" id="form">
+                        <div class="f1">
+                            <label for="name"> First Name <div class="alert">*</div></label>
+                            <input type="text" class="first-name" placeholder="Enter here">
+                            <div class="icon"><div class="i i-name"></div></div>
+                        </div>
+                        <div class="f2">
+                            <label for="name"> Last Name <div class="alert">*</div></label>
+                            <input type="text" class="last-name" placeholder="Enter here">
+                            <div class="icon"><div class="i i-name"></div></div>
+                        </div>
+                        <div class="f3">
+                            <label for="email"> Email <div class="alert">*</div></label>
+                            <input type="email" class="email" placeholder="example@domain.com">
+                            <div class="icon"><div class="i i-email"></div></div>
+                        </div>
+                        <div class="f4">
+                            <label for="tel"> Phone Number <div class="alert">*</div></label>
+                            <input type="tel" class="tel" placeholder="233 245678900">
+                            <div class="icon"><div class="i i-number"></div></div>
+                        </div>
+                        <div class="f5">
+                            <label for="company"> Company (option)</label>
+                            <input type="text" class="company" placeholder="Enter here">
+                            <div class="icon"><div class="i i-company"></div></div>
+                        </div>
+                        <div class="f6">
+                            <label for="region"> Region <div class="alert">*</div></label>
+                            <input type="text" class="region" placeholder="Enter to select option">
+                            <div class="icon"><div class="i i-region"></div></div>
+                            <div class="arrow-wrap" data-arrow="2"><div class="arrow a2" data-arrow="2"></div></div>
+                            <div class="region-option options" id="region" data-opt="2">
+                                <span class="region-select" value="Ashanti">Ashanti</span>
+                                <span class="region-select" value="Central">Central</span>
+                                <span class="region-select" value="Greater Accra">Greater Accra</span>
+                                <span class="region-select" value="Western">Western</span>
+                                <span class="region-select" value="Eastern">Eastern</span>
+                            </div>
+                        </div>
+                        <div class="f7">
+                            <label for="city"> City / Town <div class="alert">*</div></label>
+                            <input type="text" class="city" placeholder="Enter to select option">
+                            <div class="icon"><div class="i i-city"></div></div>
+                            <div class="arrow-wrap" data-arrow="2"><div class="arrow a3" data-arrow="3"></div></div>
+                            <div class="city-option citySel options" id="city" data-opt="3">
+                                
+                            </div>
+                        </div>
+                        <div class="f8">
+                            <label for="digital"> Digital Address <div class="alert">*</div></label>
+                            <input type="text" class="digital" placeholder="Enter here">
+                            <div class="icon"><div class="i i-location"></div></div>
+                            <div class="note">* Eg: AO-232-4444*</div>
+                        </div>
+                        <div class="f9">
+                            <label for="residential"> Residential Address <div class="alert">*</div></label>
+                            <input type="text" class="residential" placeholder="Enter here">
+                            <div class="icon"><div class="i i-location"></div></div>
+                            <div class="note">* may include landmarks *</div>
+                        </div>
+                        <div class="f10">
+                            <label for="agreement"> Agreement </label>
+                            <div class="agree-container">
+                                <input type="radio" class="agreement" placeholder="Enter here">
+                                <p> It can be used as a farmer's market bag, a picnic bang or storage 
+                                    of groceries in the kitchen,with the variety of colors it has, it 
+                                    also adds an aesthetic feature in the home. The farmers market baskets
+                                    are created and brought to life by our skillful and experienced 
+                                    artisans and craftsmen who are mostly women 
+                                </p>
+                            </div>
+                        </div>
+                        <div class="f11">
+                            <div class="form-btn-wrap"><div class="form-btn fbtn1">Proceed to Next</div></div>
+                            
+                            <!--<div class="form-btn-wrap"><input type="submit" class="form-btn" value="Submit"/></div>-->
+                        </div>
+                    </div>
+                    <!--------- CUSTOMER FORM END ------------>
+                    <!--------- DELIVERY METHOD START ------------>
+                    <div class="delivery-method-wrapper">
+                        <div class="delivery-title">
+                            <div class="ok-wrap ok-2"></div>
+                            <div> Delivery Method </div>
+                            <div class="edited-wrap edit-2"></div>
+                        </div>
+                        <div class="delivery-content">
+                            <div class="delivery-cell">
+                                <input type="radio" class="delivery-check radio_1">
+                                <div class="radio-header"> Delivery 1 </div>
+                                <div class="radio-content">
+                                    1
+                                </div>
+                            </div>
+                            <div class="delivery-cell">
+                                <input type="radio" class="delivery-check radio_2">
+                                <div class="radio-header"> Delivery 2 </div>
+                                <div class="radio-content">
+                                    2
+                                </div>
+                            </div>
+                            <div class="delivery-btn-wrap"><div class="form-btn fbtn2">Proceed to Next</div></div>
+                        </div>
+                    </div>
+                    <!--------- DELIVERY METHOD END ------------>
+                    <!--------- PAYMENT METHOD START ------------>
+                    <div class="payment-method-wrapper">
+                        <div class="payment-title">
+                            <div class="ok-wrap ok-3"></div>
+                            <div> Payment Method </div>
+                            <div class="edited-wrap edit-3"></div>
+                        </div>
+                        <div class="payment-content">
+                            <div class="payment-cell">
+                                <input type="radio" class="payment-check radio_1">
+                                <div class="radio-header"> Payment 1 </div>
+                                <div class="radio-content">
+                                    1
+                                </div>
+                            </div>
+                            <div class="payment-cell">
+                                <input type="radio" class="payment-check radio_2">
+                                <div class="radio-header"> Payment 2 </div>
+                                <div class="radio-content">
+                                    2
+                                </div>
+                            </div>
+                            <div class="payment-btn-wrap"><div class="form-btn fbtn3">Proceed to Next</div></div>
+                        </div>
+                    </div>
+
+                    <!--------- PAYMENT METHOD END ------------>
+                    <!--------- SUMMARY INFO START ------------>
+                    <div class="summary-wrapper">
+                        <div class="summary-title"> Summary </div>
+                        <div class="summary-content">
+                            <div>
+                                <div class="summary-cell-customer">
+                                    <span>
+                                        <div class="label">Full Name :</div>
+                                        <div>
+                                            <div class="first-name fst_name"> Kojo </div>
+                                            <div class="last-name lst_name"> Mensah </div>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <div class="label"> Email : </div>
+                                        <div class="email s-email"> km@gmail.com </div>
+                                    </span>
+                                    <span>
+                                        <div class="label"> Phone Number : </div>
+                                        <div>
+                                            <div>(+233)</div>
+                                            <div class="number s-tel"> 246220037 </div>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <div class="label"> Company : </div>
+                                        <div class="company s-company"> opd company ltd </div>
+                                    </span>
+                                    <span>
+                                        <div class="label"> Region : </div>
+                                        <div class="region s-region"> Ashanti </div>
+                                    </span>
+                                    <span>
+                                        <div class="label"> City / Town : </div>
+                                        <div class="city s-city"> Obuasi </div>
+                                    </span>
+                                    <span>
+                                        <div class="label"> Residential Address : </div>
+                                        <div class="location s-residential"> Brahabebome </div>
+                                    </span>
+                                    <span>
+                                        <div class="label"> Digital Address : </div>
+                                        <div class="location s-digital"> AO-2323-2424 </div>
+                                    </span>
+                                    <span>
+                                        <div class="label"> Delivery Method : </div>
+                                        <div class="delivery s-delivery"> Delivery 1 </div>
+                                    </span>
+                                    <span>
+                                        <div class="label"> Payment Method : </div>
+                                        <div class="payment s-payment"> PayPal </div>
+                                    </span>
+                                </div>
+                                <input type="submit" class="summary-btn-wrap"><div class="form-btn fbtn4"></div></input>
+                            </div>
+                        </div>
+                    </div>
+                    <!--------- SUMMARY INFO END ------------>
+                    <div class="form-footer">
+                        <div> Items : <span  class="item-total cart-number">00</span></div>
+                        <div> Total : GHc <span class="grand-total total-value">00</span></div>
+                    </div>
+                </form>
+                <!---------- CUSTOMER DETAILS END ------------>
+                <!----------- INVOICE START ---------------->
+                <div class="invoice-wrapper">
+                    <div class="invoice-container">
+                        <div class="invoice-content">
+                            <div class="invoice" id="element-to-print">
+                                <div class="invoice-client-logo">
+                                    <div class="logo-wrap">
+                                        <div></div>
+                                        <div>E-Commence</div>
+                                    </div>
+                                    <div class="client-wrapper">
+                                        <div class="client-container">
+                                            <!--
+                                            <div class="client-name"> Vybrant Obeng </div>
+                                            <div class="client-tel"><span> 0246220037 </span></div>
+                                            <div class="client-others">
+                                                <span> Brahabebome </span>
+                                                <span> Obuasi </span>
+                                                <span> Ashanti </span>
+                                                <span> AO-317-5487 </span>
+                                            </div>
+                                            <div class="client-email"><span> opd@vybrant.com </span></div>
+                                            -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="invoice-structure-wrap">
+                                    <div class="invoice-structure-container">
+                                        <div class="invoice-header-wrap"> 
+                                            
+                                            <div> Invoice </div>
+                                            <div>Date: <span> March 23, 2022 </span></div>
+                                            <div>Invoice Serial Code: <span> 0001 </span></div>
+                                            <div>Time Issued: <span> 07:23 52s </span></div>
+                                            
+                                        </div>
+                                        <div class="invoice-payment-wrap">
+                                            <div> Payment Info </div>
+                                            <div><span>Status:</span><em class="payment-status"> Online </em></div>
+                                            <div><span>Acc. Name:</span><em> E-commence </em></div>
+                                            <div><span> Acc. No:</span><em> 4545-457955-87951 </em></div>
+                                        </div>
+                                        <div class="invoice-table-wrap">
+                                            <div class="invoice-table-header">
+                                                <div><span> Items </span></div>
+                                                <div><span> Unit Cost </span></div>
+                                                <div><span> Qty </span></div>
+                                                <div><span> Amt </span></div>
+                                            </div>
+                                            <hr>
+                                            <div class="invoice-item-wrap">
+                                                <!--
+                                                <div class="invoice-item-cell">
+                                                    <div><span> Pokeman Lovebird </span></div>
+                                                    <div><span> 99.99 </span></div>
+                                                    <div><span> 1 </span></div>
+                                                    <div><span> 99.99 </span></div>
+                                                </div>
+                                                <div class="invoice-item-cell">
+                                                    <div><span> Pokeman Lovebird </span></div>
+                                                    <div><span> 99.99 </span></div>
+                                                    <div><span> 1 </span></div>
+                                                    <div><span> 99.99 </span></div>
+                                                </div>
+                                                -->
+                                            </div>
+                                            <hr>
+                                            <div class="invoice-summation-wrap">
+                                                <div class="summation-footer"> 
+                                                    <div> Company Info </div>
+                                                    <div> Email: <span> info@vybrant.com </span></div>
+                                                    <div> or call us at 0246220037 </div>
+                                                    <div> Location: <span> ##### </span> </div>
+                                                </div>
+                                                <div class="summation-container">
+                                                    <div> Subtotal: <span>GHc</span><span class="subtotal i-total"> 0.00 </span></div>
+                                                    <!--
+                                                    <div> Tax (15%): <span>GHc</span><span class="tax"> 5.80 </span></div>
+                                                    -->
+                                                    <div> Grand Total: <span>GHc</span><span class="grand-total i-total"> 0.00 </span></div>
+                                                    <div> * Taxes have already been added to price items * </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-------------------- INVOICE END -------------------->
+            </div>
+        </div>
+    </div>
+    <!-------FORM SECTION START ------------>
+    <!-------HIDDEN TAGS START ------------>
+    <div class="hidden cart-container"></div>
+    <div class="hidden cart-checkout"></div>
+    <div class="hidden products-wrapper"></div>
+    <div class="hidden showing-profiling"></div>
+    <div class="hidden cart-clear"></div>
+    <!-------HIDDEN TAGS END ------------>
+
+
+
+    <!-------JS START ------------>
+    <!-- plugins for js start here -->
+    <script src="../js/plugins/firebase-app-init.js" type="module"></script>
+    <script src="../js/customer_details.js" type="module"></script>
+    <script src="../js/landing-page.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

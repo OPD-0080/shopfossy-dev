@@ -1,0 +1,106 @@
+.landing-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  background: #14147e;
+  z-index: 99;
+}
+
+.landing-container.active {
+  transform: translateY(-1500px);
+  -webkit-transform: translateY(-1500px);
+  -moz-transform: translateY(-1500px);
+  -ms-transform: translateY(-1500px);
+  -o-transform: translateY(-1500px);
+  transition: .5s 1s ease-out;
+  -webkit-transition: .5s 1s ease-out;
+  -moz-transition: .5s 1s ease-out;
+  -ms-transition: .5s 1s ease-out;
+  -o-transition: .5s 1s ease-out;
+}
+.loading.close {
+  opacity: 0;
+  transition: .1s ease;
+  -webkit-transition: .1s ease;
+  -moz-transition: .1s ease;
+  -ms-transition: .1s ease;
+  -o-transition: .1s ease;
+}
+.landing-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.loading {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: .2s ease;
+  -webkit-transition: .2s ease;
+  -moz-transition: .2s ease;
+  -ms-transition: .2s ease;
+  -o-transition: .2s ease;
+}
+.loading-boxes {
+  position: relative;
+  background: white;
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.loading-boxes:nth-child(1) {
+  background: red;
+  animation: loading-box1 2s ease-in-out infinite;
+  -webkit-animation: loading-box1 2s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+.loading-boxes:nth-child(2) {
+  animation: loading-box2 2s ease-in-out infinite;
+  -webkit-animation: loading-box2 2s ease-in-out infinite;
+  transform-style: preserve-3d;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.loading-boxes:nth-child(2)::before, 
+.loading-boxes:nth-child(2)::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 3px;
+  background: white
+}
+.loading-boxes:nth-child(2)::before {
+  top: 50%;
+  left: -20px;
+  animation: lineA 2s ease-in-out infinite;
+  -webkit-animation: lineA 2s ease-in-out infinite;
+}
+.loading-boxes:nth-child(2)::after {
+  bottom: 50%;
+  left: 30px;
+  animation: lineB 2s ease-in-out infinite;
+  -webkit-animation: lineB 2s ease-in-out infinite;
+}
+.loading-boxes:nth-child(3) {
+  background: red;
+  animation: loading-box3 2s ease-in-out infinite;
+  -webkit-animation: loading-box3 2s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+

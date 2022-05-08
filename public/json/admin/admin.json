@@ -1,0 +1,31 @@
+{
+    "signInData": [
+        {
+            "sys": {"companyName": "company_name"},
+            "fields": {
+                "adminId": "userid",
+                "password": "12345",
+                "img": "img/index/admin-image/admin1.jpg",
+                "databaseUrl": "databases/company1-database.html"
+            }
+        },
+        {
+            "sys": {"companyName": "company-name"},
+            "fields": {
+                "adminId": "opd",
+                "password": "111",
+                "img": "img/index/admin-image/admin2.jpg",
+                "databaseUrl": "databases/company2-database.html"            
+            }
+        },
+        {
+            "sys": {"companyName": "company-name"},
+            "fields": {
+                "adminId": "deby",
+                "password": "222",
+                "img": "img/index/admin-image/admin3.jpg",
+                "databaseUrl": "databases/company3-database.html"            
+            }
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "content": [
+        {
+            "category": "Cloth & Shoes", "url": "/public/company-name-1.html", "dataId": "1"
+        },
+        {
+            "category": "Men & Women Shirt", "url": "/public/company-name-2.html", "dataId": "2"
+        },
+        {
+            "category": "Title & Title", "url": "#", "dataId": "3"
+        },
+        {
+            "category": "Title & Title", "url": "#", "dataId": "4"
+        }
+    ]
+}

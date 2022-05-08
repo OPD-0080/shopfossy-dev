@@ -1,0 +1,293 @@
+@-webkit-keyframes slide {
+  0% {
+    left: 0%;
+  }
+  5% {
+    left: 0%;
+  }
+  10% {
+    left: 0%;
+  }
+  15% {
+    left: 0%;
+  }
+  20% {
+    left: -100%;
+  }
+  25% {
+    left: -100%;
+  }
+  30% {
+    left: -100%;
+  }
+  35% {
+    left: -100%;
+  }
+  40% {
+    left: -200%;
+  }
+  45% {
+    left: -200%;
+  }
+  50% {
+    left: -200%;
+  }
+  55% {
+    left: -200%;
+  }
+  60% {
+    left: -300%;
+  }
+  65% {
+    left: -300%;
+  }
+  70% {
+    left: -300%;
+  }
+  75% {
+    left: -300%;
+  }
+  80% {
+    left: -400%;
+  }
+  85% {
+    left: -400%;
+  }
+  90% {
+    left: -400%;
+  }
+  95% {
+    left: -400%;
+  }
+  100% {
+    left: -400%;
+  }
+}
+
+@keyframes slide {
+  0% {
+    left: 0%;
+  }
+  5% {
+    left: 0%;
+  }
+  10% {
+    left: 0%;
+  }
+  15% {
+    left: 0%;
+  }
+  20% {
+    left: -100%;
+  }
+  25% {
+    left: -100%;
+  }
+  30% {
+    left: -100%;
+  }
+  35% {
+    left: -100%;
+  }
+  40% {
+    left: -200%;
+  }
+  45% {
+    left: -200%;
+  }
+  50% {
+    left: -200%;
+  }
+  55% {
+    left: -200%;
+  }
+  60% {
+    left: -300%;
+  }
+  65% {
+    left: -300%;
+  }
+  70% {
+    left: -300%;
+  }
+  75% {
+    left: -300%;
+  }
+  80% {
+    left: -400%;
+  }
+  85% {
+    left: -400%;
+  }
+  90% {
+    left: -400%;
+  }
+  95% {
+    left: -400%;
+  }
+  100% {
+    left: -400%;
+  }
+}
+
+@-webkit-keyframes slideDot {
+  0% {
+    right: 0%;
+  }
+  5% {
+    right: 0%;
+  }
+  10% {
+    right: 0%;
+  }
+  15% {
+    right: 0%;
+  }
+  20% {
+    right: -20%;
+  }
+  25% {
+    right: -20%;
+  }
+  30% {
+    right: -20%;
+  }
+  35% {
+    right: -20%;
+  }
+  40% {
+    right: -40%;
+  }
+  45% {
+    right: -40%;
+  }
+  50% {
+    right: -40%;
+  }
+  55% {
+    right: -40%;
+  }
+  60% {
+    right: -60%;
+  }
+  65% {
+    right: -60%;
+  }
+  70% {
+    right: -60%;
+  }
+  75% {
+    right: -60%;
+  }
+  80% {
+    right: -80%;
+  }
+  85% {
+    right: -80%;
+  }
+  90% {
+    right: -80%;
+  }
+  95% {
+    right: -80%;
+  }
+  100% {
+    right: -80%;
+  }
+}
+
+@keyframes slideDot {
+  0% {
+    right: 0%;
+  }
+  5% {
+    right: 0%;
+  }
+  10% {
+    right: 0%;
+  }
+  15% {
+    right: 0%;
+  }
+  20% {
+    right: -20%;
+  }
+  25% {
+    right: -20%;
+  }
+  30% {
+    right: -20%;
+  }
+  35% {
+    right: -20%;
+  }
+  40% {
+    right: -40%;
+  }
+  45% {
+    right: -40%;
+  }
+  50% {
+    right: -40%;
+  }
+  55% {
+    right: -40%;
+  }
+  60% {
+    right: -60%;
+  }
+  65% {
+    right: -60%;
+  }
+  70% {
+    right: -60%;
+  }
+  75% {
+    right: -60%;
+  }
+  80% {
+    right: -80%;
+  }
+  85% {
+    right: -80%;
+  }
+  90% {
+    right: -80%;
+  }
+  95% {
+    right: -80%;
+  }
+  100% {
+    right: -80%;
+  }
+}
+
+@-webkit-keyframes image-hover {
+  0% {
+    -webkit-clip-path: circle(0px at 110% -10%);
+            clip-path: circle(0px at 110% -10%);
+  }
+  50% {
+    -webkit-clip-path: circle(300px at 110% -10%);
+            clip-path: circle(300px at 110% -10%);
+  }
+  100% {
+    -webkit-clip-path: circle(0px at 110% -10%);
+            clip-path: circle(0px at 110% -10%);
+  }
+}
+
+@keyframes image-hover {
+  0% {
+    -webkit-clip-path: circle(0px at 110% -10%);
+            clip-path: circle(0px at 110% -10%);
+  }
+  50% {
+    -webkit-clip-path: circle(300px at 110% -10%);
+            clip-path: circle(300px at 110% -10%);
+  }
+  100% {
+    -webkit-clip-path: circle(0px at 110% -10%);
+            clip-path: circle(0px at 110% -10%);
+  }
+}

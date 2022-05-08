@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "axois": "^0.0.1-security",
+    "firebase-cli": "^1.2.0",
+    "http": "^0.0.1-security",
+    "moment": "^2.29.3",
+    "soket.io": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "name": "public",
+  "version": "1.0.0",
+  "description": "Project E-commence",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./js/firebase/firebaseProvider.js",
+    "dev": "nodemon ./js/firebase/firebaseProvider.js"
+  },
+  "author": "Prince Obeng Donkor",
+  "license": "MIT"
+}

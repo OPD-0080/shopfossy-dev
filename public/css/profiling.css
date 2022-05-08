@@ -1,0 +1,872 @@
+.profiling-overlay {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  visibility: hidden;
+}
+
+.profiling-overlay .item-profiling-wrapper {
+  position: fixed;
+  top: 0px;
+  width: 80%;
+  height: 100vh;
+  z-index: 6;
+  transform: translateX(1000px);
+  -webkit-transform: translateX(1000px);
+  -moz-transform: translateX(1000px);
+  -ms-transform: translateX(1000px);
+  -o-transform: translateX(1000px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background: #2e2e2e;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling {
+  position: relative;
+  top: 60px;
+  left: 0px;
+  width: 100%;
+  height: initial;
+  background: #2e2e2e;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  background: #2e2e2e;
+  width: 100%;
+  height: initial;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .item-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 35px;
+  height: 35px;
+  background: white;
+  background-image: url("../img/icons/close-black.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .prof-sub-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #4d4c4c;
+  padding: 4px;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .prof-sub-header div:nth-child(1) {
+  font-weight: 550;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .prof-sub-header .prof-icon {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: white;
+  background-image: url("../img/icons/arrow-black.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  cursor: pointer;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .prof-sub-header .prof-icon.down {
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .prof-i {
+  height: initial;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+  opacity: 1;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .prof-i.drop {
+  height: 0px;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+  opacity: 0;
+  transform: scale(0.5);
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  -o-transform: scale(0.5);
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-A {
+  width: 55%;
+  position: relative;
+  top: 20px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-A .profiling-sort-wrap {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: hidden;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-A .profiling-sort-wrap div {
+  position: relative;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-A .profiling-sort-wrap .prof-sort {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-A .profiling-sort-wrap .prof-sort .p-sort {
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-A .profiling-sort-wrap .prof-sort .p-sort img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-A .profiling-sort-wrap .prof-sort .activated {
+  border: 2px solid red;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-A .profiling-sort-wrap .prof-sort-confirm {
+  width: 80%;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-A .profiling-sort-wrap .prof-sort-confirm div {
+  position: relative;
+  width: 95%;
+  height: 95%;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-A .profiling-sort-wrap .prof-sort-confirm div .p-rel-confirm {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-A .profiling-sort-wrap .prof-sort-confirm div .p-rel-confirm img {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-A .profiling-sort-wrap .prof-sort-confirm div .confirm-overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-A .profiling-sort-wrap .prof-sort-confirm div .confirm-overlay.hide {
+  opacity: 1;
+  visibility: visible;
+  background: rgba(0, 0, 0, 0.773);
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-A .profiling-sort-wrap .prof-sort-confirm div .p-confirm {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  transform: scale(0.05);
+  -webkit-transform: scale(0.05);
+  -moz-transform: scale(0.05);
+  -ms-transform: scale(0.05);
+  -o-transform: scale(0.05);
+  transition: .5s ease;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -ms-transition: .5s ease;
+  -o-transition: .5s ease;
+  overflow: hidden;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-A .profiling-sort-wrap .prof-sort-confirm div .p-confirm img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-A .profiling-sort-wrap .prof-sort-confirm div .p-confirm.confirm {
+  visibility: visible;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transition: .5s ease;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -ms-transition: .5s ease;
+  -o-transition: .5s ease;
+  z-index: 3;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  width: 43%;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper {
+  position: relative;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper div::first-letter {
+  text-transform: uppercase;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-star {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-star .country {
+  font-size: 13px;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-star div:nth-child(2) {
+  margin-left: 10px;
+  color: whitesmoke;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-star .star-rated {
+  position: relative;
+  width: 30%;
+  height: 20px;
+  background: yellow;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 10px;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-star .star-rated img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-title {
+  margin-top: 30px;
+  font-size: 23px;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-price-stock-wrap {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-price-stock-wrap div:nth-child(1) {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-price-stock-wrap div:nth-child(2) {
+  font-size: 13px;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-price-stock-wrap .prof-stock {
+  color: greenyellow;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-price-stock-wrap .prof-stock.txt {
+  color: #ff2323;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-tax {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-cart-btn {
+  position: relative;
+  background: white;
+  color: black;
+  padding: 10px;
+  width: 100%;
+  margin-top: 20px;
+  margin-left: 0%;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-cart-btn .in-cart-overlay {
+  position: absolute;
+  top: -100px;
+  left: 0px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  background: black;
+  color: white;
+  z-index: 2;
+  transition: .2s ease;
+  -webkit-transition: .2s ease;
+  -moz-transition: .2s ease;
+  -ms-transition: .2s ease;
+  -o-transition: .2s ease;
+  pointer-events: auto;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-cart-btn .in-cart-overlay.on {
+  top: 0px;
+  transition: .2s ease;
+  -webkit-transition: .2s ease;
+  -moz-transition: .2s ease;
+  -ms-transition: .2s ease;
+  -o-transition: .2s ease;
+  pointer-events: none;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-cart-btn div:nth-child(2) {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-cart-btn div:nth-child(2) div {
+  background-image: url("../img/icons/cart-black-btn.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  margin-right: 30px;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-cart-btn.cursor {
+  pointer-events: none;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .sell-notice {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .sell-notice div:nth-child(1) {
+  width: 30px;
+  height: 30px;
+  background-image: url("../img/icons/sell-notice.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-right: 10px;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-highlight {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-highlight div {
+  position: relative;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-highlight .highlight-content {
+  margin-top: 10px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-highlight .highlight-content div {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 13px;
+  margin-top: 1.5px;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-highlight .highlight-content div ::first-letter {
+  text-transform: uppercase;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-highlight .highlight-content div:nth-child(1) :nth-child(1) {
+  margin-right: 20px;
+  width: 22px;
+  height: 22px;
+  background: white;
+  background-image: url("../img/icons/hand.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-highlight .highlight-content div:nth-child(2) :nth-child(1) {
+  margin-right: 20px;
+  width: 22px;
+  height: 22px;
+  background: white;
+  background-image: url("../img/icons/location.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-highlight .highlight-content div:nth-child(3) :nth-child(1) {
+  margin-right: 20px;
+  width: 22px;
+  height: 22px;
+  background: white;
+  background-image: url("../img/icons/material.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-highlight .highlight-content div:nth-child(4) :nth-child(1) {
+  margin-right: 20px;
+  width: 22px;
+  height: 22px;
+  background: white;
+  background-image: url("../img/icons/ruler.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return div {
+  position: relative;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content {
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content div {
+  position: relative;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content div ::first-letter {
+  text-transform: uppercase;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content .shipping-return div:nth-child(1) {
+  font-size: 13px;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content .shipping-return .date-estimated {
+  font-size: 20px;
+  margin-top: 10px;
+  color: greenyellow;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content .shipping-return .date-estimated div ::first-letter {
+  text-transform: uppercase;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content .date-progress-wrap {
+  margin-top: 30px;
+  position: relative;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content .date-progress-wrap div:nth-child(1) {
+  position: relative;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content .date-progress-wrap .date-icon-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: -20px;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content .date-progress-wrap .date-icon-wrap div {
+  width: 35px;
+  height: 35px;
+  background: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content .date-progress-wrap .date-icon-wrap div:nth-child(1) div {
+  width: 25px;
+  height: 25px;
+  background-image: url("../img/icons/bag.png");
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content .date-progress-wrap .date-icon-wrap div:nth-child(2) div {
+  width: 25px;
+  height: 25px;
+  background-image: url("../img/svg/truck-black.svg");
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content .date-progress-wrap .date-icon-wrap div:nth-child(3) div {
+  width: 25px;
+  height: 25px;
+  background-image: url("../img/icons/gift-bag.png");
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content .date-progress-wrap .progress-section-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content .date-progress-wrap .progress-section-container .progress-info div {
+  font-size: 13px;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content .date-progress-wrap .progress-section-container .progress-info div:nth-child(2) {
+  margin-top: 10px;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content .cost-return-exchange-wrap {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content .cost-return-exchange-wrap div {
+  position: relative;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content .cost-return-exchange-wrap .cost-return-section div {
+  margin-top: 10px;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content .cost-return-exchange-wrap .cost-return-section div:nth-child(1) {
+  font-size: 13px;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content .cost-return-exchange-wrap .cost-return-section div:nth-child(2) {
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content .cost-return-exchange-wrap .cost-return-section .ship-cost, .profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content .cost-return-exchange-wrap .cost-return-section .return-status {
+  color: greenyellow;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content .cost-return-exchange-wrap .cost-return-section .ship-cost.txt, .profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content .cost-return-exchange-wrap .cost-return-section .return-status.txt {
+  color: #ff2323;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-shipping-return .shipping-return-content .cost-return-exchange-wrap .cost-return-section div:nth-child(3) {
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-description {
+  position: relative;
+  top: 0px;
+  float: left;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-C {
+  position: relative;
+  width: 55%;
+  top: 50px;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-C .prof-description {
+  position: relative;
+  width: 100%;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-C .prof-description div {
+  position: relative;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-C .prof-description .description-content {
+  margin-top: 10px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-C .prof-description .description-content div {
+  line-height: 1.7rem;
+  width: 97%;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-C .prof-description .description-content div ::first-letter {
+  text-transform: uppercase;
+}
+
+.profiling-overlay .item-profiling-wrapper.slide {
+  transform: translateX(0px);
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
+  opacity: 1;
+  visibility: visible;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+}
+
+.profiling-overlay.visible {
+  visibility: visible;
+}
