@@ -1,6 +1,6 @@
 // IMPORTATION SECTION START
 import { signIn } from './firebase_signIn.js';
-import { logIn } from './firebase_logIn.js';
+import { logIn, resetPassword } from './firebase_logIn.js';
 import { authProvider_goggle, authProvider_facebook, authProvider_apple } from './firebaseProvider.js';
 import { onAuthState } from './firebase-onAuthState.js';
 import { signOutFunc, deleteAccount } from './firebase-signOut.js';
@@ -106,3 +106,47 @@ var message = "";
         }
     })
 })();
+
+(function(){
+
+    const resetBtn = document.querySelector(".reset-pass-btn");
+    const tagHidden = document.querySelectorAll(".l-hidden");
+    const header = document.querySelector(".signIn-header");
+    const tagShow = document.querySelectorAll(".l-visible");
+    const resetBackBtn = document.querySelector(".back-arrow-wrap-reset");
+    const headerImage = document.querySelector(".image-text");
+
+    resetBtn.onclick = () => {
+        // hide elements
+        tagHidden.forEach(el => {
+            el.classList.add("show");
+        })
+        tagShow.forEach(el => {
+            el.classList.add("show");
+        })
+        header.innerHTML = "Reset Password";
+        headerImage.classList.add("change")
+    }
+
+    resetBackBtn.onclick = (e) => {
+        if (e.target.classList.contains("back-arrow-wrap-reset") || e.target.classList.contains("reset-arrow")) {
+            tagHidden.forEach(el => {
+                el.classList.remove("show");
+            })
+            tagShow.forEach(el => {
+                el.classList.remove("show");
+            })
+            header.innerHTML = "SignIn";
+            headerImage.classList.add("change")
+        }
+    }
+
+    logInForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        var email = l_email.value;
+
+        resetPassword(email)
+    })
+
+})()

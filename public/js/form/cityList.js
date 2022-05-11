@@ -1,10 +1,12 @@
 var ashanti_reg = [
+    "Select Option..",
     "KNUST",
     "Asafo",
     "Ash town",
     "Tafo"
 ]
 var greater_accra_reg = [
+    "Select Option..",
     "Legon",
     "La Pas",
     "Teshie",

@@ -37,18 +37,10 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  transform: scale(0.3);
-  -webkit-transform: scale(0.3);
-  -moz-transform: scale(0.3);
-  -ms-transform: scale(0.3);
-  -o-transform: scale(0.3);
-  transition: .1s ease;
-  -webkit-transition: .1s ease;
-  -moz-transition: .1s ease;
-  -ms-transition: .1s ease;
-  -o-transition: .1s ease;
-  opacity: 0;
-  visibility: hidden;
+  /*@include shrink-in;
+    @include trans-01s;
+    opacity: 0;
+    visibility: hidden;*/
 }
 
 .sign-in-overlay .signIn-wrapper {
@@ -150,6 +142,20 @@ a {
   background-position: center;
   background-size: cover;
   background-image: url("../img/svg/mail.svg");
+  z-index: 2;
+}
+
+.sign-in-overlay .signIn-wrapper .sign-image-wrap div .image-text.change {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../img/icons/key.png");
+  z-index: 2;
 }
 
 .sign-in-overlay .signIn-wrapper .signIn-header {
@@ -445,6 +451,16 @@ a {
   position: relative;
 }
 
+.sign-in-overlay .signIn-wrapper .logIn-content .logIn-container .l-hidden {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sign-in-overlay .signIn-wrapper .logIn-content .logIn-container .l-hidden.show {
+  display: none;
+}
+
 .sign-in-overlay .signIn-wrapper .logIn-content .logIn-container div {
   position: relative;
   display: -webkit-box;
@@ -507,8 +523,28 @@ a {
   background-image: url("../img/icons/key.png");
 }
 
+.sign-in-overlay .signIn-wrapper .logIn-content .logIn-container div .l-hidden {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sign-in-overlay .signIn-wrapper .logIn-content .logIn-container div .l-hidden.show {
+  display: none;
+}
+
 .sign-in-overlay .signIn-wrapper .logIn-content .logIn-container .logIn-submit-wrap {
   margin-top: 10px;
+}
+
+.sign-in-overlay .signIn-wrapper .logIn-content .logIn-container .logIn-submit-wrap .l-visible {
+  display: none;
+}
+
+.sign-in-overlay .signIn-wrapper .logIn-content .logIn-container .logIn-submit-wrap .l-visible.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .sign-in-overlay .signIn-wrapper .logIn-content .logIn-container .reset-password-wrap {
@@ -602,7 +638,7 @@ a {
   background-image: url("../img/svg/apple.svg");
 }
 
-.sign-in-overlay .signIn-wrapper .logIn-content .logIn-container .back-arrow-wrap {
+.sign-in-overlay .signIn-wrapper .logIn-content .logIn-container .back-arrow-wrap, .sign-in-overlay .signIn-wrapper .logIn-content .logIn-container .back-arrow-wrap-reset {
   margin-top: 20px;
   width: 50px;
   height: 50px;
@@ -616,7 +652,7 @@ a {
   cursor: pointer;
 }
 
-.sign-in-overlay .signIn-wrapper .logIn-content .logIn-container .back-arrow-wrap div {
+.sign-in-overlay .signIn-wrapper .logIn-content .logIn-container .back-arrow-wrap div, .sign-in-overlay .signIn-wrapper .logIn-content .logIn-container .back-arrow-wrap-reset div {
   position: relative;
   width: 45px;
   height: 45px;
@@ -633,6 +669,16 @@ a {
   -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   -o-transform: rotate(180deg);
+}
+
+.sign-in-overlay .signIn-wrapper .logIn-content .logIn-container .l-visible {
+  display: none;
+}
+
+.sign-in-overlay .signIn-wrapper .logIn-content .logIn-container .l-visible.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .sign-in-overlay .signIn-wrapper .logIn-content.show {

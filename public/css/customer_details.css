@@ -196,6 +196,91 @@ body {
   opacity: 1;
 }
 
+.form-banner-container .overlay .form-wrapper .form-container .user-alert {
+  position: absolute;
+  top: 0px;
+  background: red;
+  padding: 5px;
+  width: 100%;
+  font-size: 13px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  transform: translateY(-50px);
+  -webkit-transform: translateY(-50px);
+  -moz-transform: translateY(-50px);
+  -ms-transform: translateY(-50px);
+  -o-transform: translateY(-50px);
+  z-index: 3;
+  transition: .5s ease;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -ms-transition: .5s ease;
+  -o-transition: .5s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .user-alert .icon {
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .user-alert .icon:before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: white;
+  background-image: url("../img/svg/alert-red.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .user-alert.on {
+  transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  transition: .5s ease;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -ms-transition: .5s ease;
+  -o-transition: .5s ease;
+  visibility: visible;
+  opacity: 1;
+}
+
 .form-banner-container .overlay .form-wrapper .form-container .form-title {
   position: relative;
   top: 0px;
@@ -311,14 +396,14 @@ body {
   font-size: 16px;
   font-weight: 500;
   margin-bottom: 10px;
-  margin-left: 40px;
+  margin-left: 50px;
 }
 
 .form-banner-container .overlay .form-wrapper .form-container .form-content div label::first-letter {
   text-transform: uppercase;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .form-content div input {
+.form-banner-container .overlay .form-wrapper .form-container .form-content div input, .form-banner-container .overlay .form-wrapper .form-container .form-content div select {
   outline: none;
   border: none;
   padding: 10px 20px;
@@ -352,6 +437,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
+  margin-left: 10px;
 }
 
 .form-banner-container .overlay .form-wrapper .form-container .form-content div .icon .i {
@@ -488,7 +574,7 @@ body {
           flex-direction: row;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type="radio"] {
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type="checkbox"], .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container select[type="checkbox"] {
   width: 25px;
   height: 25px;
   width: 5%;
@@ -549,6 +635,9 @@ body {
 .form-banner-container .overlay .form-wrapper .form-container .form-content div .note {
   font-size: 11px;
   margin-left: 20px;
+  margin-right: 20px;
+  padding: 2px;
+  text-align: center;
 }
 
 .form-banner-container .overlay .form-wrapper .form-container .form-content div .alert {
@@ -573,6 +662,23 @@ body {
   -moz-transition: .2s ease;
   -ms-transition: .2s ease;
   -o-transition: .2s ease;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .form-content div select {
+  color: rgba(0, 0, 0, 0.755);
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .form-content .notify {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 4px;
+  height: 100%;
+  background: #ff4141;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .form-content .notify.color {
+  background: #34e434;
 }
 
 .form-banner-container .overlay .form-wrapper .form-container .form-content .f1 {

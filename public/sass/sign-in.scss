@@ -12,10 +12,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    @include shrink-in;
+    /*@include shrink-in;
     @include trans-01s;
     opacity: 0;
-    visibility: hidden;
+    visibility: hidden;*/
 
     .signIn-wrapper {
         position: relative;
@@ -71,6 +71,14 @@
                     @include background-initializer;
                     background-size: cover;
                     background-image: url("../img/svg/mail.svg");
+                    z-index: 2;
+                }
+                .image-text.change {
+                    @include border-circle;
+                    @include background-initializer;
+                    background-size: cover;
+                    background-image: url("../img/icons/key.png");
+                    z-index: 2;
                 }
             }
         }
@@ -266,6 +274,13 @@
             .logIn-container {
                 position: relative;
 
+                .l-hidden {
+                    display: flex;
+                }
+                .l-hidden.show {
+                    display: none;
+                }
+
                 div {
                     position: relative;
                     display: flex;
@@ -310,9 +325,22 @@
                             background-image: url("../img/icons/key.png");
                         }
                     }
+                    .l-hidden {
+                        display: flex;
+                    }
+                    .l-hidden.show {
+                        display: none;
+                    }
                 }
                 .logIn-submit-wrap {
                     margin-top: $margin-vs;
+
+                    .l-visible {
+                        display: none;
+                    }
+                    .l-visible.show {
+                        display: flex;
+                    }
                 }
                 .reset-password-wrap {
                     display: flex;
@@ -389,6 +417,15 @@
                         object-fit: cover;
                         @include rotate-right;
                     }
+                }
+                .back-arrow-wrap-reset {
+                    @extend .back-arrow-wrap;
+                }
+                .l-visible {
+                    display: none;
+                }
+                .l-visible.show {
+                    display: flex;
                 }
             }
         }

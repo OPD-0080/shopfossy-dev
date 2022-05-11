@@ -1,4 +1,4 @@
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 import { getFirestore ,collection, getDocs } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"; 
 
 var alertError = document.querySelector(".error-message");
@@ -70,4 +70,39 @@ function logIn(email, password) {
 
     }
 }
-export { logIn }
+function resetPassword(email) {
+    const auth = getAuth();
+
+    if (email == "") {
+        alertError.innerHTML = `Enter Email Please !`;
+        alertWrap.classList.add("show");
+        setTimeout(() => { 
+            alertWrap.classList.remove("show");
+        }, 3000)
+
+    }else if (email) {
+        try {
+            sendPasswordResetEmail(auth, email)
+            .then(() => {
+                // notify user a message;
+                alertError.innerHTML = `Verify link sent to ${email}, for password reset`;
+                alertWrap.classList.add("show");
+                setTimeout(() => { 
+                    alertWrap.classList.remove("show");
+                }, 3000)
+            })
+        } catch (error) {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+
+            console.log(errorMessage);
+
+            alertError.innerHTML = `Internet Connection: BAD`;
+                alertWrap.classList.add("show");
+                setTimeout(() => { 
+                    alertWrap.classList.remove("show");
+                }, 3000)
+        }
+    }
+}
+export { logIn, resetPassword }

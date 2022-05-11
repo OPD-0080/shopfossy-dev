@@ -123,3 +123,10 @@ $database-main-background: rgb(185, 4, 4);
     -ms-transform: translateX($x);
     -o-transform: translateX($x);
 }
+@mixin transformY($y) {
+    transform: translateY($y);
+    -webkit-transform: translateY($y);
+    -moz-transform: translateY($y);
+    -ms-transform: translateY($y);
+    -o-transform: translateY($y);
+}

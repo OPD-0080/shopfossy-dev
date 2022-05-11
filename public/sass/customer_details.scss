@@ -128,7 +128,51 @@ body {
                     @include trans-1s;
                     opacity: 1;
                 }
+                .user-alert {
+                    position: absolute;
+                    top: 0px;
+                    background: red;
+                    padding: 5px;
+                    width: 100%;
+                    font-size: $font-s;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    @include transformY($y: -50px);
+                    z-index: 3;
+                    @include trans-05s;
+                    opacity: 0;
+                    visibility: hidden;
 
+                    .icon {
+                        margin-right: 5px;
+                        width: 30px;
+                        height: 30px;
+                        background: white;
+                        @include border-circle;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .icon:before {
+                        content: "";
+                        position: absolute;
+                        width: 25px;
+                        height: 25px;
+                        background: white;
+                        background-image: url("../img/svg/alert-red.svg");
+                        background-size: contain;
+                        @include background-initializer;
+                        @include border-circle;
+                    }
+                }
+                .user-alert.on {
+                    @include transformY($y: 0px);
+                    @include trans-05s;
+                    visibility: visible;
+                    opacity: 1;
+                }
                 .form-title {
                     position: relative;
                     top: 0px;
@@ -210,7 +254,7 @@ body {
                             font-size: $font-l;
                             font-weight: 500;
                             margin-bottom: $margin-vs;
-                            margin-left: 40px;
+                            margin-left: 50px;
                         }
                         label::first-letter {
                             text-transform: uppercase;;
@@ -234,6 +278,7 @@ body {
                             justify-content: center;
                             align-items: center;
                             overflow: hidden;
+                            margin-left: 10px;
 
                             .i {
                                 position: relative;
@@ -331,7 +376,7 @@ body {
                             display: flex;
                             flex-direction: row;
     
-                            input[type="radio"] {
+                            input[type="checkbox"] {
                                 width: 25px;
                                 height: 25px;
                                 width: 5%;
@@ -377,6 +422,9 @@ body {
                         .note {
                             font-size: $font-vs;
                             margin-left: 20px;
+                            margin-right: 20px;
+                            padding: 2px;
+                            text-align: center;
                         }
                         .alert {
                             float: right;
@@ -392,6 +440,21 @@ body {
                             visibility: hidden;
                             @include trans;
                         }
+                        select {
+                            color: rgba(0, 0, 0, 0.755);
+                            @extend input
+                        }
+                    }
+                    .notify {
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        width: 4px;
+                        height: 100%;
+                        background: rgb(255, 65, 65);
+                    }
+                    .notify.color {
+                        background: rgb(52, 228, 52);
                     }
                     .f1 {
                         grid-area: f1;

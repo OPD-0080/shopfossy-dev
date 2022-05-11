@@ -1,9 +1,9 @@
 import {UI} from './main-categories/categories.js';
 import {setCartValues} from './components/set_cart_values.js';
 import {ashanti_reg, greater_accra_reg} from './form/cityList.js';
-import {firestore_form} from './components/firestore_form.js';
+//import {firestore_form} from './components/firestore_form.js';
 
-import { getAuth,  onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+//import { getAuth,  onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 
 var newUI = new UI();
 var cart = newUI.setApp(cart);
@@ -20,7 +20,7 @@ var paymentContent = document.querySelector(".payment-content");
 var summaryContent = document.querySelector(".summary-content");
 
 
-function onAuthState() {
+/*function onAuthState() {
     const auth = getAuth();
 
     onAuthStateChanged(auth, (user) => {
@@ -49,7 +49,7 @@ function onAuthState() {
           // ...
         }
     });
-}onAuthState();
+}onAuthState();*/
 
 
 
@@ -58,174 +58,133 @@ var first_name, last_name, email, number, company, region, city, residential, di
 
 inputs.forEach(input => {
     input.onkeyup = (e) => {
+
+        // get notify element
         var alertEl = e.target.previousElementSibling.children[0];
+
         if (e.target.classList.contains("first-name")) {
             first_name = e.target.value;
             
             // alerting user if input is empty or not
-            alertEl.classList.add("on");
-            if (e.target.value == "") {
-                alertEl.classList.remove("on");
-            }
+            if (e.target.value.length >= e.target.getAttribute("minlength")) {
+                alertEl.classList.add("color");
+            }else if (e.target.value == "" ) {alertEl.classList.remove("color");}
+            else {alertEl.classList.remove("color");}
+
         }
         if (e.target.classList.contains("last-name")) {
             last_name = e.target.value;
             
             // alerting user if input is empty or not
-            alertEl.classList.add("on");
-            if (e.target.value == "") {
-                alertEl.classList.remove("on");
-            }
+            if (e.target.value.length >= e.target.getAttribute("minlength")) {
+                alertEl.classList.add("color");
+            }else if (e.target.value == "" ) {alertEl.classList.remove("color");}
+            else {alertEl.classList.remove("color");}
         }
         if (e.target.classList.contains("email")) {
-            email = e.target.value;
-
-            // alerting user if input is empty or not
-            alertEl.classList.add("on");
-            if (e.target.value == "") {
-                alertEl.classList.remove("on");
+            var regexp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            
+            if (e.target.value.match(regexp)) {
+                email = e.target.value;
+                // alert user
+                alertEl.classList.add("color");
+            }else {
+                alertEl.classList.remove("color");
             }
         }
         if (e.target.classList.contains("tel")) {
             number = e.target.value;
 
             // alerting user if input is empty or not
-            alertEl.classList.add("on");
-            if (e.target.value == "") {
-                alertEl.classList.remove("on");
-            }
-            else if (number.length > 11) {
-                alertEl.classList.remove("on");
-            }
+            if (e.target.value.length >= e.target.getAttribute("maxlength")) {
+                alertEl.classList.add("color");
+            }else if (e.target.value == "" ) {alertEl.classList.remove("color");}
+            else {alertEl.classList.remove("color");}
         }
         if (e.target.classList.contains("company")) {
             var companyEl = e.target;
 
-            // alerting user if input is empty or not
-            /*alertEl.classList.add("on");
-            if (e.target.value == "") {
-                alertEl.classList.remove("on");
-            }**/
             // for option only
             if (companyEl.value == "") {
                 company = "Not Defined";
+                alertEl.classList.remove("color");
             }else {
                 company = companyEl.value
-            }
-        }
-        if (e.target.classList.contains("region")) {
-            region = e.target;
-
-            // alerting user if input is empty or not
-            alertEl.classList.add("on");
-            if (e.target.value == "") {
-                alertEl.classList.remove("on");
-            }
-
-            var regionDrop = document.querySelector(".region-option");
-            regionDrop.classList.add("drop");
-            var regionOpt = document.querySelectorAll(".region-select");
-            regionOpt.forEach(opt => {
-                opt.onclick = (e) => {
-                    var regionVal = e.target.innerText;
-                    //console.log(regionVal);
-                    region.value = regionVal;
-                    region = region.value;
-                    regionDrop.classList.remove("drop");
-
-                
-                    if (region == "Ashanti") {
-                        //console.log(ashanti_reg);
-                        var res = ""
-                        ashanti_reg.forEach(data => {
-                            res += `
-                                <span class="city-select" value="">${data}</span>
-                            `
-                        });
-                        cityOptionEl.innerHTML = res;
-
-                        // alerting user if input is empty or not
-                        alertEl.classList.add("on");
-                        if (e.target.value == "") {
-                            alertEl.classList.remove("on");
-                        }
-
-                    }else if (region == "Greater Accra") {
-                        //console.log(greater_accra_reg);
-                        var res = ""
-                        greater_accra_reg.forEach(data => {
-                            res += `
-                                <span class="city-select" value="">${data}</span>
-                            `
-                        });
-                        cityOptionEl.innerHTML = res;
-
-                        // alerting user if input is empty or not
-                        alertEl.classList.add("on");
-                        if (e.target.value == "") {
-                            alertEl.classList.remove("on");
-                        }
-                    }
-                }
-            });
-            formContent.onclick = (e) => {
-                regionDrop.classList.remove("drop");
-            }
-        }
-        if (e.target.classList.contains("city")) {
-            city = e.target;
-
-            // alerting user if input is empty or not
-            alertEl.classList.add("on");
-            if (e.target.value == "") {
-                alertEl.classList.remove("on");
-            }
-
-            var cityDrop = document.querySelector(".city-option");
-            cityDrop.classList.add("drop");
-            var cityOpt = document.querySelectorAll(".city-select");
-            /*cityOpt.forEach(opts => {
-                var optText = opts.innerHTML;
-                console.log(optText);
-            })*/
-            cityOpt.forEach(opt => {
-                opt.onclick = (e) => {
-                    var cityVal = e.target.innerText;
-                    //console.log(cityVal);
-                    city.value = cityVal;
-                    city = city.value;
-                    cityDrop.classList.remove("drop");
-                }
-            });
-            formContent.onclick = (e) => {
-                cityDrop.classList.remove("drop");
+                alertEl.classList.add("color");
             }
         }
         if (e.target.classList.contains("residential")) {
             residential = e.target.value;
 
             // alerting user if input is empty or not
-            alertEl.classList.add("on");
-            if (e.target.value == "") {
-                alertEl.classList.remove("on");
-            }
+            if (e.target.value.length >= e.target.getAttribute("minlength")) {
+                alertEl.classList.add("color");
+            }else if (e.target.value == "" ) {alertEl.classList.remove("color");}
+            else {alertEl.classList.remove("color");}
         }
         if (e.target.classList.contains("digital")) {
-            digital = e.target.value;
+            var note = e.target.nextElementSibling.nextElementSibling;
 
-            // alerting user if input is empty or not
-            alertEl.classList.add("on");
-            if (e.target.value == "") {
-                alertEl.classList.remove("on");
+            if (e.target.value.match("[A-Z, A-z]{2}-[0-9]{3}-[0-9]{4}")) {
+                digital = e.target.value;
+                // alert user
+                alertEl.classList.add("color");
+                note.style.visibility = "hidden";
+            }
+            else {
+                note.style.visibility = "visible";
+                note.innerHTML = "* Required Format needed: AO-000-0000 *";
+                note.style.background = "red";
+                alertEl.classList.remove("color");
             }
         }
     }
 });
+var selectedOptionRegion = document.querySelectorAll(".select-option-region");
+selectedOptionRegion.forEach(el => {
+    el.onchange = (e) => {
+
+        region =  e.target.value;
+        // user alert
+        var alertEl = e.target.parentElement.children[0].children[0];
+        alertEl.classList.add("color");
+        
+        if (region == "Ashanti") {
+            //console.log(ashanti_reg);
+            var res = ""
+            ashanti_reg.forEach(data => {
+                res += `
+                <option class="select-option-city" value=${data}>${data}</option>
+                `
+            });
+            cityOptionEl.innerHTML = res;
+
+        }else if (region == "Greater Accra") {
+            //console.log(ashanti_reg);
+            var res = ""
+            greater_accra_reg.forEach(data => {
+                res += `
+                <option class="select-option-city" value=${data}>${data}</option>
+                `
+            });
+            cityOptionEl.innerHTML = res;
+        }
+    }
+})
+var selectedOptionCity = document.querySelectorAll(".select-option-city");
+selectedOptionCity.forEach(el => {
+    el.onchange = (e) => {
+        city =  e.target.value;
+         // user alert
+        var alertEl = e.target.parentElement.children[0].children[0];
+        alertEl.classList.add("color");
+    }
+})
 var agreementEl = document.querySelector(".agreement");
 var fbt1 = document.querySelector(".fbtn1");
 agreementEl.onclick = (e) => {
     if (e.target.checked = true) {
-        agreement = "checked"
+        agreement = e.target.value;
         // to activate "proceed to next" btn
         fbt1.classList.add("activated")
     }else {
@@ -248,7 +207,7 @@ delivery_radio.forEach(radio => {
         var radio = e.target;
         if (radio.classList.contains("radio_1")) {
             if (radio.checked = true) {
-                delivery_header = radio.parentElement.children[1].innerText;
+                delivery_header = e.target.value;
 
                 var radio_content_El = radio.nextElementSibling.nextElementSibling;
                 radio_content_El.classList.add("expand");
@@ -270,7 +229,7 @@ delivery_radio.forEach(radio => {
             }
         }else if (radio.classList.contains("radio_2")) {
             if (radio.checked = true) {
-                delivery_header = radio.parentElement.children[1].innerText;
+                delivery_header = e.target.value;
                 
                 var radio_content_El = radio.nextElementSibling.nextElementSibling;
                 radio_content_El.classList.add("expand");
@@ -423,74 +382,75 @@ function summary_variables() {
 }
 
 var formBtnEl = document.querySelectorAll(".form-btn");
+var validateInput = document.querySelectorAll(".validation");
 var customerArray = [];
 formBtnEl.forEach(btn => {
     btn.onclick = (e) => {
         if (e.target.classList.contains("fbtn1")) {
-            // checking if variables are not entered
-            if (first_name == undefined || last_name == undefined || email == undefined || number == undefined || region == undefined || city == undefined || residential == undefined || digital == undefined || agreement == "Unchecked") {
-                
-                //  alert user error with message in DOM
+            
+            // checking if variables are not entered;
+            validateInput.forEach(validate => {
+                if (!validate.checkValidity()) {
+                    // alert user error
+                    var validateError = document.querySelector(".user-alert");
+                    validateError.classList.add("on");
+                    setTimeout(() => {validateError.classList.remove("on")}, 5000);
 
-
-            }else {
-                try {
-                    console.log("done");
-
-                    //console.log(response, total_purchased, items_purchased, customerInfo);
-                
-                    // customer variables start
-                    var customerInfo = {};
-                    customerInfo.first_name = first_name;
-                    customerInfo.last_name = last_name;
-                    customerInfo.email = email;
-                    customerInfo.number = number;
-                    customerInfo.company = company;
-                    customerInfo.region = region;
-                    customerInfo.city = city;
-                    customerInfo.residential = residential;
-                    customerInfo.digital = digital;
-                    customerInfo.agreement = agreement;
-                    // customer variables end
+                }else {
+                    try {
+                        // customer variables start
+                        var customerInfo = {};
+                        customerInfo.first_name = first_name;
+                        customerInfo.last_name = last_name;
+                        customerInfo.email = email;
+                        customerInfo.number = number;
+                        customerInfo.company = company;
+                        customerInfo.region = region;
+                        customerInfo.city = city;
+                        customerInfo.residential = residential;
+                        customerInfo.digital = digital;
+                        customerInfo.agreement = agreement;
+                        // customer variables end
+        
+                        // customer items purchased start
+                        var response = cart.map(el => {
+                            var id, UID, title, price, imgUrl, seller, category, amount;
+        
+                            UID = el.UID;
+                            id = el.id;
+                            title = el.title;
+                            price = el.price;
+                            imgUrl = el.imgUrl;
+                            seller = el.seller;
+                            category = el.subCategory;
+                            amount = el.amount;
     
-                    // customer items purchased start
-                    var response = cart.map(el => {
-                        var id, UID, title, price, imgUrl, seller, category, amount;
+        
+                            var cartObj = {id, UID, title, price, imgUrl, seller, category, amount};
+                            return (cartObj)
+                        })
+                        // customer items purchased end
+                        //console.log(response, total_purchased, items_purchased, customerInfo);
+                        customerArray = [response, total_purchased, items_purchased, customerInfo]
+                        console.log(customerArray);
+                        // saving customer_details here 
+                        Storage.saveCustomerInfo(customerArray);
     
-                        UID = el.UID;
-                        id = el.id;
-                        title = el.title;
-                        price = el.price;
-                        imgUrl = el.imgUrl;
-                        seller = el.seller;
-                        category = el.subCategory;
-                        amount = el.amount;
-
-    
-                        var cartObj = {id, UID, title, price, imgUrl, seller, category, amount};
-                        return (cartObj)
-                    })
-                    // customer items purchased end
-                    //console.log(response, total_purchased, items_purchased, customerInfo);
-                    customerArray = [response, total_purchased, items_purchased, customerInfo]
-                    console.log(customerArray);
-                    // saving customer_details here 
-                    Storage.saveCustomerInfo(customerArray);
-
-                    // showing on ok alert after btn is triggered
-                    var ok_1 = document.querySelector(".ok-1");
-                    ok_1.classList.add("off");
-    
-                    // open the next slide
-                    setTimeout(() => {
-                        formContent.classList.add("collapse");
-                        deliveryContent.classList.add("collapse");
-                        summaryContent.classList.remove("active")
-                    }, 2000);
-                } catch (error) {
-                    console.log(error);
+                        // showing on ok alert after btn is triggered
+                        var ok_1 = document.querySelector(".ok-1");
+                        ok_1.classList.add("off");
+        
+                        // open the next slide
+                        setTimeout(() => {
+                            formContent.classList.add("collapse");
+                            deliveryContent.classList.add("collapse");
+                            summaryContent.classList.remove("active")
+                        }, 2000);
+                    } catch (error) {
+                        console.log(error);
+                    }
                 }
-            }
+            })
         }else if (e.target.classList.contains("fbtn2")) {
             // variable of delivery method
             delivery_header
@@ -592,61 +552,3 @@ class Storage {
     }
 }
 
-/*
-// FORM SUBMISSION START
-import {firestore_form} from './components/firestore_form.js';
-
-var form = document.querySelector("#form");
-try {
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        
-        // customer variables start
-        var customerInfo = {};
-        customerInfo.first_name = first_name;
-        customerInfo.last_name = last_name;
-        customerInfo.email = email;
-        customerInfo.number = number;
-        customerInfo.company = company;
-        customerInfo.region = region;
-        customerInfo.city = city;
-        customerInfo.location = location;
-        customerInfo.agreement = agreement;
-        // customer variables end
-
-        // customer items purchased start
-        var response = cart.map(el => {
-            var title, price, imgUrl, seller, category;
-
-            title = el.title;
-            price = el.price;
-            imgUrl = el.imgUrl;
-            seller = el.seller;
-            category = el.subCategory;
-
-            var cartObj = {title, price, imgUrl, seller, category};
-            return (cartObj)
-        })
-        // customer items purchased end
-        //console.log(response, total_purchased, items_purchased, customerInfo);
-
-        // submit ALERT start
-            var alertEl = document.querySelector(".form-alert");
-            alertEl.classList.add("alert-on");
-            setTimeout(() => {alertEl.classList.remove("alert-on")}, 2500);
-        // submit ALERT end
-
-        // firestore database for form start
-            firestore_form(response, total_purchased, items_purchased, customerInfo)
-        // firestore database for form end
-
-        // to reset form after submit btn is triggered
-        form.reset();
-
-        // getting back to initial page after form is submitted
-        setTimeout(() => {window.location.href = "/company-name-1.html"}, 5000);
-    })
-}catch (error) {
-    console.log(error);
-}
-*/

@@ -348,25 +348,27 @@
                         <div class="label-icon"><div class="icon-email" placeholder="Email"></div></div>
                         <input type="text" name="email" class="input input-tags email l-email" placeholder="Email">
                     </div>
-                    <div>
+                    <div class="l-hidden">
                         <div class="label-icon"><div class="icon-password" placeholder="Password"></div></div>
                         <input type="text" name="password" class="input input-tags confirm-password l-pass" placeholder="Password">
                     </div>
                     <div class="logIn-submit-wrap">
-                        <input type="submit" value="LogIn" name="email" class="input">
+                        <input type="submit" value="LogIn" name="email" class="input l-hidden">
+                        <input type="submit" value="Reset" name="email" class="input l-visible">
                     </div>
-                    <div class="reset-password-wrap">
+                    <div class="reset-password-wrap l-hidden">
                         <div> Do you want to reset password? </div>
                         <div class="reset-pass-btn"> Reset </div>
                     </div>
-                    <div class="alt-logIn-wrap">
+                    <div class="alt-logIn-wrap l-hidden">
                         <div> Or </div>
                         <div class="alt-btn goggle-btn"></div>
                         <div class="alt-btn facebook-btn"></div>
                         <div class="alt-btn twitter-btn"></div>
                         <div class="alt-btn apple-btn"></div>
                     </div>
-                    <div class="back-arrow-wrap"><div class="back-arrow"></div></div>
+                    <div class="back-arrow-wrap l-hidden"><div class="back-arrow"></div></div>
+                    <div class="back-arrow-wrap-reset l-visible"><div class="reset-arrow"></div></div>
                 </form>
             </div>
         </div>
