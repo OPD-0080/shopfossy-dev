@@ -103,31 +103,6 @@ body {
                 overflow-y: scroll;
                 overflow-x: hidden;
 
-                .form-alert {
-                    position: fixed;
-                    top: -100px;
-                    left: 0px;
-                    width: 100%;
-                    height: 12vh;
-                    overflow: hidden;
-                    background: black;
-                    z-index: 3;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    @include trans-1s;
-                    /*opacity: 0;*/
-
-                    div {
-                        font-size: $font-xl;
-                        font-weight: 550;
-                    }
-                }
-                .form-alert.alert-on {
-                    top: 0px;
-                    @include trans-1s;
-                    opacity: 1;
-                }
                 .user-alert {
                     position: absolute;
                     top: 0px;
@@ -224,6 +199,12 @@ body {
                         text-transform: uppercase;
                     }
                 }
+                .eds .edited-wrap {
+                    visibility: hidden;
+                }
+                .eds.off .edited-wrap {
+                    visibility: visible;
+                }
                 .form-content {
                     position: relative;
                     width: 98%;
@@ -266,6 +247,8 @@ body {
                             @include border-20;
                             font-weight: bolder;
                             letter-spacing: .5px;
+                            color: grey;
+                            text-align: center;
                         }
                         .icon {
                             position: absolute;
@@ -384,6 +367,8 @@ body {
                             p {
                                 font-size: $font-s;
                                 width: 95%;
+                                margin-left: 2.5%;
+                                margin-right: 2.5%; 
                             }
                             p::first-letter {
                                 text-transform: uppercase;;
@@ -441,8 +426,67 @@ body {
                             @include trans;
                         }
                         select {
-                            color: rgba(0, 0, 0, 0.755);
-                            @extend input
+                            color: grey;
+                            text-align: center;
+                            @extend input;
+                        }
+                    }
+                    div:nth-child(5) {
+                        label {
+                            div { background: rgb(52, 228, 52); }
+                        }
+                    }
+                    div:nth-child(7) {
+                        .toggle-btn-wrap {
+                            position: absolute;
+                            top: 0px;
+                            right: 10px;
+                            width: 40px;
+                            height: 22px;
+                            @include trans-05s;
+                            cursor: pointer;
+                            overflow: hidden;
+
+                            .toggle-btn {  
+                                position: relative;
+                                left: 0px;
+                                width: 100%;
+                                height: 100%;
+                                background: red;
+                                @include trans-05s;
+                                box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.882);
+                            }
+                            .toggle-btn::before {
+                                content:  "";
+                                position: absolute;
+                                top: 0px;
+                                left: 0px;
+                                width: 20px;
+                                height: 100%;
+                                background: white;
+                                @include border-circle;
+                                @include trans-05s;
+                            }
+                            .toggle-btn.active {
+                                background: green;
+                                @include trans-05s;
+                            }
+                        }
+                        .toggle-btn-wrap.shift .toggle-btn::before {
+                            left: 20px;
+                            @include trans-05s;
+                        }
+                        .select-option-city {
+                            display: block;
+                        }
+                        .select-option-city.on {
+                            display: none;
+                        }
+                        .city-alt {
+                            display: none;
+                        }
+                        .city-alt.on {
+                            display: block;
                         }
                     }
                     .notify {
@@ -550,6 +594,12 @@ body {
                         div::first-letter {
                             text-transform: uppercase;
                         }
+                    }
+                    .eds .edited-wrap {
+                        visibility: hidden;
+                    }
+                    .eds.off .edited-wrap {
+                        visibility: visible;
                     }
                     .delivery-content {
                         position: relative;
@@ -698,6 +748,12 @@ body {
                         div::first-letter {
                             text-transform: uppercase;
                         }
+                    }
+                    .eds .edited-wrap {
+                        visibility: hidden;
+                    }
+                    .eds.off .edited-wrap {
+                        visibility: visible;
                     }
                     .payment-content {
                         position: relative;

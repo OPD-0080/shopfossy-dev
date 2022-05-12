@@ -32,12 +32,11 @@
             <div class="form-wrapper">
                 <!---------- CUSTOMER DETAILS START ------------>
                 <form action="" method="post" class="form-container">
-                    <div class="form-title">
+                    <div class="form-title eds">
                         <div class="ok-wrap ok-1"></div>
                         <div> Billed To </div>
                         <div class="edited-wrap edit-1"></div>
                     </div>
-                    <div class="form-alert"><div> Form Submitted </div></div>
                     <div class="user-alert"><div class="icon"></div><div>Please Validate Inputs !</div></div>
                     <!--------- CUSTOMER FORM START ------------>
                     <div class="form-content" id="form">
@@ -58,12 +57,12 @@
                         </div>
                         <div class="f4">
                             <label for="tel"> Phone Number <div class="notify"></div></label>
-                            <input type="tel" class="tel validation" placeholder="233 245678900" minlength="3" maxlength="10" required>
+                            <input type="tel" class="tel validation" placeholder="Enter here" minlength="3" maxlength="10" required>
                             <div class="icon"><div class="i i-number"></div></div>
                         </div>
                         <div class="f5">
                             <label for="company"> Company (option) <div class="notify"></div></label>
-                            <input type="text" class="company" placeholder="Enter here">
+                            <input type="text" class="company" placeholder="Enter here" value="None">
                             <div class="icon"><div class="i i-company"></div></div>
                         </div>
                         <div class="f6">
@@ -88,10 +87,13 @@
                             <select class="select-option-city citySel validation" name="city" id="" required>
                                 
                             </select>
+                            <input type="text" class="city-alt" name="city-alt" value="..." minlength="2" required>
+                            <div class="toggle-btn-wrap"><div class="toggle-btn"></div></div>
+                            <div class="note"> * Activate button if options not found, Enter Manually !* </div>
                         </div>
                         <div class="f8">
                             <label for="digital"> Digital Address <div class="notify"></div></label>
-                            <input type="text" class="digital validation" placeholder="Enter here" maxlength="12" required>
+                            <input type="text" class="digital validation" placeholder="Enter here" maxlength="11" required>
                             <div class="icon"><div class="i i-location"></div></div>
                             <div class="note">* Eg: AO-###-####*</div>
                         </div>
@@ -105,12 +107,7 @@
                             <label for="agreement"> Agreement </label>
                             <div class="agree-container">
                                 <input type="checkbox" class="agreement validation" value="Agree Terms & Conditions" required>
-                                <p> It can be used as a farmer's market bag, a picnic bang or storage 
-                                    of groceries in the kitchen,with the variety of colors it has, it 
-                                    also adds an aesthetic feature in the home. The farmers market baskets
-                                    are created and brought to life by our skillful and experienced 
-                                    artisans and craftsmen who are mostly women 
-                                </p>
+                                <p> Accept terms % Conditions</p>
                             </div>
                         </div>
                         <div class="f11">
@@ -122,7 +119,7 @@
                     <!--------- CUSTOMER FORM END ------------>
                     <!--------- DELIVERY METHOD START ------------>
                     <div class="delivery-method-wrapper">
-                        <div class="delivery-title">
+                        <div class="delivery-title eds">
                             <div class="ok-wrap ok-2"></div>
                             <div> Delivery Method </div>
                             <div class="edited-wrap edit-2"></div>
@@ -148,21 +145,21 @@
                     <!--------- DELIVERY METHOD END ------------>
                     <!--------- PAYMENT METHOD START ------------>
                     <div class="payment-method-wrapper">
-                        <div class="payment-title">
+                        <div class="payment-title eds">
                             <div class="ok-wrap ok-3"></div>
                             <div> Payment Method </div>
                             <div class="edited-wrap edit-3"></div>
                         </div>
                         <div class="payment-content">
                             <div class="payment-cell">
-                                <input type="radio" class="payment-check radio_1">
+                                <input type="checkbox" class="payment-check radio_1">
                                 <div class="radio-header"> Payment 1 </div>
                                 <div class="radio-content">
                                     1
                                 </div>
                             </div>
                             <div class="payment-cell">
-                                <input type="radio" class="payment-check radio_2">
+                                <input type="checkbox" class="payment-check radio_2">
                                 <div class="radio-header"> Payment 2 </div>
                                 <div class="radio-content">
                                     2
@@ -182,48 +179,48 @@
                                     <span>
                                         <div class="label">Full Name :</div>
                                         <div>
-                                            <div class="first-name fst_name"> Kojo </div>
-                                            <div class="last-name lst_name"> Mensah </div>
+                                            <div class="first-name fst_name"> ... </div>
+                                            <div class="last-name lst_name"> ... </div>
                                         </div>
                                     </span>
                                     <span>
                                         <div class="label"> Email : </div>
-                                        <div class="email s-email"> km@gmail.com </div>
+                                        <div class="email s-email"> ... </div>
                                     </span>
                                     <span>
                                         <div class="label"> Phone Number : </div>
                                         <div>
                                             <div>(+233)</div>
-                                            <div class="number s-tel"> 246220037 </div>
+                                            <div class="number s-tel"> ... </div>
                                         </div>
                                     </span>
                                     <span>
                                         <div class="label"> Company : </div>
-                                        <div class="company s-company"> opd company ltd </div>
+                                        <div class="company s-company"> ... </div>
                                     </span>
                                     <span>
                                         <div class="label"> Region : </div>
-                                        <div class="region s-region"> Ashanti </div>
+                                        <div class="region s-region"> ... </div>
                                     </span>
                                     <span>
                                         <div class="label"> City / Town : </div>
-                                        <div class="city s-city"> Obuasi </div>
+                                        <div class="city s-city"> ... </div>
                                     </span>
                                     <span>
                                         <div class="label"> Residential Address : </div>
-                                        <div class="location s-residential"> Brahabebome </div>
+                                        <div class="location s-residential"> ... </div>
                                     </span>
                                     <span>
                                         <div class="label"> Digital Address : </div>
-                                        <div class="location s-digital"> AO-2323-2424 </div>
+                                        <div class="location s-digital"> ... </div>
                                     </span>
                                     <span>
                                         <div class="label"> Delivery Method : </div>
-                                        <div class="delivery s-delivery"> Delivery 1 </div>
+                                        <div class="delivery s-delivery"> ... </div>
                                     </span>
                                     <span>
                                         <div class="label"> Payment Method : </div>
-                                        <div class="payment s-payment"> PayPal </div>
+                                        <div class="payment s-payment"> ... </div>
                                     </span>
                                 </div>
                                 <input type="submit" class="summary-btn-wrap"><div class="form-btn fbtn4"></div></input>
@@ -266,12 +263,12 @@
                                 <div class="invoice-structure-wrap">
                                     <div class="invoice-structure-container">
                                         <div class="invoice-header-wrap"> 
-                                            
+                                            <!--
                                             <div> Invoice </div>
                                             <div>Date: <span> March 23, 2022 </span></div>
                                             <div>Invoice Serial Code: <span> 0001 </span></div>
                                             <div>Time Issued: <span> 07:23 52s </span></div>
-                                            
+                                            -->
                                         </div>
                                         <div class="invoice-payment-wrap">
                                             <div> Payment Info </div>

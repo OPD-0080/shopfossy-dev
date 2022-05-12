@@ -19,7 +19,7 @@ var deliveryContent = document.querySelector(".delivery-content");
 var paymentContent = document.querySelector(".payment-content");
 var summaryContent = document.querySelector(".summary-content");
 
-
+// FIREBASE AUTH START
 /*function onAuthState() {
     const auth = getAuth();
 
@@ -50,9 +50,9 @@ var summaryContent = document.querySelector(".summary-content");
         }
     });
 }onAuthState();*/
+// FIREBASE AUTH END
 
-
-
+// BILL TO START
 var inputs = document.querySelectorAll("input");
 var first_name, last_name, email, number, company, region, city, residential, digital, agreement;
 
@@ -125,7 +125,7 @@ inputs.forEach(input => {
         if (e.target.classList.contains("digital")) {
             var note = e.target.nextElementSibling.nextElementSibling;
 
-            if (e.target.value.match("[A-Z, A-z]{2}-[0-9]{3}-[0-9]{4}")) {
+            if (e.target.value.match("[A-Z, A-z, a-z]{2}-[0-9]{3}-[0-9]{4}")) {
                 digital = e.target.value;
                 // alert user
                 alertEl.classList.add("color");
@@ -180,6 +180,22 @@ selectedOptionCity.forEach(el => {
         alertEl.classList.add("color");
     }
 })
+// TOGGLE BUTTON START
+const toggleWrap = document.querySelector(".toggle-btn-wrap");
+const toggleBtn = document.querySelector(".toggle-btn");
+
+toggleWrap.onclick = (e) => {
+    if (e.target.classList.contains("toggle-btn")) {
+        e.target.classList.toggle("active");
+        toggleWrap.classList.toggle("shift");
+
+        // switch input
+        e.target.parentElement.previousElementSibling.classList.toggle("on");
+        e.target.parentElement.previousElementSibling.previousElementSibling.classList.toggle("on")
+    }
+}
+// TOGGLE BUTTON END
+
 var agreementEl = document.querySelector(".agreement");
 var fbt1 = document.querySelector(".fbtn1");
 agreementEl.onclick = (e) => {
@@ -192,6 +208,7 @@ agreementEl.onclick = (e) => {
         fbt1.classList.remove("activated")
     }
 }
+// BILL TO END
 
 var newSetValues = new setCartValues(cart)
 var total_purchased = newSetValues.total;
@@ -314,7 +331,7 @@ payment_radio.forEach(radio => {
 // EDIT BUTTONS START
 var editWrap = document.querySelectorAll(".edited-wrap");
 var okWrap = document.querySelectorAll(".ok-wrap");
-//var ok_1 = document.querySelector("ok-1")
+var eds = document.querySelectorAll(".eds");
 editWrap.forEach(btn => {
     btn.onclick = (e) => {
         if (e.target.classList.contains("edit-1")) {
@@ -381,6 +398,7 @@ function summary_variables() {
     payment_val = document.querySelector(".s-payment");
 }
 
+// PROCEED BUTTONS START
 var formBtnEl = document.querySelectorAll(".form-btn");
 var validateInput = document.querySelectorAll(".validation");
 var customerArray = [];
@@ -389,76 +407,96 @@ formBtnEl.forEach(btn => {
         if (e.target.classList.contains("fbtn1")) {
             
             // checking if variables are not entered;
+            var message = "";
             validateInput.forEach(validate => {
                 if (!validate.checkValidity()) {
-                    // alert user error
-                    var validateError = document.querySelector(".user-alert");
-                    validateError.classList.add("on");
-                    setTimeout(() => {validateError.classList.remove("on")}, 5000);
-
-                }else {
-                    try {
-                        // customer variables start
-                        var customerInfo = {};
-                        customerInfo.first_name = first_name;
-                        customerInfo.last_name = last_name;
-                        customerInfo.email = email;
-                        customerInfo.number = number;
-                        customerInfo.company = company;
-                        customerInfo.region = region;
-                        customerInfo.city = city;
-                        customerInfo.residential = residential;
-                        customerInfo.digital = digital;
-                        customerInfo.agreement = agreement;
-                        // customer variables end
-        
-                        // customer items purchased start
-                        var response = cart.map(el => {
-                            var id, UID, title, price, imgUrl, seller, category, amount;
-        
-                            UID = el.UID;
-                            id = el.id;
-                            title = el.title;
-                            price = el.price;
-                            imgUrl = el.imgUrl;
-                            seller = el.seller;
-                            category = el.subCategory;
-                            amount = el.amount;
-    
-        
-                            var cartObj = {id, UID, title, price, imgUrl, seller, category, amount};
-                            return (cartObj)
-                        })
-                        // customer items purchased end
-                        //console.log(response, total_purchased, items_purchased, customerInfo);
-                        customerArray = [response, total_purchased, items_purchased, customerInfo]
-                        console.log(customerArray);
-                        // saving customer_details here 
-                        Storage.saveCustomerInfo(customerArray);
-    
-                        // showing on ok alert after btn is triggered
-                        var ok_1 = document.querySelector(".ok-1");
-                        ok_1.classList.add("off");
-        
-                        // open the next slide
-                        setTimeout(() => {
-                            formContent.classList.add("collapse");
-                            deliveryContent.classList.add("collapse");
-                            summaryContent.classList.remove("active")
-                        }, 2000);
-                    } catch (error) {
-                        console.log(error);
-                    }
-                }
+                    message = "error"
+                    return message;
+                }   
             })
+            if (message) {
+
+                // alert user error
+                var validateError = document.querySelector(".user-alert");
+                validateError.classList.add("on");
+                setTimeout(() => {validateError.classList.remove("on")}, 5000);
+            }else {
+                try {
+                    // Enable edited button
+                    eds.forEach(el => {
+                        if (el.classList.contains("form-title") || el.classList.contains("delivery-title")){
+                            el.classList.add("off")
+                        }
+                    })
+
+                    // customer variables start
+                    var customerInfo = {};
+                    customerInfo.first_name = first_name;
+                    customerInfo.last_name = last_name;
+                    customerInfo.email = email;
+                    customerInfo.number = number;
+                    customerInfo.company = company;
+                    customerInfo.region = region;
+                    customerInfo.city = city;
+                    customerInfo.residential = residential;
+                    customerInfo.digital = digital;
+                    customerInfo.agreement = agreement;
+                    // customer variables end
+    
+                    // customer items purchased start
+                    var response = cart.map(el => {
+                        var id, UID, title, price, imgUrl, seller, category, amount;
+    
+                        UID = el.UID;
+                        id = el.id;
+                        title = el.title;
+                        price = el.price;
+                        imgUrl = el.imgUrl;
+                        seller = el.seller;
+                        category = el.subCategory;
+                        amount = el.amount;
+    
+    
+                        var cartObj = {id, UID, title, price, imgUrl, seller, category, amount};
+                        return (cartObj)
+                    })
+                    // customer items purchased end
+                    //console.log(response, total_purchased, items_purchased, customerInfo);
+                    customerArray = [response, total_purchased, items_purchased, customerInfo]
+                    console.log(customerArray);
+                    // saving customer_details here 
+                    Storage.saveCustomerInfo(customerArray);
+    
+                    // showing on ok alert after btn is triggered
+                    var ok_1 = document.querySelector(".ok-1");
+                    ok_1.classList.add("off");
+
+                    // 
+    
+                    // open the next slide
+                    setTimeout(() => {
+                        formContent.classList.add("collapse");
+                        deliveryContent.classList.add("collapse");
+                        summaryContent.classList.remove("active")
+                    }, 2000);
+                } catch (error) {
+                    console.log(error);
+                }
+            }
         }else if (e.target.classList.contains("fbtn2")) {
             // variable of delivery method
             delivery_header
-            console.log(delivery_header);
 
             // showing on ok alert after btn is triggered
             var ok_2 = document.querySelector(".ok-2");
             ok_2.classList.add("off");
+
+            // Enable edited button
+            eds.forEach(el => {
+                if (el.classList.contains("payment-title") || el.classList.contains("delivery-title")){
+                    el.classList.add("off")
+                }
+            })
 
             // open the next slide
             setTimeout(() => {
@@ -471,7 +509,6 @@ formBtnEl.forEach(btn => {
         }else if (e.target.classList.contains("fbtn3")) {
             // variable of payment method
             payment_header
-            console.log(payment_header);
 
             // showing on ok alert after btn is triggered
             var ok_3 = document.querySelector(".ok-3");
@@ -514,6 +551,7 @@ function summary_details() {
     delivery_val.innerHTML = delivery_header;
     payment_val.innerHTML = payment_header;
 }
+// PROCEED BUTTONS END
 
 // SUBMISSION OF DATA TO FIRESTORE DATABASE START
 function FirebaseDatabase(uid) {
@@ -531,7 +569,6 @@ function FirebaseDatabase(uid) {
         
         // SUBMISSION TO DATABASE
         firestore_form(uid, customerInfo, delivery_header, payment_header);
-
     });
 
 // SUBMISSION OF DATA TO FIRESTORE DATABASE END

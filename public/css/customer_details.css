@@ -155,47 +155,6 @@ body {
   overflow-x: hidden;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .form-alert {
-  position: fixed;
-  top: -100px;
-  left: 0px;
-  width: 100%;
-  height: 12vh;
-  overflow: hidden;
-  background: black;
-  z-index: 3;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  transition: 1s ease;
-  -webkit-transition: 1s ease;
-  -moz-transition: 1s ease;
-  -ms-transition: 1s ease;
-  -o-transition: 1s ease;
-  /*opacity: 0;*/
-}
-
-.form-banner-container .overlay .form-wrapper .form-container .form-alert div {
-  font-size: 23px;
-  font-weight: 550;
-}
-
-.form-banner-container .overlay .form-wrapper .form-container .form-alert.alert-on {
-  top: 0px;
-  transition: 1s ease;
-  -webkit-transition: 1s ease;
-  -moz-transition: 1s ease;
-  -ms-transition: 1s ease;
-  -o-transition: 1s ease;
-  opacity: 1;
-}
-
 .form-banner-container .overlay .form-wrapper .form-container .user-alert {
   position: absolute;
   top: 0px;
@@ -357,6 +316,14 @@ body {
   text-transform: uppercase;
 }
 
+.form-banner-container .overlay .form-wrapper .form-container .eds .edited-wrap {
+  visibility: hidden;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .eds.off .edited-wrap {
+  visibility: visible;
+}
+
 .form-banner-container .overlay .form-wrapper .form-container .form-content {
   position: relative;
   width: 98%;
@@ -414,6 +381,8 @@ body {
   -o-border-radius: 20px;
   font-weight: bolder;
   letter-spacing: .5px;
+  color: grey;
+  text-align: center;
 }
 
 .form-banner-container .overlay .form-wrapper .form-container .form-content div .icon {
@@ -583,6 +552,8 @@ body {
 .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container p {
   font-size: 13px;
   width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
 }
 
 .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container p::first-letter {
@@ -665,7 +636,96 @@ body {
 }
 
 .form-banner-container .overlay .form-wrapper .form-container .form-content div select {
-  color: rgba(0, 0, 0, 0.755);
+  color: grey;
+  text-align: center;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(5) label div {
+  background: #34e434;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(7) .toggle-btn-wrap {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  width: 40px;
+  height: 22px;
+  transition: .5s ease;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -ms-transition: .5s ease;
+  -o-transition: .5s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(7) .toggle-btn-wrap .toggle-btn {
+  position: relative;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: red;
+  transition: .5s ease;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -ms-transition: .5s ease;
+  -o-transition: .5s ease;
+  -webkit-box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.882);
+          box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.882);
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(7) .toggle-btn-wrap .toggle-btn::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 20px;
+  height: 100%;
+  background: white;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: .5s ease;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -ms-transition: .5s ease;
+  -o-transition: .5s ease;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(7) .toggle-btn-wrap .toggle-btn.active {
+  background: green;
+  transition: .5s ease;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -ms-transition: .5s ease;
+  -o-transition: .5s ease;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(7) .toggle-btn-wrap.shift .toggle-btn::before {
+  left: 20px;
+  transition: .5s ease;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -ms-transition: .5s ease;
+  -o-transition: .5s ease;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(7) .select-option-city {
+  display: block;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(7) .select-option-city.on {
+  display: none;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(7) .city-alt {
+  display: none;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(7) .city-alt.on {
+  display: block;
 }
 
 .form-banner-container .overlay .form-wrapper .form-container .form-content .notify {
@@ -841,6 +901,14 @@ body {
 
 .form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .delivery-title div::first-letter {
   text-transform: uppercase;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .eds .edited-wrap {
+  visibility: hidden;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .eds.off .edited-wrap {
+  visibility: visible;
 }
 
 .form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .delivery-content {
@@ -1049,6 +1117,14 @@ body {
 
 .form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .payment-title div::first-letter {
   text-transform: uppercase;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .eds .edited-wrap {
+  visibility: hidden;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .eds.off .edited-wrap {
+  visibility: visible;
 }
 
 .form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .payment-content {

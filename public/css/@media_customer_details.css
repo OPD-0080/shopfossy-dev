@@ -225,12 +225,18 @@
   .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
     font-size: 13px;
   }
-  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type="radio"] {
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div input {
+    font-size: 20px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type="checkbox"] {
     width: 25px;
     height: 25px;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container p {
     font-size: 11px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div .form-btn-wrap .form-btn {
     width: 100%;
@@ -277,12 +283,18 @@
   .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
     font-size: 13px;
   }
-  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type="radio"] {
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div input {
+    font-size: 20px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type="checkbox"] {
     width: 25px;
     height: 25px;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container p {
     font-size: 11px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div .form-btn-wrap .form-btn {
     width: 100%;
@@ -329,12 +341,18 @@
   .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
     font-size: 13px;
   }
-  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type="radio"] {
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div input {
+    font-size: 20px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type="checkbox"] {
     width: 25px;
     height: 25px;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container p {
     font-size: 11px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div .form-btn-wrap .form-btn {
     width: 100%;
@@ -381,12 +399,18 @@
   .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
     font-size: 13px;
   }
-  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type="radio"] {
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div input {
+    font-size: 20px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type="checkbox"] {
     width: 25px;
     height: 25px;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container p {
     font-size: 11px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div .form-btn-wrap .form-btn {
     width: 100%;
@@ -434,12 +458,18 @@
   .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
     font-size: 13px;
   }
-  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type="radio"] {
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div input {
+    font-size: 20px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type="checkbox"] {
     width: 25px;
     height: 25px;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container p {
     font-size: 11px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div .form-btn-wrap .form-btn {
     width: 100%;
@@ -487,12 +517,18 @@
   .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
     font-size: 13px;
   }
-  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type="radio"] {
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div input {
+    font-size: 20px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type="checkbox"] {
     width: 25px;
     height: 25px;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container p {
     font-size: 11px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div .form-btn-wrap .form-btn {
     width: 100%;
