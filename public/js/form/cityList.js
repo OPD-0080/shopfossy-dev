@@ -1,12 +1,12 @@
 var ashanti_reg = [
-    "Select Option..",
+    "...", // DO NOT CHANGE THIS CHARACTER BECAUSE IS SET TO DEFAULT
     "KNUST",
     "Asafo",
     "Ash town",
     "Tafo"
 ]
 var greater_accra_reg = [
-    "Select Option..",
+    "Select Option..", // DO NOT CHANGE THIS CHARACTER BECAUSE IS SET TO DEFAULT
     "Legon",
     "La Pas",
     "Teshie",

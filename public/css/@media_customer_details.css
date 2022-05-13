@@ -158,6 +158,31 @@
     font-size: 16px;
     margin-bottom: 10px;
   }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-client-logo .logo-wrap div:nth-child(2) {
+    font-size: 13px;
+    top: 5px;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-table-header {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 3fr 1fr 1fr 1fr;
+        grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-gap: .1rem;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-item-wrap .invoice-item-cell {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 3fr 1fr 1fr 1fr;
+        grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-gap: .1rem;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-item-wrap .invoice-item-cell div {
+    font-size: 13px;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-item-wrap .invoice-item-cell div span {
+    text-align: center;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 640px) {
@@ -301,6 +326,49 @@
     font-size: 16px;
     margin-bottom: 10px;
   }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-client-logo {
+    display: none;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div:nth-child(1) {
+    font-size: 2.5rem;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div:nth-child(2), .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div:nth-child(3), .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div:nth-child(4) {
+    font-size: 16px;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .client-wrapper-media {
+    display: block;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-table-header {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 3fr 1fr 1fr 1fr;
+        grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-gap: .1rem;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-item-wrap .invoice-item-cell {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 3fr 1fr 1fr 1fr;
+        grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-gap: .1rem;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-item-wrap .invoice-item-cell div {
+    font-size: 13px;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-item-wrap .invoice-item-cell div span {
+    text-align: center;
+    width: 100%;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-summation-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-summation-wrap .summation-container div {
+    font-size: 12px;
+    margin: 5px;
+  }
 }
 
 @media screen and (max-width: 414px) {
@@ -358,6 +426,49 @@
     width: 100%;
     font-size: 16px;
     margin-bottom: 10px;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-client-logo {
+    display: none;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div:nth-child(1) {
+    font-size: 2.5rem;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div:nth-child(2), .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div:nth-child(3), .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div:nth-child(4) {
+    font-size: 16px;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .client-wrapper-media {
+    display: block;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-table-header {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 3fr 1fr 1fr 1fr;
+        grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-gap: .1rem;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-item-wrap .invoice-item-cell {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 3fr 1fr 1fr 1fr;
+        grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-gap: .1rem;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-item-wrap .invoice-item-cell div {
+    font-size: 13px;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-item-wrap .invoice-item-cell div span {
+    text-align: center;
+    width: 100%;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-summation-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-summation-wrap .summation-container div {
+    font-size: 12px;
+    margin: 5px;
   }
 }
 
@@ -476,6 +587,49 @@
     font-size: 16px;
     margin-bottom: 10px;
   }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-client-logo {
+    display: none;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div:nth-child(1) {
+    font-size: 2.5rem;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div:nth-child(2), .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div:nth-child(3), .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div:nth-child(4) {
+    font-size: 16px;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .client-wrapper-media {
+    display: block;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-table-header {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 3fr 1fr 1fr 1fr;
+        grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-gap: .1rem;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-item-wrap .invoice-item-cell {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 3fr 1fr 1fr 1fr;
+        grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-gap: .1rem;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-item-wrap .invoice-item-cell div {
+    font-size: 13px;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-item-wrap .invoice-item-cell div span {
+    text-align: center;
+    width: 100%;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-summation-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-summation-wrap .summation-container div {
+    font-size: 12px;
+    margin: 5px;
+  }
 }
 
 @media screen and (max-width: 360px) {
@@ -534,5 +688,48 @@
     width: 100%;
     font-size: 16px;
     margin-bottom: 10px;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-client-logo {
+    display: none;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div:nth-child(1) {
+    font-size: 2.5rem;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div:nth-child(2), .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div:nth-child(3), .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div:nth-child(4) {
+    font-size: 16px;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .client-wrapper-media {
+    display: block;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-table-header {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 3fr 1fr 1fr 1fr;
+        grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-gap: .1rem;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-item-wrap .invoice-item-cell {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 3fr 1fr 1fr 1fr;
+        grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-gap: .1rem;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-item-wrap .invoice-item-cell div {
+    font-size: 13px;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-item-wrap .invoice-item-cell div span {
+    text-align: center;
+    width: 100%;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-summation-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-summation-wrap .summation-container div {
+    font-size: 12px;
+    margin: 5px;
   }
 }

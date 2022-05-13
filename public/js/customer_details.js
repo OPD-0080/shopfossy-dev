@@ -172,6 +172,7 @@ selectedOptionRegion.forEach(el => {
     }
 })
 var selectedOptionCity = document.querySelectorAll(".select-option-city");
+var cityAltEl = document.querySelector(".city-alt");
 selectedOptionCity.forEach(el => {
     el.onchange = (e) => {
         city =  e.target.value;
@@ -182,8 +183,6 @@ selectedOptionCity.forEach(el => {
 })
 // TOGGLE BUTTON START
 const toggleWrap = document.querySelector(".toggle-btn-wrap");
-const toggleBtn = document.querySelector(".toggle-btn");
-
 toggleWrap.onclick = (e) => {
     if (e.target.classList.contains("toggle-btn")) {
         e.target.classList.toggle("active");
@@ -438,6 +437,7 @@ formBtnEl.forEach(btn => {
                     customerInfo.company = company;
                     customerInfo.region = region;
                     customerInfo.city = city;
+                    customerInfo.cityAl = cityAltEl.value;
                     customerInfo.residential = residential;
                     customerInfo.digital = digital;
                     customerInfo.agreement = agreement;
@@ -545,7 +545,7 @@ function summary_details() {
     number_val.innerHTML = customerInfo[3].number;
     company_val.innerHTML = customerInfo[3].company;
     region_val.innerHTML = customerInfo[3].region;
-    city_val.innerHTML = customerInfo[3].city;
+    (city_val == "...")?  city_val.innerHTML = cityAltEl.value :  city_val.innerHTML = customerInfo[3].city;
     residential_val.innerHTML = customerInfo[3].residential;
     digital_val.innerHTML = customerInfo[3].digital;
     delivery_val.innerHTML = delivery_header;

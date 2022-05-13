@@ -446,6 +446,7 @@ body {
                             @include trans-05s;
                             cursor: pointer;
                             overflow: hidden;
+                            box-shadow: 2px 0px 20px rgba(255, 255, 255, 0.767);
 
                             .toggle-btn {  
                                 position: relative;
@@ -953,7 +954,7 @@ body {
                                 border: none;
                                 outline: none;
                                 cursor: pointer;
-                                font-size: $font-s;
+                                font-size: $font-l;
                                 
                                 .form-btn {
                                     position: relative;

@@ -657,6 +657,8 @@ body {
   -o-transition: .5s ease;
   cursor: pointer;
   overflow: hidden;
+  -webkit-box-shadow: 2px 0px 20px rgba(255, 255, 255, 0.767);
+          box-shadow: 2px 0px 20px rgba(255, 255, 255, 0.767);
 }
 
 .form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(7) .toggle-btn-wrap .toggle-btn {
@@ -1397,7 +1399,7 @@ body {
   border: none;
   outline: none;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(1) .summary-btn-wrap .form-btn {

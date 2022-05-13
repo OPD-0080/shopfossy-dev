@@ -1,13 +1,15 @@
 import { getFirestore, collection, setDoc, doc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
 
-var alertEl = document.querySelector(".form-alert");
+var validateError = document.querySelector(".user-alert");
+var alertMsg = validateError.querySelector("#error");
 
 function firestore_form(uid, customerInfo, delivery_header, payment_header) {
     const db = getFirestore();
 
     // show alert start
-    alertEl.classList.add("alert-on");
-    alertEl.innerHTML = "Processing...";
+    // alert user error
+    validateError.classList.add("on");
+    alertMsg.innerHTML = "Processing...";
     // show alert end
 
     // CART PROFILE START
@@ -77,8 +79,9 @@ function firestore_form(uid, customerInfo, delivery_header, payment_header) {
         } catch (error) {
             console.log(`Client Profile Error: ${error}`);
             // show alert start
-            alertEl.classList.add("alert-on");
-            alertEl.innerHTML = "Check & Fill Missing Input";
+            validateError.classList.add("on");
+            alertMsg.innerHTML = "Check & Fill Missing Input";
+            setTimeout(() => {validateError.classList.remove("on")}, 5000);
             // show alert end
         }
     }fireStore_ClientProfile();
@@ -110,10 +113,10 @@ function firestore_form(uid, customerInfo, delivery_header, payment_header) {
 
     function alertUser() {
         // USER ALERT AFTER SUBMISSION START
-        alertEl.classList.add("alert-on");
-        alertEl.innerHTML = "Submission successfully";
-        setTimeout(() => {alertEl.innerHTML = "Preparing Invoice"}, 5000);
-        setTimeout(() => {alertEl.classList.remove("alert-on")}, 10000);
+        validateError.classList.add("on");
+        alertMsg.innerHTML = "Submission successfully";
+        setTimeout(() => {alertMsg.innerHTML = "Preparing Invoice"}, 5000);
+        setTimeout(() => {validateError.classList.remove("on")}, 10000);
         // USER ALERT AFTER SUBMISSION END
     }
     function invoiceDataShow(customerInfo, delivery_header, payment_header) {
@@ -144,7 +147,7 @@ function firestore_form(uid, customerInfo, delivery_header, payment_header) {
             paymentWrap.querySelector(".payment-status").innerHTML = payment_header;
 
         // show client data 
-        var  show = "";
+        var  show = ""; var show_media = ""
         customerInfo.forEach(el => {
             show = `
                 <div class="client-name"> ${el.first_name} ${el.last_name} </div>
@@ -157,8 +160,19 @@ function firestore_form(uid, customerInfo, delivery_header, payment_header) {
                 </div>
                 <div class="client-email"><span> ${el.email} </span></div>
             `;
+            show_media = `
+                <li class="client-name"> ${el.first_name} ${el.last_name} </li>
+                <li class="client-tel"> ${el.number} </li>
+                <li class="client-email">opd#d.com </li>
+                <li class="client-region"> ${el.region} </li>
+                <li class="client-city"> ${el.city}</li>
+                <li class="client-resident"> ${el.residential} </li>
+                <li class="client-digital"> ${el.digital} </li>
+            `;
             var res = document.querySelector(".client-container");
+            var res_media = document.querySelector(".client-container-media");
             res.innerHTML =show;
+            res_media.innerHTML = show_media;
         })
 
 
