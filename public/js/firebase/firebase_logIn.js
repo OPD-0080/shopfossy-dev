@@ -1,4 +1,4 @@
-import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 import { getFirestore ,collection, getDocs } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"; 
 
 var alertError = document.querySelector(".error-message");
@@ -9,6 +9,7 @@ const imageText = document.querySelector(".image-text");
 const userImages = document.querySelectorAll(".image-user");
 const userNameEl = document.querySelector(".user-name");
 const userEmailEl = document.querySelector(".user-email");
+const headerText = document.querySelector(".signIn-header");
 
 function logIn(email, password) {
     const auth = getAuth();
@@ -17,6 +18,7 @@ function logIn(email, password) {
         // Signed in 
         const user = userCredential.user;
 
+        // store data in database
         getDataFromFireStore(user);
         //output(user)
         // ...
@@ -24,85 +26,99 @@ function logIn(email, password) {
     .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-
-        alertError.innerHTML = "User & Password NOT found in database";
-        alertWrap.classList.add("show");
-        setTimeout(() => { 
-            alertWrap.classList.remove("show");
-        }, 3000)
-
-        console.log(errorCode, errorMessage);
+        
+        if (errorCode == "auth/invalid-email") {
+            alertError.innerHTML = "Invalid Email, Require Valid Email !";
+            alertWrap.classList.add("show");
+            alertWrap.style.background = "red";
+            setTimeout(() => { 
+                alertWrap.classList.remove("show");
+            }, 3000)
+        }else if (errorCode == "auth/internal-error") {
+            alertError.innerHTML = "Invalid Password, Require Valid Password";
+            alertWrap.classList.add("show");
+            alertWrap.style.background = "red";
+            setTimeout(() => { 
+                alertWrap.classList.remove("show");
+            }, 3000)
+        }else if (errorCode == "auth/user-not-found") {
+            alertError.innerHTML = "User NOT Found !";
+            alertWrap.classList.add("show");
+            alertWrap.style.background = "red";
+            setTimeout(() => { 
+                alertWrap.classList.remove("show");
+            }, 3000)
+        }else if (errorCode == "auth/wrong-password") {
+            alertError.innerHTML = "Wrong Password !";
+            alertWrap.classList.add("show");
+            alertWrap.style.background = "red";
+            setTimeout(() => { 
+                alertWrap.classList.remove("show");
+            }, 3000)
+        }else if (errorCode == "auth/too-many-requests") {
+            alertError.innerHTML = "Account DISABLE Temporary, TRY LATER !";
+            alertWrap.classList.add("show");
+            alertWrap.style.background = "red";
+            setTimeout(() => { 
+                alertWrap.classList.remove("show");
+            }, 3000)
+        }
+        else if (errorCode == "auth/network-error") {
+            alertError.innerHTML = "Internet Status: BAD !";
+            alertWrap.classList.add("show");
+            alertWrap.style.background = "red";
+            setTimeout(() => { 
+                alertWrap.classList.remove("show");
+            }, 3000)
+        }
+        console.log(errorCode);
     });
 
     async function getDataFromFireStore(user) {
         const db = getFirestore();
 
-        let currentUserId = user.uid;
+        let userId = user.uid;
 
+        // user alert
+        alertError.innerHTML = "Please Wait ...";
+        alertWrap.style.background = "grey";
+        alertWrap.classList.add("show");
+        headerText.style.display = "none";
+        // ...
+        // save data into database
         const collectionRef = collection(db, "Users");
         const querySnapshot = await getDocs(collectionRef); // this return an array of document
             querySnapshot.forEach((doc) => {
             //console.log(`${doc.id} => ${doc.data()}`);
             let F_name = doc.data().FirstName;
             let L_name = doc.data().LastName;
-            let email = doc.data().email;
-            let currentDateSignIn = doc.data().metadata.creationTime;
+            let email = doc.data().Email;
 
             // getting first letter of the string 
             var firstLetter = F_name.charAt(0).toUpperCase();
             var lastLetter = L_name.charAt(0).toUpperCase();
+            imageText.style.backgroundImage = `none`;
             imageText.innerHTML = `${firstLetter} ${lastLetter}`;
-            console.log(doc.data());
+            // ...
             
+            // Info display in DOM
+            output(F_name, L_name, email, firstLetter, lastLetter);
+            // ...
 
-            output(user, F_name, L_name, email, currentDateSignIn, firstLetter, lastLetter);
+            setTimeout(() => {
+                // off display signLOgin page
+                formOverlay.classList.remove("collapse");
+                // ...
+            }, 3000);
         });
     };
-    function output(user, F_name, L_name, email, currentDateSignIn, firstLetter, lastLetter) {
-        console.log(user);
-        
+    function output(F_name, L_name, email, firstLetter, lastLetter) {
         userImages.forEach(userImage => {
             userImage.innerHTML = `${firstLetter} ${lastLetter}`;
         })
         userNameEl.innerHTML = `${F_name} ${L_name}`;
         userEmailEl.innerHTML = email;
-        userTimeSignIn.innerHTML = currentDateSignIn;
-
     }
 }
-function resetPassword(email) {
-    const auth = getAuth();
 
-    if (email == "") {
-        alertError.innerHTML = `Enter Email Please !`;
-        alertWrap.classList.add("show");
-        setTimeout(() => { 
-            alertWrap.classList.remove("show");
-        }, 3000)
-
-    }else if (email) {
-        try {
-            sendPasswordResetEmail(auth, email)
-            .then(() => {
-                // notify user a message;
-                alertError.innerHTML = `Verify link sent to ${email}, for password reset`;
-                alertWrap.classList.add("show");
-                setTimeout(() => { 
-                    alertWrap.classList.remove("show");
-                }, 3000)
-            })
-        } catch (error) {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-
-            console.log(errorMessage);
-
-            alertError.innerHTML = `Internet Connection: BAD`;
-                alertWrap.classList.add("show");
-                setTimeout(() => { 
-                    alertWrap.classList.remove("show");
-                }, 3000)
-        }
-    }
-}
-export { logIn, resetPassword }
+export { logIn }

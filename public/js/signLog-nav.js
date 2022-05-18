@@ -8,6 +8,7 @@ const logIn = document.querySelector(".logIn-btn");
 const logInContent = document.querySelector(".logIn-content");
 const signInContent = document.querySelector(".signIn-content");
 const backArrow = document.querySelector(".back-arrow");
+const headerText = document.querySelector(".signIn-header");
 
 
 // VARIABLES END
@@ -17,10 +18,12 @@ const backArrow = document.querySelector(".back-arrow");
     logIn.onclick = (e) => {
         logInContent.classList.add("show");
         signInContent.classList.add("collapse");
+        headerText.innerHTML = "SignIn";
     }
     backArrow.onclick = () => {
         logInContent.classList.remove("show");
         signInContent.classList.remove("collapse");
+        headerText.innerHTML = "LogIn";
     }
 })();
 // DYNAMIC PAGE MANIPULATION END
@@ -54,7 +57,7 @@ const backArrow = document.querySelector(".back-arrow");
             tagShow.forEach(el => {
                 el.classList.remove("show");
             });
-            header.innerHTML = "SignIn";
+            header.innerHTML = "LogIn";
             headerImage.classList.remove("change")
         }
     }

@@ -593,3 +593,57 @@ footer {
         @include trans-1s;
     }
 }
+// VERIFICATION EMAIL ALERT START
+.verification-alert-wrap {
+    position: fixed;
+    top: 50px;
+    left: 0px;
+    width: 100%;
+    padding: 1px;
+    background: rgba(255, 0, 0, 0.596);
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $font-s;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    //display: none;
+    //opacity: 0;
+
+    div {
+        position: relative;
+        margin: 5px;
+    }
+    div:nth-child(1) {
+        width: 25px;
+        height: 25px;
+        background: white;
+        background-image: url("../img/svg/alert-red.svg");
+        background-size: cover;
+        @include background-initializer;
+    }
+    .verify-btn {
+        padding: 5px 15px 5px 15px;
+        border: 2px solid white;
+        @include border-20;
+        @include trans-01s;
+        display: block;
+    }
+    .verify-btn.active {
+        display: none;
+    }
+    .verify-btn:hover {
+        background: rgba(255, 0, 0, 0.715);
+        @include trans-01s;
+    }
+}
+.verification-alert-wrap.color {
+    background: green;
+}
+.verification-alert-wrap.collapse {
+    display: flex;
+    @include trans-01s;
+    opacity: 1;
+}
+// VERIFICATION EMAIL ALERT END

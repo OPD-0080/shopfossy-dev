@@ -8,7 +8,7 @@ function signOutFunc() {
     signOut(auth)
     .then(() => {
         // return to index page with signLog page on
-        formOverlay.classList.add("collapse");
+        formOverlay.classList.remove("collapse");
         window.location.assign("index.html");
         
     })
@@ -23,7 +23,7 @@ function deleteAccount() {
     // User deleted.
         console.log("User Account deleted");
         // return to index page with signLog page on
-        formOverlay.classList.add("collapse");
+        formOverlay.classList.remove("collapse");
         window.location.assign("index.html");
         
 

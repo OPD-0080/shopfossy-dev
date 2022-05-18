@@ -251,7 +251,10 @@
     font-size: 13px;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div input {
-    font-size: 20px;
+    font-size: 16px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div select {
+    font-size: 16px;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type="checkbox"] {
     width: 25px;
@@ -309,7 +312,10 @@
     font-size: 13px;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div input {
-    font-size: 20px;
+    font-size: 16px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div select {
+    font-size: 16px;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type="checkbox"] {
     width: 25px;
@@ -410,7 +416,10 @@
     font-size: 13px;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div input {
-    font-size: 20px;
+    font-size: 16px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div select {
+    font-size: 16px;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type="checkbox"] {
     width: 25px;
@@ -511,7 +520,10 @@
     font-size: 13px;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div input {
-    font-size: 20px;
+    font-size: 16px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div select {
+    font-size: 16px;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type="checkbox"] {
     width: 25px;
@@ -570,7 +582,10 @@
     font-size: 13px;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div input {
-    font-size: 20px;
+    font-size: 16px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div select {
+    font-size: 16px;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type="checkbox"] {
     width: 25px;
@@ -586,6 +601,13 @@
     width: 100%;
     font-size: 16px;
     margin-bottom: 10px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div .summary-cell-customer span .label {
+    font-size: 11px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div .summary-cell-customer span div:nth-child(2) div {
+    font-size: 11px;
+    color: red;
   }
   .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-client-logo {
     display: none;
@@ -672,7 +694,10 @@
     font-size: 13px;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div input {
-    font-size: 20px;
+    font-size: 16px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div select {
+    font-size: 16px;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type="checkbox"] {
     width: 25px;

@@ -23,6 +23,10 @@
         @include border-circle;
         @include background-initializer;
         background-size: cover;
+        font-size: $font-s;
+        overflow: hidden;
+        color: black;
+        font-weight: 550;
     }
 }
 .user-dashboard-wrapper {

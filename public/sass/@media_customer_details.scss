@@ -372,7 +372,10 @@
                                 font-size: $font-s;
                             }
                             input {
-                                font-size: $font-vl;
+                                font-size: $font-l;
+                            }
+                            select {
+                                font-size: $font-l
                             }
                             .agree-container {
                                 input[type="checkbox"] {
@@ -444,7 +447,10 @@
                                 font-size: $font-s;
                             }
                             input {
-                                font-size: $font-vl;
+                                font-size: $font-l;
+                            }
+                            select {
+                                font-size: $font-l
                             }
                             .agree-container {
                                 input[type="checkbox"] {
@@ -577,7 +583,10 @@
                                 font-size: $font-s;
                             }
                             input {
-                                font-size: $font-vl;
+                                font-size: $font-l;
+                            }
+                            select {
+                                font-size: $font-l
                             }
                             .agree-container {
                                 input[type="checkbox"] {
@@ -710,7 +719,10 @@
                                 font-size: $font-s;
                             }
                             input {
-                                font-size: $font-vl;
+                                font-size: $font-l;
+                            }
+                            select {
+                                font-size: $font-l
                             }
                             .agree-container {
                                 input[type="checkbox"] {
@@ -783,7 +795,10 @@
                                 font-size: $font-s;
                             }
                             input {
-                                font-size: $font-vl;
+                                font-size: $font-l;
+                            }
+                            select {
+                                font-size: $font-l
                             }
                             .agree-container {
                                 input[type="checkbox"] {
@@ -802,6 +817,25 @@
                                     width: 100%;
                                     font-size: $font-l;
                                     margin-bottom: 10px;
+                                }
+                            }
+                        }
+                    }
+                    .summary-wrapper {
+                        .summary-content {
+                            div {
+                                .summary-cell-customer {
+                                    span {
+                                        .label {
+                                            font-size: $font-vs;
+                                        }
+                                        div:nth-child(2) {
+                                            div {
+                                                font-size: $font-vs;
+                                                color: red;
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -915,7 +949,10 @@
                                 font-size: $font-s;
                             }
                             input {
-                                font-size: $font-vl;
+                                font-size: $font-l;
+                            }
+                            select {
+                                font-size: $font-l
                             }
                             .agree-container {
                                 input[type="checkbox"] {

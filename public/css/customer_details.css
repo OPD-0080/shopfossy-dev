@@ -352,11 +352,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  /*.options {
-                            visibility: hidden;
-                            opacity: 0;
-                            z-index: 3;
-                        }*/
 }
 
 .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
@@ -449,42 +444,6 @@ body {
 
 .form-banner-container .overlay .form-wrapper .form-container .form-content div .icon .i-location {
   background-image: url("../img/icons/location-form.png");
-}
-
-.form-banner-container .overlay .form-wrapper .form-container .form-content div .region-option, .form-banner-container .overlay .form-wrapper .form-container .form-content div .city-option {
-  position: absolute;
-  top: 50px;
-  width: 100%;
-  height: 30vh;
-  background: white;
-  -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.466);
-          box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.466);
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-  visibility: hidden;
-  opacity: 0;
-  z-index: 3;
-  overflow-y: scroll;
-}
-
-.form-banner-container .overlay .form-wrapper .form-container .form-content div .region-option .region-select, .form-banner-container .overlay .form-wrapper .form-container .form-content div .region-option .city-select, .form-banner-container .overlay .form-wrapper .form-container .form-content div .city-option .region-select, .form-banner-container .overlay .form-wrapper .form-container .form-content div .city-option .city-select {
-  padding: 5px 20px;
-  font-size: 13px;
-  color: black;
-}
-
-.form-banner-container .overlay .form-wrapper .form-container .form-content div .region-option.drop, .form-banner-container .overlay .form-wrapper .form-container .form-content div .city-option.drop {
-  top: 70px;
-  visibility: visible;
-  opacity: 1;
-  transition: .2s ease;
-  -webkit-transition: .2s ease;
-  -moz-transition: .2s ease;
-  -ms-transition: .2s ease;
-  -o-transition: .2s ease;
 }
 
 .form-banner-container .overlay .form-wrapper .form-container .form-content div .arrow-wrap {

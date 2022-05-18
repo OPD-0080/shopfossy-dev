@@ -1,16 +1,15 @@
 
-import { getAuth, createUserWithEmailAndPassword, /*sendEmailVerification*/ } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 import { getFirestore, collection, setDoc, doc } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
-//import { getAuth, createUserWithEmailAndPassword } from "../node_modules/firebase/auth";
+
 var alertError = document.querySelector(".error-message");
 var alertWrap = document.querySelector(".error-alert-wrap");
-var formOverlay = document.querySelector(".sign-in-overlay");
 const inputEls = document.querySelectorAll(".input-tags");
-const passError = document.querySelector(".s-error");
-const userImages = document.querySelectorAll(".image-user");
-const imageText = document.querySelector(".image-text");
-const userNameEl = document.querySelector(".user-name");
-const userEmailEl = document.querySelector(".user-email");
+const logInContent = document.querySelector(".logIn-content");
+const signInContent = document.querySelector(".signIn-content");
+const headerText = document.querySelector(".signIn-header");
+const headerImage = document.querySelector(".image-text");
+
 
 function signIn(firstName, lastName, email, userPassword, password) {
   const auth = getAuth();
@@ -20,24 +19,37 @@ function signIn(firstName, lastName, email, userPassword, password) {
     // Signed in 
       const user = userCredential.user;
       const userId = user.uid;
-
-      userBio(userId, firstName, lastName, email, userPassword, password)
-
       console.log(user);
 
-      //emailVerification()
-    // ...
-  }) 
+      userBio(userId, firstName, lastName, email, userPassword, password)
+    }) 
   .catch((error) => {
       const errorMessage = error.message;
       const errorCode = error.code;
-      alertError.innerHTML = errorMessage;
-      alertWrap.classList.add("show");
-      setTimeout(() => { 
-        alertWrap.classList.remove("show");
-      }, 3000)
+      if (errorCode == "auth/email-already-in-use") {
+        alertError.innerHTML = "Email Already Exist !";
+        alertWrap.classList.add("show");
+        alertWrap.style.background = "red";
+        setTimeout(() => { 
+            alertWrap.classList.remove("show");
+        }, 3000)
+      }else if (errorCode == "auth/operation-not-allowed") {
+        alertError.innerHTML = "Internet Status: BAD. TRY AGAIN";
+        alertWrap.classList.add("show");
+        alertWrap.style.background = "red";
+        setTimeout(() => { 
+            alertWrap.classList.remove("show");
+        }, 3000)
+      }else if (errorCode == "auth/weak-password") {
+        alertError.innerHTML = "Password VERY WEAK";
+        alertWrap.classList.add("show");
+        alertWrap.style.background = "red";
+        setTimeout(() => { 
+            alertWrap.classList.remove("show");
+        }, 3000)
+      }
 
-      console.log(errorMessage);
+      console.log(errorCode);
     // ..
   });
 }
@@ -46,34 +58,20 @@ async function userBio(userId, firstName, lastName, email, userPassword, passwor
   const db = getFirestore();
 
   try {
+    // user alert
     alertError.innerHTML = "PROCESSING ...";
     alertWrap.style.background = "grey";
     alertWrap.classList.add("show");
+    headerText.style.display = "none";
+    headerImage.classList.remove("change");
 
+    // store data in database
     const collectionRef = collection(db, "Users");
     await setDoc(doc(collectionRef, userId), {
       FirstName: firstName,
       LastName: lastName, 
       Email: email,
     });
-      output(firstName, lastName, email);
-
-  } catch (e) {
-    // show error in DOM
-    alertError.innerHTML = "Check Input Requirement";
-    alertWrap.classList.add("show");
-    console.error("Error creating user profile: ", e);
-  }
-}
-function output(firstName, lastName, email) {
-  /*1. alerting user message
-    2. showing OFF the signIn page
-  */
-
-    // getting first letter of the string 
-    var firstLetter = firstName.charAt(0).toUpperCase();
-    var lastLetter = lastName.charAt(0).toUpperCase();
-    imageText.innerHTML = `${firstLetter} ${lastLetter}`;
 
     // Alert message and display off DOM
     inputEls.forEach(el => {el.value = ""})
@@ -82,26 +80,29 @@ function output(firstName, lastName, email) {
     alertWrap.classList.add("show");
     setTimeout(() => { 
       alertWrap.classList.remove("show");
-    }, 3000)
-    setTimeout(() => { formOverlay.classList.remove("collapse") }, 5000);
-
-    // display user info in Dashboard 
-    userImages.forEach(userImage => {
-      userImage.innerHTML = `${firstLetter} ${lastLetter}`;
-    })
-    userNameEl.innerHTML = `${firstLetter} ${lastLetter}`;
-    userEmailEl.innerHTML = email;
-    //userTimeSignIn.innerHTML = currentDateSignIn;
-}
-/*function emailVerification() {
-  const auth = getAuth();
-  // verify email
-  sendEmailVerification(auth.currentUser)
-  .then(() => {
-    // Email verification sent!
-    console.log("Verification link sent to your email");
+    }, 3000);
     // ...
-  });
-}*/
+    setTimeout(() => { 
+      // return to login page
+      logInContent.classList.remove("show");
+      signInContent.classList.remove("collapse");
+      // ...
+      // alert user
+      headerText.style.display = "block";
+      headerText.innerHTML = "LogIn";
+      alertError.innerHTML = "LogIn With your Credentials";
+      alertWrap.style.background = "grey";
+      alertWrap.classList.add("show");
+      // ...
+    }, 4000);
+
+  } catch (e) {
+    // show error in DOM
+    alertError.innerHTML = "Internet Connection Bad, Try Again !";
+    alertWrap.style.background = "red";
+    alertWrap.classList.add("show");
+    console.error("Error creating user profile: ", e);
+  }
+}
 
 export { signIn }

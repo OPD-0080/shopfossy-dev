@@ -37,10 +37,18 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  /*@include shrink-in;
-    @include trans-01s;
-    opacity: 0;
-    visibility: hidden;*/
+  transform: scale(0.3);
+  -webkit-transform: scale(0.3);
+  -moz-transform: scale(0.3);
+  -ms-transform: scale(0.3);
+  -o-transform: scale(0.3);
+  transition: .1s ease;
+  -webkit-transition: .1s ease;
+  -moz-transition: .1s ease;
+  -ms-transition: .1s ease;
+  -o-transition: .1s ease;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .sign-in-overlay .signIn-wrapper {
@@ -141,7 +149,7 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url("../img/svg/mail.svg");
+  background-image: url("../img/icons/user.png");
   z-index: 2;
 }
 
@@ -236,7 +244,7 @@ a {
 
 .sign-in-overlay .signIn-wrapper .signIn-content {
   margin-top: 10px;
-  display: block;
+  display: none;
   transition: .5s ease;
   -webkit-transition: .5s ease;
   -moz-transition: .5s ease;
@@ -314,6 +322,16 @@ a {
   background-image: url("../img/icons/key.png");
 }
 
+.sign-in-overlay .signIn-wrapper .signIn-content .signIn-container div .label-icon::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 5px;
+  background: red;
+}
+
 .sign-in-overlay .signIn-wrapper .signIn-content .signIn-container div .pass-error {
   font-size: 11px;
   background: red;
@@ -326,6 +344,14 @@ a {
 
 .sign-in-overlay .signIn-wrapper .signIn-content .signIn-container div .s-error.show {
   display: block;
+}
+
+.sign-in-overlay .signIn-wrapper .signIn-content .signIn-container .validate-color.green .label-icon::before {
+  background: green;
+}
+
+.sign-in-overlay .signIn-wrapper .signIn-content .signIn-container .validate-color.yellow .label-icon::before {
+  background: yellow;
 }
 
 .sign-in-overlay .signIn-wrapper .signIn-content .signIn-container .alt-logIn-wrap {
@@ -391,45 +417,41 @@ a {
   margin-top: 10px;
 }
 
-.sign-in-overlay .signIn-wrapper .signIn-content .signIn-container div:nth-child(8) {
-  margin-top: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 11px;
-}
-
-.sign-in-overlay .signIn-wrapper .signIn-content .signIn-container div:nth-child(8) span {
-  position: relative;
-  margin: 5px;
-}
-
-.sign-in-overlay .signIn-wrapper .signIn-content .signIn-container div:nth-child(8) .logIn-btn {
-  padding: 10px;
-  background: red;
-  margin: 4px;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+.sign-in-overlay .signIn-wrapper .signIn-content .signIn-container .back-arrow-wrap {
+  margin-top: 20px;
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  float: right;
   cursor: pointer;
 }
 
+.sign-in-overlay .signIn-wrapper .signIn-content .signIn-container .back-arrow-wrap div {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  background: grey;
+  cursor: pointer;
+  background-image: url("../img/icons/back-arrow.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+
 .sign-in-overlay .signIn-wrapper .signIn-content.collapse {
-  display: none;
+  display: block;
   transition: .5s ease;
   -webkit-transition: .5s ease;
   -moz-transition: .5s ease;
@@ -439,7 +461,7 @@ a {
 
 .sign-in-overlay .signIn-wrapper .logIn-content {
   margin-top: 10px;
-  display: none;
+  display: block;
   transition: .5s ease;
   -webkit-transition: .5s ease;
   -moz-transition: .5s ease;
@@ -502,6 +524,7 @@ a {
   height: 100%;
   background: grey;
   margin-top: 0px;
+  z-index: 2;
 }
 
 .sign-in-overlay .signIn-wrapper .logIn-content .logIn-container div .label-icon div {
@@ -523,6 +546,16 @@ a {
   background-image: url("../img/icons/key.png");
 }
 
+.sign-in-overlay .signIn-wrapper .logIn-content .logIn-container div .label-icon::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 5px;
+  background: red;
+}
+
 .sign-in-overlay .signIn-wrapper .logIn-content .logIn-container div .l-hidden {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -531,6 +564,51 @@ a {
 
 .sign-in-overlay .signIn-wrapper .logIn-content .logIn-container div .l-hidden.show {
   display: none;
+}
+
+.sign-in-overlay .signIn-wrapper .logIn-content .logIn-container div:nth-child(6) {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 11px;
+}
+
+.sign-in-overlay .signIn-wrapper .logIn-content .logIn-container div:nth-child(6) span {
+  position: relative;
+  margin: 5px;
+}
+
+.sign-in-overlay .signIn-wrapper .logIn-content .logIn-container div:nth-child(6) .logIn-btn {
+  padding: 10px;
+  background: red;
+  margin: 4px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+}
+
+.sign-in-overlay .signIn-wrapper .logIn-content .logIn-container .validate-color.green .label-icon::before {
+  background: green;
+}
+
+.sign-in-overlay .signIn-wrapper .logIn-content .logIn-container .validate-color.yellow .label-icon::before {
+  background: yellow;
 }
 
 .sign-in-overlay .signIn-wrapper .logIn-content .logIn-container .logIn-submit-wrap {
@@ -638,7 +716,7 @@ a {
   background-image: url("../img/svg/apple.svg");
 }
 
-.sign-in-overlay .signIn-wrapper .logIn-content .logIn-container .back-arrow-wrap, .sign-in-overlay .signIn-wrapper .logIn-content .logIn-container .back-arrow-wrap-reset {
+.sign-in-overlay .signIn-wrapper .logIn-content .logIn-container .back-arrow-wrap-reset {
   margin-top: 20px;
   width: 50px;
   height: 50px;
@@ -652,7 +730,7 @@ a {
   cursor: pointer;
 }
 
-.sign-in-overlay .signIn-wrapper .logIn-content .logIn-container .back-arrow-wrap div, .sign-in-overlay .signIn-wrapper .logIn-content .logIn-container .back-arrow-wrap-reset div {
+.sign-in-overlay .signIn-wrapper .logIn-content .logIn-container .back-arrow-wrap-reset div {
   position: relative;
   width: 45px;
   height: 45px;
@@ -682,7 +760,7 @@ a {
 }
 
 .sign-in-overlay .signIn-wrapper .logIn-content.show {
-  display: block;
+  display: none;
   transition: .5s ease;
   -webkit-transition: .5s ease;
   -moz-transition: .5s ease;
@@ -703,4 +781,89 @@ a {
   -o-transition: .1s ease;
   opacity: 1;
   visibility: visible;
+}
+
+.verification-alert-wrap {
+  position: fixed;
+  top: 50px;
+  left: 0px;
+  width: 100%;
+  padding: 1px;
+  background: rgba(255, 0, 0, 0.596);
+  z-index: 20;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 13px;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: none;
+  opacity: 0;
+}
+
+.verification-alert-wrap div {
+  position: relative;
+  margin: 5px;
+}
+
+.verification-alert-wrap div:nth-child(1) {
+  width: 25px;
+  height: 25px;
+  background: white;
+  background-image: url("../img/svg/alert-red.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.verification-alert-wrap .verify-btn {
+  padding: 5px 15px 5px 15px;
+  border: 2px solid white;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  transition: .1s ease;
+  -webkit-transition: .1s ease;
+  -moz-transition: .1s ease;
+  -ms-transition: .1s ease;
+  -o-transition: .1s ease;
+  display: block;
+}
+
+.verification-alert-wrap .verify-btn.active {
+  display: none;
+}
+
+.verification-alert-wrap .verify-btn:hover {
+  background: rgba(255, 0, 0, 0.715);
+  transition: .1s ease;
+  -webkit-transition: .1s ease;
+  -moz-transition: .1s ease;
+  -ms-transition: .1s ease;
+  -o-transition: .1s ease;
+}
+
+.verification-alert-wrap.color {
+  background: green;
+}
+
+.verification-alert-wrap.collapse {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  transition: .1s ease;
+  -webkit-transition: .1s ease;
+  -moz-transition: .1s ease;
+  -ms-transition: .1s ease;
+  -o-transition: .1s ease;
+  opacity: 1;
 }

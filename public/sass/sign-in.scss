@@ -12,10 +12,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /*@include shrink-in;
+     @include shrink-in;
     @include trans-01s;
     opacity: 0;
-    visibility: hidden;*/
+    visibility: hidden;
 
     .signIn-wrapper {
         position: relative;
@@ -70,7 +70,7 @@
                     @include border-circle;
                     @include background-initializer;
                     background-size: cover;
-                    background-image: url("../img/svg/mail.svg");
+                    background-image: url("../img/icons/user.png");
                     z-index: 2;
                 }
                 .image-text.change {
@@ -133,8 +133,7 @@
         }
         .signIn-content {
             margin-top: $margin-vs;
-            display: block;
-            ///display: none; // will be remove later
+            display: none; // will be remove later
             @include trans-05s;
 
             .signIn-container {
@@ -187,6 +186,15 @@
                             background-image: url("../img/icons/key.png");
                         }
                     }
+                    .label-icon::before {
+                        content: "";
+                        position: absolute;
+                        top: 0px;
+                        right: 0px;
+                        height: 100%;
+                        width: 5px;
+                        background: red;
+                    }
                     .pass-error {
                         font-size: $font-vs;
                         background: red;
@@ -198,6 +206,12 @@
                     .s-error.show {
                         display: block;
                     }
+                }
+                .validate-color.green .label-icon::before {
+                    background: green;
+                }
+                .validate-color.yellow .label-icon::before {
+                    background: yellow;
                 }
                 .alt-logIn-wrap {
                     display: flex;
@@ -239,36 +253,38 @@
                 div:nth-child(7) {
                     margin-top: $margin-vs;
                 }
-                div:nth-child(8) {
-                    margin-top: $margin-vs;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    align-items: center;
-                    font-size: $font-vs;
+                .back-arrow-wrap {
+                    margin-top: $margin-s;
+                    width: 50px;
+                    height: 50px;
+                    background: white;
+                    @include border-circle;
+                    float: right;
+                    cursor: pointer;
 
-                    span {
+                    div {
                         position: relative;
-                        margin: 5px;
-                    }
-                    .logIn-btn {
-                        padding: 10px;
-                        background: red;
-                        margin: 4px;
-                        @include border-20;
-                        box-sizing: border-box;
+                        width: 45px;
+                        height: 45px;
+                        background:grey;
                         cursor: pointer;
-                    } 
+                        background-image: url("../img/icons/back-arrow.png");
+                        @include background-initializer;
+                        background-size: cover;
+                        object-fit: cover;
+                        @include rotate-right;
+                    }
                 }
+                
             }
         }
         .signIn-content.collapse {
-            display: none;
+            display: block;
             @include trans-05s;
         }
         .logIn-content {
             margin-top: $margin-vs;
-            display: none;
+            display: block;
             @include trans-05s;
 
             .logIn-container {
@@ -309,6 +325,7 @@
                         height: 100%;
                         background: grey;
                         margin-top: 0px;
+                        z-index: 2;
 
                         div {
                             position: relative;
@@ -325,12 +342,48 @@
                             background-image: url("../img/icons/key.png");
                         }
                     }
+                    .label-icon::before {
+                        content: "";
+                        position: absolute;
+                        top: 0px;
+                        right: 0px;
+                        height: 100%;
+                        width: 5px;
+                        background: red;
+                    }
                     .l-hidden {
                         display: flex;
                     }
                     .l-hidden.show {
                         display: none;
                     }
+                }
+                div:nth-child(6) {
+                    margin-top: $margin-vs;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: $font-vs;
+
+                    span {
+                        position: relative;
+                        margin: 5px;
+                    }
+                    .logIn-btn {
+                        padding: 10px;
+                        background: red;
+                        margin: 4px;
+                        @include border-20;
+                        box-sizing: border-box;
+                        cursor: pointer;
+                    } 
+                }
+                .validate-color.green .label-icon::before {
+                    background: green;
+                }
+                .validate-color.yellow .label-icon::before {
+                    background: yellow;
                 }
                 .logIn-submit-wrap {
                     margin-top: $margin-vs;
@@ -396,7 +449,7 @@
                         background-image: url("../img/svg/apple.svg");
                     }
                 }
-                .back-arrow-wrap {
+                .back-arrow-wrap-reset {
                     margin-top: $margin-s;
                     width: 50px;
                     height: 50px;
@@ -418,9 +471,6 @@
                         @include rotate-right;
                     }
                 }
-                .back-arrow-wrap-reset {
-                    @extend .back-arrow-wrap;
-                }
                 .l-visible {
                     display: none;
                 }
@@ -430,7 +480,7 @@
             }
         }
         .logIn-content.show {
-            display: block;
+            display: none;
             @include trans-05s;
         }
     }
@@ -440,4 +490,56 @@
     @include trans-01s;
     opacity: 1;
     visibility: visible;
+}
+.verification-alert-wrap {
+    position: fixed;
+    top: 50px;
+    left: 0px;
+    width: 100%;
+    padding: 1px;
+    background: rgba(255, 0, 0, 0.596);
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $font-s;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    display: none;
+    opacity: 0;
+
+    div {
+        position: relative;
+        margin: 5px;
+    }
+    div:nth-child(1) {
+        width: 25px;
+        height: 25px;
+        background: white;
+        background-image: url("../img/svg/alert-red.svg");
+        background-size: cover;
+        @include background-initializer;
+    }
+    .verify-btn {
+        padding: 5px 15px 5px 15px;
+        border: 2px solid white;
+        @include border-20;
+        @include trans-01s;
+        display: block;
+    }
+    .verify-btn.active {
+        display: none;
+    }
+    .verify-btn:hover {
+        background: rgba(255, 0, 0, 0.715);
+        @include trans-01s;
+    }
+}
+.verification-alert-wrap.color {
+    background: green;
+}
+.verification-alert-wrap.collapse {
+    display: flex;
+    @include trans-01s;
+    opacity: 1;
 }

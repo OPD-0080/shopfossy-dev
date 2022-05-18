@@ -68,6 +68,12 @@
         </div>
     </div>
     <!--------ADMIN-------------------->
+    <!-------- VERIFICATION ALERT START----------->
+    <div class="verification-alert-wrap">
+        <div class="i"></div><div class="v-text">Send link to verify email</div>
+        <div class="verify-btn">Send !</div>
+    </div>
+    <!-------- VERIFICATION ALERT END----------->
     <!--------USER DASHBOARD START-------------------->
     <div class="user-fixed-image-wrap">
         <div class="image-user user-fixed-image"></div>
@@ -82,10 +88,10 @@
             <!--<div class="user-time curent-logDate"> current logIn date </div>-->
             <div class="user-btns">
                 <div class="dash-btn sign-out-btn">
-                    <div class="i i-out"></div><div> Sign Out </div>
+                    <div class="i i-out"></div><div class="it-s"> Sign Out </div>
                 </div>
                 <div class="dash-btn delete-btn">
-                    <div class="i i-deleted"></div><div>Delete User</div>
+                    <div class="i i-deleted"></div><div class="it-d">Delete User</div>
                 </div>
             </div>
             
@@ -298,33 +304,33 @@
             <div class="sign-image-wrap">
                 <div><div class="image-user image-text"></div></div>
             </div>
-            <div class="signIn-header"> SignIn </div>
+            <div class="signIn-header"> LogIn </div>
             <div class="error-alert-wrap">
                 <div class="alert-icon"></div>
                 <div class="error-message">Alert message here </div>
             </div>
             <div class="signIn-content signLogWrap">
                 <form method="post" action="" class="signIn-container">
-                    <div>
+                    <div class="validate-color">
                         <div class="label-icon"><div class="icon-user"></div></div>
-                        <input type="text" name="first-name" class="input input-tags first-name" placeholder="First Name">
+                        <input type="text" name="first-name" class="input validate-signIn input-tags first-name" placeholder="First Name" minlength="3" required>
                     </div>
-                    <div>
+                    <div class="validate-color">
                         <div class="label-icon"><div class="icon-user"></div></div>
-                        <input type="text" name="last-name" class="input input-tags last-name" placeholder="Last Name">
+                        <input type="text" name="last-name" class="input validate-signIn input-tags last-name" placeholder="Last Name" minlength="3" required>
                     </div>
-                    <div>
+                    <div class="validate-color">
                         <div class="label-icon"><div class="icon-email"></div></div>
-                        <input type="text" name="email" class="input input-tags email s-email" placeholder="Email">
+                        <input type="email" name="email" class="input validate-signIn input-tags email s-email" placeholder="Email" required>
                     </div>
-                    <div>
+                    <div class="validate-color">
                         <div class="label-icon"><div class="icon-password"></div></div>
-                        <input type="text" name="password" class="input input-tags password" placeholder="Password">
+                        <input type="password" name="password" class="input validate-signIn input-tags password" placeholder="Password" minlength="3" required>
                     </div>
-                    <div>
+                    <div class="validate-color">
                         <div class="label-icon"><div class="icon-password"></div></div>
-                        <input type="text" name="password" class="input input-tags confirm-password s-pass" placeholder="Confirm Password">
-                        <div class="pass-error s-error">da</div>
+                        <input type="password" name="password" class="input validate-signIn input-tags confirm-password s-pass" placeholder="Confirm Password" minlength="3" required>
+                        <div class="pass-error s-error"></div>
                     </div>
                     <div>
                         <input type="submit" value="SignIn" name="email" class="input">
@@ -336,29 +342,34 @@
                         <div class="alt-btn twitter-btn"></div>
                         <div class="alt-btn apple-btn"></div>
                     </div>
-                    <div>
-                        <span> Already have an account? </span>
-                        <span class="logIn-btn"> LogIn </span>
-                    </div>
+                    <div class="back-arrow-wrap l-hidden"><div class="back-arrow"></div></div>
                 </form>
             </div>
             <div class="logIn-content signLogWrap">
                 <form method="post" action="" class="logIn-container">
-                    <div>
+                    <div class="l-hidden validate-color">
                         <div class="label-icon"><div class="icon-email" placeholder="Email"></div></div>
-                        <input type="text" name="email" class="input input-tags email l-email" placeholder="Email">
+                        <input type="email" name="email" class="input validate-logIn input-tags email l-email" placeholder="Email">
                     </div>
-                    <div class="l-hidden">
+                    <div class="l-visible validate-color">
+                        <div class="label-icon"><div class="icon-email" placeholder="Email"></div></div>
+                        <input type="email" name="email" class="input validate-reset input-tags email r-email" placeholder="Email">
+                    </div>
+                    <div class="l-hidden validate-color">
                         <div class="label-icon"><div class="icon-password" placeholder="Password"></div></div>
-                        <input type="text" name="password" class="input input-tags confirm-password l-pass" placeholder="Password">
+                        <input type="password" name="password" class="input validate-logIn input-tags confirm-password l-pass" placeholder="Password" minlength="3">
                     </div>
                     <div class="logIn-submit-wrap">
                         <input type="submit" value="LogIn" name="email" class="input l-hidden">
                         <input type="submit" value="Reset" name="email" class="input l-visible">
                     </div>
                     <div class="reset-password-wrap l-hidden">
-                        <div> Do you want to reset password? </div>
+                        <div> Forgot Password? </div>
                         <div class="reset-pass-btn"> Reset </div>
+                    </div>
+                    <div class="l-hidden">
+                        <span> Don't have an account? </span>
+                        <span class="logIn-btn"> SignIn </span>
                     </div>
                     <div class="alt-logIn-wrap l-hidden">
                         <div> Or </div>
@@ -367,7 +378,6 @@
                         <div class="alt-btn twitter-btn"></div>
                         <div class="alt-btn apple-btn"></div>
                     </div>
-                    <div class="back-arrow-wrap l-hidden"><div class="back-arrow"></div></div>
                     <div class="back-arrow-wrap-reset l-visible"><div class="reset-arrow"></div></div>
                 </form>
             </div>

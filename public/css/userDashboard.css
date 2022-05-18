@@ -58,6 +58,10 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  font-size: 13px;
+  overflow: hidden;
+  color: black;
+  font-weight: 550;
 }
 
 .user-dashboard-wrapper {

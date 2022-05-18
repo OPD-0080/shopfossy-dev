@@ -293,37 +293,6 @@ body {
                                 background-image: url("../img/icons/location-form.png");
                             }
                         }
-                        .region-option, .city-option {
-                            position: absolute;
-                            top: 50px;
-                            width: 100%;
-                            height: 30vh;
-                            background: white;
-                            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.466);
-                            @include border-10;
-                            //@include trans;
-                            visibility: hidden;
-                            opacity: 0;
-                            z-index: 3;
-                            overflow-y: scroll;
-
-                            .region-select, .city-select {
-                                padding: 5px 20px; 
-                                font-size: $font-s;
-                                color: black;
-                            }
-                        }
-                        /*.options {
-                            visibility: hidden;
-                            opacity: 0;
-                            z-index: 3;
-                        }*/
-                        .region-option.drop, .city-option.drop {
-                            top: 70px;
-                            visibility: visible;
-                            opacity: 1;
-                            @include trans;
-                        }
                         .arrow-wrap {
                             opacity: 0;
                             position: absolute;
