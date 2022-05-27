@@ -24,6 +24,12 @@
         top: 220px;
 
         .user-dashboard-container {
+            flex-direction: column;
+            .user {
+                left: 0px;
+                text-align: center;
+            
+            }
             .user-name {
                 font-size: $font-s;
             }
@@ -182,6 +188,12 @@
         top: 70px;
 
         .user-dashboard-container {
+            flex-direction: column;
+            .user {
+                left: 0px;
+                text-align: center;
+            
+            }
             .user-name {
                 font-size: $font-s;
             }
@@ -239,6 +251,44 @@
                             div {
                                 width: 35px;
                                 height: 30px;
+                            }
+                        }
+                    }
+                    .admin-btn-container {
+                        position: relative;
+                        top: 6rem;
+                        width: 100%;
+                        height: 15px;
+                        left: 0px;
+                        display: block;
+                        z-index: 1;
+                        @include border-20;
+                        color: white;
+                        background: black;
+                        padding: 20px;
+
+                        .admin-tip {
+                            display: none;
+                        }
+                        .admin-btn {
+                            position: absolute;
+                            top: 0px;
+                            width: 100%;
+                            height: 100%;
+                            left: 0px;
+                            background: rgb(196, 7, 7);
+                            @include border-20;
+                            z-index: 2;
+                            justify-content: flex-start;
+
+                            .admin-icon::after {
+                                content: "Admin Dashboard";
+                                position: absolute;
+                                font-size: $font-s;
+                                top: 3px;
+                                left: 160px;
+                                width: 100%;
+                                height: 100%;
                             }
                         }
                     }
@@ -406,6 +456,12 @@
         top: 70px;
 
         .user-dashboard-container {
+            flex-direction: column;
+            .user {
+                left: 0px;
+                text-align: center;
+            
+            }
             .user-name {
                 font-size: $font-s;
             }
@@ -433,6 +489,46 @@
 
             .index-category-container {
                 height: 100vh;
+                .index-category {
+                    .admin-btn-container {
+                        position: relative;
+                        top: 6rem;
+                        width: 100%;
+                        height: 15px;
+                        left: 0px;
+                        display: block;
+                        z-index: 1;
+                        @include border-20;
+                        color: white;
+                        background: black;
+                        padding: 20px;
+
+                        .admin-tip {
+                            display: none;
+                        }
+                        .admin-btn {
+                            position: absolute;
+                            top: 0px;
+                            width: 100%;
+                            height: 100%;
+                            left: 0px;
+                            background: rgb(196, 7, 7);
+                            @include border-20;
+                            z-index: 2;
+                            justify-content: flex-start;
+
+                            .admin-icon::after {
+                                content: "Admin Dashboard";
+                                position: absolute;
+                                font-size: $font-s;
+                                top: 3px;
+                                left: 160px;
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
             }
             .flare-wrapper {
                 div:nth-child(1) {
@@ -502,6 +598,12 @@
         top: 70px;
 
         .user-dashboard-container {
+            flex-direction: column;
+            .user {
+                left: 0px;
+                text-align: center;
+            
+            }
             .user-name {
                 font-size: $font-s;
             }
@@ -644,6 +746,12 @@
         top: 220px;
 
         .user-dashboard-container {
+            flex-direction: column;
+            .user {
+                left: 0px;
+                text-align: center;
+            
+            }
             .user-name {
                 font-size: $font-s;
             }
@@ -861,6 +969,12 @@
         top: 70px;
 
         .user-dashboard-container {
+            flex-direction: column;
+            .user {
+                left: 0px;
+                text-align: center;
+            
+            }
             .user-name {
                 font-size: $font-s;
             }
@@ -1155,6 +1269,12 @@
         top: 70px;
 
         .user-dashboard-container {
+            flex-direction: column;
+            .user {
+                left: 0px;
+                text-align: center;
+            
+            }
             .user-name {
                 font-size: $font-s;
             }
@@ -1448,6 +1568,12 @@
         top: 70px;
 
         .user-dashboard-container {
+            flex-direction: column;
+            .user {
+                left: 0px;
+                text-align: center;
+            
+            }
             .user-name {
                 font-size: $font-s;
             }
@@ -1505,6 +1631,44 @@
                             div {
                                 width: 35px;
                                 height: 30px;
+                            }
+                        }
+                    }
+                    .admin-btn-container {
+                        position: relative;
+                        top: 6rem;
+                        width: 100%;
+                        height: 15px;
+                        left: 0px;
+                        display: block;
+                        z-index: 1;
+                        @include border-20;
+                        color: white;
+                        background: black;
+                        padding: 20px;
+
+                        .admin-tip {
+                            display: none;
+                        }
+                        .admin-btn {
+                            position: absolute;
+                            top: 0px;
+                            width: 100%;
+                            height: 100%;
+                            left: 0px;
+                            background: rgb(196, 7, 7);
+                            @include border-20;
+                            z-index: 2;
+                            justify-content: flex-start;
+
+                            .admin-icon::after {
+                                content: "Admin Dashboard";
+                                position: absolute;
+                                font-size: $font-s;
+                                top: 3px;
+                                left: 140px;
+                                width: 100%;
+                                height: 100%;
                             }
                         }
                     }
@@ -1740,6 +1904,12 @@
         top: 90px;
 
         .user-dashboard-container {
+            flex-direction: column;
+            .user {
+                left: 0px;
+                text-align: center;
+            
+            }
             .user-name {
                 font-size: $font-s;
             }
@@ -2032,6 +2202,12 @@
         width: 60%;
 
         .user-dashboard-container {
+            flex-direction: column;
+            .user {
+                left: 0px;
+                text-align: center;
+            
+            }
             .user-name {
                 font-size: $font-s;
             }
@@ -2338,6 +2514,12 @@
         top: 70px;
 
         .user-dashboard-container {
+            flex-direction: column;
+            .user {
+                left: 0px;
+                text-align: center;
+            
+            }
             .user-name {
                 font-size: $font-s;
             }
@@ -2640,6 +2822,11 @@
         top: 70px;
 
         .user-dashboard-container {
+            flex-direction: column;
+            .user {
+                left: 0px;
+                text-align: center;
+            }
             .user-name {
                 font-size: $font-s;
             }
@@ -2697,6 +2884,44 @@
                             div {
                                 width: 35px;
                                 height: 30px;
+                            }
+                        }
+                    }
+                    .admin-btn-container {
+                        position: relative;
+                        top: 6rem;
+                        width: 100%;
+                        height: 15px;
+                        left: 0px;
+                        display: block;
+                        z-index: 1;
+                        @include border-20;
+                        color: white;
+                        background: black;
+                        padding: 20px;
+
+                        .admin-tip {
+                            display: none;
+                        }
+                        .admin-btn {
+                            position: absolute;
+                            top: 0px;
+                            width: 100%;
+                            height: 100%;
+                            left: 0px;
+                            background: rgb(196, 7, 7);
+                            @include border-20;
+                            z-index: 2;
+                            justify-content: flex-start;
+
+                            .admin-icon::after {
+                                content: "Admin Dashboard";
+                                position: absolute;
+                                font-size: $font-s;
+                                top: 3px;
+                                left: 140px;
+                                width: 100%;
+                                height: 100%;
                             }
                         }
                     }
@@ -2933,6 +3158,11 @@
         top: 70px;
 
         .user-dashboard-container {
+            flex-direction: column;
+            .user {
+                left: 0px;
+                text-align: center;
+            }
             .user-name {
                 font-size: $font-s;
             }
@@ -3224,6 +3454,12 @@
         top: 70px;
 
         .user-dashboard-container {
+            flex-direction: column;
+            .user {
+                left: 0px;
+                text-align: center;
+            
+            }
             .user-name {
                 font-size: $font-s;
             }
@@ -3510,10 +3746,20 @@
     // NAVIGATION END
 
     // DASHBOARD START
+    .user-fixed-image-wrap {
+        top: 100px;
+    }
     .user-dashboard-wrapper {
+        top: 100px;
         width: 60%;
 
         .user-dashboard-container {
+            flex-direction: column;
+            .user {
+                    left: 0px;
+                    text-align: center;
+            
+                }
             .user-name {
                 font-size: $font-s;
             }
@@ -3813,10 +4059,20 @@
     // NAVIGATION END
 
     // DASHBOARD START
+    .user-fixed-image-wrap {
+        top: 100px;
+    }
     .user-dashboard-wrapper {
+        top: 100px;
         width: 60%;
 
         .user-dashboard-container {
+            flex-direction: column;
+            .user {
+                left: 0px;
+                text-align: center;
+            
+            }
             .user-name {
                 font-size: $font-s;
             }
@@ -3871,6 +4127,44 @@
                             div {
                                 width: 35px;
                                 height: 30px;
+                            }
+                        }
+                    }
+                    .admin-btn-container {
+                        position: relative;
+                        top: 6rem;
+                        width: 100%;
+                        height: 15px;
+                        left: 0px;
+                        display: block;
+                        z-index: 1;
+                        @include border-20;
+                        color: white;
+                        background: black;
+                        padding: 20px;
+
+                        .admin-tip {
+                            display: none;
+                        }
+                        .admin-btn {
+                            position: absolute;
+                            top: 0px;
+                            width: 100%;
+                            height: 100%;
+                            left: 0px;
+                            background: rgb(196, 7, 7);
+                            @include border-20;
+                            z-index: 2;
+                            justify-content: flex-start;
+
+                            .admin-icon::after {
+                                content: "Admin Dashboard";
+                                position: absolute;
+                                font-size: $font-s;
+                                top: 3px;
+                                left: 110px;
+                                width: 100%;
+                                height: 100%;
                             }
                         }
                     }
@@ -4117,10 +4411,19 @@
     // NAVIGATION END
 
     // DASHBOARD START
+    .user-fixed-image-wrap {
+        top: 100px;
+    }
     .user-dashboard-wrapper {
+        top: 100px;
         width: 60%;
 
         .user-dashboard-container {
+            flex-direction: column;
+            .user {
+                    left: 0px;
+                    text-align: center;
+            }
             .user-name {
                 font-size: $font-s;
             }
@@ -4153,6 +4456,7 @@
             .index-category-container {
                 height: 50vh;
                 width: 0%;
+                overflow: hidden;
 
                 .index-category {
                     position: fixed;
@@ -4175,6 +4479,44 @@
                             div {
                                 width: 35px;
                                 height: 30px;
+                            }
+                        }
+                    }
+                    .admin-btn-container {
+                        position: relative;
+                        top: 6rem;
+                        width: 100%;
+                        height: 15px;
+                        left: 0px;
+                        display: block;
+                        z-index: 1;
+                        @include border-20;
+                        color: white;
+                        background: black;
+                        padding: 20px;
+
+                        .admin-tip {
+                            display: none;
+                        }
+                        .admin-btn {
+                            position: absolute;
+                            top: 0px;
+                            width: 100%;
+                            height: 100%;
+                            left: 0px;
+                            background: rgb(196, 7, 7);
+                            @include border-20;
+                            z-index: 2;
+                            justify-content: flex-start;
+
+                            .admin-icon::after {
+                                content: "Admin Dashboard";
+                                position: absolute;
+                                font-size: $font-s;
+                                top: 3px;
+                                left: 110px;
+                                width: 100%;
+                                height: 100%;
                             }
                         }
                     }
@@ -4428,6 +4770,11 @@
         width: 60%;
 
         .user-dashboard-container {
+            flex-direction: column;
+            .user {
+                left: 0px;
+                text-align: center;
+            }
             .user-name {
                 font-size: $font-s;
             }
@@ -4482,6 +4829,44 @@
                             div {
                                 width: 35px;
                                 height: 30px;
+                            }
+                        }
+                    }
+                    .admin-btn-container {
+                        position: relative;
+                        top: 6rem;
+                        width: 100%;
+                        height: 15px;
+                        left: 0px;
+                        display: block;
+                        z-index: 1;
+                        @include border-20;
+                        color: white;
+                        background: black;
+                        padding: 20px;
+
+                        .admin-tip {
+                            display: none;
+                        }
+                        .admin-btn {
+                            position: absolute;
+                            top: 0px;
+                            width: 100%;
+                            height: 100%;
+                            left: 0px;
+                            background: rgb(196, 7, 7);
+                            @include border-20;
+                            z-index: 2;
+                            justify-content: flex-start;
+
+                            .admin-icon::after {
+                                content: "Admin Dashboard";
+                                position: absolute;
+                                font-size: $font-s;
+                                top: 0px;
+                                left: 110px;
+                                width: 100%;
+                                height: 100%;
                             }
                         }
                     }

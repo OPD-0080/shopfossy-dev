@@ -48,6 +48,7 @@ a {
   -ms-transition: .1s ease;
   -o-transition: .1s ease;
   background: green;
+  overflow: hidden;
 }
 
 .admin-btn-container .admin-tip {
@@ -94,7 +95,7 @@ a {
   left: 0px;
   width: 60%;
   height: 60%;
-  background-image: url("../img/icons/user.png");
+  background-image: url("../img/icons/admin.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;

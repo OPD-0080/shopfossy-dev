@@ -18,10 +18,20 @@ function logIn(email, password) {
         // Signed in 
         const user = userCredential.user;
 
-        // store data in database
-        getDataFromFireStore(user);
-        //output(user)
-        // ...
+        if (user == null) {
+            // alert user
+            alertError.innerHTML = "Error in User Authentication. Try Again !";
+            alertWrap.classList.add("show");
+            alertWrap.style.background = "red";
+            setTimeout(() => { 
+                alertWrap.classList.remove("show");
+            }, 3000)
+        }
+        else {
+             // store data in database
+            getDataFromFireStore(user);
+            // ...
+        }
     })
     .catch((error) => {
         const errorCode = error.code;
@@ -85,39 +95,82 @@ function logIn(email, password) {
         alertWrap.classList.add("show");
         headerText.style.display = "none";
         // ...
-        // save data into database
+        // get data from database
         const collectionRef = collection(db, "Users");
         const querySnapshot = await getDocs(collectionRef); // this return an array of document
             querySnapshot.forEach((doc) => {
             //console.log(`${doc.id} => ${doc.data()}`);
-            let F_name = doc.data().FirstName;
-            let L_name = doc.data().LastName;
-            let email = doc.data().Email;
+            let user_name = doc.data().UserName;
+            let Email = doc.data().Email;
+            let UID = doc.data().UID
 
-            // getting first letter of the string 
-            var firstLetter = F_name.charAt(0).toUpperCase();
-            var lastLetter = L_name.charAt(0).toUpperCase();
-            imageText.style.backgroundImage = `none`;
-            imageText.innerHTML = `${firstLetter} ${lastLetter}`;
-            // ...
-            
-            // Info display in DOM
-            output(F_name, L_name, email, firstLetter, lastLetter);
-            // ...
-
-            setTimeout(() => {
-                // off display signLOgin page
-                formOverlay.classList.remove("collapse");
+            // checking id of the user
+            if (UID == userId) {
+                // getting first letter of the string 
+                var firstLetter = user_name.charAt(0).toUpperCase();
+                imageText.style.backgroundImage = `none`;
+                imageText.innerHTML = `${firstLetter}`;
                 // ...
-            }, 3000);
+                // Info display in DOM
+                output(user, user_name, Email, firstLetter);
+            }
+            
         });
     };
-    function output(F_name, L_name, email, firstLetter, lastLetter) {
-        userImages.forEach(userImage => {
-            userImage.innerHTML = `${firstLetter} ${lastLetter}`;
-        })
-        userNameEl.innerHTML = `${F_name} ${L_name}`;
-        userEmailEl.innerHTML = email;
+    function output(user, user_name, Email, firstLetter) {
+        if (user.photoURL == null) {
+            userImages.forEach(userImage => {
+                userImage.style.backgroundImage = "none";
+                userImage.innerHTML = `${firstLetter}`;
+            });
+            if (user.displayName == null) {
+                userNameEl.innerHTML = `${user_name}`;
+            }else {
+                userNameEl.innerHTML = user.displayName;
+            }
+            userEmailEl.innerHTML = Email;
+            logInPageCollapse(user_name)
+
+        }else if (user.displayName == null) {
+            if (user.photoURL == null) {
+                userImages.forEach(userImage => {
+                    userImage.style.backgroundImage = "none";
+                    userImage.innerHTML = `${firstLetter}`;
+                });
+            }else {
+                userImages.forEach(userImage => {
+                    userImage.style.backgroundImage = `url(${user.photoURL})`;
+                })
+            }
+            userNameEl.innerHTML = `${user_name}`;
+            userEmailEl.innerHTML = Email;
+            logInPageCollapse(user_name)
+
+        }
+        else {
+            userImages.forEach(userImage => {
+                userImage.style.backgroundImage = `url(${user.photoURL})`;
+            });
+            userNameEl.innerHTML = user.displayName;
+            userEmailEl.innerHTML = user.email;
+            logInPageCollapse(user_name)
+        }
+    }
+    function logInPageCollapse(user_name) {
+        // ...
+        setTimeout(() => {
+            // user alert
+            alertError.innerHTML = `Welcome ${user_name}}`;
+            alertWrap.style.background = "green";
+            alertWrap.classList.add("show");
+            setTimeout(() => { 
+                alertWrap.classList.remove("show");
+            }, 3000)
+            // ..
+            // off display signLOgin page
+            formOverlay.classList.remove("collapse");
+            // ...
+        }, 4500);
     }
 }
 

@@ -25,8 +25,8 @@ a {
   top: 100px;
   right: 0px;
   z-index: 7;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   background: red;
   border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -47,9 +47,8 @@ a {
 
 .user-fixed-image-wrap .image-user {
   position: relative;
-  width: 30px;
-  height: 30px;
-  background: white;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -58,10 +57,22 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-image: url("../img/icons/user.png");
   font-size: 13px;
   overflow: hidden;
-  color: black;
-  font-weight: 550;
+  color: white;
+  font-weight: bolder;
+  overflow: hidden;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .user-dashboard-wrapper {
@@ -99,10 +110,10 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -181,6 +192,11 @@ a {
   background-size: cover;
 }
 
+.user-dashboard-wrapper .user-dashboard-container .user {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .user-dashboard-wrapper .user-dashboard-container .user-name {
   font-size: 16px;
   font-weight: 550;
@@ -251,6 +267,10 @@ a {
   -o-border-radius: 50%;
 }
 
+.user-dashboard-wrapper .user-dashboard-container .user-btns .dash-btn .i-edit {
+  background-image: url("../img/icons/edit.png");
+}
+
 .user-dashboard-wrapper .user-dashboard-container .user-btns .dash-btn .i-out {
   background-image: url("../img/svg/signout.svg");
 }
@@ -297,4 +317,579 @@ a {
   opacity: 1;
   visibility: visible;
   z-index: 6;
+}
+
+.user-edited-overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.805);
+  z-index: 20;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-edited-overlay .user-edited-wrapper {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 80%;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-edited-close {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.658);
+          box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.658);
+  z-index: 5;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-edited-close .i {
+  width: 30px;
+  height: 30px;
+  background-image: url("../img/icons/close-white.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-edited-close:hover {
+  -webkit-box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.575);
+          box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.575);
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(128, 128, 128, 0.253);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content div {
+  position: relative;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-header {
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 550;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edit-alert {
+  position: absolute;
+  top: 10px;
+  right: 100px;
+  background: red;
+  padding: 3px;
+  font-size: 13px;
+  -webkit-box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.644);
+          box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.644);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  transition: .5s ease;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -ms-transition: .5s ease;
+  -o-transition: .5s ease;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edit-alert div {
+  position: relative;
+  margin: 5px;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edit-alert .i {
+  width: 20px;
+  height: 20px;
+  background: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../img/svg/alert-red.svg");
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edit-alert.alert {
+  display: block;
+  transition: .5s ease;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -ms-transition: .5s ease;
+  -o-transition: .5s ease;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.829);
+  z-index: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+  transition: .5s ease;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -ms-transition: .5s ease;
+  -o-transition: .5s ease;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container {
+  position: relative;
+  background: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 85%;
+  padding: 20px;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container div {
+  margin: 20px;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .close-confirm-alert {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border: 2px solid white;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-image: url("../img/icons/close-white.png");
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .confirm-alert-text {
+  font-size: 20px;
+  font-weight: 550;
+  top: 20px;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .confirm-btn {
+  padding: 15px;
+  border: 2px solid white;
+  cursor: pointer;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .confirm-btn:hover, .user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .close-confirm-alert:hover {
+  background-color: #b30303;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert.collapse {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  transition: .5s ease;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -ms-transition: .5s ease;
+  -o-transition: .5s ease;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image div {
+  position: relative;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap {
+  width: 20rem;
+  height: 20rem;
+  background: white;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container {
+  width: 17rem;
+  height: 17rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background: black;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 2;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background: grey;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-image: url("../img/svg/camera.gif");
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content {
+  position: relative;
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content {
+  position: relative;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20px;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .note {
+  position: absolute;
+  top: 15px;
+  right: 140px;
+  font-size: 11px;
+  color: #ff6e6e;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content label {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+  font-size: 20px;
+  font-weight: 550;
+  margin-bottom: 10px;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  overflow: hidden;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .verify-icon {
+  position: absolute;
+  top: 10px;
+  right: 140px;
+  width: 30px;
+  height: 30px;
+  background: white;
+  z-index: 2;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url("../img/icons/verify.png");
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-icon {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 50px;
+  height: 100%;
+  background: grey;
+  z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-icon .i {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-icon .i-name {
+  background-image: url("../img/icons/user.png");
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-icon .i-email {
+  background-image: url("../img/icons/email.png");
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-icon .i-tel {
+  background-image: url("../img/icons/phone-white.png");
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-icon .i-password {
+  background-image: url("../img/icons/key.png");
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-input {
+  position: relative;
+  width: 100%;
+  outline: none;
+  padding: 15px 60px;
+  font-size: 16px;
+  font-weight: 550;
+  background: grey;
+  color: white;
+  text-align: center;
+  transition: .5s ease;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -ms-transition: .5s ease;
+  -o-transition: .5s ease;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-input::first-letter {
+  text-transform: uppercase;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-input.edit {
+  background: white;
+  text-align: left;
+  transition: .5s ease;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -ms-transition: .5s ease;
+  -o-transition: .5s ease;
+  color: black;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-input.edit .hover-name {
+  -webkit-box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.582);
+          box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.582);
+  transition: .5s ease;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -ms-transition: .5s ease;
+  -o-transition: .5s ease;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .btn {
+  width: 45px;
+  height: 45px;
+  background: grey;
+  margin: 0px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .btn .i {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .btn .i-close {
+  display: none;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .btn .i-close.close {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .btn .i-edit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-image: url("../img/icons/edit-white.png");
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .btn .i-edit.collapse {
+  display: none;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .btn .i-save {
+  background-image: url("../img/icons/thumb-white-up.png");
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .btn .i-close {
+  background-image: url("../img/icons/close-white.png");
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .btn:hover {
+  background: rgba(128, 128, 128, 0.608);
 }

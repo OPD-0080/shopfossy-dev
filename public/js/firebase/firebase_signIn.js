@@ -11,7 +11,7 @@ const headerText = document.querySelector(".signIn-header");
 const headerImage = document.querySelector(".image-text");
 
 
-function signIn(firstName, lastName, email, userPassword, password) {
+function signIn(userName, email, userPassword, password) {
   const auth = getAuth();
 
   createUserWithEmailAndPassword(auth, email, password)
@@ -21,7 +21,7 @@ function signIn(firstName, lastName, email, userPassword, password) {
       const userId = user.uid;
       console.log(user);
 
-      userBio(userId, firstName, lastName, email, userPassword, password)
+      userBio(userId, userName, email, userPassword, password)
     }) 
   .catch((error) => {
       const errorMessage = error.message;
@@ -54,7 +54,7 @@ function signIn(firstName, lastName, email, userPassword, password) {
   });
 }
 
-async function userBio(userId, firstName, lastName, email, userPassword, password) {
+async function userBio(userId, userName, email, userPassword, password) {
   const db = getFirestore();
 
   try {
@@ -68,9 +68,9 @@ async function userBio(userId, firstName, lastName, email, userPassword, passwor
     // store data in database
     const collectionRef = collection(db, "Users");
     await setDoc(doc(collectionRef, userId), {
-      FirstName: firstName,
-      LastName: lastName, 
+      UserName: userName,
       Email: email,
+      UID: userId
     });
 
     // Alert message and display off DOM

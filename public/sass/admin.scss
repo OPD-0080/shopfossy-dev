@@ -16,6 +16,7 @@
     color: white;
     @include trans-01s;
     background: green;
+    overflow: hidden;
 
     .admin-tip {
         margin-right: 40px;
@@ -45,7 +46,7 @@
             left: 0px;
             width: 60%;
             height: 60%;
-            background-image: url("../img/icons/user.png");
+            background-image: url("../img/icons/admin.png");
             @include background-initializer;
             background-size: contain;
         }

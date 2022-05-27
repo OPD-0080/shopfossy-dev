@@ -130,3 +130,7 @@ $database-main-background: rgb(185, 4, 4);
     -ms-transform: translateY($y);
     -o-transform: translateY($y);
 }
+@mixin filter($filter) {
+    filter: blur($filter);
+    -webkit-filter: blur($filter);
+}

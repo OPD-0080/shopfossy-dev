@@ -24,12 +24,12 @@ var message = "";
 // SIGN-IN SECTION START
 (function(){
     // Validate Inputs
-    var firstNameEL = document.querySelector(".first-name");
-    var lastNameEl = document.querySelector(".last-name");
+    var userNameEL = document.querySelector(".user-name");
+    //var lastNameEl = document.querySelector(".last-name");
     var emailEl = document.querySelector(".s-email");
     var confirmPasswordEl = document.querySelector(".password");
     var userPasswordEl = document.querySelector(".s-pass");
-    var firstName, lastName, email, confirmPassword, userPassword;
+    var userName, email, confirmPassword, userPassword;
 
     signInInputs.forEach(input => {
         input.onkeyup = (e) => {
@@ -151,8 +151,7 @@ var message = "";
     signInForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        firstName = firstNameEL.value;
-        lastName = lastNameEl.value;
+        userName = userNameEL.value;
         email = emailEl.value;
         confirmPassword = confirmPasswordEl.value;
         userPassword = userPasswordEl.value;
@@ -170,14 +169,14 @@ var message = "";
             // ...
         }else {
             password = confirmPassword;
-            authSignIn(firstName, lastName, email, userPassword, password);
+            authSignIn(userName, email, userPassword, password);
         }
     })
 
 
-    function authSignIn(firstName, lastName, email, userPassword, password) {
-        signIn(firstName, lastName, email, userPassword, password)
-        console.log(firstName, lastName, email, userPassword, password);
+    function authSignIn(userName, email, userPassword, password) {
+        signIn(userName, email, userPassword, password)
+        console.log(userName, email, userPassword, password);
     }
 })();
 // SIGN-IN SECTION END
