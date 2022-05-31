@@ -431,14 +431,12 @@ a {
   font-size: 13px;
   -webkit-box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.644);
           box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.644);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   transition: .5s ease;
   -webkit-transition: .5s ease;
   -moz-transition: .5s ease;
   -ms-transition: .5s ease;
   -o-transition: .5s ease;
+  display: none;
 }
 
 .user-edited-overlay .user-edited-wrapper .user-update-content .user-edit-alert div {
@@ -457,7 +455,9 @@ a {
 }
 
 .user-edited-overlay .user-edited-wrapper .user-update-content .user-edit-alert.alert {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   transition: .5s ease;
   -webkit-transition: .5s ease;
   -moz-transition: .5s ease;
@@ -511,7 +511,7 @@ a {
 }
 
 .user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container div {
-  margin: 20px;
+  margin: 10px;
 }
 
 .user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .close-confirm-alert {
@@ -537,9 +537,10 @@ a {
   font-size: 20px;
   font-weight: 550;
   top: 20px;
+  margin-bottom: 30px;
 }
 
-.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .confirm-btn {
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .confirm-btn, .user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .re-auth-container .re-auth-btn {
   padding: 15px;
   border: 2px solid white;
   cursor: pointer;
@@ -548,10 +549,83 @@ a {
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
+  display: block;
 }
 
-.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .confirm-btn:hover, .user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .close-confirm-alert:hover {
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .confirm-btn.collapse, .user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .re-auth-container .collapse.re-auth-btn {
+  display: none;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .confirm-btn:hover, .user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .re-auth-container .re-auth-btn:hover, .user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .close-confirm-alert:hover {
   background-color: #b30303;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .re-auth-container {
+  display: none;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .re-auth-container .re-auth-pass-wrap {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background: white;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .re-auth-container .re-auth-pass-wrap input {
+  position: relative;
+  padding: 15px 20px;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 550;
+  text-align: center;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .re-auth-container .re-auth-pass-wrap .i {
+  position: relative;
+  margin: 0px;
+  border: 1px solid white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .re-auth-container .re-auth-pass-wrap .i div {
+  position: relative;
+  background: red;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-image: url("../img/icons/key.png");
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .re-auth-container .re-auth-btn {
+  text-align: center;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .re-auth-container.collapse {
+  display: block;
 }
 
 .user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert.collapse {
@@ -617,6 +691,25 @@ a {
   background-position: center;
   background-size: cover;
   z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container .upload-progress {
+  position: relative;
+  font-size: 30px;
+  font-weight: 550;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container .upload-progress.collapse {
+  visibility: visible;
 }
 
 .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container::before {
@@ -861,10 +954,6 @@ a {
   -o-border-radius: 50%;
 }
 
-.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .btn .i-close {
-  display: none;
-}
-
 .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .btn .i-close.close {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -887,9 +976,18 @@ a {
 }
 
 .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .btn .i-close {
+  display: none;
   background-image: url("../img/icons/close-white.png");
 }
 
 .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .btn:hover {
   background: rgba(128, 128, 128, 0.608);
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .save-btn {
+  visibility: hidden;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .save-btn.active {
+  visibility: visible;
 }

@@ -47,6 +47,13 @@ function signIn(userName, email, userPassword, password) {
         setTimeout(() => { 
             alertWrap.classList.remove("show");
         }, 3000)
+      }else if (errorCode == "auth/network-request-failed") {
+        alertError.innerHTML = "Bad Internet Connection. Try Again !";
+        alertWrap.classList.add("show");
+        alertWrap.style.background = "red";
+        setTimeout(() => { 
+            alertWrap.classList.remove("show");
+        }, 3000)
       }
 
       console.log(errorCode);
@@ -94,14 +101,13 @@ async function userBio(userId, userName, email, userPassword, password) {
       alertWrap.style.background = "grey";
       alertWrap.classList.add("show");
       // ...
-    }, 4000);
+    }, 3500);
 
   } catch (e) {
     // show error in DOM
     alertError.innerHTML = "Internet Connection Bad, Try Again !";
     alertWrap.style.background = "red";
     alertWrap.classList.add("show");
-    console.error("Error creating user profile: ", e);
   }
 }
 

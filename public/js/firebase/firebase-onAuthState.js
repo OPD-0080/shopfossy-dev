@@ -49,6 +49,9 @@ function onAuthState() {
             alertVerification.classList.remove("color");
             verifyBtn.classList.remove("active");
             verifyText.innerHTML = "Send link for Email Verification !"
+            setTimeout(() => { 
+              alertVerification.classList.remove("collapse");
+            }, 1000);
             // ...
             // Email verification 
             emailVerificationLink(user);

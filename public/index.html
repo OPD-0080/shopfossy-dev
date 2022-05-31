@@ -76,7 +76,7 @@
                 <div class="image-user user-image"></div>
             </div>
             <div>
-                <div class="user user-name">User Nmae</div>
+                <div class="user user-name">User Name</div>
                 <div class="user user-email">User email</div>
                 <!--<div class="user-time curent-logDate"> current logIn date </div>-->
                 <div class="user-btns">
@@ -100,6 +100,7 @@
             <div class="user-edited-close"><div class="i"></div></div>
             <form action="" method="post" class="user-update-content">
                 <div class="user-edited-header"> User Profile </div>
+                <!--------USER NOTIFICATION START-------------------->
                 <div class="user-edit-alert">
                     <div class="i"></div>
                     <div class="alert-text">Profile Update Required !</div>
@@ -109,11 +110,23 @@
                         <div class="close-confirm-alert"></div>
                         <div class="confirm-alert-text"></div>
                         <div class="confirm-btn">Confirm</div>
+                        <div class="re-auth-container">
+                            <div class="re-auth-pass-wrap">
+                                <div class="i"><div class="i-pass"></div></div>
+                                <input type="text" class="re-auth-input" name="auth-password" id="">
+                            </div>
+                            <div class="re-auth-btn">Authenticate</div>
+                        </div>
                     </div>
                 </div>
+                <!------------------------------------------>
+                <!--------PROFILE CONTENT START-------------------->
                 <div class="user-row user-edited-image">
                     <div class="edited-image-wrap">
-                        <div class="edited-image-container"><input class="image-file" type="file" hidden accept="image/png, image/jpeg"></div>
+                        <div class="edited-image-container">
+                            <div class="upload-progress"></div>
+                            <input class="image-file" type="file" hidden accept="image/png, image/jpeg">
+                        </div>
                     </div>
                 </div>
                 <div class="user-row user-edited-content">
@@ -166,9 +179,9 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
+                <!------------------------------------------>
             </form>
         </div>
     </div>
@@ -472,9 +485,9 @@
     <script src="./js/plugins/setup.js"></script>
     <script src="./js/plugins/vanilla-tilt.js"></script>
     <script src="./js/plugins/tiltSetup.js"></script>
-    <script src="./js/userProfile.js"></script>
     <script src="./js/plugins/firebase-app-init.js" type="module"></script>
     <script src="./js/firebase/firebase-main.js" type="module"></script>
+    <script type="module" src="./js/userProfile.js"></script>
     <!-- plugins for js end here -->
 </body>
 </html>

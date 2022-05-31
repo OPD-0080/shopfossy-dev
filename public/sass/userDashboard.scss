@@ -195,6 +195,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    //display: none;
 
     .user-edited-wrapper {
         position: relative;
@@ -257,9 +258,9 @@
                 padding: 3px;
                 font-size: $font-s;
                 box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.644);
-                display: flex;
+                //display: flex;
                 @include trans-05s;
-                //display: none;
+                display: none;
 
                 div {
                     position: relative; 
@@ -276,7 +277,7 @@
                 }
             }
             .user-edit-alert.alert {
-                display: block;
+                display: flex;
                 @include trans-05s;
             }
             .user-confirm-alert {
@@ -303,7 +304,9 @@
                     width: 85%;
                     padding: 20px;
 
-                    div {margin: 20px;}
+                    div {
+                        margin: 10px;
+                    }
 
                     .close-confirm-alert {
                         position: absolute;
@@ -322,18 +325,71 @@
                         font-size: $font-vl;
                         font-weight: 550;
                         top: 20px;
+                        margin-bottom: $margin-l
                     }
                     .confirm-btn {
                         padding: 15px;
                         border: 2px solid white;
                         cursor: pointer;
                         @include border-20;
+                        display: block;
+                    }
+                    .confirm-btn.collapse {
+                        display: none;
                     }
                     .confirm-btn:hover, .close-confirm-alert:hover {
                         background-color: rgb(179, 3, 3);
                     }
-                }
+                    .re-auth-container {
+                        display: none;
 
+                        .re-auth-pass-wrap {
+                            overflow: hidden;
+                            display: flex; // will be remove later
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: row;
+                            background: white;
+                            
+    
+                            input {
+                                position: relative;
+                                padding: 15px 20px;
+                                outline: none;
+                                border: none;
+                                font-size: $font-l;
+                                font-weight: 550;
+                                text-align: center;
+                            }
+                            .i {
+                                position: relative;
+                                margin: 0px;
+                                border: 1px solid white;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+    
+                                div {
+                                    position: relative;
+                                    background: red;
+                                    @include background-initializer;
+                                    background-size: cover;
+                                    width: 40px;
+                                    height: 40px;
+                                    object-fit: cover; 
+                                    background-image: url("../img/icons/key.png");
+                                }
+                            }
+                        }
+                        .re-auth-btn {
+                            @extend .confirm-btn;
+                            text-align: center;
+                        }
+                    }
+                    .re-auth-container.collapse {
+                        display: block;
+                    }
+                }
             }
             .user-confirm-alert.collapse {
                 display: flex;
@@ -365,6 +421,19 @@
                         @include background-initializer;
                         background-size: cover;
                         z-index: 2;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        .upload-progress {
+                            position: relative;
+                            font-size: $font-xxl;
+                            font-weight: 550;
+                            //visibility: hidden;
+                        }
+                        .upload-progress.collapse {
+                            visibility: visible;
+                        }
                     }
                     .edited-image-container::before {
                         content: "";
@@ -524,16 +593,21 @@
                                     height: 30px;
                                     @include border-circle;
                                 }
-                                .i-close { display: none; }
                                 .i-close.close { display: flex; }
                                 .i-edit { display: flex; background-image: url("../img/icons/edit-white.png"); }
                                 .i-edit.collapse { display: none }
                                 .i-save { background-image: url("../img/icons/thumb-white-up.png"); }
-                                .i-close {background-image: url("../img/icons/close-white.png");}
+                                .i-close {display: none; background-image: url("../img/icons/close-white.png");}
 
                             }
                             .btn:hover {
                                 background: rgba(128, 128, 128, 0.608);
+                            }
+                            .save-btn {
+                                visibility: hidden;
+                            }
+                            .save-btn.active {
+                                visibility: visible;
                             }
                         }
                     }

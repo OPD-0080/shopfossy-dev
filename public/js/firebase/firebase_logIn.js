@@ -74,7 +74,14 @@ function logIn(email, password) {
             }, 3000)
         }
         else if (errorCode == "auth/network-error") {
-            alertError.innerHTML = "Internet Status: BAD !";
+            alertError.innerHTML = "Bad Internet Connection. Try Again !";
+            alertWrap.classList.add("show");
+            alertWrap.style.background = "red";
+            setTimeout(() => { 
+                alertWrap.classList.remove("show");
+            }, 3000)
+        }else if (errorCode == "auth/network-request-failed") {
+            alertError.innerHTML = "Bad Internet Connection. Try Again !";
             alertWrap.classList.add("show");
             alertWrap.style.background = "red";
             setTimeout(() => { 

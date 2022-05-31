@@ -24,8 +24,9 @@ var message = "";
 // SIGN-IN SECTION START
 (function(){
     // Validate Inputs
-    var userNameEL = document.querySelector(".user-name");
-    //var lastNameEl = document.querySelector(".last-name");
+    var signInContainer = document.querySelector(".signIn-content");
+    var userNameEL = signInContainer.querySelector(".user-name");
+    
     var emailEl = document.querySelector(".s-email");
     var confirmPasswordEl = document.querySelector(".password");
     var userPasswordEl = document.querySelector(".s-pass");
@@ -34,17 +35,7 @@ var message = "";
     signInInputs.forEach(input => {
         input.onkeyup = (e) => {
             const validateEl = e.target.parentElement;
-            if (e.target.classList.contains("first-name")) {
-                if (e.target.value.length >= e.target.getAttribute("minlength")) {
-                    // change color
-                    validateEl.classList.add("green");
-                    // ...
-                }
-                else {
-                    // change color
-                    validateEl.classList.remove("green");
-                }
-            }else if (e.target.classList.contains("last-name")) {
+            if (e.target.classList.contains("user-name")) {
                 if (e.target.value.length >= e.target.getAttribute("minlength")) {
                     // change color
                     validateEl.classList.add("green");
@@ -152,6 +143,7 @@ var message = "";
         e.preventDefault();
 
         userName = userNameEL.value;
+        //console.log(userName);
         email = emailEl.value;
         confirmPassword = confirmPasswordEl.value;
         userPassword = userPasswordEl.value;
@@ -334,7 +326,7 @@ var message = "";
         e.preventDefault();
 
         const email = r_email.value;
-        console.log(email);
+        //console.log(email);
 
         resetPassword(email)
     })
