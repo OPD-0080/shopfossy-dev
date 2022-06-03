@@ -327,15 +327,13 @@ a {
   height: 100%;
   background: rgba(0, 0, 0, 0.805);
   z-index: 20;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  display: none;
 }
 
 .user-edited-overlay .user-edited-wrapper {
@@ -781,6 +779,10 @@ a {
   color: #ff6e6e;
 }
 
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .note.show {
+  color: green;
+}
+
 .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content label {
   position: relative;
   top: 0px;
@@ -817,10 +819,15 @@ a {
   height: 30px;
   background: white;
   z-index: 2;
+  visibility: hidden;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   background-image: url("../img/icons/verify.png");
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .verify-icon.show {
+  visibility: visible;
 }
 
 .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-icon {
@@ -990,4 +997,50 @@ a {
 
 .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .save-btn.active {
   visibility: visible;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content-delete .delete-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 70%;
+  cursor: pointer;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content-delete .delete-wrap div {
+  font-size: 13px;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content-delete .delete-wrap .i {
+  margin-right: 8px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content-delete .delete-wrap .i-deleted {
+  background-image: url("../img/icons/bin.png");
+}
+
+.user-edited-overlay.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }

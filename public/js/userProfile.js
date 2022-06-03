@@ -1,6 +1,9 @@
 // IMPORTATION
-import { getAuth,  onAuthStateChanged, EmailAuthProvider, updateProfile, updateEmail, reauthenticateWithCredential } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
-import { getStorage, ref, uploadBytes, uploadBytesResumable, getDownloadURL  } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-storage.js";
+import { getAuth,  onAuthStateChanged, sendEmailVerification, 
+    EmailAuthProvider, updateProfile, updatePassword, 
+    updateEmail, reauthenticateWithCredential } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+import { getStorage, ref, getDownloadURL, uploadString,} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-storage.js";
+import { getFirestore, updateDoc, doc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
 // ...
 
 // VARIABLES
@@ -22,13 +25,20 @@ const confirmAlertBtn = confirmAlert.querySelector(".confirm-btn");
 const reAuthPage = confirmAlert.querySelector(".re-auth-container");
 const authPassInput = reAuthPage.querySelector(".re-auth-input");
 const authPassBtn = reAuthPage.querySelector(".re-auth-btn");
+const noteWrap = document.querySelector(".content-email");
+const noteEmail = noteWrap.querySelector(".note");
+const verifiedIconEmail = noteWrap.querySelector(".verify-icon");
+const noteWrapPass = document.querySelector(".content-password");
+const notePass = noteWrapPass.querySelector(".note");
+const verifiedIconPass = noteWrapPass.querySelector(".verify-icon");
 // ...
 // Plugins initiation
 const auth = getAuth();
 const storage = getStorage();
+const db = getFirestore();
 // ...
 
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, async (user) => {
     if (user) {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
@@ -37,9 +47,16 @@ onAuthStateChanged(auth, (user) => {
 
         // getting user info
         // Destructuring user info
-        const userName = user.displayName;
-        const userEmail = user.email;
-        const userPhoto = user.photoURL;
+        const userVerificationStatus = user.emailVerified;
+        if (userVerificationStatus) {
+            noteEmail.classList.add("show");
+            noteEmail.innerHTML = "Verified";
+            verifiedIconEmail.classList.add("show");
+        }else {
+            noteEmail.classList.remove("show");
+            noteEmail.innerHTML = "Not Verified";
+            verifiedIconEmail.classList.remove("show");
+        }
         // ...
 
         // checking if condition are met
@@ -116,53 +133,34 @@ imageFile.onchange = (event) => {
 
     reader.onload = (e) => {
         var filePhoto = e.target.result;
-        fileOutput(fileName, filePhoto, size);
+        fileOutput(fileName, filePhoto, size, file);
     }
     reader.readAsDataURL(file);
 }
 function fileOutput(fileName, file, filePhoto, size) {
     const storageRef = ref(storage, `userProfileImages/${auth.currentUser.uid}`);
-    const metadata = {
-        contentType: 'image/png'
-    };
-    // pushing image file into firebase storage;
-    const uploadTask = uploadBytesResumable(storageRef, file, metadata);
-    // ...
-    uploadTask.on('state_changed', (snapshot) => {
-        console.log(snapshot);
-        // Observe state change events such as progress, pause, and resume
-        // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log('Upload is ' + progress + '% done');
-        // showing progress action in DOM
-        progressEL.innerHTML = `${progress}%`
+    // pushing image file into firebase storage and
+    // Monitoring upload progress
+    uploadString(storageRef, file, 'data_url')
+    .then((snapshot) => {
+        // user alert
+        userAlertText.innerHTML = "Photo Upload Successful !";
+        userAlert_green();
+        setTimeout(() => {
+            userAlert.classList.remove("alert");
+        }, 3000);
         // ...
-        switch (snapshot.state) {
-            case 'paused':
-                console.log('Upload is paused');
-            break;
-            case 'running':
-                console.log('Upload is running');
-            break;
-        }
-        // remove progress percentage bar after upload
-        if (progress == "100") {
-            progressEL.classList.add("collapse");
-        }
-        // ...
-    }, (error) => {
-        // Handle unsuccessful uploads
-        console.log(error);
-    }, () => {
-        // Handle successful uploads on complete
-        // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-        getDownloadURL(uploadTask.snapshot.ref)
-        .then((downloadURL) => {
-            console.log('File available at', downloadURL);
-            userImageBox.style.backgroundImage = `url(${downloadURL})`; // will be remove later
-            updatePhoto(downloadURL);
+        // download image url 
+        getDownloadURL(storageRef).then((url) => {
+            // update photo in firebase auth
+            updatePhoto(url)
+            // ...
+        }).catch((error) => {
+            // Handle any errors
+            console.log(error);
         });
-    });
+        // ... 
+    })
 }
 // ....
 
@@ -186,10 +184,8 @@ contentOverall.forEach(container => {
                 // updating profile Name
                 updateProfile(auth.currentUser, {
                     displayName: userFullName 
-
                 }).then(() => {
                     closeSingleBtn(inputTag, subContainer); // enable close btn
-                    //inputTag.value = auth.currentUser.displayName; // Display name in DOM
                      // user alert
                     userAlertText.innerHTML = "Profile Status: Name Updated  !"
                     userAlert_green();
@@ -226,47 +222,26 @@ contentOverall.forEach(container => {
                 confirmAlert.onclick = (e) => {
                     if (e.target.classList.contains("confirm-btn")) {
                         editSingleBtn(inputTag, subContainer); // enable edit btn
-                        confirmAlertBtn.classList.add("collapse"); // remove alert confirm btn
-                        confirmAlertText.innerHTML = "Confirm PASSWORD for Authentication !";
-                        reAuthPage.classList.add("collapse"); // show re-auth page
-                        authPassInput.focus(); // focusing input
-                        
-                        // Re-authentication of user when btn is triggered
-                        authPassBtn.onclick = (e) => {
-                            const reAuthPassword = authPassInput.value;
-
-                            if (reAuthPassword == "" || reAuthPassword == null || reAuthPassword == undefined) {
-                                confirmAlertText.innerHTML = "Error !";
-                                setTimeout(() => {
-                                    confirmAlertText.innerHTML = "Confirm PASSWORD for Authentication !";
-                                }, 1000);
-                            }else {
-                                const  user = auth.currentUser; // get user
-                                const password = reAuthPassword; //get user entered password
-
-                                reAuthenticationEmail(user, password);
-                            }
-                        }
-
+                        // reAuthentication process
+                        reAuthenticationProcess();
+                        // ...
                     }else if (e.target.classList.contains("close-confirm-alert")) {
                         closeSingleBtn(inputTag, subContainer); // enable close btn
-                        confirmAlertBtn.classList.remove("collapse"); //  restore default confirm btn
-                        confirmAlertText.innerHTML = "Confirm to proceed to edit EMAIL !";
-                        reAuthPage.classList.remove("collapse"); // restore default re-auth page
-                        confirmAlert.classList.remove("collapse"); // remove confirm alert
+                        // restore authentication process to default
+                        restoreAuthenticationProcess();
+                        // ...
                     }
                 }
                 // ...
-
             }else if (e.target.classList.contains("i-close")) {
                 closeSingleBtn(inputTag, subContainer); // enable close btn
-                //auth_status_email() // set auth default info if user info not edited
+                auth_status_email() // set auth default info if user info not edited
             }
             if (e.target.classList.contains("i-save")) {
                 const newEmail = emailTag.value; // getting email input value;
                 // updating email
                 if (newEmail == "" || newEmail == undefined || newEmail == null) {
-                    userAlertText.innerHTML = "Please Enter New Email !"
+                    userAlertText.innerHTML = "Please Enter NEW EMAIL !"
                     userAlert_red();
                     setTimeout(() => {
                         userAlert.classList.remove("alert");
@@ -276,18 +251,13 @@ contentOverall.forEach(container => {
                     // Updating New Email
                     updateEmail(auth.currentUser, newEmail)
                     .then(() => {
-                        // Alert user
-                        userAlertText.innerHTML = "Profile Status: Email Updated !"
-                        userAlert_green();
                         closeSingleBtn(inputTag, subContainer) // enable close btn
-                        setTimeout(() => {
-                            userAlert.classList.remove("alert");
-                            auth_status_email() // check auth status
-                        }, 3000);
+                        // update user bio in fireStore Database
+                        updateUserBio(newEmail);
                         // ...
                     }).catch((error) => {
                         // An error occurred
-                        userAlertText.innerHTML = "Error in Updating Email, Try Again !"
+                        userAlertText.innerHTML = "Error in Updating EMAIL, Try Again !"
                         userAlert_red();
                         auth_status_email() // check auth status
                         setTimeout(() => {
@@ -332,8 +302,9 @@ contentOverall.forEach(container => {
                 confirmAlert.onclick = (e) => {
                     if (e.target.classList.contains("confirm-btn")) {
                         editSingleBtn(inputTag, subContainer); // enable edit btn
-                        confirmAlert.classList.remove("collapse"); // remove confirm alert
-                    
+                        // reAuthentication process
+                        reAuthenticationProcess();
+                        // ...
                     }else if (e.target.classList.contains("close-confirm-alert")) {
                         closeSingleBtn(inputTag, subContainer); // enable close btn
                         confirmAlert.classList.remove("collapse"); // remove confirm alert
@@ -344,6 +315,46 @@ contentOverall.forEach(container => {
             }else if (e.target.classList.contains("i-close")) {
                 closeSingleBtn(inputTag, subContainer) // enable close btn
                 passwordTag.value = "....."; // remove attribute value
+                // restore authentication process to default
+                restoreAuthenticationProcess();
+                // ...
+            }
+            if (e.target.classList.contains("i-save")) {
+                const newPassword = passwordTag.value; // getting email input value;
+                // updating email
+                if (newPassword == "" || newPassword == undefined || newPassword == null) {
+                    userAlertText.innerHTML = "Please Enter NEW PASSWORD !"
+                    userAlert_red();
+                    setTimeout(() => {
+                        userAlert.classList.remove("alert");
+                    }, 1500);
+
+                }else {
+                    // Updating New Email
+                    updatePassword(auth.currentUser, newPassword)
+                    .then(() => {
+                        // Alert user
+                        userAlertText.innerHTML = "Profile Status: PASSWORD Updated !"
+                        userAlert_green();
+                        closeSingleBtn(inputTag, subContainer) // enable close btn
+                        notePass.innerHTML = "Password Changed";
+                        notePass.classList.add("show");
+                        setTimeout(() => {
+                            userAlert.classList.remove("alert");
+                        }, 3000);
+                        // ...
+                    }).catch((error) => {
+                        // An error occurred
+                        userAlertText.innerHTML = "Error in Updating PASSWORD, Try Again !"
+                        userAlert_red();
+                        setTimeout(() => {
+                            userAlert.classList.remove("alert");
+                        }, 3000);
+                        // ...
+                    });
+                    // ...
+                }
+                // ...
             }
         }
     }
@@ -365,15 +376,14 @@ function closeSingleBtn(inputTag, subContainer) {
     subContainer.querySelector(".i-close").classList.remove("close"); // show close btn
     subContainer.querySelector(".save-btn").classList.remove("active"); // remove save btn
 }
-function updatePhoto(downloadURL) {
-    console.log(downloadURL);
+function updatePhoto(url) {
     // updating profile Name
-    /*updateProfile(auth.currentUser, {
-        photoURL: downloadURL
+    updateProfile(auth.currentUser, {
+        photoURL: url
 
     }).then(() => {
         // display photo 
-        userImageBox.style.backgroundImage = `url(${downloadURL})`;
+        userImageBox.style.backgroundImage = `url(${url})`;
         // ...
         // user alert
         userAlertText.innerHTML = "Profile Status: Photo Updated !";
@@ -395,9 +405,32 @@ function updatePhoto(downloadURL) {
             }, 3000);
         }
     })
-    // ...*/
+    // ...
 }
-async function reAuthenticationEmail(user, password) {
+function reAuthenticationProcess() {
+    confirmAlertBtn.classList.add("collapse"); // remove alert confirm btn
+    confirmAlertText.innerHTML = "Confirm PASSWORD for Authentication !";
+    reAuthPage.classList.add("collapse"); // show re-auth page
+    authPassInput.focus(); // focusing input
+    
+    // Re-authentication of user when btn is triggered
+    authPassBtn.onclick = (e) => {
+        const reAuthPassword = authPassInput.value;
+
+        if (reAuthPassword == "" || reAuthPassword == null || reAuthPassword == undefined) {
+            confirmAlertText.innerHTML = "Error !";
+            setTimeout(() => {
+                confirmAlertText.innerHTML = "Confirm PASSWORD for Authentication !";
+            }, 1000);
+        }else {
+            const  user = auth.currentUser; // get user
+            const password = reAuthPassword; //get user entered password
+
+            reAuthentication(user, password);
+        }
+    }
+}
+async function reAuthentication(user, password) {
     
     confirmAlertText.innerHTML = "Checking Authentication ...!"; // Alert User auth status
     // TODO(you): prompt the user to re-provide their sign-in credentials
@@ -419,6 +452,54 @@ async function reAuthenticationEmail(user, password) {
         console.log(error);
         // ...
     });
+}
+function restoreAuthenticationProcess() {
+    confirmAlertBtn.classList.remove("collapse"); //  restore default confirm btn
+    confirmAlertText.innerHTML = "Confirm to proceed to edit EMAIL !";
+    reAuthPage.classList.remove("collapse"); // restore default re-auth page
+    confirmAlert.classList.remove("collapse"); // remove confirm alert
+}
+async function updateUserBio(newEmail) {
+    // Update firebase database
+    const docRef = doc(db, "Users", auth.currentUser.uid);
+    if (newEmail) {
+        await updateDoc(docRef, {
+            Email: newEmail,
+            TimeUpdated: serverTimestamp()
+
+        }).then(() => {
+            // Alert user
+            userAlertText.innerHTML = "Profile Status: EMAIL Updated !"
+            userAlert_green();
+            setTimeout(() => {
+                userAlert.classList.remove("alert");
+                auth_status_email(); // check auth status
+                // Verify new email
+                newEmailVerification();
+                // ...
+            }, 3000);
+            // ...
+        }).catch((error) => {
+            console.log(error.code);
+        })
+        // ...
+    }
+}
+function newEmailVerification() {
+    const user = auth.currentUser;
+    sendEmailVerification(user)
+    .then(() => {
+        // alert user
+        userAlertText.innerHTML = "Verification Link sent. Verify Email !"
+        userAlert.classList.add("alert");
+        userAlert_green();
+        setTimeout(() => {
+            userAlert.classList.remove("alert");
+        }, 3000);
+        // ...
+    }).catch((error) => {
+        console.log(error.code);
+    })
 }
 function userAlert_red() {
     userAlert.style.background = "red";

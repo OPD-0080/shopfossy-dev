@@ -10,7 +10,7 @@ function signOutFunc() {
     .then(() => {
         // return to index page with signLog page on
         formOverlay.classList.add("collapse");
-        window.location.assign("index.html");
+        //window.location.assign("index.html");
         
     })
 }
@@ -24,13 +24,15 @@ function deleteAccount() {
     deleteUser(user).then(() => {
     // User deleted.
         console.log("User Account deleted");
-
         // deleting data fireStore database using it uid
         deleteUSerFromDatabase(user);
 
     }).catch((error) => {
     // An error ocurred
         console.log(error);
+        if (error.code == "auth/requires-recent-login") {
+            signOutFunc()
+        }
     // ...
     });
     async function deleteUSerFromDatabase(user) {
@@ -47,7 +49,7 @@ function deleteAccount() {
                 setTimeout(() => {
                     // return to index page with signLog page on
                     formOverlay.classList.add("collapse");
-                    window.location.assign("index.html");
+                    //window.location.assign("index.html");
                     // ...
                 }, 1000)
             })

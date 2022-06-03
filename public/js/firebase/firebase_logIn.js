@@ -157,10 +157,11 @@ function logIn(email, password) {
         else {
             userImages.forEach(userImage => {
                 userImage.style.backgroundImage = `url(${user.photoURL})`;
+                userImage.style.fontSize = "2px";
             });
             userNameEl.innerHTML = user.displayName;
             userEmailEl.innerHTML = user.email;
-            logInPageCollapse(user_name)
+            logInPageCollapse(user_name);
         }
     }
     function logInPageCollapse(user_name) {

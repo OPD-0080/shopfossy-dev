@@ -247,7 +247,7 @@ body {
                             @include border-20;
                             font-weight: bolder;
                             letter-spacing: .5px;
-                            color: grey;
+                            color: rgb(95, 95, 95);
                             text-align: center;
                         }
                         .icon {
@@ -395,7 +395,7 @@ body {
                             @include trans;
                         }
                         select {
-                            color: grey;
+                            color: rgb(95, 95, 95);
                             text-align: center;
                             @extend input;
                         }

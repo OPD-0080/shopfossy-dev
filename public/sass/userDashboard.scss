@@ -192,10 +192,10 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.805);
     z-index: 20;
-    display: flex;
+    //display: flex;
     justify-content: center;
     align-items: center;
-    //display: none;
+    display: none;
 
     .user-edited-wrapper {
         position: relative;
@@ -479,6 +479,9 @@
                             font-size: $font-vs;
                             color: rgb(255, 110, 110);
                         }
+                        .note.show {
+                            color: green;
+                        }
 
                         label {
                             position: relative;
@@ -507,9 +510,13 @@
                                 height: 30px;
                                 background: white;
                                 z-index: 2;
+                                visibility: hidden;
                                 @include background-initializer;
                                 background-size: contain;
                                 background-image: url("../img/icons/verify.png");
+                            }
+                            .verify-icon.show {
+                                visibility: visible;
                             }
 
                             .content-icon {
@@ -611,8 +618,36 @@
                             }
                         }
                     }
+                    .content-delete {
+                        .delete-wrap {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: center;
+                            //border: 2px solid white;
+                            width: 70%;
+                            cursor: pointer;
+
+                            div { font-size: $font-s; }
+
+                            .i {
+                                margin-right: $margin-xvs;
+                                @include background-initializer;
+                                background-size: cover;
+                                width: 20px;
+                                height: 20px;
+                                @include border-circle;
+                            }
+                            .i-deleted {
+                                background-image: url("../img/icons/bin.png");
+                            }
+                        }
+                    }
                 }
             }
         }
     }   
+}
+.user-edited-overlay.show {
+    display: flex;
 }

@@ -1,6 +1,8 @@
+
+// IMPORTATION 
 import { getAuth,  onAuthStateChanged, sendEmailVerification } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
-
-
+// ...
+// VARIABLES
 var formOverlay = document.querySelector(".sign-in-overlay");
 const userImages = document.querySelectorAll(".image-user");
 const userNameEl = document.querySelector(".user-name");
@@ -8,7 +10,7 @@ const userEmailEl = document.querySelector(".user-email");
 const alertVerification = document.querySelector(".verification-alert-wrap");
 const verifyBtn = alertVerification.querySelector(".verify-btn");
 const verifyText = alertVerification.querySelector(".v-text");
-
+// ...
 
 function onAuthState() {
   const auth = getAuth();
@@ -51,9 +53,9 @@ function onAuthState() {
             verifyText.innerHTML = "Send link for Email Verification !"
             setTimeout(() => { 
               alertVerification.classList.remove("collapse");
-            }, 1000);
+            }, 2000);
             // ...
-            // Email verification 
+            // Passing user through the function for email verification
             emailVerificationLink(user);
             // ...
           }
@@ -92,7 +94,7 @@ function emailVerificationLink(user) {
     .catch((error) => {
       const errorMessage = error.message;
       const errorCode = error.code;
-      console.log(errorMessage);
+      console.log(errorCode);
     })
   }
 }

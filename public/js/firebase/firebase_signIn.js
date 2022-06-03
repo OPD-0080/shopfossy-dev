@@ -1,6 +1,6 @@
 
 import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
-import { getFirestore, collection, setDoc, doc } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
+import { getFirestore, collection, setDoc, doc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
 
 var alertError = document.querySelector(".error-message");
 var alertWrap = document.querySelector(".error-alert-wrap");
@@ -77,7 +77,8 @@ async function userBio(userId, userName, email, userPassword, password) {
     await setDoc(doc(collectionRef, userId), {
       UserName: userName,
       Email: email,
-      UID: userId
+      UID: userId,
+      TimeCreated: serverTimestamp()
     });
 
     // Alert message and display off DOM

@@ -16,9 +16,14 @@ function firestore_form(uid, customerInfo, delivery_header, payment_header) {
     customerInfo[0].forEach(item => {
         //fireStore_CartData(uid, UID, title, price, seller, category, quantity, img );
         async function fireStore_CartProfile() {
-            try {
+            try {  
+                // fire-store database collection ref
+                    // COLLECTION = "shopping Cart";
+                    // DOC  = "user uid, first & last name"
+                    // SUB-COLLECTION = "items"
+                // ...
                 const collectionRef_cart = collection(db, "Shopping Cart", `${uid}-${customerInfo[3].first_name}-${customerInfo[3].last_name}`, "items");
-                await setDoc(doc(collectionRef_cart, `${item.id}`), {
+                await setDoc(doc(collectionRef_cart, `${item.id}`/* TODO(in production): change item.id to item.UID */), {
                     UID: item.UID,
                     title: item.title,
                     price: item.price,
@@ -30,8 +35,9 @@ function firestore_form(uid, customerInfo, delivery_header, payment_header) {
                 });
     
                 /* 
-                    send notification to through email to the ADMIN
-                */
+                    send notification to through email (using ADMIN SDK CLOUD MESSAGE)
+                    as an alert to the admin
+                    */
     
                 console.log("Data submitted successfully");
     

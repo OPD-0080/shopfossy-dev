@@ -9,12 +9,5 @@ const userDashBoard = document.querySelector(".user-dashboard-wrapper");
             userDashBoard.classList.toggle("shrink");
         }
     });
-    /*userDashBoard.addEventListener("mouseenter", (e) => {
-        userDashBoard.classList.add("shrink");
-    });
-    userDashBoard.addEventListener("mouseleave", (e) => {
-        userDashBoard.classList.remove("shrink");
-    });*/
-    
 
 })();

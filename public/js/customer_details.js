@@ -1,9 +1,8 @@
 import {UI} from './main-categories/categories.js';
 import {setCartValues} from './components/set_cart_values.js';
 import {ashanti_reg, greater_accra_reg} from './form/cityList.js';
-//import {firestore_form} from './components/firestore_form.js';
-
-//import { getAuth,  onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+import {firestore_form} from './components/firestore_form.js';
+import { getAuth,  onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 
 var newUI = new UI();
 var cart = newUI.setApp(cart);
@@ -20,8 +19,8 @@ var paymentContent = document.querySelector(".payment-content");
 var summaryContent = document.querySelector(".summary-content");
 
 // FIREBASE AUTH START
-/*function onAuthState() {
-    const auth = getAuth();
+const auth = getAuth();
+function onAuthState() {
 
     onAuthStateChanged(auth, (user) => {
         if (user) {
@@ -49,7 +48,7 @@ var summaryContent = document.querySelector(".summary-content");
           // ...
         }
     });
-}onAuthState();*/
+}onAuthState();
 // FIREBASE AUTH END
 
 // BILL TO START
@@ -105,7 +104,7 @@ inputs.forEach(input => {
             var companyEl = e.target;
 
             // for option only
-            if (companyEl.value == "") {
+            if (companyEl.value == "" || companyEl.value == undefined) {
                 company = "Not Defined";
                 alertEl.classList.remove("color");
             }else {
@@ -140,6 +139,15 @@ inputs.forEach(input => {
         }
     }
 });
+
+if (auth.currentUser.email) {
+    // display current user email to the input tag
+    const res = formContent.querySelector(".email");
+    res.value = auth.currentUser.email;
+    email = res.value;
+    res.previousElementSibling.children[0].classList.add("color");
+}
+
 var selectedOptionRegion = document.querySelectorAll(".select-option-region");
 selectedOptionRegion.forEach(el => {
     el.onchange = (e) => {
@@ -149,7 +157,7 @@ selectedOptionRegion.forEach(el => {
         var alertEl = e.target.parentElement.children[0].children[0];
         alertEl.classList.add("color");
         
-        if (region == "Ashanti") {
+        if (region == "Ashanti" || region == "ashanti") {
             //console.log(ashanti_reg);
             var res = ""
             ashanti_reg.forEach(data => {
@@ -159,7 +167,7 @@ selectedOptionRegion.forEach(el => {
             });
             cityOptionEl.innerHTML = res;
 
-        }else if (region == "Greater Accra") {
+        }else if (region == "Greater Accra" || region == "greater accra") {
             //console.log(ashanti_reg);
             var res = ""
             greater_accra_reg.forEach(data => {
@@ -209,7 +217,7 @@ agreementEl.onclick = (e) => {
 }
 // BILL TO END
 
-var newSetValues = new setCartValues(cart)
+var newSetValues = new setCartValues(cart);
 var total_purchased = newSetValues.total;
 var items_purchased = newSetValues.itemAll;
 
@@ -269,7 +277,6 @@ delivery_radio.forEach(radio => {
     }
 })
 // DELIVERY METHOD END
-
 
 // PAYMENT METHOD START
 var payment_radio = document.querySelectorAll(".payment-check");
@@ -380,7 +387,7 @@ editWrap.forEach(btn => {
 })
 // EDIT BUTTONS END
 
-
+// CUSTOMER DETAILS VARIABLES
 var first_name_val, last_name_val, email_val, number_val, company_val, region_val, city_val, 
 residential_val, digital_val, delivery_val, payment_val
 function summary_variables() {
@@ -396,6 +403,7 @@ function summary_variables() {
     delivery_val = document.querySelector(".s-delivery");
     payment_val = document.querySelector(".s-payment");
 }
+// ...
 
 // PROCEED BUTTONS START
 var formBtnEl = document.querySelectorAll(".form-btn");
@@ -414,7 +422,6 @@ formBtnEl.forEach(btn => {
                 }   
             })
             if (message) {
-
                 // alert user error
                 var validateError = document.querySelector(".user-alert");
                 validateError.classList.add("on");
@@ -427,6 +434,11 @@ formBtnEl.forEach(btn => {
                             el.classList.add("off")
                         }
                     })
+                    // ...
+
+                    // email logic
+                    
+                    // ...
 
                     // customer variables start
                     var customerInfo = {};
@@ -456,7 +468,6 @@ formBtnEl.forEach(btn => {
                         category = el.subCategory;
                         amount = el.amount;
     
-    
                         var cartObj = {id, UID, title, price, imgUrl, seller, category, amount};
                         return (cartObj)
                     })
@@ -466,13 +477,11 @@ formBtnEl.forEach(btn => {
                     console.log(customerArray);
                     // saving customer_details here 
                     Storage.saveCustomerInfo(customerArray);
-    
+                    // ...
                     // showing on ok alert after btn is triggered
                     var ok_1 = document.querySelector(".ok-1");
                     ok_1.classList.add("off");
-
-                    // 
-    
+                    // ...
                     // open the next slide
                     setTimeout(() => {
                         formContent.classList.add("collapse");
@@ -490,14 +499,14 @@ formBtnEl.forEach(btn => {
             // showing on ok alert after btn is triggered
             var ok_2 = document.querySelector(".ok-2");
             ok_2.classList.add("off");
-
+            // ...
             // Enable edited button
             eds.forEach(el => {
                 if (el.classList.contains("payment-title") || el.classList.contains("delivery-title")){
                     el.classList.add("off")
                 }
             })
-
+            // ...
             // open the next slide
             setTimeout(() => {
                 //formContent.classList.add("collapse");
@@ -533,11 +542,9 @@ function summary_details() {
     var customerInfo = Storage.getCustomerInfo();
     // getting the delivery method text
     delivery_header, payment_header
-    
-    //console.log(customerInfo);
+    // ...
     // summary variables
     summary_variables();
-    console.log(customerInfo[3]);
     // Assigning variables for DOMEl display
     first_name_val.innerHTML = customerInfo[3].first_name;
     last_name_val.innerHTML = customerInfo[3].last_name;
@@ -575,6 +582,7 @@ function FirebaseDatabase(uid) {
 }
 FirebaseDatabase()
 
+// STORAGE SECTION
 class Storage {
     static saveCustomerInfo(customerArray) {
         localStorage.setItem("customerInfo", JSON.stringify(customerArray))
@@ -588,4 +596,4 @@ class Storage {
         }
     }
 }
-
+// ...

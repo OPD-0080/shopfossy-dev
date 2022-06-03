@@ -17,6 +17,10 @@ const altBtns = document.querySelectorAll(".alt-btn");
 const dashBoardBtns = document.querySelectorAll(".dash-btn");
 var alertWrap = document.querySelector(".error-alert-wrap");
 var signInInputs = document.querySelectorAll(".validate-signIn");
+const deleteUser = document.querySelector(".delete-wrap");
+const editUserPage = document.querySelector(".user-edited-overlay");
+const editUserClose = document.querySelector(".user-edited-close");
+const userDashBoard = document.querySelector(".user-dashboard-wrapper");
 
 var message = "";
 // VARIABLES END
@@ -279,12 +283,22 @@ var message = "";
         btn.onclick = (e) => {
             if (e.target.classList.contains("sign-out-btn") || e.target.classList.contains("it-s") || e.target.classList.contains("i-out")) {
                 signOutFunc();
-
-            }else if (e.target.classList.contains("delete-btn") || e.target.classList.contains("it-d") || e.target.classList.contains("i-deleted")) {
-                deleteAccount();
+            }else if (e.target.classList.contains("user-edit-btn") || e.target.classList.contains("it-e") || e.target.classList.contains("i-edit")) {
+                editUserPage.classList.add("show");
+                userDashBoard.classList.remove("shrink");
             }
         }
-    })
+    });
+    deleteUser.onclick = (e) => {
+        if (e.target.classList.contains("i-deleted") || e.target.classList.contains("it-d") || e.target.classList.contains("delete-wrap")) {
+            deleteAccount()
+        }
+    }
+    editUserClose.onclick = (e) => {
+        if (e.target.classList.contains("user-edited-close") || e.target.classList.contains("i")) {
+            editUserPage.classList.remove("show");
+        }
+    }
 })();
 
 (function(){
