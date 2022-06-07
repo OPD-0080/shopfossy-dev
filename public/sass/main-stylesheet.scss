@@ -602,14 +602,14 @@ footer {
     padding: 1px;
     background: rgba(255, 0, 0, 0.596);
     z-index: 20;
-    display: flex;
+    //display: flex;
     justify-content: center;
     align-items: center;
     font-size: $font-s;
     backdrop-filter: blur(10px);
     cursor: pointer;
-    //display: none;
-    //opacity: 0;
+    display: none;
+    opacity: 0;
 
     div {
         position: relative;

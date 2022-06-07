@@ -1,5 +1,5 @@
 
-import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signOut, sendEmailVerification } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 import { getFirestore, collection, setDoc, doc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
 
 var alertError = document.querySelector(".error-message");
@@ -22,7 +22,11 @@ function signIn(userName, email, userPassword, password) {
       console.log(user);
 
       userBio(userId, userName, email, userPassword, password)
-    }) 
+    })
+  .then(() => {
+    // prevent  firebase default login 
+    signOut(auth)
+  })
   .catch((error) => {
       const errorMessage = error.message;
       const errorCode = error.code;

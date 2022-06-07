@@ -18,6 +18,7 @@ import {addCartItem} from '../components/add_cart_item.js';
     var buttonsDOM = [];
     var cartContainer = document.querySelector(".cart-container");
     var checkOutBtn = document.querySelector(".cart-checkout");
+    var emptyCartAlert = document.querySelector(".cart-empty-alert");
 
     class Products {
         async getList() {
@@ -182,7 +183,6 @@ import {addCartItem} from '../components/add_cart_item.js';
             cart = Storage.getCart();
             setCartValues(cart); // keeping cart values updated;
             this.populateCart(cart); // keeping cart items in cart page as page refreshes
-            this.customerForm(cart);
             this.checkOutBtn(cart);
             return (cart)
         }
@@ -196,21 +196,22 @@ import {addCartItem} from '../components/add_cart_item.js';
         // KEEPING CART & VALUES WHEN (PAGE IS REFRESHED) END
 
         checkOutBtn(cart) {
-            // enabling check out btn when cart is empty or not
-            (cart == "") ? checkOutBtn.classList.remove("disable") : checkOutBtn.classList.add("disable")
+            // enabling check-out btn and display alert when cart is empty or not
+            if (cart == ""){
+                checkOutBtn.classList.remove("disable");
+                emptyCartAlert.classList.add("collapse");
+            }else {
+                checkOutBtn.classList.add("disable");
+                emptyCartAlert.classList.remove("collapse")
+            } 
         }
-
-        // CUSTOMER FORM START
-        customerForm(cart) {
-            
-        }
-        // CUSTOMER FORM END
 
         cartLogic() {
             // clearing all cart items start
             var clearBtn = document.querySelector(".cart-clear");
             clearBtn.onclick = () => {
                 this.clearCart();
+                emptyCartAlert.classList.add("collapse");
             };
             // clearing all cart items start
 

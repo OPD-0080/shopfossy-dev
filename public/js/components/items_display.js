@@ -8,7 +8,7 @@ function mainDisplay(allList) {
                     <div class="item-img">
                         <div class="img-text-logo"> e-commence </div>
                         <img class="lazy-load-selector"
-                            src="/public/img/main-categories/blur-img/blur.jpg" width="300px" height="300px" alt="img"
+                            src="./img/main-categories/blur-img/blur.jpg" width="300px" height="300px" alt="img"
                             data-src=${el.imgUrl} width="300px" height="300px" alt="img"
                         >
                     </div>
@@ -21,7 +21,7 @@ function mainDisplay(allList) {
                     <div class="seller-name"> ${el.seller} </div>
                     <div class="star-rated"><img src=${el.starRated} alt=""></div>
                     <div class="item-price-wrap">
-                        <div class="price"> ${el.price} </div>
+                        <div class="price">Ghc ${el.price} </div>
                         <del class="price-del"> ${el.priceDel} </del>
                     </div>
                     <div href=${el.link} class="item-detail" data-det=${el.id}> detail </div>

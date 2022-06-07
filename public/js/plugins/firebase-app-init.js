@@ -9,7 +9,8 @@ const firebaseConfig = {
   projectId: "fossy-f83f4",
   storageBucket: "fossy-f83f4.appspot.com",
   messagingSenderId: "248415487110",
-  appId: "1:248415487110:web:a5826b800016eacc19bd07"
+  appId: "1:248415487110:web:a5826b800016eacc19bd07",
+  measurementId: "G-NSC4K2YEPQ"
 };
 
   // Initialize Firebase

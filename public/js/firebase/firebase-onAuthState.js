@@ -79,7 +79,7 @@ function onAuthState() {
 }
 function emailVerificationLink(user) {
 
-  const emailVerifyWrap= document.querySelector(".verification-alert-wrap")
+  const emailVerifyWrap = document.querySelector(".verification-alert-wrap")
   const btn = emailVerifyWrap.querySelector(".verify-btn");
   btn.onclick = () => {
     

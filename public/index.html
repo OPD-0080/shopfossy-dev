@@ -17,27 +17,40 @@
     <title>index</title>
 
     <!-- CSS STYLESHEET HERE -->
+    <link rel="stylesheet" href="./css/landing-page.css" />
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/admin.css">
     <link rel="stylesheet" href="./css/userDashboard.css">
     <link rel="stylesheet" href="./css/sign-in.css">
+    <link rel="stylesheet" href="css/@keyframes-landing.css" />
     <link rel="stylesheet" href="./css/@keyframe-index.css">
     <link rel="stylesheet" href="./css/@media_index.css">
     
 
     <!-- plugins css start here -->
     <link rel="stylesheet" href="./css/plugins/swiper.min.css">
-    <link rel="stylesheet" href="./css/plugins/aos.css">
     <!-- plugins css end here -->
 </head>
 <body>
+    <!-------LANDING PAGE ------------>
+    <div class="landing-container">
+        <div class="landing-wrap">
+            <div class="loading">
+                <div class="loading-boxes"></div>
+                <div class="loading-boxes"></div>
+                <div class="loading-boxes"></div>
+            </div>
+        </div>
+    </div>
+    <!-------LANDING PAGE ------------>
+
     <!-- NAVIGATION -->
     <div class="navigation">
         <nav>
             <div class="nav-container">
                 <div class="media-hunburger"><div class="hun"></div></div>
                 <div class="nav-split logo">logo</div>
-                <div class="nav-split">E-commence</div>
+                <div class="nav-split"><h1>E-commence</h1></div>
                 <div class="nav-split cart-nav-btn">
                     <div class="overall-cart-btn"></div>
                     <div class="cart-number">00</div>
@@ -50,6 +63,7 @@
     <!-- CART SECTION START -->
     <div class="cart-wrapper">
         <div class="cart-container">
+            <div class="cart-empty-alert"><div><div></div></div><div>Cart Empty</div></div>
             <!-- CART ITEM START -->
             <!-- CART ITEM END -->
         </div>
@@ -241,34 +255,34 @@
             <div class="main-section-B-container">
                 <div>
                     <div class="sec-B-icon"><div class="i i1"></div></div>
-                    <div class="sec-B-txt"><a href="#"> Text </a></div>
+                    <div class="sec-B-txt"><a href="#"><h1> Text </h1></a></div>
                 </div>
                 <div>
                     <div class="sec-B-icon"><div class="i i2"></div></div>
-                    <div class="sec-B-txt"><a href="#"> Text </a></div>
+                    <div class="sec-B-txt"><a href="#"><h1> Text </h1></a></div>
                 </div>
                 <div>
                     <div class="sec-B-icon"><div class="i i3"></div></div>
-                    <div class="sec-B-txt"><a href="#"> Text </a></div>
+                    <div class="sec-B-txt"><a href="#"><h1> Text </h1></a></div>
                 </div>
                 <div>
                     <div class="sec-B-icon"><div class="i i4"></div></div>
-                    <div class="sec-B-txt"><a href="#"> Text </a></div>
+                    <div class="sec-B-txt"><a href="#"><h1> Text </h1></a></div>
                 </div>
             </div>
         </div>
         <!-- SUB NAVIGATION END -->
         <!-- PICK UP  SECTION START -->
         <div class="main-section-C-wrapper">
-            <div class="C-split"> our pick for you </div>
+            <h1 class="C-split"> our pick for you </h1>
             <div class="C-split">
                 <div class="section-C-nav">
                     <ul class="C-nav">
                         <!-- only write CATEGORIES inside the div tag -->
-                        <li class="C-list C-red active" data-id="1"><div class="i" data-id="1"><div></div></div> list </li>
-                        <li class="C-list C-white" data-id="2"><div class="i" data-id="2"><div></div></div> list </li>
-                        <li class="C-list C-green" data-id="3"><div class="i" data-id="3"><div></div></div> list </li>
-                        <li class="C-list C-blue" data-id="4"><div class="i" data-id="4"><div></div></div> list </li>
+                        <li class="C-list C-red active" data-id="1"><div class="i" data-id="1"><div></div></div><h2> list </h2> </li>
+                        <li class="C-list C-white" data-id="2"><div class="i" data-id="2"><div></div></div><h2> list </h2> </li>
+                        <li class="C-list C-green" data-id="3"><div class="i" data-id="3"><div></div></div><h2> list </h2> </li>
+                        <li class="C-list C-blue" data-id="4"><div class="i" data-id="4"><div></div></div><h2> list </h2> </li>
                     </ul>
                 </div>
                 <div class="C-images-wrap">
@@ -476,6 +490,7 @@
     <!-- SIGN-IN SECTION END -->
 
 
+    <script src="./js/landing-page.js"></script>
     <script src="./js/index.js" type="module"></script>
     <script src="./js/admin_icon.js"></script>
     <script src="./js/signLog-nav.js"></script>
@@ -485,8 +500,6 @@
     <!-- plugins for js start here -->
     <script src="./js/plugins/Swiper.min.js"></script>
     <script src="./js/plugins/setup.js"></script>
-    <script src="./js/plugins/vanilla-tilt.js"></script>
-    <script src="./js/plugins/tiltSetup.js"></script>
     <script src="./js/plugins/firebase-app-init.js" type="module"></script>
     <script src="./js/firebase/firebase-main.js" type="module"></script>
     <script type="module" src="./js/userProfile.js"></script>
