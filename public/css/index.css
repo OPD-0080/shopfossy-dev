@@ -2027,12 +2027,12 @@ footer .foot-note-wrapper div:nth-child(3) {
 
 .verification-alert-wrap {
   position: fixed;
-  top: 50px;
+  bottom: 0px;
   left: 0px;
   width: 100%;
   padding: 1px;
   background: rgba(255, 0, 0, 0.596);
-  z-index: 20;
+  z-index: 5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

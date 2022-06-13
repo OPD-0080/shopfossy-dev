@@ -9,7 +9,7 @@ function mainDisplay(allList) {
                         <div class="img-text-logo"> e-commence </div>
                         <img class="lazy-load-selector"
                             src="./img/main-categories/blur-img/blur.jpg" width="300px" height="300px" alt="img"
-                            data-src=${el.imgUrl} width="300px" height="300px" alt="img"
+                            data-src="img/main-categories/${el.imgUrl}" width="300px" height="300px" alt="img"
                         >
                     </div>
                     <div class="heart-wrap"><div class="heart-img"></div></div>
@@ -19,12 +19,12 @@ function mainDisplay(allList) {
                 <div class="item-description-wrap">
                     <div class="item-title"> ${el.title} </div>
                     <div class="seller-name"> ${el.seller} </div>
-                    <div class="star-rated"><img src=${el.starRated} alt=""></div>
+                    <div class="star-rated"><img src="img/icons/${el.starRated}-star.png" alt=""></div>
                     <div class="item-price-wrap">
                         <div class="price">Ghc ${el.price} </div>
                         <del class="price-del"> ${el.priceDel} </del>
                     </div>
-                    <div href=${el.link} class="item-detail" data-det=${el.id}> detail </div>
+                    <div class="item-detail" data-det=${el.id}> detail </div>
                 </div>
                 <!-- ITEM DESCRIPTION END -->
             </div>
@@ -48,23 +48,23 @@ function descriptionDisplay(allList) {
                         <div class="profiling-container-A">
                             <div class="profiling-sort-wrap">
                                 <div class="sort-cell prof-sort">
-                                    <div class="p-sort activated" data-sort="1"><img class="sort-img lazy-load-selector" data-sort="1" src="/public/img/main-categories/blur-img/blur.jpg" data-src=${array.imgSort1} alt=""></div>
-                                    <div class="p-sort" data-sort="2"><img class="sort-img lazy-load-selector" data-sort="2" src="/public/img/main-categories/blur-img/blur.jpg" data-src=${array.imgSort2} alt=""></div>
-                                    <div class="p-sort" data-sort="3"><img class="sort-img lazy-load-selector" data-sort="3" src="/public/img/main-categories/blur-img/blur.jpg" data-src=${array.imgSort3} alt=""></div>
-                                    <div class="p-sort" data-sort="4"><img class="sort-img lazy-load-selector" data-sort="4" src="/public/img/main-categories/blur-img/blur.jpg" data-src=${array.imgSort4} alt=""></div>
-                                    <div class="p-sort" data-sort="5"><img class="sort-img lazy-load-selector" data-sort="5" src="/public/img/main-categories/blur-img/blur.jpg" data-src=${array.imgSort5} alt=""></div>
-                                    <div class="p-sort" data-sort="6"><img class="sort-img lazy-load-selector" data-sort="6" src="/public/img/main-categories/blur-img/blur.jpg" data-src=${array.imgSort6} alt=""></div>
+                                    <div class="p-sort activated" data-sort="1"><img class="sort-img lazy-load-selector" data-sort="1" src="/public/img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgSort1}" alt=""></div>
+                                    <div class="p-sort" data-sort="2"><img class="sort-img lazy-load-selector" data-sort="2" src="/public/img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgSort2}" alt=""></div>
+                                    <div class="p-sort" data-sort="3"><img class="sort-img lazy-load-selector" data-sort="3" src="/public/img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgSort3}" alt=""></div>
+                                    <div class="p-sort" data-sort="4"><img class="sort-img lazy-load-selector" data-sort="4" src="/public/img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgSort4}" alt=""></div>
+                                    <div class="p-sort" data-sort="5"><img class="sort-img lazy-load-selector" data-sort="5" src="/public/img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgSort5}" alt=""></div>
+                                    <div class="p-sort" data-sort="6"><img class="sort-img lazy-load-selector" data-sort="6" src="/public/img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgSort6}" alt=""></div>
                                 </div>
                                 <div class="sort-cell prof-sort-confirm">
                                     <div>
                                         <div class="confirm-overlay"></div>
-                                        <div class="p-rel-confirm"><img class="lazy-load-selector" src="/public/img/main-categories/blur-img/blur.jpg" data-src=${array.imgUrl} alt=""></div>
-                                        <div class="p-confirm" data-confirm="1"><img class="lazy-load-selector" src="/public/img/main-categories/blur-img/blur.jpg" data-src=${array.imgSort1} alt=""></div>
-                                        <div class="p-confirm" data-confirm="2"><img class="lazy-load-selector" src="/public/img/main-categories/blur-img/blur.jpg" data-src=${array.imgSort2} alt=""></div>
-                                        <div class="p-confirm" data-confirm="3"><img class="lazy-load-selector" src="/public/img/main-categories/blur-img/blur.jpg" data-src=${array.imgSort3} alt=""></div>
-                                        <div class="p-confirm" data-confirm="4"><img class="lazy-load-selector" src="/public/img/main-categories/blur-img/blur.jpg" data-src=${array.imgSort4} alt=""></div>
-                                        <div class="p-confirm" data-confirm="5"><img class="lazy-load-selector" src="/public/img/main-categories/blur-img/blur.jpg" data-src=${array.imgSort5} alt=""></div>
-                                        <div class="p-confirm" data-confirm="6"><img class="lazy-load-selector" src="/public/img/main-categories/blur-img/blur.jpg" data-src=${array.imgSort6} alt=""></div>
+                                        <div class="p-rel-confirm"><img class="lazy-load-selector" src="/public/img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgUrl}" alt=""></div>
+                                        <div class="p-confirm" data-confirm="1"><img class="lazy-load-selector" src="/public/img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgSort1}" alt=""></div>
+                                        <div class="p-confirm" data-confirm="2"><img class="lazy-load-selector" src="/public/img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgSort2}" alt=""></div>
+                                        <div class="p-confirm" data-confirm="3"><img class="lazy-load-selector" src="/public/img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgSort3}" alt=""></div>
+                                        <div class="p-confirm" data-confirm="4"><img class="lazy-load-selector" src="/public/img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgSort4}" alt=""></div>
+                                        <div class="p-confirm" data-confirm="5"><img class="lazy-load-selector" src="/public/img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgSort5}" alt=""></div>
+                                        <div class="p-confirm" data-confirm="6"><img class="lazy-load-selector" src="/public/img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgSort6}" alt=""></div>
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@ function descriptionDisplay(allList) {
                                 <div class="prof-seller-name"> ${array.seller} </div>
                                 <div class="prof-star">
                                     <div class="country"> Ghana </div><div>|</div>
-                                    <div class="star-rated"><img src=${array.starRated} alt=""></div>
+                                    <div class="star-rated"><img src="img/icons/${array.starRated}-star.png" alt=""></div>
                                 </div>
                                 <div class="prof-title"> 
                                     ${array.title}
@@ -98,6 +98,10 @@ function descriptionDisplay(allList) {
                                         <div class="prof-icon" data-icon="1"></div>
                                     </div>
                                     <div class="highlight-content prof-i" data-i="1">
+                                        <div>
+                                            <div class="item-uid"></div>
+                                            <div> ${array.UID} </div>
+                                        </div>
                                         <div>
                                             <div class="hand-icon"></div>
                                             <div> ${array.madeBy} </div>

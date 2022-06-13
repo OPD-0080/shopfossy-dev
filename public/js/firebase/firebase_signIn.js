@@ -1,6 +1,5 @@
 
 import { getAuth, createUserWithEmailAndPassword, signOut, sendEmailVerification } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
-import { getFirestore, collection, setDoc, doc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
 
 var alertError = document.querySelector(".error-message");
 var alertWrap = document.querySelector(".error-alert-wrap");
@@ -10,19 +9,19 @@ const signInContent = document.querySelector(".signIn-content");
 const headerText = document.querySelector(".signIn-header");
 const headerImage = document.querySelector(".image-text");
 
+const auth = getAuth();
 
-function signIn(userName, email, userPassword, password) {
-  const auth = getAuth();
+function signIn(userName, email, password) {
 
   createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
-    // Signed in 
-      const user = userCredential.user;
-      const userId = user.uid;
-      console.log(user);
+      // Signed in 
+        const user = userCredential.user;
+        console.log(user);
 
-      userBio(userId, userName, email, userPassword, password)
-    })
+        notification(userName)
+      // ...
+  })
   .then(() => {
     // prevent  firebase default login 
     signOut(auth)
@@ -65,8 +64,7 @@ function signIn(userName, email, userPassword, password) {
   });
 }
 
-async function userBio(userId, userName, email, userPassword, password) {
-  const db = getFirestore();
+async function notification(userName) {
 
   try {
     // user alert
@@ -76,20 +74,16 @@ async function userBio(userId, userName, email, userPassword, password) {
     headerText.style.display = "none";
     headerImage.classList.remove("change");
 
-    // store data in database
-    const collectionRef = collection(db, "Users");
-    await setDoc(doc(collectionRef, userId), {
-      UserName: userName,
-      Email: email,
-      UID: userId,
-      TimeCreated: serverTimestamp()
-    });
+    // saving user name in local storage
+    localStorage.setItem("username", userName);
 
     // Alert message and display off DOM
-    inputEls.forEach(el => {el.value = ""})
-    alertError.innerHTML = "USER successfully created";
-    alertWrap.style.background = "green";
-    alertWrap.classList.add("show");
+    setTimeout(() => {
+      inputEls.forEach(el => {el.value = ""})
+      alertError.innerHTML = "USER successfully created";
+      alertWrap.style.background = "green";
+      alertWrap.classList.add("show");
+    }, 1000)
     setTimeout(() => { 
       alertWrap.classList.remove("show");
     }, 3000);

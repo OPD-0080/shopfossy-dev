@@ -221,7 +221,7 @@ import { pickUpLists } from './sideBarList/pickUpList.js';
         var navContainer = document.querySelectorAll(".C-nav");
         navContainer.forEach(item => {
             item.onclick = (e) => {
-                if (e.target.classList.contains("C-list") || e.target.classList.contains("i")) {
+                if (e.target.classList.contains("C-list") || e.target.classList.contains("i") || e.target.classList.contains("t") || e.target.classList.contains("is")) {
                     var select = e.target;
                     item.querySelector(".active").classList.remove("active");
                     select.classList.add("active");

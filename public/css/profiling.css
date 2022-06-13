@@ -615,7 +615,7 @@
   width: 22px;
   height: 22px;
   background: white;
-  background-image: url("../img/icons/location.png");
+  background-image: url("../img/icons/hand.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -626,13 +626,24 @@
   width: 22px;
   height: 22px;
   background: white;
-  background-image: url("../img/icons/material.png");
+  background-image: url("../img/icons/location.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
 
 .profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-highlight .highlight-content div:nth-child(4) :nth-child(1) {
+  margin-right: 20px;
+  width: 22px;
+  height: 22px;
+  background: white;
+  background-image: url("../img/icons/material.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.profiling-overlay .item-profiling-wrapper .item-profiling .item-profiling-container .profiling-container .profiling-container-B .profiling-content-wrapper .prof-highlight .highlight-content div:nth-child(5) :nth-child(1) {
   margin-right: 20px;
   width: 22px;
   height: 22px;

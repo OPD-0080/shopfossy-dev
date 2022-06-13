@@ -485,7 +485,7 @@
                                             width: 22px;
                                             height: 22px;
                                             background: white;
-                                            background-image: url("../img/icons/location.png");
+                                            background-image: url("../img/icons/hand.png");
                                             @include background-initializer;
                                             background-size: contain;
                                         }
@@ -496,12 +496,23 @@
                                             width: 22px;
                                             height: 22px;
                                             background: white;
-                                            background-image: url("../img/icons/material.png");
+                                            background-image: url("../img/icons/location.png");
                                             @include background-initializer;
                                             background-size: contain;
                                         }
                                     }
                                     div:nth-child(4) {
+                                        :nth-child(1) {
+                                            margin-right: $margin-s;
+                                            width: 22px;
+                                            height: 22px;
+                                            background: white;
+                                            background-image: url("../img/icons/material.png");
+                                            @include background-initializer;
+                                            background-size: contain;
+                                        }
+                                    }
+                                    div:nth-child(5) {
                                         :nth-child(1) {
                                             margin-right: $margin-s;
                                             width: 22px;

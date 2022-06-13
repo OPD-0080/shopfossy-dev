@@ -4,7 +4,7 @@ function addCartItem(el) {
     div.classList.add("cart-single-wrap");
     div.innerHTML = `
         <div class="cart-item-img">
-            <div class="cart-img"><img src=${el.imgUrl} alt=""></div>
+            <div class="cart-img"><img src="img/main-categories/${el.imgUrl}" alt=""></div>
             <div class="remove-btn" data-id=${el.id}></div>
         </div>
         <div class="cart-item-content">

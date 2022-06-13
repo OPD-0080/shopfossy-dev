@@ -1,5 +1,5 @@
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
-import { getFirestore ,collection, getDocs } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"; 
+import { getFirestore ,collection, getDocs, setDoc, doc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"; 
 
 var alertError = document.querySelector(".error-message");
 var alertWrap = document.querySelector(".error-alert-wrap");
@@ -11,10 +11,12 @@ const userNameEl = document.querySelector(".user-name");
 const userEmailEl = document.querySelector(".user-email");
 const headerText = document.querySelector(".signIn-header");
 
+const auth = getAuth();
+const db = getFirestore();
+
 function logIn(email, password) {
-    const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
+    .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
 
@@ -28,8 +30,8 @@ function logIn(email, password) {
             }, 3000)
         }
         else {
-             // store data in database
-            getDataFromFireStore(user);
+            // store data in database
+            storeDataInFireStore(email)
             // ...
         }
     })
@@ -91,11 +93,29 @@ function logIn(email, password) {
         console.log(errorCode);
     });
 
-    async function getDataFromFireStore(user) {
-        const db = getFirestore();
-
-        let userId = user.uid;
-
+    async function storeDataInFireStore(email) {
+        // get userName from local storage
+        const userName = localStorage.getItem("username");
+        // ...
+        // store data in fireStore database
+        const collectionRef = collection(db, "Users");
+        await setDoc(doc(collectionRef, auth.currentUser.uid), {
+            UserName: userName,
+            Email: email,
+            UID: auth.currentUser.uid,
+            TimeCreated: serverTimestamp()
+        });
+        // ...
+        // delete local storage
+        localStorage.clear();
+        // ...
+        // get data from fireStore database
+        getDataFromFireStore();
+        // ...
+    }
+    async function getDataFromFireStore() {
+        let userId = auth.currentUser.uid;
+        const user = auth.currentUser.uid;
         // user alert
         alertError.innerHTML = "Please Wait ...";
         alertWrap.style.background = "grey";
@@ -163,7 +183,7 @@ function logIn(email, password) {
             userEmailEl.innerHTML = user.email;
             logInPageCollapse(user_name);
         }
-    }
+    };
     function logInPageCollapse(user_name) {
         // ...
         setTimeout(() => {

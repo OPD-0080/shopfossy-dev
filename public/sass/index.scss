@@ -1121,12 +1121,12 @@ footer {
 // VERIFICATION EMAIL ALERT START
 .verification-alert-wrap {
     position: fixed;
-    top: 50px;
+    bottom: 0px;
     left: 0px;
     width: 100%;
     padding: 1px;
     background: rgba(255, 0, 0, 0.596);
-    z-index: 20;
+    z-index: 5;
     display: flex;
     justify-content: center;
     align-items: center;

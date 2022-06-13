@@ -41,12 +41,11 @@ import {addCartItem} from '../components/add_cart_item.js';
                 var {priceDel} = item.priceDel;
                 var {star} = item.starRated;
                 var {imgUrl} = item.imgUrl;
-                var {link} = item.link;
                 var {subCategory} = item.subCategory;
                 var {categoryAll} = item.categoryAll;
                 var {priceFtr} = item.priceFtr;
                 return (
-                    id, UID, title, seller, price, priceDel, star, imgUrl, link, subCategory, categoryAll, priceFtr
+                    id, UID, title, seller, price, priceDel, star, imgUrl, subCategory, categoryAll, priceFtr
                 );
             });
             descriptions.map((item) => {

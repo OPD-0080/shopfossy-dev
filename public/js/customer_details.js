@@ -140,6 +140,7 @@ inputs.forEach(input => {
     }
 });
 
+// DISPLAYING CURRENT USER EMAIL IN FORM TAG (EMAIL INPUT TAG)
 if (auth.currentUser.email) {
     // display current user email to the input tag
     const res = formContent.querySelector(".email");
@@ -147,7 +148,8 @@ if (auth.currentUser.email) {
     email = res.value;
     res.previousElementSibling.children[0].classList.add("color");
 }
-
+// .......................................
+// SELECT REGION AND CITY 
 var selectedOptionRegion = document.querySelectorAll(".select-option-region");
 selectedOptionRegion.forEach(el => {
     el.onchange = (e) => {
@@ -189,6 +191,7 @@ selectedOptionCity.forEach(el => {
         alertEl.classList.add("color");
     }
 })
+// ..............................
 // TOGGLE BUTTON START
 const toggleWrap = document.querySelector(".toggle-btn-wrap");
 toggleWrap.onclick = (e) => {
