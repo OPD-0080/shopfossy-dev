@@ -394,10 +394,25 @@ body {
                             visibility: hidden;
                             @include trans;
                         }
-                        select {
-                            color: rgb(95, 95, 95);
-                            text-align: center;
-                            @extend input;
+                        .custom-select {
+                            background: white;
+                            padding: 0px 20px;
+                            @include border-20;
+
+                            select {
+                                color: rgb(95, 95, 95);
+                                text-align: center;
+                                border: none;
+                                outline: none;
+                                padding: 10px 20px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                option {
+                                    text-align: center;
+                                }
+                            }
                         }
                     }
                     div:nth-child(5) {
@@ -410,7 +425,7 @@ body {
                             position: absolute;
                             top: 0px;
                             right: 10px;
-                            width: 40px;
+                            width: 50px;
                             height: 22px;
                             @include trans-05s;
                             cursor: pointer;
@@ -431,7 +446,7 @@ body {
                                 position: absolute;
                                 top: 0px;
                                 left: 0px;
-                                width: 20px;
+                                width: 25px;
                                 height: 100%;
                                 background: white;
                                 @include border-circle;

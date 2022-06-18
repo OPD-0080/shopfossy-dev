@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> E-commence | Customer_Details </title>
+    <title> Shopfossy | Customer Details </title>
 
     <!-- CSS here -->
     <link rel="stylesheet" href="../css/customer_details.css">
@@ -12,8 +12,20 @@
     <link rel="stylesheet" href="../css/invoice.css">
     <link rel="stylesheet" href="../css/@keyframes-landing.css">
     <link rel="stylesheet" href="../css/@media_customer_details.css">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W3XSKX6');</script>
+    <!-- End Google Tag Manager -->
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W3XSKX6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-------LANDING PAGE ------------>
     <div class="landing-container">
         <div class="landing-wrap">
@@ -25,6 +37,7 @@
         </div>
     </div>
     <!-------LANDING PAGE ------------>
+    <div class="cart-empty-alert"><div><div></div></div><div>Cart Empty</div></div>
     <!-------FORM SECTION START ------------>
     <div class="form-banner-container">
         <div class="overlay">
@@ -67,26 +80,30 @@
                         </div>
                         <div class="f6">
                             <label for="region"> Region <div class="notify"></div></label>
-                            <select class="select-option-region validation" name="region" id="">
-                                <option class="select-option-region" id="select-default-color" value="" required>Select Option..</option>
-                                <option class="select-option-region" value="Ashanti">Ashanti</option>
-                                <option class="select-option-region" value="Central">Central</option>
-                                <option class="select-option-region" value="Greater Accra">Greater Accra</option>
-                                <option class="select-option-region" value="Western">Western</option>
-                                <option class="select-option-region" value="Eastern">Eastern</option>
-                                <option class="select-option-region" value="Ahafo">Ahafo</option>
-                                <option class="select-option-region" value="Northern">Northern</option>
-                                <option class="select-option-region" value="Upper East">Upper East</option>
-                                <option class="select-option-region" value="Upper West">Upper West</option>
-                            </select>
+                            <div class="custom-select">
+                                <select class="select-option-region validation" name="region" id="">
+                                    <option class="select-option-region" id="select-default-color" value="" required>Select Option..</option>
+                                    <option class="select-option-region" value="Ashanti">Ashanti</option>
+                                    <option class="select-option-region" value="Central">Central</option>
+                                    <option class="select-option-region" value="Greater Accra">Greater Accra</option>
+                                    <option class="select-option-region" value="Western">Western</option>
+                                    <option class="select-option-region" value="Eastern">Eastern</option>
+                                    <option class="select-option-region" value="Ahafo">Ahafo</option>
+                                    <option class="select-option-region" value="Northern">Northern</option>
+                                    <option class="select-option-region" value="Upper East">Upper East</option>
+                                    <option class="select-option-region" value="Upper West">Upper West</option>
+                                </select>
+                            </div>
                             <div class="icon"><div class="i i-region"></div></div>
                         </div>
                         <div class="f7">
                             <label for="city"> City / Town <div class="notify"></div></label>
                             <div class="icon"><div class="i i-city"></div></div>
-                            <select class="select-option-city citySel validation" name="city" id="" required>
+                            <div class="custom-select">
+                                <select class="select-option-city citySel validation" name="city" id="" required>
                                 
-                            </select>
+                                </select>
+                            </div>
                             <input type="text" class="city-alt" name="city-alt" value="..." minlength="2" required>
                             <div class="toggle-btn-wrap"><div class="toggle-btn"></div></div>
                             <div class="note"> * Activate button if options not found, Enter Manually !* </div>

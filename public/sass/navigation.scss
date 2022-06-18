@@ -65,8 +65,12 @@ body.collapse {
     }
     .nav-split:nth-child(3) {
         h1 {
-            font-weight: 500;
             font-size: 20px;
+            a {
+                color: white;
+                font-weight: 600;
+                font-size: 21px;
+            }
         }
     }
     .nav-split:nth-child(4) {
@@ -145,10 +149,11 @@ body.collapse {
             position: absolute;
             top: 30%;
             left: 35%;
-            display: none;
+            display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            visibility: hidden;
 
             div {
                 position: relative;
@@ -174,9 +179,6 @@ body.collapse {
             div:nth-child(2) {
                 margin-top: $margin-s;
             }
-        }
-        .cart-empty-alert.collapse {
-            display: flex;
         }
 
         .cart-single-wrap {

@@ -66,6 +66,33 @@
         height: 70vh;
     }
     // NAVIGATION END
+    // DASHBOARD START
+    .user-fixed-image-wrap {
+        top: 110px;
+    }
+    .user-dashboard-wrapper {
+        width: 40%;
+        top: 110px;
+
+        .user-dashboard-container {
+            flex-direction: column;
+            .user {
+                left: 0px;
+                text-align: center;
+            }
+            .user-name {
+                font-size: $font-s;
+            }
+            .user-email {
+                font-size: $font-vs;
+            }
+            .user-time {
+                font-size: $font-vs;
+                font-style: italic;
+            }
+        }
+    }
+    // DASHBOARD END
     // SIDE BAR START
     .sidebar-wrapper {
         position: fixed;
@@ -242,6 +269,7 @@
             }
             .nav-split:nth-child(4) div:nth-child(2) {
                 right: 70px;
+                top: 10px;
             }
         }
     }
@@ -1875,6 +1903,14 @@
         height: 400px;
     }
     // NAVIGATION END
+    // DASHBOARD START
+    .user-fixed-image-wrap {
+        top: 110px;
+    }
+    .user-dashboard-wrapper {
+        top: 110px;
+    }
+    // DASHBOARD END
     // SIDE BAR START
     .sidebar-wrapper {
         position: fixed;
@@ -2029,6 +2065,14 @@
         }
     }
     // NAVIGATION END
+    // DASHBOARD START
+    .user-fixed-image-wrap {
+        top: 110px;
+    }
+    .user-dashboard-wrapper {
+        top: 110px;
+    }
+    // DASHBOARD END
     // SIDE BAR START
     .sidebar-wrapper {
         .sidebar-container {
@@ -2104,6 +2148,14 @@
         height: 400px;
     }
     // NAVIGATION END
+    // DASHBOARD START
+    .user-fixed-image-wrap {
+        top: 110px;
+    }
+    .user-dashboard-wrapper {
+        top: 110px;
+    }
+    // DASHBOARD END
     // SIDE BAR START
     .sidebar-wrapper {
         position: fixed;
@@ -2240,6 +2292,14 @@
         top: 45px;
     }
     // NAVIGATION END
+    // DASHBOARD START
+    .user-fixed-image-wrap {
+        top: 110px;
+    }
+    .user-dashboard-wrapper {
+        top: 110px;
+    }
+    // DASHBOARD END
     // SIDE BAR START
     .sidebar-wrapper {
         .sidebar-container {

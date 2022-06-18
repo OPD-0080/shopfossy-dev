@@ -198,10 +198,10 @@ import {addCartItem} from '../components/add_cart_item.js';
             // enabling check-out btn and display alert when cart is empty or not
             if (cart == ""){
                 checkOutBtn.classList.remove("disable");
-                emptyCartAlert.classList.add("collapse");
+                emptyCartAlert.style.visibility = "visible";
             }else {
                 checkOutBtn.classList.add("disable");
-                emptyCartAlert.classList.remove("collapse")
+                emptyCartAlert.style.visibility = "hidden";
             } 
         }
 

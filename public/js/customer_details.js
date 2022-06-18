@@ -36,15 +36,13 @@ function onAuthState() {
             const userPhoto = user.photoURL;
 
             // Displaying user in DOM
-            
             FirebaseDatabase(uid);
-
-            // collapsing signLog page form
-          // ...
+            // ...
+            show_current_email_in_inputTag(user);
         } else {
-            console.log("Don't have an account. Sign In");
+            //console.log("Don't have an account. Sign In");
           // User is signed out
-            //window.location.assign("/index.html");
+            window.location.assign("/index.html");
           // ...
         }
     });
@@ -141,14 +139,17 @@ inputs.forEach(input => {
 });
 
 // DISPLAYING CURRENT USER EMAIL IN FORM TAG (EMAIL INPUT TAG)
-if (auth.currentUser.email) {
-    // display current user email to the input tag
-    const res = formContent.querySelector(".email");
-    res.value = auth.currentUser.email;
-    email = res.value;
-    res.previousElementSibling.children[0].classList.add("color");
+function show_current_email_in_inputTag(user) {
+    if (user.email) {
+        // display current user email to the input tag
+        const res = formContent.querySelector(".email");
+        res.value = user.email;
+        email = res.value;
+        res.previousElementSibling.children[0].classList.add("color");
+    }
 }
 // .......................................
+
 // SELECT REGION AND CITY 
 var selectedOptionRegion = document.querySelectorAll(".select-option-region");
 selectedOptionRegion.forEach(el => {

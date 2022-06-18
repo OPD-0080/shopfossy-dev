@@ -85,6 +85,33 @@ a {
     top: 80px;
     height: 70vh;
   }
+  .user-fixed-image-wrap {
+    top: 110px;
+  }
+  .user-dashboard-wrapper {
+    width: 40%;
+    top: 110px;
+  }
+  .user-dashboard-wrapper .user-dashboard-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .user-dashboard-wrapper .user-dashboard-container .user {
+    left: 0px;
+    text-align: center;
+  }
+  .user-dashboard-wrapper .user-dashboard-container .user-name {
+    font-size: 13px;
+  }
+  .user-dashboard-wrapper .user-dashboard-container .user-email {
+    font-size: 11px;
+  }
+  .user-dashboard-wrapper .user-dashboard-container .user-time {
+    font-size: 11px;
+    font-style: italic;
+  }
   .sidebar-wrapper {
     position: fixed;
     top: 70px;
@@ -259,6 +286,7 @@ a {
   }
   .navigation nav .nav-split:nth-child(4) div:nth-child(2) {
     right: 70px;
+    top: 10px;
   }
   .cart-wrapper {
     width: 50%;
@@ -1629,6 +1657,12 @@ a {
     top: 60px;
     height: 400px;
   }
+  .user-fixed-image-wrap {
+    top: 110px;
+  }
+  .user-dashboard-wrapper {
+    top: 110px;
+  }
   .sidebar-wrapper {
     position: fixed;
     top: 40px;
@@ -1770,6 +1804,12 @@ a {
   .navigation nav .nav-container .nav-split.nav-split:nth-child(4) div:nth-child(2) {
     top: 10px;
   }
+  .user-fixed-image-wrap {
+    top: 110px;
+  }
+  .user-dashboard-wrapper {
+    top: 110px;
+  }
   .sidebar-wrapper .sidebar-container .sidebar-content-wrap {
     height: 80vh;
   }
@@ -1838,6 +1878,12 @@ a {
     top: 50px;
     width: 80%;
     height: 400px;
+  }
+  .user-fixed-image-wrap {
+    top: 110px;
+  }
+  .user-dashboard-wrapper {
+    top: 110px;
   }
   .sidebar-wrapper {
     position: fixed;
@@ -1971,6 +2017,12 @@ a {
   .cart-wrapper {
     width: 80%;
     top: 45px;
+  }
+  .user-fixed-image-wrap {
+    top: 110px;
+  }
+  .user-dashboard-wrapper {
+    top: 110px;
   }
   .sidebar-wrapper .sidebar-container .sidebar-content-wrap {
     height: 70vh;
