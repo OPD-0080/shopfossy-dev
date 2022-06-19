@@ -1,7 +1,7 @@
 // IMPORTATION SECTION START
 import { signIn } from './firebase_signIn.js';
 import { logIn} from './firebase_logIn.js';
-import { authProvider_goggle, authProvider_facebook, authProvider_apple } from './firebaseProvider.js';
+import { authProvider_goggle} from './firebaseProvider.js';
 import { onAuthState } from './firebase-onAuthState.js';
 import { signOutFunc, deleteAccount } from './firebase-signOut.js';
 import { resetPassword } from './firebase-resetPassword.js';
@@ -261,10 +261,6 @@ var message = "";
         btn.onclick = (e) => {
             if (e.target.classList.contains("goggle-btn")) {
                 authProvider_goggle();
-            }else if (e.target.classList.contains("facebook-btn")) {
-                authProvider_facebook();
-            }else if (e.target.classList.contains("apple-btn")) {
-                authProvider_apple();
             }
         }
     })

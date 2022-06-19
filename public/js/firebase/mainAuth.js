@@ -9,24 +9,12 @@ const dashBoardBtns = document.querySelectorAll(".dash-btn");
 const alertVerification = document.querySelector(".verification-alert-wrap");
 const verifyBtn = alertVerification.querySelector(".verify-btn");
 const verifyText = alertVerification.querySelector(".v-text");
+const imageText = document.querySelector(".image-text");
 var formOverlay = document.querySelector(".sign-in-overlay");
 // ...
+const auth = getAuth();
 // USER AUTHENTICATION 
 function onAuthState() {
-    const auth = getAuth();
-    // auth user in session state,
-    // will close user even if user forgot to signOut
-    /*setPersistence(auth, browserSessionPersistence)
-    .then(() => {
-      
-
-      // collapsing signLog page form
-      window.location.assign("../../index.html");
-      formOverlay.classList.add("collapse");
-      // ...
-      return signInWithEmailAndPassword(auth, email, password);
-    });*/
-    // ...
     onAuthStateChanged(auth, (user) => {
         if (user) {
           // User is signed in, see docs for a list of available properties
@@ -75,11 +63,24 @@ function onAuthState() {
         }
     });
     function output(userName, userEmail, userPhoto) {
-        userImages.forEach(userImage => {
-            userImage.style.backgroundImage = `url(${userPhoto})`;
-        })
+      if (userName == null || userName == undefined || userName == "") {
+        const userObj = localStorage.getItem("currentUserCred");
+        userNameEl.innerHTML = userObj.userName;
+      }else {
         userNameEl.innerHTML = userName;
-        userEmailEl.innerHTML = userEmail;
+      };
+      if (userPhoto == null || userPhoto == undefined || userPhoto == "") {
+        const firstLetter = userName.charAt(0).toUpperCase();
+        imageText.innerHTML = `${firstLetter}`;
+        userImages.forEach(userImage => {
+          userImage.style.backgroundImage = `none`;
+        });
+      }else {
+        userImages.forEach(userImage => {
+          userImage.style.backgroundImage = `url(${userPhoto})`;
+        })
+      }
+      userEmailEl.innerHTML = userEmail;
     }
 }onAuthState();
 // ...

@@ -1,5 +1,5 @@
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
-import { getFirestore ,collection, getDocs, setDoc, doc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"; 
+import { getFirestore ,collection, setDoc, doc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"; 
 
 var alertError = document.querySelector(".error-message");
 var alertWrap = document.querySelector(".error-alert-wrap");
@@ -94,55 +94,39 @@ function logIn(email, password) {
     });
 
     async function storeDataInFireStore(email) {
+         // user alert
+            alertError.innerHTML = "Please Wait ...";
+            alertWrap.style.background = "grey";
+            alertWrap.classList.add("show");
+            headerText.style.display = "none";
+         // ...
         // get userName from local storage
-        const userName = localStorage.getItem("username");
+        const userObj = localStorage.getItem("currentUserCred");
         // ...
         // store data in fireStore database
         const collectionRef = collection(db, "Users");
         await setDoc(doc(collectionRef, auth.currentUser.uid), {
-            UserName: userName,
-            Email: email,
+            UserName: userObj.userName,
+            Email: userObj.email,
             UID: auth.currentUser.uid,
             TimeCreated: serverTimestamp()
         });
         // ...
-        // delete local storage
-        localStorage.clear();
-        // ...
-        // get data from fireStore database
-        getDataFromFireStore();
+        // get data from local storage
+        getData(userObj);
         // ...
     }
-    async function getDataFromFireStore() {
-        let userId = auth.currentUser.uid;
+    async function getData(userObj) {
         const user = auth.currentUser.uid;
-        // user alert
-        alertError.innerHTML = "Please Wait ...";
-        alertWrap.style.background = "grey";
-        alertWrap.classList.add("show");
-        headerText.style.display = "none";
-        // ...
-        // get data from database
-        const collectionRef = collection(db, "Users");
-        const querySnapshot = await getDocs(collectionRef); // this return an array of document
-            querySnapshot.forEach((doc) => {
-            //console.log(`${doc.id} => ${doc.data()}`);
-            let user_name = doc.data().UserName;
-            let Email = doc.data().Email;
-            let UID = doc.data().UID
+        const user_name = userObj.userName;
+        const Email = userObj.email;
 
-            // checking id of the user
-            if (UID == userId) {
-                // getting first letter of the string 
-                var firstLetter = user_name.charAt(0).toUpperCase();
-                imageText.style.backgroundImage = `none`;
-                imageText.innerHTML = `${firstLetter}`;
-                // ...
-                // Info display in DOM
-                output(user, user_name, Email, firstLetter);
-            }
-            
-        });
+        // getting first letter of the string 
+        var firstLetter = userObj.userName.charAt(0).toUpperCase();
+        imageText.style.backgroundImage = `none`;
+        imageText.innerHTML = `${firstLetter}`;
+        // ...
+        output(user, user_name, Email, firstLetter);
     };
     function output(user, user_name, Email, firstLetter) {
         if (user.photoURL == null) {

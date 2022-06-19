@@ -19,7 +19,7 @@ function signIn(userName, email, password) {
         const user = userCredential.user;
         console.log(user);
 
-        notification(userName)
+        notification(userName, email)
       // ...
   })
   .then(() => {
@@ -64,7 +64,7 @@ function signIn(userName, email, password) {
   });
 }
 
-async function notification(userName) {
+async function notification(userName, email) {
 
   try {
     // user alert
@@ -75,7 +75,8 @@ async function notification(userName) {
     headerImage.classList.remove("change");
 
     // saving user name in local storage
-    localStorage.setItem("username", userName);
+    const currentUserInfo = {userName, email}
+    localStorage.setItem("currentUserCred", currentUserInfo );
 
     // Alert message and display off DOM
     setTimeout(() => {

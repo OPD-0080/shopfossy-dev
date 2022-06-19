@@ -37,18 +37,11 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  transform: scale(0.3);
-  -webkit-transform: scale(0.3);
-  -moz-transform: scale(0.3);
-  -ms-transform: scale(0.3);
-  -o-transform: scale(0.3);
   transition: .1s ease;
   -webkit-transition: .1s ease;
   -moz-transition: .1s ease;
   -ms-transition: .1s ease;
   -o-transition: .1s ease;
-  opacity: 0;
-  visibility: hidden;
 }
 
 .sign-in-overlay .signIn-wrapper {
@@ -377,8 +370,8 @@ a {
 }
 
 .sign-in-overlay .signIn-wrapper .signIn-content .signIn-container .alt-logIn-wrap .alt-btn {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background: white;
   background-repeat: no-repeat;
   background-position: center;
@@ -395,18 +388,6 @@ a {
 
 .sign-in-overlay .signIn-wrapper .signIn-content .signIn-container .alt-logIn-wrap .goggle-btn {
   background-image: url("../img/svg/goggle.svg");
-}
-
-.sign-in-overlay .signIn-wrapper .signIn-content .signIn-container .alt-logIn-wrap .facebook-btn {
-  background-image: url("../img/svg/facebook.svg");
-}
-
-.sign-in-overlay .signIn-wrapper .signIn-content .signIn-container .alt-logIn-wrap .twitter-btn {
-  background-image: url("../img/svg/twitter.svg");
-}
-
-.sign-in-overlay .signIn-wrapper .signIn-content .signIn-container .alt-logIn-wrap .apple-btn {
-  background-image: url("../img/svg/apple.svg");
 }
 
 .sign-in-overlay .signIn-wrapper .signIn-content .signIn-container div:nth-child(6) {
@@ -684,8 +665,8 @@ a {
 }
 
 .sign-in-overlay .signIn-wrapper .logIn-content .logIn-container .alt-logIn-wrap .alt-btn {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background: white;
   background-repeat: no-repeat;
   background-position: center;
