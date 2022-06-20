@@ -20,6 +20,67 @@ a {
   text-decoration: none;
 }
 
+@media screen and (max-width: 915px) {
+  .user-edited-overlay {
+    z-index: 25;
+  }
+  .user-edited-overlay .user-edited-wrapper {
+    height: 100%;
+    overflow-y: scroll;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-edited-close {
+    top: 30px;
+    right: 30px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    height: initial;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image {
+    top: 55px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap {
+    width: 6rem;
+    height: 6rem;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container {
+    width: 4.7rem;
+    height: 4.7rem;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container .upload-progress {
+    font-size: 13px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container::before {
+    width: 20px;
+    height: 20px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content {
+    position: relative;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin-top: 30px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content {
+    position: relative;
+    width: 90%;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-btns .btn {
+    width: 40px;
+    height: 40px;
+    margin: 0px 5px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content-delete .delete-wrap {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 30px;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .navigation nav {
     position: fixed;
@@ -200,6 +261,64 @@ a {
   .user-dashboard-wrapper .user-dashboard-container .user-time {
     font-size: 11px;
     font-style: italic;
+  }
+  .user-edited-overlay {
+    z-index: 25;
+  }
+  .user-edited-overlay .user-edited-wrapper {
+    height: 100%;
+    overflow-y: scroll;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-edited-close {
+    top: 30px;
+    right: 30px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    height: initial;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image {
+    top: 55px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap {
+    width: 6rem;
+    height: 6rem;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container {
+    width: 4.7rem;
+    height: 4.7rem;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container .upload-progress {
+    font-size: 13px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container::before {
+    width: 20px;
+    height: 20px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content {
+    position: relative;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin-top: 30px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content {
+    position: relative;
+    width: 90%;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-btns .btn {
+    width: 40px;
+    height: 40px;
+    margin: 0px 5px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content-delete .delete-wrap {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 30px;
   }
   .cart-wrapper {
     top: 40px;
@@ -478,6 +597,64 @@ a {
     font-size: 11px;
     font-style: italic;
   }
+  .user-edited-overlay {
+    z-index: 25;
+  }
+  .user-edited-overlay .user-edited-wrapper {
+    height: 100%;
+    overflow-y: scroll;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-edited-close {
+    top: 30px;
+    right: 30px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    height: initial;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image {
+    top: 55px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap {
+    width: 6rem;
+    height: 6rem;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container {
+    width: 4.7rem;
+    height: 4.7rem;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container .upload-progress {
+    font-size: 13px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container::before {
+    width: 20px;
+    height: 20px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content {
+    position: relative;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin-top: 30px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content {
+    position: relative;
+    width: 90%;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-btns .btn {
+    width: 40px;
+    height: 40px;
+    margin: 0px 5px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content-delete .delete-wrap {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 30px;
+  }
   .cart-wrapper {
     top: 40px;
     width: 50%;
@@ -593,6 +770,64 @@ a {
   .user-dashboard-wrapper .user-dashboard-container .user-time {
     font-size: 11px;
     font-style: italic;
+  }
+  .user-edited-overlay {
+    z-index: 25;
+  }
+  .user-edited-overlay .user-edited-wrapper {
+    height: 100%;
+    overflow-y: scroll;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-edited-close {
+    top: 30px;
+    right: 30px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    height: initial;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image {
+    top: 55px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap {
+    width: 6rem;
+    height: 6rem;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container {
+    width: 4.7rem;
+    height: 4.7rem;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container .upload-progress {
+    font-size: 13px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container::before {
+    width: 20px;
+    height: 20px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content {
+    position: relative;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin-top: 30px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content {
+    position: relative;
+    width: 90%;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-btns .btn {
+    width: 40px;
+    height: 40px;
+    margin: 0px 5px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content-delete .delete-wrap {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 30px;
   }
   .cart-wrapper {
     top: 40px;
@@ -1553,6 +1788,64 @@ a {
   .user-dashboard-wrapper .user-dashboard-container .user-time {
     font-size: 11px;
     font-style: italic;
+  }
+  .user-edited-overlay {
+    z-index: 25;
+  }
+  .user-edited-overlay .user-edited-wrapper {
+    height: 100%;
+    overflow-y: scroll;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-edited-close {
+    top: 30px;
+    right: 30px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    height: initial;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image {
+    top: 55px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap {
+    width: 6rem;
+    height: 6rem;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container {
+    width: 4.7rem;
+    height: 4.7rem;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container .upload-progress {
+    font-size: 13px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container::before {
+    width: 20px;
+    height: 20px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content {
+    position: relative;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin-top: 30px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content {
+    position: relative;
+    width: 90%;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-btns .btn {
+    width: 40px;
+    height: 40px;
+    margin: 0px 5px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content-delete .delete-wrap {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 30px;
   }
   .cart-wrapper {
     top: 40px;
@@ -2873,6 +3166,64 @@ a {
     font-size: 11px;
     font-style: italic;
   }
+  .user-edited-overlay {
+    z-index: 25;
+  }
+  .user-edited-overlay .user-edited-wrapper {
+    height: 100%;
+    overflow-y: scroll;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-edited-close {
+    top: 30px;
+    right: 30px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    height: initial;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image {
+    top: 55px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap {
+    width: 6rem;
+    height: 6rem;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container {
+    width: 4.7rem;
+    height: 4.7rem;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container .upload-progress {
+    font-size: 13px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container::before {
+    width: 20px;
+    height: 20px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content {
+    position: relative;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin-top: 30px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content {
+    position: relative;
+    width: 90%;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-btns .btn {
+    width: 40px;
+    height: 40px;
+    margin: 0px 5px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content-delete .delete-wrap {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 30px;
+  }
   .cart-wrapper {
     top: 40px;
     width: 50%;
@@ -3227,6 +3578,64 @@ a {
   .user-dashboard-wrapper .user-dashboard-container .user-time {
     font-size: 11px;
     font-style: italic;
+  }
+  .user-edited-overlay {
+    z-index: 25;
+  }
+  .user-edited-overlay .user-edited-wrapper {
+    height: 100%;
+    overflow-y: scroll;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-edited-close {
+    top: 30px;
+    right: 30px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    height: initial;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image {
+    top: 55px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap {
+    width: 6rem;
+    height: 6rem;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container {
+    width: 4.7rem;
+    height: 4.7rem;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container .upload-progress {
+    font-size: 13px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container::before {
+    width: 20px;
+    height: 20px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content {
+    position: relative;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin-top: 30px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content {
+    position: relative;
+    width: 90%;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-btns .btn {
+    width: 40px;
+    height: 40px;
+    margin: 0px 5px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content-delete .delete-wrap {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 30px;
   }
   .cart-wrapper {
     top: 40px;
@@ -3840,6 +4249,63 @@ a {
     font-size: 11px;
     font-style: italic;
   }
+  .user-edited-overlay {
+    z-index: 25;
+  }
+  .user-edited-overlay .user-edited-wrapper {
+    height: 90%;
+    overflow-y: scroll;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-edited-close {
+    top: 30px;
+    right: 30px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    height: 100%;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image {
+    top: 55px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap {
+    width: 6rem;
+    height: 6rem;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container {
+    width: 4.7rem;
+    height: 4.7rem;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container .upload-progress {
+    font-size: 13px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container::before {
+    width: 20px;
+    height: 20px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content {
+    position: relative;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content {
+    position: relative;
+    width: 90%;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-btns .btn {
+    width: 40px;
+    height: 40px;
+    margin: 0px 5px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content-delete .delete-wrap {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 20px;
+  }
   .cart-wrapper {
     top: 55px;
     width: 70%;
@@ -4178,6 +4644,63 @@ a {
   .user-dashboard-wrapper .user-dashboard-container .user-time {
     font-size: 11px;
     font-style: italic;
+  }
+  .user-edited-overlay {
+    z-index: 25;
+  }
+  .user-edited-overlay .user-edited-wrapper {
+    height: 90%;
+    overflow-y: scroll;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-edited-close {
+    top: 30px;
+    right: 30px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    height: 100%;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image {
+    top: 55px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap {
+    width: 6rem;
+    height: 6rem;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container {
+    width: 4.7rem;
+    height: 4.7rem;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container .upload-progress {
+    font-size: 13px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container::before {
+    width: 20px;
+    height: 20px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content {
+    position: relative;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content {
+    position: relative;
+    width: 90%;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-btns .btn {
+    width: 40px;
+    height: 40px;
+    margin: 0px 5px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content-delete .delete-wrap {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 20px;
   }
   .cart-wrapper {
     top: 55px;
@@ -4564,6 +5087,63 @@ a {
     font-size: 11px;
     font-style: italic;
   }
+  .user-edited-overlay {
+    z-index: 25;
+  }
+  .user-edited-overlay .user-edited-wrapper {
+    height: 90%;
+    overflow-y: scroll;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-edited-close {
+    top: 30px;
+    right: 30px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    height: 100%;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image {
+    top: 55px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap {
+    width: 6rem;
+    height: 6rem;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container {
+    width: 4.7rem;
+    height: 4.7rem;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container .upload-progress {
+    font-size: 13px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container::before {
+    width: 20px;
+    height: 20px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content {
+    position: relative;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content {
+    position: relative;
+    width: 90%;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-btns .btn {
+    width: 40px;
+    height: 40px;
+    margin: 0px 5px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content-delete .delete-wrap {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 20px;
+  }
   .cart-wrapper {
     top: 55px;
     width: 70%;
@@ -4947,6 +5527,63 @@ a {
   .user-dashboard-wrapper .user-dashboard-container .user-time {
     font-size: 11px;
     font-style: italic;
+  }
+  .user-edited-overlay {
+    z-index: 25;
+  }
+  .user-edited-overlay .user-edited-wrapper {
+    height: 100%;
+    overflow-y: scroll;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-edited-close {
+    top: 30px;
+    right: 30px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    height: 100%;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image {
+    top: 45px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap {
+    width: 5rem;
+    height: 5rem;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container {
+    width: 4rem;
+    height: 4rem;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container .upload-progress {
+    font-size: 13px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container::before {
+    width: 20px;
+    height: 20px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content {
+    position: relative;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content {
+    position: relative;
+    width: 90%;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-btns .btn {
+    width: 40px;
+    height: 40px;
+    margin: 0px 5px;
+  }
+  .user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content-delete .delete-wrap {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 30px;
   }
   .cart-wrapper {
     top: 55px;

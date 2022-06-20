@@ -12,10 +12,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    //@include shrink-in;
+    @include shrink-in;
     @include trans-01s;
-   // opacity: 0;
-   // visibility: hidden;
+    opacity: 0;
+    visibility: hidden;
 
     .signIn-wrapper {
         position: relative;
