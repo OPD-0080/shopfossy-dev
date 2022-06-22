@@ -21,6 +21,9 @@ const deleteUser = document.querySelector(".delete-wrap");
 const editUserPage = document.querySelector(".user-edited-overlay");
 const editUserClose = document.querySelector(".user-edited-close");
 const userDashBoard = document.querySelector(".user-dashboard-wrapper");
+const confirmAlert = document.querySelector(".user-confirm-alert");
+const confirmAlertText = confirmAlert.querySelector(".confirm-alert-text");
+const confirmAlertBtn = confirmAlert.querySelector(".confirm-btn");
 
 var message = "";
 // VARIABLES END
@@ -287,7 +290,20 @@ var message = "";
     });
     deleteUser.onclick = (e) => {
         if (e.target.classList.contains("i-deleted") || e.target.classList.contains("it-d") || e.target.classList.contains("delete-wrap")) {
-            deleteAccount()
+            // confirm alert to edit
+            confirmAlertText.innerHTML = "Confirm to DELETE ACCOUNT !";
+            confirmAlert.classList.add("collapse");
+            // ... 
+             // click confirm alert btn to activate edit input
+            confirmAlert.onclick = (e) => {
+                if (e.target.classList.contains("confirm-btn")) {
+                    deleteAccount();
+                    // ...
+                }else if (e.target.classList.contains("close-confirm-alert")) {
+                    confirmAlert.classList.remove("collapse");
+                }
+            }
+            // ...
         }
     }
     editUserClose.onclick = (e) => {

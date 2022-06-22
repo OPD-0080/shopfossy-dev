@@ -13,6 +13,7 @@ const progressEL = document.querySelector(".upload-progress");
 const contentOverall = document.querySelectorAll(".user-edited-content-container");
 const nameTag = document.querySelector(".user-name-tag");
 const emailTag = document.querySelector(".user-email-tag");
+const telTag = document.querySelector(".user-tel-tag");
 const passwordTag = document.querySelector(".user-password-tag");
 const userAlert = document.querySelector(".user-edit-alert");
 const userAlertText = userAlert.querySelector(".alert-text");
@@ -43,7 +44,7 @@ onAuthStateChanged(auth, async (user) => {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
         const uid = user.uid;
-        console.log(user);
+        //console.log(user);
 
         // getting user info
         // Destructuring user info
@@ -64,6 +65,7 @@ onAuthStateChanged(auth, async (user) => {
         auth_status_photo();
         auth_status_email();
         auth_status_all();
+        auth_status_tel();
         // ...
     } 
 })
@@ -114,6 +116,14 @@ function auth_status_all() {
         userAlert.classList.remove("alert");
     }
 }
+function auth_status_tel() {
+    const res = localStorage.getItem("userTel");
+    if (res == null || res == undefined || res == "") {
+        telTag.value = "Not Specified";
+    }else if (res) {
+        telTag.value = res;
+    }
+}
 
 
 // SELECTING PHOTO LOCALLY
@@ -127,7 +137,6 @@ imageFile.onchange = (event) => {
 
     const reader = new FileReader();
     //console.log(file);
-
     const fileName = file.name;
     const size =file.size;
 
@@ -141,6 +150,7 @@ function fileOutput(fileName, file, filePhoto, size) {
     const storageRef = ref(storage, `userProfileImages/${auth.currentUser.uid}`);
     // pushing image file into firebase storage and
     // Monitoring upload progress
+    userAlertText.innerHTML = "Photo Uploading ...";
     uploadString(storageRef, file, 'data_url')
     .then((snapshot) => {
         // user alert
@@ -230,6 +240,7 @@ contentOverall.forEach(container => {
                         // restore authentication process to default
                         restoreAuthenticationProcess();
                         // ...
+                        auth_status_email() // set auth default info if user info not edited
                     }
                 }
                 // ...
@@ -282,8 +293,19 @@ contentOverall.forEach(container => {
 
             }else if (e.target.classList.contains("i-close")) {
                 closeSingleBtn(inputTag, subContainer) // enable close btn
-                inputTag.value = "Not Specified"; // remove attribute value
-                    
+                //inputTag.value = "Not Specified"; // remove attribute value
+                auth_status_tel();
+            }
+            if (e.target.classList.contains("i-save")) {
+                const tel =  telTag.value;
+                // store tel number in local storage
+                localStorage.setItem("userTel", tel);
+
+                setTimeout(() => {
+                    //get local storage 
+                    const res = localStorage.getItem("userTel");
+                    telTag.value = res;
+                }, 2000)
             }
         }
     }
@@ -378,6 +400,7 @@ function closeSingleBtn(inputTag, subContainer) {
 }
 function updatePhoto(url) {
     // updating profile Name
+    userAlertText.innerHTML = "Updating photo ...";
     updateProfile(auth.currentUser, {
         photoURL: url
 
@@ -386,7 +409,7 @@ function updatePhoto(url) {
         userImageBox.style.backgroundImage = `url(${url})`;
         // ...
         // user alert
-        userAlertText.innerHTML = "Profile Status: Photo Updated !";
+        userAlertText.innerHTML = "Photo Updated !";
         userAlert_green();
         setTimeout(() => {
             userAlert.classList.remove("alert");

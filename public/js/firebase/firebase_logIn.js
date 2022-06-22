@@ -134,16 +134,10 @@ function logIn(email, password) {
                 userImage.style.backgroundImage = "none";
                 userImage.innerHTML = `${firstLetter}`;
             });
-            if (user.displayName == null) {
-                userNameEl.innerHTML = `${user_name}`;
-            }else {
-                userNameEl.innerHTML = user.displayName;
-            }
-            userEmailEl.innerHTML = Email;
-            logInPageCollapse(user_name)
-
-        }else if (user.displayName == null) {
-            if (user.photoURL == null) {
+            //userNameEl.innerHTML = user.displayName;
+        }if (user.displayName == null) {
+            userNameEl.innerHTML = `${user_name}`;
+            /*if (user.photoURL == null) {
                 userImages.forEach(userImage => {
                     userImage.style.backgroundImage = "none";
                     userImage.innerHTML = `${firstLetter}`;
@@ -152,21 +146,18 @@ function logIn(email, password) {
                 userImages.forEach(userImage => {
                     userImage.style.backgroundImage = `url(${user.photoURL})`;
                 })
-            }
-            userNameEl.innerHTML = `${user_name}`;
-            userEmailEl.innerHTML = Email;
-            logInPageCollapse(user_name)
-
+            }*/
         }
-        else {
+        if (user.photoURL && user.displayName) {
             userImages.forEach(userImage => {
                 userImage.style.backgroundImage = `url(${user.photoURL})`;
                 userImage.style.fontSize = "2px";
             });
             userNameEl.innerHTML = user.displayName;
             userEmailEl.innerHTML = user.email;
-            logInPageCollapse(user_name);
         }
+        userEmailEl.innerHTML = Email;
+        logInPageCollapse(user_name);
     };
     function logInPageCollapse(user_name) {
         // ...
