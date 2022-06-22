@@ -17,7 +17,7 @@ function itemFiltering(btnId, allList) {
                         <div class="item-img">
                         <img class="lazy-load-selector"
                             src="./img/main-categories/blur-img/blur.jpg" width="300px" height="300px" alt="img"
-                            data-src=${item.imgUrl} width="300px" height="300px" alt="img"
+                            data-src="img/main-categories/${item.imgUrl}" width="300px" height="300px" alt="img"
                         >
                         </div>
                         <div class="heart-wrap"><div class="heart-img"></div></div>
@@ -27,7 +27,7 @@ function itemFiltering(btnId, allList) {
                     <div class="item-description-wrap">
                         <div class="item-title"> ${item.title} </div>
                         <div class="seller-name"> ${item.seller} </div>
-                        <div class="star-rated"><img src=${item.starRated} alt=""></div>
+                        <div class="star-rated"><img src="img/icons/${item.starRated}-star.png" alt=""></div>
                         <div class="item-price-wrap">
                             <div class="price"> ${item.price} </div>
                             <del class="price-del"> ${item.priceDel} </del>

@@ -708,19 +708,20 @@ body.collapse {
   cursor: pointer;
   padding: 5px;
   font-size: 13px;
+  background: transparent;
 }
 
-.sidebar-wrapper .filter-container .filter :first-letter {
-  text-transform: uppercase;
-}
-
-.sidebar-wrapper .filter-container .filter :hover {
+.sidebar-wrapper .filter-container .filter:hover {
   padding-left: 10px;
   transition: .1s ease;
   -webkit-transition: .1s ease;
   -moz-transition: .1s ease;
   -ms-transition: .1s ease;
   -o-transition: .1s ease;
+}
+
+.sidebar-wrapper .filter-container .filter:first-letter {
+  text-transform: uppercase;
 }
 
 .sidebar-wrapper .filter-container .filter.active {
@@ -779,11 +780,11 @@ body.collapse {
   height: inherit;
   background: #424141;
   overflow: hidden;
-  transition: 1s ease;
-  -webkit-transition: 1s ease;
-  -moz-transition: 1s ease;
-  -ms-transition: 1s ease;
-  -o-transition: 1s ease;
+  transition: .5s ease;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -ms-transition: .5s ease;
+  -o-transition: .5s ease;
   transform: scale(1);
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
@@ -908,7 +909,7 @@ body.collapse {
   margin-top: 5px;
 }
 
-.main-content-wrapper .main-content-container .products-wrapper .single-item-container .item-description-wrap div ::first-letter {
+.main-content-wrapper .main-content-container .products-wrapper .single-item-container .item-description-wrap div::first-letter {
   text-transform: uppercase;
 }
 

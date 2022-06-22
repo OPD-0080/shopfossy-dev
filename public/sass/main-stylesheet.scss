@@ -186,27 +186,22 @@
             cursor: pointer;
             padding: 5px;
             font-size: $font-s;
-
-            :first-letter {
-                text-transform: uppercase;
-            }
-
-            :hover {
-                padding-left: 10px;
-                transition: .1s ease;
-                -webkit-transition: .1s ease;
-                -moz-transition: .1s ease;
-                -ms-transition: .1s ease;
-                -o-transition: .1s ease;
-            }
+            background: transparent;
+        }
+        .filter:hover {
+            padding-left: 10px;
+            transition: .1s ease;
+            -webkit-transition: .1s ease;
+            -moz-transition: .1s ease;
+            -ms-transition: .1s ease;
+            -o-transition: .1s ease;
+        }
+        .filter:first-letter {
+            text-transform: uppercase;
         }
         .filter.active {
             background: red;
-            transition: .1s ease ;
-            -webkit-transition: .1s ease ;
-            -moz-transition: .1s ease ;
-            -ms-transition: .1s ease ;
-            -o-transition: .1s ease ;
+            @include trans-01s;
         }
     }
 }
@@ -248,7 +243,7 @@
                 height: inherit;
                 background: $primary-sidebar-background;
                 overflow: hidden;
-                @include trans-1s;
+                @include trans-05s;
                 transform: scale(1);
                 -webkit-transform: scale(1);
                 -moz-transform: scale(1);
@@ -349,9 +344,9 @@
 
                     div {
                         margin-top: 5px;
-                        ::first-letter {
-                            text-transform: uppercase;
-                        }
+                    }
+                    div::first-letter {
+                        text-transform: uppercase;
                     }
 
                     .item-title {

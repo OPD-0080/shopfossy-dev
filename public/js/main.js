@@ -1,5 +1,5 @@
 import { categoryList } from './sideBarList/categoryList.js';
-
+//import { subCategoryList } from './sideBarList/sub-categoryList.js';
 
 (function() {
     var cartNavBtn = document.querySelector(".cart-nav-btn");
@@ -94,4 +94,24 @@ import { categoryList } from './sideBarList/categoryList.js';
     })
 })();
 // SIDEBAR (CATEGORY) END
+/*
+// SIDEBAR (SUB-CATEGORY) START
+(function () {
 
+    subCategoryList.map(el => {
+        const text = el.text;
+        
+        const res = {text};
+        return res;
+    });
+    var result = "";
+    subCategoryList.forEach(el => {
+        result += `
+            <div class="filter active" data-id=${el.text}> ${el.text} </div>
+        `
+    });
+    var dis = document.querySelector(".fc-1");
+    dis.innerHTML = result;
+
+})();
+*/

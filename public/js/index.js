@@ -94,37 +94,37 @@ import { pickUpLists } from './sideBarList/pickUpList.js';
         var {id} = item.id;
         var {imgUrl} = item.imgUrl;
         var {imgHover} = item.imgHover;
-        var {price} = item.price;
+        var {name} = item.name;
         var {href} = item.href;
         var {classCode} = item.classCode;
-        return (id, imgUrl, imgHover, price, classCode, href)
+        return (id, imgUrl, imgHover, name, classCode, href)
     });
     pickUpLists[1].map(item => {
         var {id} = item.id;
         var {imgUrl} = item.imgUrl;
         var {imgHover} = item.imgHover;
-        var {price} = item.price;
+        var {name} = item.name;
         var {href} = item.href;
         var {classCode} = item.classCode;
-        return (id, imgUrl, imgHover, price, classCode, href)
+        return (id, imgUrl, imgHover, name, classCode, href)
     });
     pickUpLists[2].map(item => {
         var {id} = item.id;
         var {imgUrl} = item.imgUrl;
         var {imgHover} = item.imgHover;
-        var {price} = item.price;
+        var {name} = item.name;
         var {href} = item.href;
         var {classCode} = item.classCode;
-        return (id, imgUrl, imgHover, price, classCode, href)
+        return (id, imgUrl, imgHover, name, classCode, href)
     });
     pickUpLists[3].map(item => {
         var {id} = item.id;
         var {imgUrl} = item.imgUrl;
         var {imgHover} = item.imgHover;
-        var {price} = item.price;
+        var {name} = item.name;
         var {href} = item.href;
         var {classCode} = item.classCode;
-        return (id, imgUrl, imgHover, price, classCode, href)
+        return (id, imgUrl, imgHover, name, classCode, href)
     });
 
     //console.log(array);
@@ -139,12 +139,12 @@ import { pickUpLists } from './sideBarList/pickUpList.js';
                     data-src=${item.imgUrl} alt=""
                 />
                 <img class="img-display intersection-effect" 
-                    src=${item.imgHover} alt=""
+                    src=${item.imgHover} alt=""z
                     data-src=${item.imgHover} alt=""
                 />
             </a>
             <div class="heart-wrap"><div class="heart-img"></div></div>
-            <div class="image-price"> GHC <span class="C-price"> ${item.price} </span> </div>
+            <div class="image-price"><span class="C-price"> ${item.name} </span> </div>
         </div>
         `
     })
@@ -167,7 +167,7 @@ import { pickUpLists } from './sideBarList/pickUpList.js';
                 />
             </a>
             <div class="heart-wrap"><div class="heart-img"></div></div>
-            <div class="image-price"> GHC <span class="C-price"> ${item.price} </span> </div>
+            <div class="image-price"><span class="C-price"> ${item.name} </span> </div>
         </div>
         `
     })
@@ -188,7 +188,7 @@ import { pickUpLists } from './sideBarList/pickUpList.js';
                 />
             </a>
             <div class="heart-wrap"><div class="heart-img"></div></div>
-            <div class="image-price"> GHC <span class="C-price"> ${item.price} </span> </div>
+            <div class="image-price"><span class="C-price"> ${item.name} </span> </div>
         </div>
         `
     })
@@ -209,7 +209,7 @@ import { pickUpLists } from './sideBarList/pickUpList.js';
                 />
             </a>
             <div class="heart-wrap"><div class="heart-img"></div></div>
-            <div class="image-price"> GHC <span class="C-price"> ${item.price} </span> </div>
+            <div class="image-price"><span class="C-price"> ${item.name} </span> </div>
         </div>
         `
     })

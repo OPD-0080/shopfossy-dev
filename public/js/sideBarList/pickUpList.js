@@ -4,7 +4,7 @@ const listA = [
         classCode: "C1",
         imgUrl: "img/index/pick-up-images/1/1.jpg",
         imgHover: "img/index/pick-up-images/1/1H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -12,7 +12,7 @@ const listA = [
         classCode: "C2",
         imgUrl: "img/index/pick-up-images/1/2.jpg",
         imgHover: "img/index/pick-up-images/1/2H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -20,7 +20,7 @@ const listA = [
         classCode: "C3",
         imgUrl: "img/index/pick-up-images/1/3.jpg",
         imgHover: "img/index/pick-up-images/1/3H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -28,7 +28,7 @@ const listA = [
         classCode: "C4",
         imgUrl: "img/index/pick-up-images/1/4.jpg",
         imgHover: "img/index/pick-up-images/1/4H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -36,7 +36,7 @@ const listA = [
         classCode: "C5",
         imgUrl: "img/index/pick-up-images/1/5.jpg",
         imgHover: "img/index/pick-up-images/1/5H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -44,7 +44,7 @@ const listA = [
         classCode: "C6",
         imgUrl: "img/index/pick-up-images/1/6.jpg",
         imgHover: "img/index/pick-up-images/1/6H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -52,7 +52,7 @@ const listA = [
         classCode: "C7",
         imgUrl: "img/index/pick-up-images/1/7.jpg",
         imgHover: "img/index/pick-up-images/1/7H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -60,7 +60,7 @@ const listA = [
         classCode: "C8",
         imgUrl: "img/index/pick-up-images/1/8.jpg",
         imgHover: "img/index/pick-up-images/1/8H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     }
 ];
@@ -71,7 +71,7 @@ const listB = [
         classCode: "C1",
         imgUrl: "img/index/pick-up-images/2/1.jpg",
         imgHover: "img/index/pick-up-images/2/1H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -79,7 +79,7 @@ const listB = [
         classCode: "C2",
         imgUrl: "img/index/pick-up-images/2/2.jpg",
         imgHover: "img/index/pick-up-images/2/2H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -87,7 +87,7 @@ const listB = [
         classCode: "C3",
         imgUrl: "img/index/pick-up-images/2/3.jpg",
         imgHover: "img/index/pick-up-images/2/3H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -95,7 +95,7 @@ const listB = [
         classCode: "C4",
         imgUrl: "img/index/pick-up-images/2/4.jpg",
         imgHover: "img/index/pick-up-images/2/4H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -103,7 +103,7 @@ const listB = [
         classCode: "C5",
         imgUrl: "img/index/pick-up-images/2/5.jpg",
         imgHover: "img/index/pick-up-images/2/5H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -111,7 +111,7 @@ const listB = [
         classCode: "C6",
         imgUrl: "img/index/pick-up-images/2/6.jpg",
         imgHover: "img/index/pick-up-images/2/6H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -119,7 +119,7 @@ const listB = [
         classCode: "C7",
         imgUrl: "img/index/pick-up-images/2/7.jpg",
         imgHover: "img/index/pick-up-images/2/7H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -127,7 +127,7 @@ const listB = [
         classCode: "C8",
         imgUrl: "img/index/pick-up-images/2/8.jpg",
         imgHover: "img/index/pick-up-images/2/8H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     }
 ];
@@ -137,7 +137,7 @@ const listC = [
         classCode: "C1",
         imgUrl: "img/index/pick-up-images/2/1.jpg",
         imgHover: "img/index/pick-up-images/2/1H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -145,7 +145,7 @@ const listC = [
         classCode: "C2",
         imgUrl: "img/index/pick-up-images/2/2.jpg",
         imgHover: "img/index/pick-up-images/2/2H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -153,7 +153,7 @@ const listC = [
         classCode: "C3",
         imgUrl: "img/index/pick-up-images/2/3.jpg",
         imgHover: "img/index/pick-up-images/2/3H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -161,7 +161,7 @@ const listC = [
         classCode: "C4",
         imgUrl: "img/index/pick-up-images/2/4.jpg",
         imgHover: "img/index/pick-up-images/2/4H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -169,7 +169,7 @@ const listC = [
         classCode: "C5",
         imgUrl: "img/index/pick-up-images/2/5.jpg",
         imgHover: "img/index/pick-up-images/2/5H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -177,7 +177,7 @@ const listC = [
         classCode: "C6",
         imgUrl: "img/index/pick-up-images/2/6.jpg",
         imgHover: "img/index/pick-up-images/2/6H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -185,7 +185,7 @@ const listC = [
         classCode: "C7",
         imgUrl: "img/index/pick-up-images/2/7.jpg",
         imgHover: "img/index/pick-up-images/2/7H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -193,7 +193,7 @@ const listC = [
         classCode: "C8",
         imgUrl: "img/index/pick-up-images/2/8.jpg",
         imgHover: "img/index/pick-up-images/2/8H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     }
 ];
@@ -203,7 +203,7 @@ const listD = [
         classCode: "C1",
         imgUrl: "img/index/pick-up-images/2/1.jpg",
         imgHover: "img/index/pick-up-images/2/1H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -211,7 +211,7 @@ const listD = [
         classCode: "C2",
         imgUrl: "img/index/pick-up-images/2/2.jpg",
         imgHover: "img/index/pick-up-images/2/2H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -219,7 +219,7 @@ const listD = [
         classCode: "C3",
         imgUrl: "img/index/pick-up-images/2/3.jpg",
         imgHover: "img/index/pick-up-images/2/3H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -227,7 +227,7 @@ const listD = [
         classCode: "C4",
         imgUrl: "img/index/pick-up-images/2/4.jpg",
         imgHover: "img/index/pick-up-images/2/4H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -235,7 +235,7 @@ const listD = [
         classCode: "C5",
         imgUrl: "img/index/pick-up-images/2/5.jpg",
         imgHover: "img/index/pick-up-images/2/5H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -243,7 +243,7 @@ const listD = [
         classCode: "C6",
         imgUrl: "img/index/pick-up-images/2/6.jpg",
         imgHover: "img/index/pick-up-images/2/6H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -251,7 +251,7 @@ const listD = [
         classCode: "C7",
         imgUrl: "img/index/pick-up-images/2/7.jpg",
         imgHover: "img/index/pick-up-images/2/7H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     },
     {
@@ -259,7 +259,7 @@ const listD = [
         classCode: "C8",
         imgUrl: "img/index/pick-up-images/2/8.jpg",
         imgHover: "img/index/pick-up-images/2/8H.jpg",
-        price: "99.99",
+        name: "item Name",
         href: "#"
     }
 ];

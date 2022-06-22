@@ -101,10 +101,14 @@ body.collapse {
   -o-transition: .2s ease;
 }
 
+.navigation .nav-split:nth-child(3) h1 {
+  font-size: 20px;
+}
+
 .navigation .nav-split:nth-child(3) h1 a {
   color: white;
-  font-weight: 500;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 21px;
 }
 
 .navigation .nav-split:nth-child(4) {
@@ -1690,6 +1694,41 @@ body.collapse {
   background-position: center;
   background-size: cover;
   -webkit-box-reflect: below -5px linear-gradient(transparent, rgba(0, 0, 0, 0.35));
+}
+
+.main-section-F-wrapper .swiper-container .swiper-wrapper .swiper-slide span {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  padding: 5px 10px 5px 10px;
+  background: white;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  color: black;
+  transform: scale(0.3);
+  -webkit-transform: scale(0.3);
+  -moz-transform: scale(0.3);
+  -ms-transform: scale(0.3);
+  -o-transform: scale(0.3);
+  visibility: hidden;
+  font-size: 13px;
+}
+
+.main-section-F-wrapper .swiper-container .swiper-wrapper .swiper-slide:hover span {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transition: .5s ease;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -ms-transition: .5s ease;
+  -o-transition: .5s ease;
+  visibility: visible;
 }
 
 .main-section-F-wrapper::before {
