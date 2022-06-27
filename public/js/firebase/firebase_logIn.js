@@ -137,16 +137,13 @@ function logIn(email, password) {
             //userNameEl.innerHTML = user.displayName;
         }if (user.displayName == null) {
             userNameEl.innerHTML = `${user_name}`;
-            /*if (user.photoURL == null) {
-                userImages.forEach(userImage => {
-                    userImage.style.backgroundImage = "none";
-                    userImage.innerHTML = `${firstLetter}`;
-                });
-            }else {
-                userImages.forEach(userImage => {
-                    userImage.style.backgroundImage = `url(${user.photoURL})`;
-                })
-            }*/
+        }
+        if (user.photoURL == null && user.displayName) {
+            userImages.forEach(userImage => {
+                userImage.style.backgroundImage = "none";
+                userImage.innerHTML = `${firstLetter}`;
+            });
+            userNameEl.innerHTML = user.displayName;
         }
         if (user.photoURL && user.displayName) {
             userImages.forEach(userImage => {

@@ -63,6 +63,7 @@ function onAuthState() {
         }
     });
     function output(userName, userEmail, userPhoto) {
+
       if (userName == null || userName == undefined || userName == "") {
         const userObj = localStorage.getItem("currentUserCred");
         userNameEl.innerHTML = userObj.userName;
@@ -79,6 +80,12 @@ function onAuthState() {
         userImages.forEach(userImage => {
           userImage.style.backgroundImage = `url(${userPhoto})`;
         })
+      }
+      if (userPhoto && userName) {
+        userImages.forEach(userImage => {
+          userImage.style.backgroundImage = `url(${userPhoto})`;
+        });
+        userNameEl.innerHTML = userName;
       }
       userEmailEl.innerHTML = userEmail;
     }

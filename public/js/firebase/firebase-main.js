@@ -277,6 +277,7 @@ var message = "";
 })();
 //  CHECKING USER AUTHENTICATION END
 
+// DELETE ACCOUNT AND EDITED BUTTON
 (function(){
     dashBoardBtns.forEach(btn => {
         btn.onclick = (e) => {
@@ -312,7 +313,9 @@ var message = "";
         }
     }
 })();
+// ...
 
+// RESET PASSWORD 
 (function(){
 
     const resetBtn = document.querySelector(".reset-pass-btn");
@@ -357,4 +360,5 @@ var message = "";
         resetPassword(email)
     })
 
-})()
+})();
+// ....
