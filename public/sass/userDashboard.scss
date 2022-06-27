@@ -158,10 +158,28 @@
                 .i-deleted {
                     background-image: url("../img/svg/deleteuser.svg");
                 }
+                .i-redirect {
+                    background-image: url("../img/icons/arrow-black-left.png");
+                }
+                .i-in {
+                    background-image: url("../img/svg/login-back.svg");
+                }
             }
             .dash-btn:hover {
                 background: rgba(128, 128, 128, 0.553);
                 @include trans-05s;
+            }
+            .off {
+                display: none;
+            }
+            .off.show {
+                display: flex;
+            }
+            .on {
+                display: flex;
+            }
+            .on.show {
+                display: none;
             }
         }
         

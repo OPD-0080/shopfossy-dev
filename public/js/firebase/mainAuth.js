@@ -10,6 +10,10 @@ const alertVerification = document.querySelector(".verification-alert-wrap");
 const verifyBtn = alertVerification.querySelector(".verify-btn");
 const verifyText = alertVerification.querySelector(".v-text");
 const imageText = document.querySelector(".image-text");
+const signInBtn = document.querySelector(".sign-in-btn");
+const userBtnWrapper = document.querySelector(".user-btns");
+const btnOff = userBtnWrapper.querySelector(".off");
+const btnOn = userBtnWrapper.querySelector(".on");
 var formOverlay = document.querySelector(".sign-in-overlay");
 // ...
 const auth = getAuth();
@@ -30,6 +34,11 @@ function onAuthState() {
 
             // Displaying user in DOM
             output(userName, userEmail, userPhoto);
+            // ...
+
+            // activating & deactivate buttons 
+            btnOff.classList.add("show");
+            btnOn.classList.add("show");
             // ...
 
             // checking for email verification
@@ -57,9 +66,13 @@ function onAuthState() {
             }
             // ...
         } else {
-          // User is signed out
-            window.location.assign("../../index.html");
-          // ...
+          signInBtn.onclick = (e) => {
+            if (e.target.classList.contains("sign-in-btn") || e.target.classList.contains("i-redirect") ||  e.target.classList.contains("it-i")) {
+                // User is signed out
+                window.location.assign("../../index.html");
+                // ...
+            }
+          }
         }
     });
     function output(userName, userEmail, userPhoto) {

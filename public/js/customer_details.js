@@ -17,6 +17,7 @@ var formContent = document.querySelector(".form-content");
 var deliveryContent = document.querySelector(".delivery-content");
 var paymentContent = document.querySelector(".payment-content");
 var summaryContent = document.querySelector(".summary-content");
+var requestSignInWrap = document.querySelector(".request-signIn-page");
 
 // FIREBASE AUTH START
 const auth = getAuth();
@@ -39,11 +40,15 @@ function onAuthState() {
             FirebaseDatabase(uid);
             // ...
             show_current_email_in_inputTag(user);
+            // remove redirect page
+            requestSignInWrap.classList.remove("show");
+            // ...
         } else {
-            //console.log("Don't have an account. Sign In");
-          // User is signed out
-            window.location.assign("/index.html");
-          // ...
+            // Redirect to index page for sign in 
+            setTimeout(() => {
+                requestSignInWrap.classList.add("show");
+            }, 2000);
+            // .....
         }
     });
 }onAuthState();

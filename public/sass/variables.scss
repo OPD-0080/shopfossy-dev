@@ -95,6 +95,13 @@ $database-main-background: rgb(185, 4, 4);
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
 }
+@mixin rotate($r) {
+    transform: rotate($r);
+    -webkit-transform: rotate($r);
+    -moz-transform: rotate($r);
+    -ms-transform: rotate($r);
+    -o-transform: rotate($r);
+}
 @mixin rotate-90 {
     transform: rotate(35deg);
     -webkit-transform: rotate(35deg);

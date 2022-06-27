@@ -10,6 +10,9 @@ const userEmailEl = document.querySelector(".user-email");
 const alertVerification = document.querySelector(".verification-alert-wrap");
 const verifyBtn = alertVerification.querySelector(".verify-btn");
 const verifyText = alertVerification.querySelector(".v-text");
+const signInBtn = document.querySelector(".sign-in-btn");
+const userBtnWrapper = document.querySelector(".user-btns");
+const btnOff = userBtnWrapper.querySelector(".off");
 // ...
 
 function onAuthState() {
@@ -61,10 +64,18 @@ function onAuthState() {
           }
           // ...
           
+          // activating buttons 
+          btnOff.classList.add("show");
+          // ...
+
       } else {
-        // User is signed out
-          formOverlay.classList.add("collapse")
-        // ...
+        signInBtn.onclick = (e) => {
+          if (e.target.classList.contains("sign-in-btn") || e.target.classList.contains("i-in") || e.target.classList.contains("it-i")) {
+              // User is signed out
+              formOverlay.classList.add("collapse");
+              // ...
+          }
+        }
       }
   });
   // display data on dashboard

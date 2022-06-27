@@ -279,6 +279,14 @@ a {
   background-image: url("../img/svg/deleteuser.svg");
 }
 
+.user-dashboard-wrapper .user-dashboard-container .user-btns .dash-btn .i-redirect {
+  background-image: url("../img/icons/arrow-black-left.png");
+}
+
+.user-dashboard-wrapper .user-dashboard-container .user-btns .dash-btn .i-in {
+  background-image: url("../img/svg/login-back.svg");
+}
+
 .user-dashboard-wrapper .user-dashboard-container .user-btns .dash-btn:hover {
   background: rgba(128, 128, 128, 0.553);
   transition: .5s ease;
@@ -286,6 +294,26 @@ a {
   -moz-transition: .5s ease;
   -ms-transition: .5s ease;
   -o-transition: .5s ease;
+}
+
+.user-dashboard-wrapper .user-dashboard-container .user-btns .off {
+  display: none;
+}
+
+.user-dashboard-wrapper .user-dashboard-container .user-btns .off.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.user-dashboard-wrapper .user-dashboard-container .user-btns .on {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.user-dashboard-wrapper .user-dashboard-container .user-btns .on.show {
+  display: none;
 }
 
 .user-dashboard-wrapper::before {

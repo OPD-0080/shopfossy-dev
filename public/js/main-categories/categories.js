@@ -88,7 +88,7 @@ import {addCartItem} from '../components/add_cart_item.js';
 
             // btn triggered to open customer form html page
             checkOutBtn.onclick = () => {
-                window.location.href = "form/customer_info.html";
+                window.location.href = "/public/customer_info.html";
             }
 
             // GET & SHOW ITEM DESCRIPTION START
