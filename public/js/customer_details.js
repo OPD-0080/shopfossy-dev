@@ -30,12 +30,6 @@ function onAuthState() {
             const uid = user.uid;
             console.log(user);
 
-            // getting user info
-            // Destructuring user info
-            const userName = user.displayName;
-            const userEmail = user.email;
-            const userPhoto = user.photoURL;
-
             // Displaying user in DOM
             FirebaseDatabase(uid);
             // ...
