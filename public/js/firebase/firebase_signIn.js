@@ -19,8 +19,11 @@ function signIn(userName, email, password) {
         const user = userCredential.user;
         console.log(user);
 
-        notification(userName, email)
+        notification()
       // ...
+      // saving user name in local storage
+      const currentUserInfo = {userName, email};
+      localStorage.setItem("currentUserCred", JSON.stringify(currentUserInfo) );
   })
   .then(() => {
     // prevent  firebase default login 
@@ -64,7 +67,7 @@ function signIn(userName, email, password) {
   });
 }
 
-async function notification(userName, email) {
+async function notification() {
 
   try {
     // user alert
@@ -73,10 +76,6 @@ async function notification(userName, email) {
     alertWrap.classList.add("show");
     headerText.style.display = "none";
     headerImage.classList.remove("change");
-
-    // saving user name in local storage
-    const currentUserInfo = {userName, email}
-    localStorage.setItem("currentUserCred", currentUserInfo );
 
     // Alert message and display off DOM
     setTimeout(() => {

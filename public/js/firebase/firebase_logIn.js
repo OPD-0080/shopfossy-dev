@@ -101,7 +101,7 @@ function logIn(email, password) {
             headerText.style.display = "none";
          // ...
         // get userName from local storage
-        const userObj = localStorage.getItem("currentUserCred");
+        const userObj = JSON.parse(localStorage.getItem("currentUserCred"));
         // ...
         // store data in fireStore database
         const collectionRef = collection(db, "Users");
@@ -134,7 +134,7 @@ function logIn(email, password) {
                 userImage.style.backgroundImage = "none";
                 userImage.innerHTML = `${firstLetter}`;
             });
-            //userNameEl.innerHTML = user.displayName;
+            imageText.innerHTML = `${firstLetter}`;
         }if (user.displayName == null) {
             userNameEl.innerHTML = `${user_name}`;
         }

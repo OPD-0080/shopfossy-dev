@@ -13,6 +13,9 @@ const verifyText = alertVerification.querySelector(".v-text");
 const signInBtn = document.querySelector(".sign-in-btn");
 const userBtnWrapper = document.querySelector(".user-btns");
 const btnOff = userBtnWrapper.querySelector(".off");
+const btnOn = userBtnWrapper.querySelector(".in");
+const signInPageCloseBtn = document.querySelector(".signInOut-close-btn");
+const imageText = document.querySelector(".image-text");
 // ...
 
 function onAuthState() {
@@ -36,7 +39,7 @@ function onAuthState() {
           // ...
 
           // Displaying user in DOM
-          output(userName, userEmail, userPhoto);
+          output(user, userName, userEmail, userPhoto);
           // ...
 
           // checking for email verification
@@ -66,9 +69,13 @@ function onAuthState() {
           
           // activating buttons 
           btnOff.classList.add("show");
+          btnOn.classList.add("show");
           // ...
 
       } else {
+        btnOff.classList.remove("show");
+        btnOn.classList.remove("show");
+
         signInBtn.onclick = (e) => {
           if (e.target.classList.contains("sign-in-btn") || e.target.classList.contains("i-in") || e.target.classList.contains("it-i")) {
               // User is signed out
@@ -76,16 +83,49 @@ function onAuthState() {
               // ...
           }
         }
+        signInPageCloseBtn.onclick = (e) => {
+          formOverlay.classList.remove("collapse");
+        }
       }
   });
   // display data on dashboard
-  function output(userName, userEmail, userPhoto) {
-      userImages.forEach(userImage => {
-          userImage.style.backgroundImage = `url(${userPhoto})`;
-      })
-      userNameEl.innerHTML = userName;
-      userEmailEl.innerHTML = userEmail;
+  function output(user, userName, userEmail, userPhoto) {
+    // get userName from local storage
+    const userObj = JSON.parse(localStorage.getItem("currentUserCred"));
+    const user_name = userObj.userName;
+    const Email = userObj.email;
 
+    // getting first letter of the string 
+    var firstLetter = userObj.userName.charAt(0).toUpperCase();
+    imageText.style.backgroundImage = `none`;
+    imageText.innerHTML = `${firstLetter}`;
+        // ...
+    // ...
+    if (user.photoURL == null) {
+      userImages.forEach(userImage => {
+          userImage.style.backgroundImage = "none";
+          userImage.innerHTML = `${firstLetter}`;
+      });
+      //userNameEl.innerHTML = user.displayName;
+    }if (user.displayName == null) {
+        userNameEl.innerHTML = `${user_name}`;
+    }
+    if (user.photoURL == null && user.displayName) {
+        userImages.forEach(userImage => {
+            userImage.style.backgroundImage = "none";
+            userImage.innerHTML = `${firstLetter}`;
+        });
+        userNameEl.innerHTML = user.displayName;
+    }
+    if (user.photoURL && user.displayName) {
+        userImages.forEach(userImage => {
+            userImage.style.backgroundImage = `url(${user.photoURL})`;
+            userImage.style.fontSize = "2px";
+        });
+        userNameEl.innerHTML = user.displayName;
+        userEmailEl.innerHTML = user.email;
+    }
+    userEmailEl.innerHTML = userEmail;
   } 
 }
 function emailVerificationLink(user) {

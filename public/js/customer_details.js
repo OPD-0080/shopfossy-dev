@@ -18,6 +18,7 @@ var deliveryContent = document.querySelector(".delivery-content");
 var paymentContent = document.querySelector(".payment-content");
 var summaryContent = document.querySelector(".summary-content");
 var requestSignInWrap = document.querySelector(".request-signIn-page");
+var orderedContent = document.querySelector(".order-content");
 
 // FIREBASE AUTH START
 const auth = getAuth();
@@ -47,6 +48,27 @@ function onAuthState() {
     });
 }onAuthState();
 // FIREBASE AUTH END
+
+// SHOW CART ORDERED AS PREVIEW
+var orderedRes = "";
+cart.forEach(el => {
+    orderedRes += `
+    <div>
+        <div class="order-image-wrap"><img src=${el.imgUrl} alt="img"></div>
+        <div class="ordered-des">
+            <ul>
+                <li> ${el.title} </li>
+                <li> ${el.UID} </li>
+                <li> GHC ${el.price} </li>
+                <li> ${el.amount} </li>
+            </ul>
+        </div>
+    </div>
+    `;
+    orderedContent.innerHTML = orderedRes;
+})
+// .....
+
 
 // BILL TO START
 var inputs = document.querySelectorAll("input");

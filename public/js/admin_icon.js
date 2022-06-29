@@ -14,7 +14,7 @@ adminBtn.addEventListener("mouseenter", () => {
 });
 
 adminBtn.onclick = (e) => {
-    window.location.href = "/public/admin.html"
+    window.location.href = "../admin.html"
 }
 /*adminCloseBtn.onclick = () => {
     adminContainer.classList.remove("visible")

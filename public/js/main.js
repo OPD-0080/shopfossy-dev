@@ -1,14 +1,15 @@
 import { categoryList } from './sideBarList/categoryList.js';
-//import { subCategoryList } from './sideBarList/sub-categoryList.js';
+let categories = categoryList;
 
 (function() {
     var cartNavBtn = document.querySelector(".cart-nav-btn");
+    var cartWrapper = document.querySelector(".cart-wrapper");
+    var closeBtn = document.querySelector(".overall-cart-btn");
+
     cartNavBtn.onclick = (e) => {
         if (e.target.classList.contains("overall-cart-btn") || e.target.classList.contains("cart-number") || e.target.classList.contains("cart-nav-btn")) {
             var cartBtn = e.target;
-            var cartWrapper = document.querySelector(".cart-wrapper");
-            var closeBtn = document.querySelector(".overall-cart-btn");
-
+            
             cartWrapper.classList.toggle("open");
             closeBtn.classList.toggle("collapse");
         }
@@ -65,7 +66,7 @@ import { categoryList } from './sideBarList/categoryList.js';
 (function(){
     
     // Destructuring array
-    categoryList.map(el => {
+    categories.map(el => {
         const text = el.text;
         const href = el.href;
         const dataId = el.dataId;
@@ -75,7 +76,7 @@ import { categoryList } from './sideBarList/categoryList.js';
     });
 
     var result = "";
-    categoryList.forEach(el => {
+    categories.forEach(el => {
         result += `
             <li class="btn-active" data-id="${el.dataId}"><a class="a-btn" href="${el.href}" data-id="${el.dataId}">${el.text}</a></li>
         `
@@ -91,7 +92,14 @@ import { categoryList } from './sideBarList/categoryList.js';
             sideBarEl.classList.toggle("shift");
             hunEl.classList.toggle("change")
         }
-    })
+    });
+    const categoryList = document.querySelector(".btn-active");
+    categoryList.onclick = (e) => {
+        if (e.target.classList.contains("a-btn") || e.target.classList.contains("btn-active")) {
+            sideBarEl.classList.remove("shift");
+            hunEl.classList.remove("change")
+        }
+    }
 })();
 // SIDEBAR (CATEGORY) END
 /*

@@ -141,7 +141,7 @@ body {
                     visibility: visible;
                     opacity: 1;
                 }
-                .form-title {
+                .header-title {
                     position: relative;
                     top: 0px;
                     height: 5vh;
@@ -389,7 +389,7 @@ body {
                         }
                         .custom-select {
                             background: white;
-                            padding: 0px 20px;
+                            padding: 10px 20px;
                             @include border-20;
 
                             select {
@@ -397,7 +397,7 @@ body {
                                 text-align: center;
                                 border: none;
                                 outline: none;
-                                padding: 10px 20px;
+                                padding: 0px 20px;
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
@@ -522,7 +522,7 @@ body {
                     left: 0px;
                     width: 100%;
                     
-                    .delivery-title {
+                    .header-title {
                         position: relative;
                         top: 0px;
                         height: 5vh;
@@ -676,7 +676,7 @@ body {
                     width: 100%;
                     margin-top: 20px;
                     
-                    .payment-title {
+                    .header-title {
                         position: relative;
                         top: 0px;
                         height: 5vh;
@@ -830,7 +830,7 @@ body {
                     margin-bottom: $margin-l;
                     margin-top: $margin-l;
                     
-                    .summary-title {
+                    .header-title {
                         position: relative;
                         top: 0px;
                         height: 5vh;
@@ -841,6 +841,9 @@ body {
                         font-weight: 550;
                         font-size: $font-vl;
                         z-index: 2; 
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                     }
                     .summary-content {
                         position: relative;
@@ -851,12 +854,10 @@ body {
                         align-items: center;
                         width: 98%;
                         height: 100%;
-                        //height: 0vh; // will be included later
-                        //height: inherit; // will be remove later
-                        //background: orange;
+                        height: 0vh; // will be included later
                         //overflow-y: scroll;  // will be included in @media query
                         //overflow-x: hidden;
-                        //visibility: hidden; 
+                        visibility: hidden; 
                         overflow: hidden;
                         @include trans-1s;
                         
@@ -958,18 +959,71 @@ body {
                         }
                         div:nth-child(2) {
                             flex-grow: 0;
-                        }
-                        div:nth-child(3) {
-                            flex-grow: 0;
+                            width: 100%;
+                            margin: 0px;
+
+                            .item-ordered-wrapper {
+                                position: relative;
+                                width: 100%;
+
+                                div {
+                                    position: relative;
+                                }
+
+                                .order-title {
+                                    @extend .header-title;
+                                    box-shadow: none;
+                                }
+                                .order-content {
+                                    width: 100%;
+                                    height: 100%;
+                                    margin-top: $margin-s;
+                                    margin-bottom: $margin-vs;
+                                    left: -10px;
+                                    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.638);
+
+                                    div {
+                                        display: flex;
+                                        justify-content: baseline;
+                                        align-items: center;
+
+                                        .order-image-wrap {
+                                            position: relative;
+                                            width: 100px;
+                                            height: 60px;
+                                            background: grey;
+                                            border: 5px solid white;
+                                            overflow: hidden;
+
+                                            img {
+                                                position: absolute;
+                                                top: 0px;
+                                                left: 0px;
+                                                width: 100%;
+                                                height: 100%;
+                                                object-fit: cover;
+                                            }
+                                        }
+                                        .ordered-des {
+                                            margin: 5px;
+                                            ul {
+                                                li {
+                                                    font-size: $font-s;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                     .summary-content.collapse {
-                        position: relative;
                         height: inherit;
                         visibility: visible;
                         @include trans-1s;
                     }
                 }
+                
                 .form-footer {
                     position: fixed;
                     bottom: 0px;
@@ -1025,7 +1079,7 @@ body {
                             .i {
                                 width: 30px;
                                 height: 30px;
-                                background-image: url("/public/img/icons/arrow-white-down.png");
+                                background-image: url("../img/icons/arrow-white-down.png");
                                 @include background-initializer;
                                 background-size: cover;
                                 margin-right: 10px;

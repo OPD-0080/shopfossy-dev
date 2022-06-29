@@ -33,6 +33,18 @@
             position: relative;
         }
 
+        .signInOut-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-image: url("../img/icons/close-white.png");
+            @include background-initializer;
+            background-size: cover;
+            z-index: 10;
+        }
+
         .sign-image-wrap {
             position: relative;
             width: 110px;

@@ -19,6 +19,8 @@ import {addCartItem} from '../components/add_cart_item.js';
     var cartContainer = document.querySelector(".cart-container");
     var checkOutBtn = document.querySelector(".cart-checkout");
     var emptyCartAlert = document.querySelector(".cart-empty-alert");
+    var cartWrapper = document.querySelector(".cart-wrapper");
+    var closeBtn = document.querySelector(".overall-cart-btn");
 
     class Products {
         async getList() {
@@ -88,7 +90,11 @@ import {addCartItem} from '../components/add_cart_item.js';
 
             // btn triggered to open customer form html page
             checkOutBtn.onclick = () => {
-                window.location.href = "/public/customer_info.html";
+                cartWrapper.classList.remove("open");
+                closeBtn.classList.remove("collapse");
+                setTimeout(() => {
+                    window.location.assign("customer_info.html");
+                }, 1000)
             }
 
             // GET & SHOW ITEM DESCRIPTION START

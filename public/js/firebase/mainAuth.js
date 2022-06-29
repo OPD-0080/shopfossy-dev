@@ -13,7 +13,7 @@ const imageText = document.querySelector(".image-text");
 const signInBtn = document.querySelector(".sign-in-btn");
 const userBtnWrapper = document.querySelector(".user-btns");
 const btnOff = userBtnWrapper.querySelector(".off");
-const btnOn = userBtnWrapper.querySelector(".on");
+const btnOn = userBtnWrapper.querySelector(".in");
 var formOverlay = document.querySelector(".sign-in-overlay");
 // ...
 const auth = getAuth();
@@ -69,26 +69,27 @@ function onAuthState() {
           signInBtn.onclick = (e) => {
             if (e.target.classList.contains("sign-in-btn") || e.target.classList.contains("i-redirect") ||  e.target.classList.contains("it-i")) {
                 // User is signed out
-                window.location.assign("../../index.html");
+                window.location.assign("index.html");
                 // ...
             }
           }
         }
     });
     function output(userName, userEmail, userPhoto) {
+      const userObj = JSON.parse(localStorage.getItem("currentUserCred"));
+      const firstLetter = userObj.userName.charAt(0).toUpperCase();
 
       if (userName == null || userName == undefined || userName == "") {
-        const userObj = localStorage.getItem("currentUserCred");
         userNameEl.innerHTML = userObj.userName;
       }else {
         userNameEl.innerHTML = userName;
       };
       if (userPhoto == null || userPhoto == undefined || userPhoto == "") {
-        const firstLetter = userName.charAt(0).toUpperCase();
-        imageText.innerHTML = `${firstLetter}`;
         userImages.forEach(userImage => {
           userImage.style.backgroundImage = `none`;
+          userImage.innerHTML = `${firstLetter}`;
         });
+        imageText.innerHTML = `${firstLetter}`;
       }else {
         userImages.forEach(userImage => {
           userImage.style.backgroundImage = `url(${userPhoto})`;

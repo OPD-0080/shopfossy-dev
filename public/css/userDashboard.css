@@ -306,13 +306,13 @@ a {
   display: flex;
 }
 
-.user-dashboard-wrapper .user-dashboard-container .user-btns .on {
+.user-dashboard-wrapper .user-dashboard-container .user-btns .in {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.user-dashboard-wrapper .user-dashboard-container .user-btns .on.show {
+.user-dashboard-wrapper .user-dashboard-container .user-btns .in.show {
   display: none;
 }
 

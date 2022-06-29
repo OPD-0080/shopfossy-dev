@@ -233,7 +233,7 @@ body {
   opacity: 1;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .form-title {
+.form-banner-container .overlay .form-wrapper .form-container .header-title, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title {
   position: relative;
   top: 0px;
   height: 5vh;
@@ -251,14 +251,14 @@ body {
           box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.568);
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .form-title div {
+.form-banner-container .overlay .form-wrapper .form-container .header-title div, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title div {
   position: relative;
   text-align: center;
   font-weight: 550;
   font-size: 20px;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .form-title div:nth-child(1) {
+.form-banner-container .overlay .form-wrapper .form-container .header-title div:nth-child(1), .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title div:nth-child(1) {
   width: 25px;
   height: 25px;
   z-index: 2;
@@ -274,7 +274,7 @@ body {
   -o-transition: .5s ease;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .form-title .ok-1 {
+.form-banner-container .overlay .form-wrapper .form-container .header-title .ok-1, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title .ok-1 {
   opacity: 0;
   transition: .5s ease;
   -webkit-transition: .5s ease;
@@ -283,7 +283,7 @@ body {
   -o-transition: .5s ease;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .form-title .ok-1.off {
+.form-banner-container .overlay .form-wrapper .form-container .header-title .ok-1.off, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title .ok-1.off {
   opacity: 1;
   transition: .5s ease;
   -webkit-transition: .5s ease;
@@ -292,7 +292,7 @@ body {
   -o-transition: .5s ease;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .form-title div:nth-child(3) {
+.form-banner-container .overlay .form-wrapper .form-container .header-title div:nth-child(3), .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title div:nth-child(3) {
   width: 25px;
   height: 25px;
   z-index: 2;
@@ -305,7 +305,7 @@ body {
   cursor: pointer;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .form-title div::first-letter {
+.form-banner-container .overlay .form-wrapper .form-container .header-title div::first-letter, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title div::first-letter {
   text-transform: uppercase;
 }
 
@@ -589,7 +589,7 @@ body {
 
 .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select {
   background: white;
-  padding: 0px 20px;
+  padding: 10px 20px;
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -602,7 +602,7 @@ body {
   text-align: center;
   border: none;
   outline: none;
-  padding: 10px 20px;
+  padding: 0px 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -806,7 +806,7 @@ body {
   width: 100%;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .delivery-title {
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .header-title, .form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .delivery-method-wrapper .order-title {
   position: relative;
   top: 0px;
   height: 5vh;
@@ -825,14 +825,14 @@ body {
   z-index: 2;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .delivery-title div {
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .header-title div, .form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title div, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .delivery-method-wrapper .order-title div {
   position: relative;
   text-align: center;
   font-weight: 550;
   font-size: 20px;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .delivery-title div:nth-child(1) {
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .header-title div:nth-child(1), .form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title div:nth-child(1), .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .delivery-method-wrapper .order-title div:nth-child(1) {
   width: 25px;
   height: 25px;
   z-index: 2;
@@ -848,7 +848,7 @@ body {
   -o-transition: .5s ease;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .delivery-title .ok-2 {
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .header-title .ok-2, .form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title .ok-2, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .delivery-method-wrapper .order-title .ok-2 {
   opacity: 0;
   transition: .5s ease;
   -webkit-transition: .5s ease;
@@ -857,7 +857,7 @@ body {
   -o-transition: .5s ease;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .delivery-title .ok-2.off {
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .header-title .ok-2.off, .form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title .ok-2.off, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .delivery-method-wrapper .order-title .ok-2.off {
   opacity: 1;
   transition: .5s ease;
   -webkit-transition: .5s ease;
@@ -866,7 +866,7 @@ body {
   -o-transition: .5s ease;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .delivery-title div:nth-child(3) {
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .header-title div:nth-child(3), .form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title div:nth-child(3), .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .delivery-method-wrapper .order-title div:nth-child(3) {
   width: 25px;
   height: 25px;
   z-index: 2;
@@ -879,7 +879,7 @@ body {
   cursor: pointer;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .delivery-title div::first-letter {
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .header-title div::first-letter, .form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title div::first-letter, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .delivery-method-wrapper .order-title div::first-letter {
   text-transform: uppercase;
 }
 
@@ -1022,7 +1022,7 @@ body {
   margin-top: 20px;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .payment-title {
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .header-title, .form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .payment-method-wrapper .order-title {
   position: relative;
   top: 0px;
   height: 5vh;
@@ -1041,14 +1041,14 @@ body {
   z-index: 2;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .payment-title div {
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .header-title div, .form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title div, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .payment-method-wrapper .order-title div {
   position: relative;
   text-align: center;
   font-weight: 550;
   font-size: 20px;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .payment-title div:nth-child(1) {
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .header-title div:nth-child(1), .form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title div:nth-child(1), .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .payment-method-wrapper .order-title div:nth-child(1) {
   width: 25px;
   height: 25px;
   z-index: 2;
@@ -1064,7 +1064,7 @@ body {
   -o-transition: .5s ease;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .payment-title .ok-3 {
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .header-title .ok-3, .form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title .ok-3, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .payment-method-wrapper .order-title .ok-3 {
   opacity: 0;
   transition: .5s ease;
   -webkit-transition: .5s ease;
@@ -1073,7 +1073,7 @@ body {
   -o-transition: .5s ease;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .payment-title .ok-3.off {
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .header-title .ok-3.off, .form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title .ok-3.off, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .payment-method-wrapper .order-title .ok-3.off {
   opacity: 1;
   transition: .5s ease;
   -webkit-transition: .5s ease;
@@ -1082,7 +1082,7 @@ body {
   -o-transition: .5s ease;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .payment-title div:nth-child(3) {
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .header-title div:nth-child(3), .form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title div:nth-child(3), .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .payment-method-wrapper .order-title div:nth-child(3) {
   width: 25px;
   height: 25px;
   z-index: 2;
@@ -1095,7 +1095,7 @@ body {
   cursor: pointer;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .payment-title div::first-letter {
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .header-title div::first-letter, .form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title div::first-letter, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .payment-method-wrapper .order-title div::first-letter {
   text-transform: uppercase;
 }
 
@@ -1238,7 +1238,7 @@ body {
   margin-top: 30px;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-title {
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .header-title, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title {
   position: relative;
   top: 0px;
   height: 5vh;
@@ -1249,6 +1249,15 @@ body {
   font-weight: 550;
   font-size: 20px;
   z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content {
@@ -1269,6 +1278,8 @@ body {
           align-items: center;
   width: 98%;
   height: 100%;
+  height: 0vh;
+  visibility: hidden;
   overflow: hidden;
   transition: 1s ease;
   -webkit-transition: 1s ease;
@@ -1412,16 +1423,74 @@ body {
   -webkit-box-flex: 0;
       -ms-flex-positive: 0;
           flex-grow: 0;
+  width: 100%;
+  margin: 0px;
 }
 
-.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(3) {
-  -webkit-box-flex: 0;
-      -ms-flex-positive: 0;
-          flex-grow: 0;
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper div {
+  position: relative;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-content {
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  left: -10px;
+  -webkit-box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.638);
+          box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.638);
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-content div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: baseline;
+      -ms-flex-pack: baseline;
+          justify-content: baseline;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-content div .order-image-wrap {
+  position: relative;
+  width: 100px;
+  height: 60px;
+  background: grey;
+  border: 5px solid white;
+  overflow: hidden;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-content div .order-image-wrap img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-content div .ordered-des {
+  margin: 5px;
+}
+
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-content div .ordered-des ul li {
+  font-size: 13px;
 }
 
 .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content.collapse {
-  position: relative;
   height: inherit;
   visibility: visible;
   transition: 1s ease;
@@ -1508,7 +1577,7 @@ body {
 .form-banner-container .overlay .form-wrapper .request-signIn-page div .request-btn a .i {
   width: 30px;
   height: 30px;
-  background-image: url("/public/img/icons/arrow-white-down.png");
+  background-image: url("../img/icons/arrow-white-down.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
