@@ -124,7 +124,7 @@ inputs.forEach(input => {
 
             // for option only
             if (companyEl.value == "" || companyEl.value == undefined) {
-                company = "Not Defined";
+                company = "None";
                 alertEl.classList.remove("color");
             }else {
                 company = companyEl.value
@@ -158,6 +158,11 @@ inputs.forEach(input => {
         }
     }
 });
+
+// SET DEFAULT VALUE FOR COMPANY INPUT
+const companyInputTag = formContent.querySelector(".company");
+company = companyInputTag.value;
+// ...........................
 
 // DISPLAYING CURRENT USER EMAIL IN FORM TAG (EMAIL INPUT TAG)
 function show_current_email_in_inputTag(user) {
@@ -459,10 +464,6 @@ formBtnEl.forEach(btn => {
                             el.classList.add("off")
                         }
                     })
-                    // ...
-
-                    // email logic
-                    
                     // ...
 
                     // customer variables start

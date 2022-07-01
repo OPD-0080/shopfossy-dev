@@ -598,7 +598,7 @@ body {
 }
 
 .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
-  color: #5f5f5f;
+  color: black;
   text-align: center;
   border: none;
   outline: none;
@@ -612,10 +612,12 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: white;
 }
 
 .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select option {
   text-align: center;
+  background: white;
 }
 
 .form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(5) label div {

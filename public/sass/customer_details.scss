@@ -393,7 +393,7 @@ body {
                             @include border-20;
 
                             select {
-                                color: rgb(95, 95, 95);
+                                color: black;
                                 text-align: center;
                                 border: none;
                                 outline: none;
@@ -401,9 +401,11 @@ body {
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
+                                background: white;
 
                                 option {
                                     text-align: center;
+                                    background: white;
                                 }
                             }
                         }
