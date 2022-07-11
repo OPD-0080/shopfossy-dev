@@ -13,22 +13,20 @@ body {
     width: 100%;
     height: 100vh;
     z-index: 15;
-    /*transform: translateY(-1500px);
-    -webkit-transform: translateY(-1500px);
-    -moz-transform: translateY(-1500px);
-    -ms-transform: translateY(-1500px);
-    -o-transform: translateY(-1500px);*/
     @include trans-1s;
-   
-    .overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .overlay {
         position: fixed;
         width: 100%;
-        height: 100%;
+        height: 100vh;
         top: 0px;
         left: 0px;
         @include background-initializer;
         background-size: cover;
-        background-image: url("../img/form/2.jpg");
+        background-image: url("../img/form/1.jpg");
         display: flex;
         justify-content: center;
         align-items: center;
@@ -53,6 +51,10 @@ body {
             width: 100px;
             height: 80px;
             background: $primary_background;
+            background-image: url("../img/logo/logo.jpg");
+            @include background-initializer;
+            background-size: cover;
+            object-fit: cover;
             z-index: 3;
             visibility: visible;
             opacity: 1;
@@ -78,10 +80,9 @@ body {
         .form-wrapper {
             position: fixed;
             z-index: 3;
-            width: 60%;
-            height: 95vh;
-            background: rgba(177, 176, 176, 0.377);
-            backdrop-filter: blur(10px);
+            width: 70%;
+            height: 100vh;
+            backdrop-filter: blur(20px);
             @include border-20;
             overflow: hidden;
             @include trans-1s;
@@ -409,6 +410,9 @@ body {
                                 }
                             }
                         }
+                        .custom-select.on {
+                            display: none;
+                        }
                     }
                     div:nth-child(5) {
                         label {
@@ -458,9 +462,6 @@ body {
                         }
                         .select-option-city {
                             display: block;
-                        }
-                        .select-option-city.on {
-                            display: none;
                         }
                         .city-alt {
                             display: none;
@@ -1145,14 +1146,6 @@ body {
         width: 100%;
         height: 100%;
     }
-}
-.form-banner-container.customerForm {
-    transform: translateY(0px);
-    -webkit-transform: translateY(0px);
-    -moz-transform: translateY(0px);
-    -ms-transform: translateY(0px);
-    -o-transform: translateY(0px);
-    @include trans-1s;
 }
 .hidden {
     display: none;

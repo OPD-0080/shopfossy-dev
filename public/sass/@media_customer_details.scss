@@ -20,6 +20,17 @@
                         height: 85%;
 
                         div {
+                            .custom-select {
+                                select {
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
                             label {
                                 font-size: $font-s;
                             }
@@ -60,6 +71,17 @@
                         height: 85%;
 
                         div {
+                            .custom-select {
+                                select {
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
                             label {
                                 font-size: $font-s;
                             }
@@ -100,6 +122,17 @@
                         height: 85%;
 
                         div {
+                            .custom-select {
+                                select {
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
                             label {
                                 font-size: $font-s;
                             }
@@ -140,6 +173,17 @@
                         height: 85%;
 
                         div {
+                            .custom-select {
+                                select {
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
                             label {
                                 font-size: $font-s;
                             }
@@ -180,6 +224,17 @@
                         height: 85%;
 
                         div {
+                            .custom-select {
+                                select {
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
                             label {
                                 font-size: $font-s;
                             }
@@ -220,6 +275,17 @@
                         height: 85%;
 
                         div {
+                            .custom-select {
+                                select {
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
                             label {
                                 font-size: $font-s;
                             }
@@ -255,6 +321,12 @@
                     }
                     .invoice-structure-wrap {
                         .invoice-structure-container {
+                            .watermark {
+                                top: 35%;
+                                left: -10%;
+                                font-size: 60px;
+                                @include rotate(-65deg);
+                            }
                             .invoice-table-wrap {
                                 .invoice-table-header {
                                     display: grid;
@@ -303,6 +375,17 @@
                         height: 85%;
 
                         div {
+                            .custom-select {
+                                select {
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
                             label {
                                 font-size: $font-s;
                             }
@@ -341,7 +424,7 @@
             }
             .form-wrapper {
                 position: relative;
-                width: 90%;
+                width: 97%;
                 //height: 95vh;
                 display: flex;
                 justify-content: center;
@@ -368,6 +451,17 @@
                         overflow-x: hidden;
 
                         div {
+                            .custom-select {
+                                select {
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
                             label {
                                 font-size: $font-s;
                             }
@@ -416,7 +510,7 @@
             }
             .form-wrapper {
                 position: relative;
-                width: 90%;
+                width: 97%;
                 //height: 95vh;
                 display: flex;
                 justify-content: center;
@@ -443,6 +537,17 @@
                         overflow-x: hidden;
 
                         div {
+                            .custom-select {
+                                select {
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
                             label {
                                 font-size: $font-s;
                             }
@@ -487,6 +592,12 @@
                     }
                     .invoice-structure-wrap {
                         .invoice-structure-container {
+                            .watermark {
+                                top: 35%;
+                                left: -10%;
+                                font-size: 60px;
+                                @include rotate(-65deg);
+                            }
                             .invoice-header-wrap {
                                 div:nth-child(1) {
                                     font-size: 2.5rem;
@@ -552,7 +663,7 @@
             }
             .form-wrapper {
                 position: relative;
-                width: 90%;
+                width: 97%;
                 //height: 95vh;
                 display: flex;
                 justify-content: center;
@@ -579,6 +690,17 @@
                         overflow-x: hidden;
 
                         div {
+                            .custom-select {
+                                select {
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
                             label {
                                 font-size: $font-s;
                             }
@@ -623,6 +745,12 @@
                     }
                     .invoice-structure-wrap {
                         .invoice-structure-container {
+                            .watermark {
+                                top: 35%;
+                                left: -10%;
+                                font-size: 60px;
+                                @include rotate(-65deg);
+                            }
                             .invoice-header-wrap {
                                 div:nth-child(1) {
                                     font-size: 2.5rem;
@@ -688,7 +816,7 @@
             }
             .form-wrapper {
                 position: relative;
-                width: 90%;
+                width: 97%;
                 //height: 95vh;
                 display: flex;
                 justify-content: center;
@@ -715,6 +843,17 @@
                         overflow-x: hidden;
 
                         div {
+                            .custom-select {
+                                select {
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
                             label {
                                 font-size: $font-s;
                             }
@@ -764,8 +903,8 @@
             }
             .form-wrapper {
                 position: relative;
-                width: 90%;
-                height: 90vh;
+                width: 97%;
+                height: 97vh;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -791,6 +930,17 @@
                         overflow-x: hidden;
 
                         div {
+                            .custom-select {
+                                select {
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
                             label {
                                 font-size: $font-s;
                             }
@@ -853,6 +1003,12 @@
                     }
                     .invoice-structure-wrap {
                         .invoice-structure-container {
+                            .watermark {
+                                top: 35%;
+                                left: -10%;
+                                font-size: 60px;
+                                @include rotate(-65deg);
+                            }
                             .invoice-header-wrap {
                                 div:nth-child(1) {
                                     font-size: 2.5rem;
@@ -918,8 +1074,8 @@
             }
             .form-wrapper {
                 position: relative;
-                width: 90%;
-                height: 90vh;
+                width: 97%;
+                height: 97vh;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -945,6 +1101,17 @@
                         overflow-x: hidden;
 
                         div {
+                            .custom-select {
+                                select {
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
                             label {
                                 font-size: $font-s;
                             }
@@ -991,6 +1158,12 @@
                     }
                     .invoice-structure-wrap {
                         .invoice-structure-container {
+                            .watermark {
+                                top: 35%;
+                                left: -10%;
+                                font-size: 60px;
+                                @include rotate(-65deg);
+                            }
                             .invoice-header-wrap {
                                 div:nth-child(1) {
                                     font-size: 2.5rem;

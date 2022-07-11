@@ -54,13 +54,13 @@ var orderedRes = "";
 cart.forEach(el => {
     orderedRes += `
     <div>
-        <div class="order-image-wrap"><img src=${el.imgUrl} alt="img"></div>
+        <div class="order-image-wrap"><img src="img/main-categories/${el.imgUrl}" alt="img"></div>
         <div class="ordered-des">
             <ul>
-                <li> ${el.title} </li>
-                <li> ${el.UID} </li>
-                <li> GHC ${el.price} </li>
-                <li> ${el.amount} </li>
+                <li> Name: ${el.title} </li>
+                <li> UID: ${el.UID} </li>
+                <li> Price: GHC ${el.price} </li>
+                <li> Qty: ${el.amount} </li>
             </ul>
         </div>
     </div>
@@ -228,7 +228,7 @@ toggleWrap.onclick = (e) => {
 
         // switch input
         e.target.parentElement.previousElementSibling.classList.toggle("on");
-        e.target.parentElement.previousElementSibling.previousElementSibling.classList.toggle("on")
+        e.target.parentElement.parentElement.children[2].classList.toggle("on")
     }
 }
 // TOGGLE BUTTON END

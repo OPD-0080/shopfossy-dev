@@ -12,6 +12,21 @@
     overflow-x: hidden;
     height: 85%;
   }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
+  }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
     font-size: 13px;
   }
@@ -38,6 +53,21 @@
     overflow-y: scroll;
     overflow-x: hidden;
     height: 85%;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
     font-size: 13px;
@@ -66,6 +96,21 @@
     overflow-x: hidden;
     height: 85%;
   }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
+  }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
     font-size: 13px;
   }
@@ -92,6 +137,21 @@
     overflow-y: scroll;
     overflow-x: hidden;
     height: 85%;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
     font-size: 13px;
@@ -120,6 +180,21 @@
     overflow-x: hidden;
     height: 85%;
   }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
+  }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
     font-size: 13px;
   }
@@ -147,6 +222,21 @@
     overflow-x: hidden;
     height: 85%;
   }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
+  }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
     font-size: 13px;
   }
@@ -161,6 +251,16 @@
   .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-client-logo .logo-wrap div:nth-child(2) {
     font-size: 13px;
     top: 5px;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .watermark {
+    top: 35%;
+    left: -10%;
+    font-size: 60px;
+    transform: rotate(-65deg);
+    -webkit-transform: rotate(-65deg);
+    -moz-transform: rotate(-65deg);
+    -ms-transform: rotate(-65deg);
+    -o-transform: rotate(-65deg);
   }
   .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-table-wrap .invoice-table-header {
     display: -ms-grid;
@@ -199,6 +299,21 @@
     overflow-x: hidden;
     height: 85%;
   }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
+  }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
     font-size: 13px;
   }
@@ -228,7 +343,7 @@
   }
   .form-banner-container .overlay .form-wrapper {
     position: relative;
-    width: 90%;
+    width: 97%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -246,6 +361,21 @@
         grid-template-areas: 'f1' 'f2' 'f3' 'f4' 'f5' 'f6' 'f7' 'f8' 'f9' 'f10' 'f11';
     overflow-y: scroll;
     overflow-x: hidden;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
     font-size: 13px;
@@ -289,7 +419,7 @@
   }
   .form-banner-container .overlay .form-wrapper {
     position: relative;
-    width: 90%;
+    width: 97%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -307,6 +437,21 @@
         grid-template-areas: 'f1' 'f2' 'f3' 'f4' 'f5' 'f6' 'f7' 'f8' 'f9' 'f10' 'f11';
     overflow-y: scroll;
     overflow-x: hidden;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
     font-size: 13px;
@@ -334,6 +479,16 @@
   }
   .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-client-logo {
     display: none;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .watermark {
+    top: 35%;
+    left: -10%;
+    font-size: 60px;
+    transform: rotate(-65deg);
+    -webkit-transform: rotate(-65deg);
+    -moz-transform: rotate(-65deg);
+    -ms-transform: rotate(-65deg);
+    -o-transform: rotate(-65deg);
   }
   .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div:nth-child(1) {
     font-size: 2.5rem;
@@ -393,7 +548,7 @@
   }
   .form-banner-container .overlay .form-wrapper {
     position: relative;
-    width: 90%;
+    width: 97%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -411,6 +566,21 @@
         grid-template-areas: 'f1' 'f2' 'f3' 'f4' 'f5' 'f6' 'f7' 'f8' 'f9' 'f10' 'f11';
     overflow-y: scroll;
     overflow-x: hidden;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
     font-size: 13px;
@@ -438,6 +608,16 @@
   }
   .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-client-logo {
     display: none;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .watermark {
+    top: 35%;
+    left: -10%;
+    font-size: 60px;
+    transform: rotate(-65deg);
+    -webkit-transform: rotate(-65deg);
+    -moz-transform: rotate(-65deg);
+    -ms-transform: rotate(-65deg);
+    -o-transform: rotate(-65deg);
   }
   .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div:nth-child(1) {
     font-size: 2.5rem;
@@ -497,7 +677,7 @@
   }
   .form-banner-container .overlay .form-wrapper {
     position: relative;
-    width: 90%;
+    width: 97%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -515,6 +695,21 @@
         grid-template-areas: 'f1' 'f2' 'f3' 'f4' 'f5' 'f6' 'f7' 'f8' 'f9' 'f10' 'f11';
     overflow-y: scroll;
     overflow-x: hidden;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
     font-size: 13px;
@@ -558,8 +753,8 @@
   }
   .form-banner-container .overlay .form-wrapper {
     position: relative;
-    width: 90%;
-    height: 90vh;
+    width: 97%;
+    height: 97vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -577,6 +772,21 @@
         grid-template-areas: 'f1' 'f2' 'f3' 'f4' 'f5' 'f6' 'f7' 'f8' 'f9' 'f10' 'f11';
     overflow-y: scroll;
     overflow-x: hidden;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
     font-size: 13px;
@@ -611,6 +821,16 @@
   }
   .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-client-logo {
     display: none;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .watermark {
+    top: 35%;
+    left: -10%;
+    font-size: 60px;
+    transform: rotate(-65deg);
+    -webkit-transform: rotate(-65deg);
+    -moz-transform: rotate(-65deg);
+    -ms-transform: rotate(-65deg);
+    -o-transform: rotate(-65deg);
   }
   .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div:nth-child(1) {
     font-size: 2.5rem;
@@ -670,8 +890,8 @@
   }
   .form-banner-container .overlay .form-wrapper {
     position: relative;
-    width: 90%;
-    height: 90vh;
+    width: 97%;
+    height: 97vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -689,6 +909,21 @@
         grid-template-areas: 'f1' 'f2' 'f3' 'f4' 'f5' 'f6' 'f7' 'f8' 'f9' 'f10' 'f11';
     overflow-y: scroll;
     overflow-x: hidden;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
   }
   .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
     font-size: 13px;
@@ -716,6 +951,16 @@
   }
   .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-client-logo {
     display: none;
+  }
+  .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .watermark {
+    top: 35%;
+    left: -10%;
+    font-size: 60px;
+    transform: rotate(-65deg);
+    -webkit-transform: rotate(-65deg);
+    -moz-transform: rotate(-65deg);
+    -ms-transform: rotate(-65deg);
+    -o-transform: rotate(-65deg);
   }
   .invoice-wrapper .invoice-container .invoice-content .invoice .invoice-structure-wrap .invoice-structure-container .invoice-header-wrap div:nth-child(1) {
     font-size: 2.5rem;

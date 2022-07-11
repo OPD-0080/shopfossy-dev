@@ -8,8 +8,6 @@ const userImages = document.querySelectorAll(".image-user");
 const userBtnWrapper = document.querySelector(".user-btns");
 const btnOff = userBtnWrapper.querySelector(".off");
 const btnOn = userBtnWrapper.querySelector(".in");
-const userAlert = document.querySelector(".user-edit-alert");
-const userAlertText = userAlert.querySelector(".alert-text");
 
 function signOutFunc() {
     const auth = getAuth();
@@ -60,9 +58,6 @@ function deleteAccount() {
             await deleteDoc(doc(db, "Users", `${user.uid}`))
             .then(() => {
                 // Alert user a notification
-                // user alert
-                alertNotification()
-                // ...
 
                 setTimeout(() => {
                     // return to index page with signLog page on
@@ -76,14 +71,6 @@ function deleteAccount() {
             // doc.data() will be undefined in this case
             console.log("No such document!");
         }
-    }
-    function alertNotification() {
-        userAlertText.innerHTML = "User Account Deleted !";
-        userAlert.style.background = "green";
-        userAlert.classList.add("alert");
-        setTimeout(() => {
-            userAlert.classList.remove("alert");
-        }, 800);
     }
 }
 export {signOutFunc, deleteAccount}

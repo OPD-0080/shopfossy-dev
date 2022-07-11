@@ -37,11 +37,11 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  transform: scale(0.3);
-  -webkit-transform: scale(0.3);
-  -moz-transform: scale(0.3);
-  -ms-transform: scale(0.3);
-  -o-transform: scale(0.3);
+  transform: scale(0.1);
+  -webkit-transform: scale(0.1);
+  -moz-transform: scale(0.1);
+  -ms-transform: scale(0.1);
+  -o-transform: scale(0.1);
   transition: .1s ease;
   -webkit-transition: .1s ease;
   -moz-transition: .1s ease;
@@ -298,6 +298,10 @@ a {
   font-weight: 550;
 }
 
+.sign-in-overlay .signIn-wrapper .signIn-content .signIn-container div input[type="submit"] {
+  padding: 20px 30px 20px 30px;
+}
+
 .sign-in-overlay .signIn-wrapper .signIn-content .signIn-container div .input::first-letter {
   text-transform: uppercase;
 }
@@ -511,6 +515,10 @@ a {
   border: none;
   font-size: 16px;
   font-weight: 550;
+}
+
+.sign-in-overlay .signIn-wrapper .logIn-content .logIn-container div input[type="submit"] {
+  padding: 20px 30px 20px 30px;
 }
 
 .sign-in-overlay .signIn-wrapper .logIn-content .logIn-container div .input::first-letter {
@@ -781,7 +789,9 @@ a {
   -ms-transition: .1s ease;
   -o-transition: .1s ease;
   opacity: 1;
-  visibility: visible;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .verification-alert-wrap {
@@ -855,13 +865,11 @@ a {
 }
 
 .verification-alert-wrap.collapse {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   transition: .1s ease;
   -webkit-transition: .1s ease;
   -moz-transition: .1s ease;
   -ms-transition: .1s ease;
   -o-transition: .1s ease;
   opacity: 1;
+  visibility: visible;
 }

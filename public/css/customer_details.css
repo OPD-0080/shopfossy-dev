@@ -31,28 +31,32 @@ body {
   width: 100%;
   height: 100vh;
   z-index: 15;
-  /*transform: translateY(-1500px);
-    -webkit-transform: translateY(-1500px);
-    -moz-transform: translateY(-1500px);
-    -ms-transform: translateY(-1500px);
-    -o-transform: translateY(-1500px);*/
   transition: 1s ease;
   -webkit-transition: 1s ease;
   -moz-transition: 1s ease;
   -ms-transition: 1s ease;
   -o-transition: 1s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .form-banner-container .overlay {
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   top: 0px;
   left: 0px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url("../img/form/2.jpg");
+  background-image: url("../img/form/1.jpg");
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -85,6 +89,12 @@ body {
   width: 100px;
   height: 80px;
   background: #2e2e2e;
+  background-image: url("../img/logo/logo.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   z-index: 3;
   visibility: visible;
   opacity: 1;
@@ -119,11 +129,10 @@ body {
 .form-banner-container .overlay .form-wrapper {
   position: fixed;
   z-index: 3;
-  width: 60%;
-  height: 95vh;
-  background: rgba(177, 176, 176, 0.377);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  width: 70%;
+  height: 100vh;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -620,6 +629,10 @@ body {
   background: white;
 }
 
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select.on {
+  display: none;
+}
+
 .form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(5) label div {
   background: #34e434;
 }
@@ -696,10 +709,6 @@ body {
 
 .form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(7) .select-option-city {
   display: block;
-}
-
-.form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(7) .select-option-city.on {
-  display: none;
 }
 
 .form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(7) .city-alt {
@@ -1673,19 +1682,6 @@ body {
   background: rgba(0, 0, 0, 0.559);
   width: 100%;
   height: 100%;
-}
-
-.form-banner-container.customerForm {
-  transform: translateY(0px);
-  -webkit-transform: translateY(0px);
-  -moz-transform: translateY(0px);
-  -ms-transform: translateY(0px);
-  -o-transform: translateY(0px);
-  transition: 1s ease;
-  -webkit-transition: 1s ease;
-  -moz-transition: 1s ease;
-  -ms-transition: 1s ease;
-  -o-transition: 1s ease;
 }
 
 .hidden {

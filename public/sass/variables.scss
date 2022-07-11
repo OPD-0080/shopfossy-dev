@@ -110,11 +110,11 @@ $database-main-background: rgb(185, 4, 4);
     -o-transform: rotate(35deg);
 }
 @mixin shrink-in {
-    transform: scale(0.3);
-    -webkit-transform: scale(0.3);
-    -moz-transform: scale(0.3);
-    -ms-transform: scale(0.3);
-    -o-transform: scale(0.3);
+    transform: scale(0.1);
+    -webkit-transform: scale(0.1);
+    -moz-transform: scale(0.1);
+    -ms-transform: scale(0.1);
+    -o-transform: scale(0.1);
 }
 @mixin shrink-out {
     transform: scale(1);

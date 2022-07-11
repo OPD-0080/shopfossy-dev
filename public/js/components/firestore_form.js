@@ -148,9 +148,10 @@ function firestore_form(uid, customerInfo, delivery_header, payment_header) {
             grandtotal.forEach(el => el.innerHTML = customerInfo[1]);
         })
 
-        // show payment methods
+        // show payment & delivery methods
             var paymentWrap = document.querySelector(".invoice-payment-wrap");
             paymentWrap.querySelector(".payment-status").innerHTML = payment_header;
+            paymentWrap.querySelector(".delivery-status").innerHTML = delivery_header;
 
         // show client data 
         var  show = ""; var show_media = ""
@@ -169,7 +170,7 @@ function firestore_form(uid, customerInfo, delivery_header, payment_header) {
             show_media = `
                 <li class="client-name"> ${el.first_name} ${el.last_name} </li>
                 <li class="client-tel"> ${el.number} </li>
-                <li class="client-email">opd#d.com </li>
+                <li class="client-email"> ${el.email} </li>
                 <li class="client-region"> ${el.region} </li>
                 <li class="client-city"> ${el.city}</li>
                 <li class="client-resident"> ${el.residential} </li>

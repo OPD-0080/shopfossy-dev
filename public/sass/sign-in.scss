@@ -168,6 +168,9 @@
                         font-size: 16px;
                         font-weight: 550;
                     }
+                    input[type="submit"] {
+                        padding: 20px 30px 20px 30px
+                    }
                     .input::first-letter {
                         text-transform: uppercase;
                     }
@@ -316,6 +319,9 @@
                         border: none;
                         font-size: 16px;
                         font-weight: 550;
+                    }
+                    input[type="submit"] {
+                        padding: 20px 30px 20px 30px
                     }
                     .input::first-letter {
                         text-transform: uppercase;
@@ -492,7 +498,7 @@
     @include shrink-out;
     @include trans-01s;
     opacity: 1;
-    visibility: visible;
+    display: flex;
 }
 .verification-alert-wrap {
     position: fixed;
@@ -542,7 +548,7 @@
     background: green;
 }
 .verification-alert-wrap.collapse {
-    display: flex;
     @include trans-01s;
     opacity: 1;
+    visibility: visible;
 }
