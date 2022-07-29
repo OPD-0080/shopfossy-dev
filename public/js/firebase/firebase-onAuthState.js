@@ -3,18 +3,15 @@
 import { getAuth,  onAuthStateChanged, sendEmailVerification } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 // ...
 // VARIABLES
-var formOverlay = document.querySelector(".sign-in-overlay");
 const userImages = document.querySelectorAll(".image-user");
 const userNameEl = document.querySelector(".user-name");
 const userEmailEl = document.querySelector(".user-email");
 const alertVerification = document.querySelector(".verification-alert-wrap");
 const verifyBtn = alertVerification.querySelector(".verify-btn");
 const verifyText = alertVerification.querySelector(".v-text");
-const signInBtn = document.querySelector(".sign-in-btn");
 const userBtnWrapper = document.querySelector(".user-btns");
 const btnOff = userBtnWrapper.querySelector(".off");
 const btnOn = userBtnWrapper.querySelector(".in");
-const signInPageCloseBtn = document.querySelector(".signInOut-close-btn");
 const imageText = document.querySelector(".image-text");
 // ...
 
@@ -75,17 +72,6 @@ function onAuthState() {
       } else {
         btnOff.classList.remove("show");
         btnOn.classList.remove("show");
-
-        signInBtn.onclick = (e) => {
-          if (e.target.classList.contains("sign-in-btn") || e.target.classList.contains("i-in") || e.target.classList.contains("it-i")) {
-              // User is signed out
-              formOverlay.classList.add("collapse");
-              // ...
-          }
-        }
-        signInPageCloseBtn.onclick = (e) => {
-          formOverlay.classList.remove("collapse");
-        }
       }
   });
   // display data on dashboard

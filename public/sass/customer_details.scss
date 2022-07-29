@@ -82,7 +82,7 @@ body {
             z-index: 3;
             width: 70%;
             height: 100vh;
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(25px);
             @include border-20;
             overflow: hidden;
             @include trans-1s;

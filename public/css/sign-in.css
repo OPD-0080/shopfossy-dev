@@ -28,9 +28,7 @@ a {
   height: 100vh;
   background: rgba(0, 0, 0, 0.7);
   z-index: 50;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -48,7 +46,6 @@ a {
   -ms-transition: .1s ease;
   -o-transition: .1s ease;
   opacity: 0;
-  visibility: hidden;
 }
 
 .sign-in-overlay .signIn-wrapper {
@@ -865,11 +862,18 @@ a {
 }
 
 .verification-alert-wrap.collapse {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   transition: .1s ease;
   -webkit-transition: .1s ease;
   -moz-transition: .1s ease;
   -ms-transition: .1s ease;
   -o-transition: .1s ease;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
   opacity: 1;
-  visibility: visible;
 }

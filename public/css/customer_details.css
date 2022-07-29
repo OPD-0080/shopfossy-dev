@@ -131,8 +131,8 @@ body {
   z-index: 3;
   width: 70%;
   height: 100vh;
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;

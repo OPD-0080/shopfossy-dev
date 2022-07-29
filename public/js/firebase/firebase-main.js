@@ -277,7 +277,7 @@ var message = "";
 })();
 //  CHECKING USER AUTHENTICATION END
 
-// DELETE ACCOUNT AND EDITED BUTTON
+// DELETE ACCOUNT, SIGN IN  AND EDITED BUTTON
 (function(){
     dashBoardBtns.forEach(btn => {
         btn.onclick = (e) => {

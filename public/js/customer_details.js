@@ -183,7 +183,7 @@ selectedOptionRegion.forEach(el => {
 
         region =  e.target.value;
         // user alert
-        var alertEl = e.target.parentElement.children[0].children[0];
+        var alertEl = e.target.parentElement.parentElement.children[0].children[0];
         alertEl.classList.add("color");
         
         if (region == "Ashanti" || region == "ashanti") {
@@ -210,11 +210,18 @@ selectedOptionRegion.forEach(el => {
 })
 var selectedOptionCity = document.querySelectorAll(".select-option-city");
 var cityAltEl = document.querySelector(".city-alt");
+cityAltEl.onkeyup = (e) => {
+    var alertEl = e.target.parentElement.children[0].children[0];
+    if (e.target.value.length >= e.target.getAttribute("minlength")) {
+        alertEl.classList.add("color");
+    }else if (e.target.value == "" ) {alertEl.classList.remove("color");}
+    else {alertEl.classList.remove("color");}
+}
 selectedOptionCity.forEach(el => {
     el.onchange = (e) => {
         city =  e.target.value;
          // user alert
-        var alertEl = e.target.parentElement.children[0].children[0];
+        var alertEl = e.target.parentElement.parentElement.children[0].children[0];
         alertEl.classList.add("color");
     }
 })

@@ -31,7 +31,7 @@ function logIn(email, password) {
         }
         else {
             // store data in database
-            storeDataInFireStore(email)
+            storeDataInFireStore(email, user)
             // ...
         }
     })
@@ -93,7 +93,7 @@ function logIn(email, password) {
         console.log(errorCode);
     });
 
-    async function storeDataInFireStore(email) {
+    async function storeDataInFireStore(email, user) {
          // user alert
             alertError.innerHTML = "Please Wait ...";
             alertWrap.style.background = "grey";
@@ -105,10 +105,10 @@ function logIn(email, password) {
         // ...
         // store data in fireStore database
         const collectionRef = collection(db, "Users");
-        await setDoc(doc(collectionRef, auth.currentUser.uid), {
+        await setDoc(doc(collectionRef, user.uid), {
             UserName: userObj.userName,
             Email: userObj.email,
-            UID: auth.currentUser.uid,
+            UID: user.uid,
             TimeCreated: serverTimestamp()
         });
         // ...
@@ -117,7 +117,7 @@ function logIn(email, password) {
         // ...
     }
     async function getData(userObj) {
-        const user = auth.currentUser.uid;
+        const user = auth.currentUser;
         const user_name = userObj.userName;
         const Email = userObj.email;
 

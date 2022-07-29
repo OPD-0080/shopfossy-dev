@@ -9,13 +9,12 @@
     height: 100vh;
     background: rgba(0, 0, 0, 0.7);
     z-index: 50;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     @include shrink-in;
     @include trans-01s;
     opacity: 0;
-    visibility: hidden;
 
     .signIn-wrapper {
         position: relative;
@@ -548,7 +547,8 @@
     background: green;
 }
 .verification-alert-wrap.collapse {
+    display: flex;
     @include trans-01s;
+    @include shrink-out;
     opacity: 1;
-    visibility: visible;
 }

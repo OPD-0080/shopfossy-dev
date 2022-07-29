@@ -1,5 +1,5 @@
 const dashBoardBtn = document.querySelector(".user-fixed-image-wrap");
-const userDashBoard = document.querySelector(".user-dashboard-wrapper");
+var userDashBoard = document.querySelector(".user-dashboard-wrapper");
 const redirectBtn = document.querySelector(".sign-in-btn");
 
 (function(){
