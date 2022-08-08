@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="./css/invoice.css">
     <link rel="stylesheet" href="./css/@keyframes-landing.css">
     <link rel="stylesheet" href="./css/@media_customer_details.css">
+    <!-- For Android mobile -->
+    <link rel="manifest" href="./manifest.json">
+    <!--- for IOS Mobile -->
+    <link rel="apple-touch-icon" href="./img/logo/icons-96x96.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#2e2e2e">
+    <meta name="theme-color" content="#2e2e2e">
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -389,6 +395,7 @@
 
     <!-------JS START ------------>
     <!-- plugins for js start here -->
+    <script src="./js/sw-register.js"></script>
     <script src="./js/landing-page.js"></script>
     <script src="./js/plugins/firebase-app-init.js" type="module"></script>
     <script src="./js/customer_details.js" type="module"></script>

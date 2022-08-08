@@ -5,7 +5,7 @@
             "fields": {
                 "adminId": "userid",
                 "password": "12345",
-                "img": "img/index/admin-image/admin1.jpg",
+                "img": "img/index/admin-image/admin1.webp",
                 "databaseUrl": "databases/company1-database.html"
             }
         },
@@ -14,7 +14,7 @@
             "fields": {
                 "adminId": "opd",
                 "password": "111",
-                "img": "img/index/admin-image/admin2.jpg",
+                "img": "img/index/admin-image/admin2.webp",
                 "databaseUrl": "databases/company2-database.html"            
             }
         },
@@ -23,7 +23,7 @@
             "fields": {
                 "adminId": "deby",
                 "password": "222",
-                "img": "img/index/admin-image/admin3.jpg",
+                "img": "img/index/admin-image/admin3.webp",
                 "databaseUrl": "databases/company3-database.html"            
             }
         }

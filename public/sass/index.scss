@@ -122,22 +122,22 @@
                             background-size: cover;
                         }
                         .img1 {
-                            background-image: url("../img/index/flare-images/1.jpg");
+                            background-image: url("../img/index/flare-images/1.webp");
                         }
                         .img2 {
-                            background-image: url("../img/index/flare-images/2.jpg");
+                            background-image: url("../img/index/flare-images/2.webp");
                         }
                         .img3 {
-                            background-image: url("../img/index/flare-images/3.jpg");
+                            background-image: url("../img/index/flare-images/3.webp");
                         }
                         .img4 {
-                            background-image: url("../img/index/flare-images/4.jpg");
+                            background-image: url("../img/index/flare-images/4.webp");
                         }
                         .img5 {
-                            background-image: url("../img/index/flare-images/5.jpg");
+                            background-image: url("../img/index/flare-images/5.webp");
                         }
                         .img6 {
-                            background-image: url("../img/index/flare-images/1.jpg");
+                            background-image: url("../img/index/flare-images/1.webp");
                         }
                     }
                     .slide-dot-wrap {
@@ -678,7 +678,7 @@
     .D-section-container {
         position: relative;
         width: 100%;
-        background-image: url("../img/index/banner/cover.png");
+        background-image: url("../img/index/banner/cover.webp");
         background-size: cover;
         @include background-initializer;
         display: flex;
@@ -703,7 +703,7 @@
                 left: 0px;
                 width: 100%;
                 height: 100%;
-                background-image: url("../img/index/banner/banner-logo.png");
+                background-image: url("../img/index/banner/banner-logo.webp");
                 background-size: contain;
                 @include background-initializer;
             }
@@ -794,7 +794,7 @@
                 left: 0px;
                 width: 100%;
                 height: 100%;
-                background-image: url("../img/index/banner/gamer.png");
+                background-image: url("../img/index/banner/gamer.webp");
                 @include background-initializer;
                 background-size: contain;
                 object-fit: contain;
@@ -891,7 +891,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.566);
-    background-image: url("../img/index/banner/trend-banner.jpg");
+    background-image: url("../img/index/banner/trend-banner.webp");
     background-size: cover;
 }
 .main-section-F-wrapper::after {
@@ -980,7 +980,7 @@
     left: 0px;
     width: 100%;
     height: 100%;
-    background-image: url("../img/index/banner/new-banner.jpg");
+    background-image: url("../img/index/banner/new-banner.webp");
     @include background-initializer;
     background-size: cover;
     background-attachment: fixed;

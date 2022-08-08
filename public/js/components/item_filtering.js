@@ -16,7 +16,7 @@ function itemFiltering(btnId, allList) {
                     <div class="item-img-wrap" data-id=${item.id}>
                         <div class="item-img">
                         <img class="lazy-load-selector"
-                            src="./img/main-categories/blur-img/blur.jpg" width="300px" height="300px" alt="img"
+                            src="./img/main-categories/blur-img/blur.webp" width="300px" height="300px" alt="img"
                             data-src="img/main-categories/${item.imgUrl}" width="300px" height="300px" alt="img"
                         >
                         </div>

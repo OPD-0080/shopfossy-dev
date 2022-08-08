@@ -45,7 +45,7 @@ body.collapse {
         width: 100px;
         height: 100px;
         background: grey;
-        background-image: url("../img/logo/logo.jpg");
+        background-image: url("../img/logo/logo.webp");
         @include background-initializer;
         background-size: cover;
         transition: .2s ease;

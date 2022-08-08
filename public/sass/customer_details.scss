@@ -237,7 +237,7 @@ body {
                         input {
                             outline: none;
                             border: none;
-                            padding: 10px 20px;
+                            padding: 10px 45px;
                             @include border-20;
                             font-weight: bolder;
                             letter-spacing: .5px;
@@ -395,10 +395,10 @@ body {
 
                             select {
                                 color: black;
-                                text-align: center;
+                                text-align: left;
                                 border: none;
                                 outline: none;
-                                padding: 0px 20px;
+                                padding: 0px 45px;
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;

@@ -223,7 +223,7 @@ function firestore_form(uid, customerInfo, delivery_header, payment_header) {
         var opt = {
             margin:       1,
             filename:     'myfile.pdf',
-            image:        { type: 'png', quality: 1 },
+            image:        { type: 'webp', quality: 1 },
             html2canvas:  { scale: 2 },
             jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
         };

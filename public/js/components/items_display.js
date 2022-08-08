@@ -8,7 +8,7 @@ function mainDisplay(allList) {
                     <div class="item-img">
                         <div class="img-text-logo"> shopfossy </div>
                         <img class="lazy-load-selector"
-                            src="img/main-categories/blur-img/blur.jpg" width="300px" height="300px" alt="img"
+                            src="img/main-categories/blur-img/blur.webp" width="300px" height="300px" alt="img"
                             data-src="img/main-categories/${el.imgUrl}" width="300px" height="300px" alt="img"
                         >
                     </div>
@@ -48,23 +48,23 @@ function descriptionDisplay(allList) {
                         <div class="profiling-container-A">
                             <div class="profiling-sort-wrap">
                                 <div class="sort-cell prof-sort">
-                                    <div class="p-sort activated" data-sort="1"><img class="sort-img lazy-load-selector" data-sort="1" src="img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgSort1}" alt=""></div>
-                                    <div class="p-sort" data-sort="2"><img class="sort-img lazy-load-selector" data-sort="2" src="img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgSort2}" alt=""></div>
-                                    <div class="p-sort" data-sort="3"><img class="sort-img lazy-load-selector" data-sort="3" src="img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgSort3}" alt=""></div>
-                                    <div class="p-sort" data-sort="4"><img class="sort-img lazy-load-selector" data-sort="4" src="img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgSort4}" alt=""></div>
-                                    <div class="p-sort" data-sort="5"><img class="sort-img lazy-load-selector" data-sort="5" src="img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgSort5}" alt=""></div>
-                                    <div class="p-sort" data-sort="6"><img class="sort-img lazy-load-selector" data-sort="6" src="img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgSort6}" alt=""></div>
+                                    <div class="p-sort activated" data-sort="1"><img class="sort-img lazy-load-selector" data-sort="1" src="img/main-categories/blur-img/blur.webp" data-src="img/main-categories/${array.imgSort1}" alt=""></div>
+                                    <div class="p-sort" data-sort="2"><img class="sort-img lazy-load-selector" data-sort="2" src="img/main-categories/blur-img/blur.webp" data-src="img/main-categories/${array.imgSort2}" alt=""></div>
+                                    <div class="p-sort" data-sort="3"><img class="sort-img lazy-load-selector" data-sort="3" src="img/main-categories/blur-img/blur.webp" data-src="img/main-categories/${array.imgSort3}" alt=""></div>
+                                    <div class="p-sort" data-sort="4"><img class="sort-img lazy-load-selector" data-sort="4" src="img/main-categories/blur-img/blur.webp" data-src="img/main-categories/${array.imgSort4}" alt=""></div>
+                                    <div class="p-sort" data-sort="5"><img class="sort-img lazy-load-selector" data-sort="5" src="img/main-categories/blur-img/blur.webp" data-src="img/main-categories/${array.imgSort5}" alt=""></div>
+                                    <div class="p-sort" data-sort="6"><img class="sort-img lazy-load-selector" data-sort="6" src="img/main-categories/blur-img/blur.webp" data-src="img/main-categories/${array.imgSort6}" alt=""></div>
                                 </div>
                                 <div class="sort-cell prof-sort-confirm">
                                     <div>
                                         <div class="confirm-overlay"></div>
-                                        <div class="p-rel-confirm"><img class="lazy-load-selector" src="img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgUrl}" alt=""></div>
-                                        <div class="p-confirm" data-confirm="1"><img class="lazy-load-selector" src="img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgSort1}" alt=""></div>
-                                        <div class="p-confirm" data-confirm="2"><img class="lazy-load-selector" src="img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgSort2}" alt=""></div>
-                                        <div class="p-confirm" data-confirm="3"><img class="lazy-load-selector" src="img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgSort3}" alt=""></div>
-                                        <div class="p-confirm" data-confirm="4"><img class="lazy-load-selector" src="img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgSort4}" alt=""></div>
-                                        <div class="p-confirm" data-confirm="5"><img class="lazy-load-selector" src="img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgSort5}" alt=""></div>
-                                        <div class="p-confirm" data-confirm="6"><img class="lazy-load-selector" src="img/main-categories/blur-img/blur.jpg" data-src="img/main-categories/${array.imgSort6}" alt=""></div>
+                                        <div class="p-rel-confirm"><img class="lazy-load-selector" src="img/main-categories/blur-img/blur.webp" data-src="img/main-categories/${array.imgUrl}" alt=""></div>
+                                        <div class="p-confirm" data-confirm="1"><img class="lazy-load-selector" src="img/main-categories/blur-img/blur.webp" data-src="img/main-categories/${array.imgSort1}" alt=""></div>
+                                        <div class="p-confirm" data-confirm="2"><img class="lazy-load-selector" src="img/main-categories/blur-img/blur.webp" data-src="img/main-categories/${array.imgSort2}" alt=""></div>
+                                        <div class="p-confirm" data-confirm="3"><img class="lazy-load-selector" src="img/main-categories/blur-img/blur.webp" data-src="img/main-categories/${array.imgSort3}" alt=""></div>
+                                        <div class="p-confirm" data-confirm="4"><img class="lazy-load-selector" src="img/main-categories/blur-img/blur.webp" data-src="img/main-categories/${array.imgSort4}" alt=""></div>
+                                        <div class="p-confirm" data-confirm="5"><img class="lazy-load-selector" src="img/main-categories/blur-img/blur.webp" data-src="img/main-categories/${array.imgSort5}" alt=""></div>
+                                        <div class="p-confirm" data-confirm="6"><img class="lazy-load-selector" src="img/main-categories/blur-img/blur.webp" data-src="img/main-categories/${array.imgSort6}" alt=""></div>
                                     </div>
                                 </div>
                             </div>
