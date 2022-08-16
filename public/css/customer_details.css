@@ -56,7 +56,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url("../img/form/1.jpg");
+  background-image: url("../img/form/1.webp");
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -608,7 +608,6 @@ body {
 
 .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
   color: black;
-  text-align: left;
   border: none;
   outline: none;
   padding: 0px 45px;
@@ -625,7 +624,6 @@ body {
 }
 
 .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select option {
-  text-align: center;
   background: white;
 }
 

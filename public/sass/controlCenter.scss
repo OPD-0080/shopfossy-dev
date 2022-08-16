@@ -1,3 +1,675 @@
 @import './variables.scss';
 @import './reset.scss';
+body {
+    background: $cc-primary-background;
+    color: $cc-main-color;
+}
+.sidebar-nav-wrapper {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 18%;
+    height: 100vh;
+    background: $cc-secondary-background;
+    overflow: hidden;
 
+    .sidebar-nav-container {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        overflow: hidden; // will be changed later
+
+        .sidebar-logo {
+            position: relative;
+            top: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            div {
+                position: relative;
+                margin-left: 20px;
+            }
+            .logo-wrap {
+                width: 40px;
+                height: 40px;
+                background: $cc-main-color;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+                .logo {
+                    width: 35px;
+                    height: 35px;
+                    //background: red;
+                }
+            }
+        }
+        .sidebar-content-wrap {
+            position: relative;
+            width: 100%;
+            margin-top: $margin-l;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .sidebar-content-container {
+                position: relative;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 90vh;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: column;
+
+                .sidebar {
+                    width: 80%;
+                    position: relative;
+                    top: 0px;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    
+                    li {
+                        position: relative;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        padding: 8px;
+                        //background: green;
+                        width: 100%;
+                        cursor: pointer;
+                        font-size: smaller;
+                        text-align: center;
+
+                        &:hover {
+                            background: $primary-sidebar-inside;
+                            @include trans-01s;
+                        }
+                        &::first-letter {
+                            text-transform: uppercase;
+                        }
+
+                        div {
+                            margin: 5px;
+                        }
+                        .i {
+                            position: relative;
+                            width: 30px;
+                            height: 30px;
+                            background: $cc-main-color;
+                            margin-right: 20px;
+                            @include border-circle;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            div {
+                                @include border-circle;
+                                background-size: contain;
+                                @include background-initializer;
+                                width: 20px;
+                                height: 20px;
+                            }
+                            .i-1 {
+                                background-image: url("../img/svg/microsoft-red.svg");
+                            }
+                            .i-2 {
+                                background-image: url("../img/svg/user-red.svg");
+                            }
+                            .i-3 {
+                                background-image: url("../img/svg/handbag-red.svg");
+                            }
+                            .i-4 {
+                                background-image: url("../img/svg/line-chart-red.svg");
+                            }
+                            .i-5 {
+                                background-image: url("../img/svg/mail-red.svg");
+                            }
+                            .i-6 {
+                                background-image: url("../img/svg/error-red.svg");
+                            }
+                            .i-7 {
+                                background-image: url("../img/svg/database-red.svg");
+                            }
+                            .i-8 {
+                                background-image: url("../img/svg/logout-red.svg");
+                            }
+                        }
+                        &:hover .i {
+                            left: 5px;
+                            @include trans-05s;
+                        }
+                        .count-msg {
+                            font-size: smaller;
+                            padding: 5px;
+                            @include border-20;
+                            background: $cc-red;
+                            margin-left: 20px;
+                        }
+                    }
+                    li.active {
+                        position: relative;
+                        top: 0px;
+                        height: 100%;
+                        background: $primary-sidebar-inside;
+                    }
+                }
+                .sidebar-base-content {
+                    @extend .sidebar;
+                }
+            }
+        }
+    }
+}
+.main-content-wrapper {
+    position: absolute;
+    width: 82%;
+    right: 0px;
+    //background: green;
+    display: flex;
+    justify-content: space-evenly;
+    overflow: hidden;
+
+    .main-content-container {
+        width: 70%;
+        //background: red;
+        overflow: hidden;
+        background: $cc-secondary-deepGreen;
+
+        .dashboard-container {
+            width: 100%;
+            position: relative;
+            top: 0px;
+            left: 0px;
+
+            .main-content {
+                width: 100%;
+                margin-top: $margin-s;
+                padding: 0px 20px 0px 20px;
+                
+                .header {
+                    padding: 0px;
+                }
+                .insight-cards-container {
+                    position: relative;
+                    width: 100%;
+                    margin-top: $margin-l;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+    
+                    .insight-cards {
+                        background: $cc-secondary-background;
+                        width: 32%;
+                        @include border-20;
+                        display: flex;
+                        justify-content: center;
+                        align-items: flex-start;
+                        flex-direction: row;
+
+                        div {
+                            padding: 10px 5px;
+                        }
+                        .insight-content {
+                            width: 60%;
+                            overflow: hidden;
+
+                            .insight-logo {
+                                width: 40px;
+                                margin-top: $margin-s;
+                                height: 40px;
+                                @include border-circle;
+                                background: $cc-main-color;
+                                margin-left: 20px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                .card-logo {
+                                    width: 30px;
+                                    height: 30px;
+                                    @include border-circle;
+                                    background-size: cover;
+                                    @include background-initializer;
+                                }
+                                .logo-1 {background-image: url("../img/svg/donut-chart-red.svg");}
+                                .logo-2 {background-image: url("../img/svg/bar-chart-red.svg");}
+                                .logo-3 {background-image: url("../img/svg/line-chart-red.svg");}
+                            }
+                            .insight-header {
+                                width: 100%;
+                                font-size: smaller;
+                                font-weight: 550;
+                            }
+                            .insight-hour {
+                                font-size: 10px;
+                                color: $cc-color-post;
+                            }
+                        }
+                        .insight-circle {
+                            //background: green;
+                            width: 40%;
+                            position: relative;
+                            top: 20px;
+                            overflow: hidden;
+
+                            svg {
+                                position: relative;
+                                top: 5px;
+                                left: 0px;
+                                height: 100px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                circle {
+                                    fill: none;
+                                    stroke-width: 14px;
+                                    stroke-linecap: round;
+                                    @include transform(0px, 5px);
+                                }
+                            }
+                            .insight-sales circle {
+                                stroke-dasharray: 130;
+                                stroke: yellow;
+                                stroke-dashoffset: -10;
+                            }
+                            .insight-expenses circle {
+                                stroke-dasharray: 200;
+                                stroke: red;
+                                stroke-dashoffset: 50;
+                            }
+                            .insight-income circle {
+                                stroke-dasharray: 160;
+                                stroke: blue;
+                                stroke-dashoffset: -30;
+                            }
+                        }
+                    }
+                }
+                .recent-orders-wrapper {
+                    position: relative;
+                    width: 100%;
+                    margin-top: $margin-l;
+                    
+                    .recent-orders-container {
+                        position: relative;
+                        top: 0px;
+                        left: 0px;
+                        width: 100%;
+                        overflow: hidden;
+
+                        .order-header {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            .sell-all-btn {
+                                padding: 7px 20px 7px 20px;
+                                font-size: $font-vs;
+                                cursor: pointer;
+                                border: 2px solid $cc-secondary-background;
+                                @include border-20;
+
+                                &:hover {
+                                    background: $cc-secondary-background;
+                                    @include trans-01s;
+                                }
+                            }
+                        }
+                        .orders-container {
+                            margin-top: $margin-s;
+                            position: relative;
+                            width: 100%;
+                            height: 45vh;
+                            background: $cc-secondary-background;
+                            @include border-20;
+
+                            .recent-orders {
+                                width: 100%;
+                                padding: 10px;
+
+                                table {
+                                    width: 100%;
+                                    thead {
+                                        margin: 20px;
+                                        th {
+                                            &::first-letter {text-transform: uppercase;}
+                                            padding: 10px;
+                                            font-size: small;
+                                        }
+                                    }
+                                    tbody {
+                                        tr {
+                                            line-height: 2rem;
+                                            td {
+                                                text-align: center;
+                                                font-size: smaller;
+                                                border: 1px solid $cc-tertiary-background;
+                                                &::first-letter {text-transform: uppercase}
+                                            }
+                                            .color-yellow {color: $cc-color-yellow}
+                                            .color-red {color: $cc-color-lightRed}
+                                            .color-green {color: $cc-color-lightgreen}
+                                            .recent-order-btn {
+                                                color: $cc-color-lightblue;
+                                                cursor: pointer;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .customer-container {
+            width: 70%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            overflow: hidden;
+            background: green;;
+            //background: $cc-secondary-deepGreen;
+
+            .main-content {
+                width: 100%;
+                margin-top: $margin-s;
+                padding: 0px 20px 0px 20px;
+                
+                .header {
+                    padding: 0px;
+                }
+                .customers-wrapper {
+                    position: relative;
+                    top: 0px;
+                    left: 0px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .admin-banner-wrapper {
+        position: fixed;
+        //background: green;
+        top: 0px;
+        right: 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px;
+
+        div {
+            margin: $margin-vs;
+        }
+        .admin-section {
+            div {
+                margin: 0px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .admin-img-wrap {
+                    width: 40px;
+                    height: 40px;
+                    @include border-circle;
+                    background: $cc-main-color;
+                    margin-left: $margin-vs;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    img {
+                        position: relative;
+                        top: 0px;
+                        left: 0px;
+                        background-size: cover;
+                        @include background-initializer;
+                        object-fit: cover;
+                        width: 35px;
+                        height: 35px;
+                        @include border-circle;
+                    }
+                }
+                .admin-tex {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    font-size: $font-s;
+                    
+                    em {color: $cc-color-lightblue; font-size: $font-vs;}
+                    span {
+                        em {@extend em}
+                    }
+                }
+            }
+        }
+        .theme-toggle-wrap {
+            position: relative;
+            .toggle-wrap {
+                position: relative;
+                width: 70px;
+                height: 35px;
+                background:  $cc-main-color;
+                @include border-20;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                //padding: 0px 10px 0px 10px;
+
+                div {
+                    position: relative;
+                    width: 50%;
+                    height: 100%;
+                    margin: 0px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 2;
+
+                    &:nth-child(1) {
+                        div {
+                            width: 20px;
+                            height: 20px;
+                            background-image: url("../img/svg/moon-red.svg");
+                            background-position: contain;
+                            @include background-initializer;
+                        }
+                    }
+                    &:nth-child(2) {
+                        div {
+                            width: 20px;
+                            height: 20px;
+                            background-image: url("../img/svg/sun-red.svg");
+                            background-position: contain;
+                            @include background-initializer;
+                        }
+                    }
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    width: 50%;
+                    height: 100%;
+                    margin-bottom: 2px;
+                    background: rgb(168, 168, 168);
+                    @include border-20;
+                    z-index: 5;
+                    @include trans-01s;
+                    //visibility: hidden;
+                }
+            }
+        }
+        .theme-toggle-wrap.shift .toggle-wrap::before {
+            left: 50%;
+            @include trans-01s;
+        }
+    }
+    .summary-content-container {
+        width: 30%;
+        //background: orange;
+        overflow: hidden;
+
+        .recent-update-wrapper {
+            position: relative;
+            width: 100%;
+            top: 70px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+
+            .summary-header {
+                width: 100%;
+                padding: 10 10px;
+                margin-left: $margin-s;
+                h3 {
+                    font-size: large;
+                }
+            }
+            .recent-update-container {
+                position: relative;
+                width: 90%;
+                height: 40vh;
+                margin-top: $margin-s;
+                background: $cc-secondary-background;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                @include border-20;
+                margin-bottom: $margin-s;
+                margin-left: $margin-vs;
+
+                div {
+                    position: relative;
+                    width: 90%; 
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    padding: 3px;
+
+                    .update-image-wrap {
+                        width: 45px;
+                        height: 40px;
+                        background: $cc-main-color;
+                        margin-right: $margin-vs;
+                        @include border-circle;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        img {
+                            position: relative;
+                            top: 0px;
+                            left: 0px;
+                            width: 35px;
+                            height: 30px;
+                            @include border-circle;
+                        }
+                    }
+                    .update-content {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        font-size: smaller;
+                        flex-direction: column;
+                        color: $cc-color-post;
+
+                        em { 
+                            color: $cc-main-color;
+                            font-style: normal;
+                        }
+                        .update-time {
+                            font-size: $font-vs;
+                        }
+                    }
+                }
+
+            }
+        }
+        .sale-analytics-wrapper {
+            position: relative;
+            //background: green;
+            width: 95%;
+            margin-top: $margin-vs;
+
+            .sale-analytics-container {
+                position: relative;
+                width: 95%;
+                margin-left: $margin-vs;
+
+                div {
+                    position: relative;
+                    top: 0px;
+                    left: 0px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    background: $cc-secondary-background;
+                    padding: 1px;
+                    @include border-20;
+                    margin: 5px;
+
+                    .sale-image-wrap {
+                        width: 40px;
+                        height: 40px;
+                        background: $cc-main-color;
+                        margin-right: $margin-vs;
+                        @include border-circle;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: relative;
+
+                        .image {
+                            position: relative;
+                            width: 30px;
+                            height: 30px;
+                            @include background-initializer;
+                            background-position: cover;
+                            @include border-circle;
+                        }
+                        .img-1 {
+                            
+                            background-image: url("../img//svg/cart-red.svg");
+                        }
+                        .img-2 {
+                            background-image: url("../img/svg/user-red.svg");
+                        }
+                    }
+                    .sale-header {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        flex-direction: column;
+                        div {
+                            font-size: $font-s;
+                            &:nth-child(2) {
+                                font-size: $font-vs;
+                                color: $cc-color-post;
+                            }
+                        }
+                    }
+                    .sale-calc {
+                        font-size: $font-vs;
+                        width: 60%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -43,6 +43,11 @@ function firestore_form(uid, customerInfo, delivery_header, payment_header) {
     
             } catch (error) {
                 console.log(` Shopping Cart Error: ${error}`);
+                // show alert start
+                validateError.classList.add("on");
+                alertMsg.innerHTML = "Internet Status: 'BAD' Try Again !";
+                setTimeout(() => {validateError.classList.remove("on")}, 5000);
+                // show alert end
             }
         }fireStore_CartProfile()
     });

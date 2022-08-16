@@ -1,8 +1,14 @@
 //
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/public/sw.js')
-    .then((res) => console.log("Service Worker is Registered", res))
+    .then((res) => {
+        console.log("Service Worker is Registered", res);
+    })
     .catch((error) => {
-        console.log(`Service Worker Error: ${error}`);
+        if (error) {
+            const errorEl = document.querySelector(".err-text");
+            errorEl.innerHTML = "Recommendation: use 'Chrome' or 'Safari' !";
+
+        }
     })
 }

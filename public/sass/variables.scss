@@ -1,10 +1,21 @@
 // VARIABLE
-$primary_background: rgb(46, 46, 46);
-$primary_color: white;
-$primary-sidebar-background: rgb(66, 65, 65);
-$primary-sidebar-inside: rgb(77, 76, 76);
-$secondary-background: whitesmoke;
-$primary-index-background: rgb(66, 65, 65);
+$primary_background: #2e2e2e;
+$primary_color: #ffffff;
+$primary-sidebar-background: #424141;
+$primary-sidebar-inside: #4d4c4c;
+$secondary-background: #f5f5f5;
+$primary-index-background: #424141;
+$cc-primary-background: #00001a;
+$cc-secondary-background: #03033b;
+$cc-secondary-deepGreen: #015301;
+$cc-tertiary-background: #010124;
+$cc-color-yellow: #ffff00;
+$cc-color-lightRed: #ff2d2d;
+$cc-color-lightblue: #4a4af7;
+$cc-color-lightgreen: #06be06;
+$cc-color-post: #ffffffa2;
+$cc-main-color: white;
+$cc-red: red;
 $max-width: 100%;
 $max-height: 100vh;
 $font-vs: 11px;
@@ -25,11 +36,11 @@ $uppercase: uppercase;
 $lowercase: lowercase;
 $media-w-375: 330px;
 
-$database-background: rgb(0, 0, 133);
-$database-banner: rgb(6, 6, 207);
-$overlay: rgba(0, 0, 0, 0.562);
+$database-background: #000085;
+$database-banner: #0606cf;
+$overlay: #0000008f;
 $database-red: red;
-$database-main-background: rgb(185, 4, 4);
+$database-main-background: #b90404;
 
 
 
@@ -122,6 +133,13 @@ $database-main-background: rgb(185, 4, 4);
     -moz-transform: scale(1);
     -ms-transform: scale(1);
     -o-transform: scale(1);
+}
+@mixin transform($x, $y) {
+    transform: translate($x, $y);
+    -webkit-transform: translate($x, $y);
+    -moz-transform: translate($x, $y);
+    -ms-transform: translate($x, $y);
+    -o-transform: translate($x, $y);
 }
 @mixin transformX($x) {
     transform: translateX($x);

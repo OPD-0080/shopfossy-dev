@@ -70,15 +70,16 @@ let categories = categoryList;
         const text = el.text;
         const href = el.href;
         const dataId = el.dataId;
+        const icon = el.icon;
         
-        const res = {text, href, dataId};
+        const res = {text, href, dataId, icon};
         return res;
     });
 
     var result = "";
     categories.forEach(el => {
         result += `
-            <li class="btn-active" data-id="${el.dataId}"><a class="a-btn" href="${el.href}" data-id="${el.dataId}">${el.text}</a></li>
+            <li class="btn-active" data-id="${el.dataId}"><div class="i"><img src=${el.icon} alt="img"></div></div><a class="a-btn" href="${el.href}" data-id="${el.dataId}">${el.text}</a></li>
         `
     });
     var dis = document.querySelector(".display-1");

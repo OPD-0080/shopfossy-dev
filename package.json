@@ -1,0 +1,32 @@
+{
+  "name": "e-commence-new-edition",
+  "version": "1.0.0",
+  "description": "shopfossy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OPD-0080/master.git"
+  },
+  "author": "Prince Obeng Donkor (OPD)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OPD-0080/master/issues"
+  },
+  "homepage": "https://github.com/OPD-0080/master#readme",
+  "devDependencies": {
+    "moment": "^2.29.4",
+    "morgan": "^1.10.0"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bcrypt": "^5.0.1",
+    "express": "^4.18.1",
+    "firebase-tools": "^11.7.0",
+    "http": "^0.0.1-security",
+    "pg": "^8.7.3",
+    "socket.io": "^4.5.1"
+  }
+}

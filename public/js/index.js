@@ -69,15 +69,16 @@ import { pickUpLists } from './sideBarList/pickUpList.js';
         const text = el.text;
         const href = el.href;
         const dataId = el.dataId;
+        const icon = el.icon;
         
-        const res = {text, href, dataId};
+        const res = {text, href, icon, dataId};
         return res;
     })
 
     var show = "";
     categoryList.forEach(el => {
         show += `
-        <li><div></div><a href="${el.href}"> ${el.text} </a></li>
+        <li><div class="i"><img src=${el.icon} alt=""></div><a href="${el.href}"> ${el.text} </a></li>
         `;
 
         var res = document.querySelector(".category-wrap");
@@ -127,94 +128,7 @@ import { pickUpLists } from './sideBarList/pickUpList.js';
         return (id, imgUrl, imgHover, name, classCode, href)
     });
 
-    //console.log(array);
-    var show = ""; var showB = ""; var showC = ""; var showD = "";
-    pickUpLists[0].forEach(item => {
-        show += `
-        <div class="C-wrap ${item.classCode}" data-id=${item.id}>
-            <a href=${item.href}>
-                <div class="image-cover"></div>
-                <img class="img-real intersection-effect" 
-                    src=${item.imgUrl} alt=""
-                    data-src=${item.imgUrl} alt=""
-                />
-                <img class="img-display intersection-effect" 
-                    src=${item.imgHover} alt=""z
-                    data-src=${item.imgHover} alt=""
-                />
-            </a>
-            <div class="heart-wrap"><div class="heart-img"></div></div>
-            <div class="image-price"><span class="C-price"> ${item.name} </span> </div>
-        </div>
-        `
-    })
-    var pickUpWrapA = document.querySelectorAll(".show1");
-    pickUpWrapA.forEach(el => {
-        el.innerHTML = show;
-    });
-    pickUpLists[1].forEach(item => {
-        showB += `
-        <div class="C-wrap ${item.classCode}" data-id=${item.id}>
-            <a href=${item.href}>
-                <div class="image-cover intersection-effect"></div>
-                <img class="img-real" 
-                    src=${item.imgUrl} alt=""
-                    data-src=${item.imgUrl} alt=""
-                />
-                <img class="img-display intersection-effect" 
-                    src=${item.imgHover} alt=""
-                    data-src=${item.imgHover} alt=""
-                />
-            </a>
-            <div class="heart-wrap"><div class="heart-img"></div></div>
-            <div class="image-price"><span class="C-price"> ${item.name} </span> </div>
-        </div>
-        `
-    })
-    var pickUpWrapB = document.querySelector(".show2");
-    pickUpWrapB.innerHTML = showB;
-    pickUpLists[2].forEach(item => {
-        showC += `
-        <div class="C-wrap ${item.classCode}" data-id=${item.id}>
-            <a href=${item.href}>
-                <div class="image-cover"></div>
-                <img class="img-real intersection-effect" 
-                    src=${item.imgUrl} alt=""
-                    data-src=${item.imgUrl} alt=""
-                />
-                <img class="img-display intersection-effect" 
-                    src=${item.imgHover} alt=""
-                    data-src=${item.imgHover} alt=""
-                />
-            </a>
-            <div class="heart-wrap"><div class="heart-img"></div></div>
-            <div class="image-price"><span class="C-price"> ${item.name} </span> </div>
-        </div>
-        `
-    })
-    var pickUpWrapC = document.querySelector(".show3");
-    pickUpWrapC.innerHTML = showC;
-    pickUpLists[3].forEach(item => {
-        showD += `
-        <div class="C-wrap ${item.classCode}" data-id=${item.id}>
-            <a href=${item.href}>
-                <div class="image-cover"></div>
-                <img class="img-real intersection-effect" 
-                    src=${item.imgUrl} alt=""
-                    data-src=${item.imgUrl} alt=""
-                />
-                <img class="img-display intersection-effect" 
-                    src=${item.imgHover} alt=""
-                    data-src=${item.imgHover} alt=""
-                />
-            </a>
-            <div class="heart-wrap"><div class="heart-img"></div></div>
-            <div class="image-price"><span class="C-price"> ${item.name} </span> </div>
-        </div>
-        `
-    })
-    var pickUpWrapD = document.querySelector(".show4");
-    pickUpWrapD.innerHTML = showD;
+   
 
     
     // FILTER START

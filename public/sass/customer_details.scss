@@ -26,7 +26,7 @@ body {
         left: 0px;
         @include background-initializer;
         background-size: cover;
-        background-image: url("../img/form/1.jpg");
+        background-image: url("../img/form/1.webp");
         display: flex;
         justify-content: center;
         align-items: center;
@@ -395,7 +395,7 @@ body {
 
                             select {
                                 color: black;
-                                text-align: left;
+                                //text-align: left;
                                 border: none;
                                 outline: none;
                                 padding: 0px 45px;
@@ -405,7 +405,7 @@ body {
                                 background: white;
 
                                 option {
-                                    text-align: center;
+                                    //text-align: center;
                                     background: white;
                                 }
                             }
