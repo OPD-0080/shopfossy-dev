@@ -10,6 +10,8 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   width: 100%;
+  background: #2e2e2e;
+  color: white;
 }
 
 ul, ol, li {
@@ -90,9 +92,8 @@ a {
 
 .sign-in-overlay .signIn-wrapper .sign-image-wrap {
   position: relative;
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -119,8 +120,8 @@ a {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   background: grey;
   font-size: 16px;
   display: -webkit-box;
@@ -147,7 +148,9 @@ a {
   -o-border-radius: 50%;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  width: 70px;
+  height: 70px;
 }
 
 .sign-in-overlay .signIn-wrapper .sign-image-wrap div .image-text {
@@ -158,7 +161,7 @@ a {
   -o-border-radius: 50%;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-image: url("../img/icons/user.png");
   z-index: 2;
 }
@@ -171,7 +174,7 @@ a {
   -o-border-radius: 50%;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-image: url("../img/icons/key.png");
   z-index: 2;
 }

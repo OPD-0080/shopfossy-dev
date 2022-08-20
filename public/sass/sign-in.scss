@@ -46,9 +46,8 @@
 
         .sign-image-wrap {
             position: relative;
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
+            width: 90px;
+            height: 90px;
             @include border-circle;
             background: white;
             display: flex;
@@ -60,8 +59,8 @@
                 top: 0px;
                 left: 0px;
                 @include border-circle;
-                width: 90px;
-                height: 90px;
+                width: 80px;
+                height: 80px;
                 background: grey;
                 font-size: 16px;
                 display: flex;
@@ -75,19 +74,21 @@
                 .image-user {
                     @include border-circle;
                     @include background-initializer;
-                    background-size: cover;
+                    background-size: contain;
+                    width: 70px;
+                    height: 70px;
                 }
                 .image-text {
                     @include border-circle;
                     @include background-initializer;
-                    background-size: cover;
+                    background-size: contain;
                     background-image: url("../img/icons/user.png");
                     z-index: 2;
                 }
                 .image-text.change {
                     @include border-circle;
                     @include background-initializer;
-                    background-size: cover;
+                    background-size: contain;
                     background-image: url("../img/icons/key.png");
                     z-index: 2;
                 }

@@ -74,6 +74,8 @@ const assetsUrl = [
     './js/sideBarList/categoryList.js',
     './js/sideBarList/pickUpList.js',
 
+    // to include FIREBASE URLS and it SOURCE FILES URL
+
     // html pages
     './fallbackError.html',
 ];

@@ -3,6 +3,7 @@
 body {
     background: $cc-primary-background;
     color: $cc-main-color;
+    overflow: hidden;
 }
 .sidebar-nav-wrapper {
     position: fixed;
@@ -175,193 +176,345 @@ body {
     right: 0px;
     //background: green;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     overflow: hidden;
 
     .main-content-container {
-        width: 70%;
+        width: 72%;
         //background: red;
         overflow: hidden;
         background: $cc-secondary-deepGreen;
+
+        .page-sections {
+            height: 100vh; //! important
+            z-index: 10;
+        }
 
         .dashboard-container {
             width: 100%;
             position: relative;
             top: 0px;
             left: 0px;
+            //visibility: visible;
+            //opacity: 1;
+            visibility: hidden;
+            opacity: 0;
+            @include trans-05s;
 
             .main-content {
                 width: 100%;
                 margin-top: $margin-s;
                 padding: 0px 20px 0px 20px;
+                box-sizing: border-box;
                 
                 .header {
                     padding: 0px;
+                    margin-bottom: $margin-vs;
+                    box-sizing: border-box;
                 }
-                .insight-cards-container {
+                .main-wrap {
                     position: relative;
                     width: 100%;
-                    margin-top: $margin-l;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-    
-                    .insight-cards {
-                        background: $cc-secondary-background;
-                        width: 32%;
-                        @include border-20;
+                    overflow-y: scroll;
+                    overflow-x: hidden;
+                    scrollbar-width: thin;
+                    height: 90vh; // !! important
+
+                    .insight-cards-container {
+                        position: relative;
+                        width: 100%;
+                        margin-top: $margin-l;
                         display: flex;
-                        justify-content: center;
-                        align-items: flex-start;
-                        flex-direction: row;
-
-                        div {
-                            padding: 10px 5px;
-                        }
-                        .insight-content {
-                            width: 60%;
-                            overflow: hidden;
-
-                            .insight-logo {
-                                width: 40px;
-                                margin-top: $margin-s;
-                                height: 40px;
-                                @include border-circle;
-                                background: $cc-main-color;
-                                margin-left: 20px;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-
-                                .card-logo {
-                                    width: 30px;
-                                    height: 30px;
+                        justify-content: space-between;
+                        align-items: center;
+        
+                        .insight-cards {
+                            background: $cc-secondary-background;
+                            width: 32%;
+                            @include border-20;
+                            display: flex;
+                            justify-content: center;
+                            align-items: flex-start;
+                            flex-direction: row;
+    
+                            div {
+                                padding: 10px 5px;
+                            }
+                            .insight-content {
+                                width: 60%;
+                                overflow: hidden;
+    
+                                .insight-logo {
+                                    width: 40px;
+                                    margin-top: $margin-s;
+                                    height: 40px;
                                     @include border-circle;
-                                    background-size: cover;
-                                    @include background-initializer;
+                                    background: $cc-main-color;
+                                    margin-left: 20px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+    
+                                    .card-logo {
+                                        width: 30px;
+                                        height: 30px;
+                                        @include border-circle;
+                                        background-size: cover;
+                                        @include background-initializer;
+                                    }
+                                    .logo-1 {background-image: url("../img/svg/donut-chart-red.svg");}
+                                    .logo-2 {background-image: url("../img/svg/bar-chart-red.svg");}
+                                    .logo-3 {background-image: url("../img/svg/line-chart-red.svg");}
                                 }
-                                .logo-1 {background-image: url("../img/svg/donut-chart-red.svg");}
-                                .logo-2 {background-image: url("../img/svg/bar-chart-red.svg");}
-                                .logo-3 {background-image: url("../img/svg/line-chart-red.svg");}
+                                .insight-header {
+                                    width: 100%;
+                                    font-size: smaller;
+                                    font-weight: 550;
+                                }
+                                .insight-hour {
+                                    font-size: 10px;
+                                    color: $cc-color-post;
+                                }
                             }
-                            .insight-header {
-                                width: 100%;
-                                font-size: smaller;
-                                font-weight: 550;
-                            }
-                            .insight-hour {
-                                font-size: 10px;
-                                color: $cc-color-post;
-                            }
-                        }
-                        .insight-circle {
-                            //background: green;
-                            width: 40%;
-                            position: relative;
-                            top: 20px;
-                            overflow: hidden;
-
-                            svg {
+                            .insight-circle {
+                                width: 40%;
                                 position: relative;
-                                top: 5px;
-                                left: 0px;
-                                height: 100px;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-
-                                circle {
-                                    fill: none;
-                                    stroke-width: 14px;
-                                    stroke-linecap: round;
-                                    @include transform(0px, 5px);
+                                top: 20px;
+                                overflow: hidden;
+    
+                                .insight-percentage {
+                                    position: absolute;
+                                    top: 40px;
+                                    left: 25px;
+                                    font-size: $font-vs;
+                                    color: $cc-color-post;
                                 }
-                            }
-                            .insight-sales circle {
-                                stroke-dasharray: 130;
-                                stroke: yellow;
-                                stroke-dashoffset: -10;
-                            }
-                            .insight-expenses circle {
-                                stroke-dasharray: 200;
-                                stroke: red;
-                                stroke-dashoffset: 50;
-                            }
-                            .insight-income circle {
-                                stroke-dasharray: 160;
-                                stroke: blue;
-                                stroke-dashoffset: -30;
+    
+                                svg {
+                                    position: relative;
+                                    top: 5px;
+                                    left: 0px;
+                                    height: 100px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+    
+                                    circle {
+                                        fill: none;
+                                        stroke-width: 14px;
+                                        stroke-linecap: round;
+                                        @include transform(0px, 5px);
+                                    }
+                                }
+                                .insight-sales circle {
+                                    stroke-dasharray: 130;
+                                    stroke: yellow;
+                                    stroke-dashoffset: -10;
+                                }
+                                .insight-expenses circle {
+                                    stroke-dasharray: 200;
+                                    stroke: red;
+                                    stroke-dashoffset: 50;
+                                }
+                                .insight-income circle {
+                                    stroke-dasharray: 160;
+                                    stroke: blue;
+                                    stroke-dashoffset: -30;
+                                }
                             }
                         }
                     }
-                }
-                .recent-orders-wrapper {
-                    position: relative;
-                    width: 100%;
-                    margin-top: $margin-l;
-                    
-                    .recent-orders-container {
+                    .recent-orders-wrapper {
                         position: relative;
-                        top: 0px;
-                        left: 0px;
                         width: 100%;
-                        overflow: hidden;
-
-                        .order-header {
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-
+                        margin-top: $margin-l;
+                        
+                        .recent-orders-container {
+                            position: relative;
+                            top: 0px;
+                            left: 0px;
+                            width: 100%;
+                            overflow: hidden;
+    
+                            .order-header {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+    
+                                .sell-all-btn {
+                                    padding: 7px 20px 7px 20px;
+                                    font-size: $font-vs;
+                                    cursor: pointer;
+                                    border: 2px solid $cc-secondary-background;
+                                    @include border-20;
+    
+                                    &:hover {
+                                        background: $cc-secondary-background;
+                                        @include trans-01s;
+                                    }
+                                }
+                            }
+                            .orders-container {
+                                margin-top: $margin-s;
+                                position: relative;
+                                width: 100%;
+                                min-height: 35vh;
+                                max-height: 45vh;
+                                background: $cc-secondary-background;
+                                @include border-20;
+    
+                                .recent-orders {
+                                    width: 100%;
+                                    padding: 10px;
+    
+                                    table {
+                                        width: 100%;
+                                        thead {
+                                            margin: 20px;
+                                            th {
+                                                &::first-letter {text-transform: uppercase;}
+                                                padding: 10px;
+                                                font-size: small;
+                                            }
+                                        }
+                                        tbody {
+                                            tr {
+                                                line-height: 2rem;
+                                                td {
+                                                    text-align: center;
+                                                    font-size: smaller;
+                                                    border: 1px solid $cc-tertiary-background;
+                                                    &::first-letter {text-transform: uppercase}
+                                                }
+                                                .recent-photo {
+                                                    width: 100%;
+                                                    height: 40px;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;
+    
+                                                    .photo {
+                                                        width: 100%;
+                                                        height: 30px;
+                                                        background: $cc-main-color;
+                                                        @include border-10;
+                                                        display: flex;
+                                                        justify-content: center;
+                                                        align-items: center;
+    
+                                                        img {
+                                                            position: relative;
+                                                            width: 30px;
+                                                            height: 30px;
+                                                            background: transparent;
+                                                            @include border-10;
+                                                            object-fit: cover;
+                                                        }
+                                                    }
+                                                }
+                                                .color-yellow {color: $cc-color-yellow}
+                                                .color-red {color: $cc-color-lightRed}
+                                                .color-green {color: $cc-color-lightgreen}
+                                                .recent-order-btn {
+                                                    color: $cc-color-lightblue;
+                                                    cursor: pointer;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .recent-customers-wrapper {
+                        position: relative;
+                        width: 100%;
+                        margin-top: $margin-l;
+                        
+                        .recent-customer-container {
+                            position: relative;
+                            top: 0px;
+                            left: 0px;
+                            width: 100%;
+                            overflow: hidden;
+    
+                            .customer-header {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            }
                             .sell-all-btn {
                                 padding: 7px 20px 7px 20px;
                                 font-size: $font-vs;
                                 cursor: pointer;
                                 border: 2px solid $cc-secondary-background;
                                 @include border-20;
-
+    
                                 &:hover {
                                     background: $cc-secondary-background;
                                     @include trans-01s;
                                 }
                             }
-                        }
-                        .orders-container {
-                            margin-top: $margin-s;
-                            position: relative;
-                            width: 100%;
-                            height: 45vh;
-                            background: $cc-secondary-background;
-                            @include border-20;
-
-                            .recent-orders {
+                            .customer-contents {
+                                margin-top: $margin-s;
+                                position: relative;
                                 width: 100%;
-                                padding: 10px;
-
-                                table {
+                                min-height: 35vh;
+                                max-height: 45vh;
+                                background: $cc-secondary-background;
+                                @include border-20;
+    
+                                .recent-customer {
                                     width: 100%;
-                                    thead {
-                                        margin: 20px;
-                                        th {
-                                            &::first-letter {text-transform: uppercase;}
-                                            padding: 10px;
-                                            font-size: small;
-                                        }
-                                    }
-                                    tbody {
-                                        tr {
-                                            line-height: 2rem;
-                                            td {
-                                                text-align: center;
-                                                font-size: smaller;
-                                                border: 1px solid $cc-tertiary-background;
-                                                &::first-letter {text-transform: uppercase}
+                                    padding: 10px;
+    
+                                    table {
+                                        width: 100%;
+                                        thead {
+                                            margin: 20px;
+                                            th {
+                                                &::first-letter {text-transform: uppercase;}
+                                                padding: 10px;
+                                                font-size: small;
                                             }
-                                            .color-yellow {color: $cc-color-yellow}
-                                            .color-red {color: $cc-color-lightRed}
-                                            .color-green {color: $cc-color-lightgreen}
-                                            .recent-order-btn {
-                                                color: $cc-color-lightblue;
-                                                cursor: pointer;
+                                        }
+                                        tbody {
+                                            tr {
+                                                line-height: 2rem;
+                                                td {
+                                                    text-align: center;
+                                                    font-size: smaller;
+                                                    border: 1px solid $cc-tertiary-background;
+                                                    &::first-letter {text-transform: uppercase}
+                                                }
+                                                .user-photo {
+                                                    width: 100%;
+                                                    height: 40px;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;
+    
+                                                    .photo {
+                                                        width: 50px;
+                                                        height: 30px;
+                                                        background: $cc-main-color;
+                                                        @include border-10;
+                                                        display: flex;
+                                                        justify-content: center;
+                                                        align-items: center;
+    
+                                                        img {
+                                                            position: relative;
+                                                            width: 30px;
+                                                            height: 30px;
+                                                            background: transparent;
+                                                            @include border-10;
+                                                            background-position: cover;
+                                                            @include background-initializer;
+                                                            background-image: url("../img/svg/user-red.svg");
+                                                        }
+                                                    }
+                                                }
                                             }
                                         }
                                     }
@@ -372,14 +525,23 @@ body {
                 }
             }
         }
+        .dashboard-container.off {
+            visibility: hidden;
+            opacity: 0;
+            @include trans-05s;
+        }
         .customer-container {
             width: 70%;
             position: absolute;
             top: 0px;
             left: 0px;
+            height: 100vh;
             overflow: hidden;
-            background: green;;
-            //background: $cc-secondary-deepGreen;
+            background: $cc-secondary-deepGreen;
+            //visibility: hidden;
+            //opacity: 0;
+            z-index: 2;
+            @include trans-01s;
 
             .main-content {
                 width: 100%;
@@ -388,25 +550,241 @@ body {
                 
                 .header {
                     padding: 0px;
+                    margin-bottom: $margin-vs;
+                    box-sizing: border-box;
                 }
-                .customers-wrapper {
+                .main-wrap {
                     position: relative;
-                    top: 0px;
-                    left: 0px;
                     width: 100%;
+                    overflow-y: scroll;
+                    overflow-x: hidden;
+                    scrollbar-width: thin;
+                    height: 90vh; // !! important
+
+                    .update-customer {
+                        position: relative;
+                        top: 0px;
+                        left: 0px;
+                        width: 100%;
+                        margin-top: $margin-s;
+
+                        
+                        .customer-header {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            .color-indicator{
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-size: $font-vs;
+                                margin: 5px;
+
+                                div {
+                                    position: relative;
+                                    margin-left: 20px;
+
+                                    &::before {
+                                        content: "";
+                                        position: absolute;
+                                        top: 0px;
+                                        left: 0px;
+                                        width: 10px;
+                                        height: 100%;
+                                        @include transform(-12px, 0px)
+                                    }
+                                    &:nth-child(1)::before {
+                                        background: $cc-red;
+                                    }
+                                    &:nth-child(2)::before {
+                                        background: $cc-orange;
+                                    }
+                                }
+                            }
+                        }
+                        .customer-update-content {
+                            position: relative;
+                            top: 0px;
+                            left: 0px;
+                            width: 100%;
+                            //min-height: 30vh; // important !!
+                            max-height: 45vh;
+                            background: $cc-secondary-background;
+                            @include border-20;
+
+                            .update-container {
+                                width: 100%;
+                                position: relative;
+                                top: 0px;
+                                left: 0px;
+                                margin-top: $margin-vs;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: flex-start;
+                                align-items: center;
+                                padding: 2px;
+                                box-sizing: border-box;
+                                overflow-y: scroll;
+                                overflow-x: hidden;
+
+                                .row {
+                                    position: relative;
+                                    top: 0px;
+                                    left: 0px;
+                                    width: 90%;
+                                    margin: 5px;
+                                    @include border-20;
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                    background: $cc-tertiary-background;
+                                
+                                    .de {
+                                        position: relative;
+                                        top: 0px;
+                                        left: 0px;
+                                        width: 60px;
+                                        height: 40px;
+
+                                        &::before {
+                                            content: "";
+                                            position: absolute;
+                                            top: 0px;
+                                            right: 0px;
+                                            width: 40px;
+                                            height: 40px;
+                                            @include transform(20px, 0px);
+                                            background: $cc-tertiary-background;
+                                            @include border-circle;
+                                        }
+                                    }
+                                    .color-client {background: $cc-red;}
+                                    .color-bill {background: $cc-orange}
+                                    .de-message {
+                                        position: relative;
+                                        width: 80%;
+                                        margin-left: $margin-l;
+
+                                        p {
+                                            color: $cc-color-post;
+                                            font-size: $font-s;
+                                            margin-top: $margin-vs;
+                                            em {
+                                                font-style: none;
+                                                color: $cc-main-color;
+                                            }
+                                        }
+                                        div {
+                                            display: flex;
+                                            justify-content: flex-end;
+                                            align-items: center;
+                                            font-size: $font-vs;
+                                            margin-top: $margin-vs;
+                                            color: $cc-color-post;
+
+                                            div {margin: 5px;}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .checkout-update-content {
+                            position: relative;
+                            top: 0px;
+                            left: 0px;
+                            width: 100%;
+                            //min-height: 30vh; // important !!
+                            max-height: 80vh;
+                            background: $cc-secondary-background;
+                            margin-top: $margin-vs;
+                            @include border-20;
+                            display: flex;
+                            justify-content: center;
+                            align-items: flex-start;
+                            overflow-y: scroll;
+                            overflow-x: hidden;
+
+                            .checkout-container {
+                                position:relative;
+                                width: 95%;
+                                top: 0px;
+                                left: 0px;
+                                margin: 5px;
+                                background: $cc-tertiary-background;
+                                @include border-10;
+
+                                .table-row {
+                                    display: grid;
+                                    grid-template-columns: repeat(2, 1fr);
+                                    grid-gap: 1rem;
+
+                                    div {
+                                        ul {
+                                            li { 
+                                                position: relative;
+                                                font-size: $font-s;
+                                                padding: 5px;
+                                                color: $cc-color-post;
+                                                margin-left: 25px;
+
+                                                span {
+                                                    margin-left: $margin-vs;
+                                                    color: $cc-main-color;
+                                                }
+                                                .i {
+                                                    position: absolute;
+                                                    top: 4px;
+                                                    left: 0px;
+                                                    width: 20px;
+                                                    height: 20px;
+                                                    background: transparent;
+                                                    @include transform(-30px, 0px);
+                                                    background-size: cover;
+                                                    @include background-initializer;
+                                                }
+                                                .i-1 {background-image: url("../img/icons/user.png")}
+                                                .i-2 {background-image: url("../img/icons/user.png")}
+                                                .i-3 {background-image: url("../img/icons/email.png")}
+                                                .i-4 {background-image: url("../img/icons/phone-white.png")}
+                                                .i-5 {background-image: url("../img/svg/home-white.svg")}
+                                                .i-6 {background-image: url("../img/icons/region-white.png")}
+                                                .i-7 {background-image: url("../img/icons/city-white.png")}
+                                                .i-8 {background-image: url("../img/icons/location-white.png")}
+                                                .i-9 {background-image: url("../img/icons/location-white.png")}
+                                                .i-10 {background-image: url("../img/svg/bag-white.svg")}
+                                                .i-11 {background-image: url("../img/svg/shield-white.svg")}
+                                            
+                                            }    
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
+        }
+        .customer-container.switch {
+            visibility: visible;
+            opacity: 1;
+            @include trans-05s;
         }
     }
     .admin-banner-wrapper {
         position: fixed;
-        //background: green;
+        //background: palevioletred;
         top: 0px;
+        min-width: 20%;
+        max-width: 23%;
         right: 0px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0px;
+        //padding: 0px;
+        overflow: hidden;
+        z-index: 5;
 
         div {
             margin: $margin-vs;
@@ -456,6 +834,8 @@ body {
         }
         .theme-toggle-wrap {
             position: relative;
+            z-index: 3;
+            //background: green;
             .toggle-wrap {
                 position: relative;
                 width: 70px;
@@ -518,7 +898,11 @@ body {
         }
     }
     .summary-content-container {
-        width: 30%;
+        position: fixed;
+        right: 0px;
+        top: 0px;
+        width: 23%;
+        height: 100vh;
         //background: orange;
         overflow: hidden;
 
@@ -541,8 +925,8 @@ body {
             }
             .recent-update-container {
                 position: relative;
-                width: 90%;
-                height: 40vh;
+                width: 95%;
+                height: 50vh;
                 margin-top: $margin-s;
                 background: $cc-secondary-background;
                 display: flex;
@@ -552,16 +936,22 @@ body {
                 @include border-20;
                 margin-bottom: $margin-s;
                 margin-left: $margin-vs;
+                overflow-y: scroll;
+                overflow-x: hidden;
 
-                div {
+                .row {
                     position: relative;
-                    width: 90%; 
+                    width: 98%; 
                     display: flex;
                     justify-content: flex-start;
                     align-items: center;
                     padding: 3px;
+                    background: $cc-tertiary-background;
+                    margin-top: $margin-vs;
+                    @include border-20;
 
                     .update-image-wrap {
+                        position: relative;
                         width: 45px;
                         height: 40px;
                         background: $cc-main-color;
@@ -581,9 +971,11 @@ body {
                         }
                     }
                     .update-content {
+                        position: relative;
                         display: flex;
                         justify-content: flex-start;
                         align-items: flex-start;
+                        flex-direction: column;
                         font-size: smaller;
                         flex-direction: column;
                         color: $cc-color-post;
@@ -592,8 +984,19 @@ body {
                             color: $cc-main-color;
                             font-style: normal;
                         }
-                        .update-time {
-                            font-size: $font-vs;
+
+                        .note {
+                            width: 100%;
+                            margin-top: $margin-vs;
+                            display: flex;
+                            align-items: flex-end;
+                            justify-content: space-between;
+                            padding: 5px;
+                            
+                            div {
+                                font-size: $font-vs;
+                            }
+                        
                         }
                     }
                 }

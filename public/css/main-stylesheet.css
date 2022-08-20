@@ -10,6 +10,8 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   width: 100%;
+  background: #2e2e2e;
+  color: white;
 }
 
 ul, ol, li {
@@ -22,7 +24,7 @@ a {
 
 body {
   background: #2e2e2e;
-  color: white;
+  color: #ffffff;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -539,7 +541,7 @@ body.collapse {
 
 .sidebar-wrapper .bar-dir li a {
   font-size: 11px;
-  color: white;
+  color: #ffffff;
 }
 
 .sidebar-wrapper .bar-dir .bar-arrow {
@@ -716,7 +718,7 @@ body.collapse {
 }
 
 .sidebar-wrapper .category-content-wrap a {
-  color: white;
+  color: #ffffff;
   font-size: 13px;
   width: 100%;
   padding: 3px;
@@ -786,7 +788,7 @@ body.collapse {
   position: relative;
   width: 100%;
   height: 20vh;
-  background: whitesmoke;
+  background: #f5f5f5;
 }
 
 .main-content-wrapper .main-content-container .products-wrapper {

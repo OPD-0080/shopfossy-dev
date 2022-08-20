@@ -33,7 +33,7 @@
             <div class="sidebar-content-wrap">
                 <div class="sidebar-content-container">
                     <ul class="sidebar">
-                        <li data-id="0" class="sb-list active"><div class="i" data-id="0"><div class="i-1"></div></div> Dashboard </li>
+                        <li data-id="dashboard" class="sb-list active"><div class="i" data-id="dashboard"><div class="i-1"></div></div> Dashboard </li>
                         <li data-id="1" class="sb-list"><div class="i" data-id="1"><div class="i-2"></div></div> Customers </li>
                         <li data-id="2" class="sb-list"><div class="i" data-id="2"><div class="i-3"></div></div> Orders </li>
                         <li data-id="3" class="sb-list"><div class="i" data-id="3"><div class="i-4"></div></div> Analytics </li>
@@ -41,7 +41,7 @@
                         <li data-id="5" class="sb-list"><div class="i" data-id="5"><div class="i-6"></div></div> Reports </li>
                     </ul>
                     <ul class="sidebar-base-content">
-                        <li><div class="i"><div class="i-7"></div></div> Database </li>
+                        <li data-id="6"><div class="i"><div class="i-7" data-id="6"></div></div> Database </li>
                         <li><div class="i"><div class="i-8"></div></div> Log Out </li>
                     </ul>
                 </div>
@@ -53,120 +53,255 @@
     <div class="main-content-wrapper">
         <div class="main-content-container">
             <!-------------- DASHBOARD SECTION --------------->
-            <div class="dashboard-container" data-slide="dashboard">
+            <div class="page-sections dashboard-container" data-slide="dashboard">
                 <div class="main-content">
                     <div class="header"><h2> Dashboard </h2></div>
-                    <!----------------- INSIGHT SECTION ---------------->
-                    <div class="insight-cards-container">
-                        <div class="insight-cards">
-                            <div class="insight-content">
-                                <div class="insight-logo"><div class="card-logo logo-1"></div></div>
-                                <div class="insight-header">Total Sales </div>
-                                <div class="insight-amount"><h3>Ghc 18.99</h3></div>
-                                <div class="insight-hour">Last 24hrs </div>
+                    <div class="main-wrap">
+                        <!----------------- INSIGHT SECTION ---------------->
+                        <div class="insight-cards-container">
+                            <div class="insight-cards">
+                                <div class="insight-content">
+                                    <div class="insight-logo"><div class="card-logo logo-1"></div></div>
+                                    <div class="insight-header">Total Sales </div>
+                                    <div class="insight-amount"><h3>Ghc 18.99</h3></div>
+                                    <div class="insight-hour">Last 24hrs </div>
+                                </div>
+                                <div class="insight-circle">
+                                    <svg class="insight-sales">
+                                        <circle cx="38" cy="38" r="30"></circle>
+                                    </svg>
+                                    <div class="insight-percentage"> 78% </div>
+                                </div>
                             </div>
-                            <div class="insight-circle">
-                                <svg class="insight-sales">
-                                    <circle cx="38" cy="38" r="30"></circle>
-                                </svg>
+                            <div class="insight-cards">
+                                <div class="insight-content">
+                                    <div class="insight-logo"><div class="card-logo logo-2"></div></div>
+                                    <div class="insight-header">Total Expenses </div>
+                                    <div class="insight-amount"><h3>Ghc 15.99</h3></div>
+                                    <div class="insight-hour">Last 24hrs </div>
+                                </div>
+                                <div class="insight-circle">
+                                    <svg class="insight-expenses">
+                                        <circle cx="38" cy="38" r="30"></circle>
+                                    </svg>
+                                    <div class="insight-percentage"> 78% </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="insight-cards">
-                            <div class="insight-content">
-                                <div class="insight-logo"><div class="card-logo logo-2"></div></div>
-                                <div class="insight-header">Total Expenses </div>
-                                <div class="insight-amount"><h3>Ghc 15.99</h3></div>
-                                <div class="insight-hour">Last 24hrs </div>
-                            </div>
-                            <div class="insight-circle">
-                                <svg class="insight-expenses">
-                                    <circle cx="38" cy="38" r="30"></circle>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="insight-cards">
-                            <div class="insight-content">
-                                <div class="insight-logo"><div class="card-logo logo-3"></div></div>
-                                <div class="insight-header">Total Income </div>
-                                <div class="insight-amount"><h3>Ghc 24.99</h3></div>
-                                <div class="insight-hour">Last 24hrs </div>
-                            </div>
-                            <div class="insight-circle">
-                                <svg class="insight-income">
-                                    <circle cx="38" cy="38" r="30"></circle>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <!--------------------------------------------------------->
-                    <!------------------ RECENT ORDERS ----------------------->
-                    <div class="recent-orders-wrapper">
-                        <div class="recent-orders-container">
-                            <div class="order-header">
-                                <h3> Recent Orders </h3>
-                                <div class="sell-all-btn recent-orders-all"> Sell All </div>
-                            </div>
-                            <div class="orders-container">
-                                <div class="recent-orders">
-                                    <table>
-                                        <thead>
-                                            <th> Product Name </th>
-                                            <th> Products UID </th>
-                                            <th> Payment </th>
-                                            <th> status </th>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td> Fordable Mini drone </td>
-                                                <td> #12223 </td>
-                                                <td> Due </td>
-                                                <td class="color-yellow"> Pending </td>
-                                                <td class="recent-order-btn"> Detail </td>
-                                            </tr>
-                                            <tr>
-                                                <td> Fordable Mini drone </td>
-                                                <td> #12223 </td>
-                                                <td> Due </td>
-                                                <td class="color-yellow"> Pending </td>
-                                                <td class="recent-order-btn"> Detail </td>
-                                            </tr>
-                                            <tr>
-                                                <td> Fordable Mini drone </td>
-                                                <td> #12223 </td>
-                                                <td> Refunded </td>
-                                                <td class="color-red"> Declined </td>
-                                                <td class="recent-order-btn"> Detail </td>
-                                            </tr>
-                                            <tr>
-                                                <td> Fordable Mini drone </td>
-                                                <td> #12223 </td>
-                                                <td> Paid </td>
-                                                <td class="color-green"> Delivered </td>
-                                                <td class="recent-order-btn"> Detail </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                            <div class="insight-cards">
+                                <div class="insight-content">
+                                    <div class="insight-logo"><div class="card-logo logo-3"></div></div>
+                                    <div class="insight-header">Total Income </div>
+                                    <div class="insight-amount"><h3>Ghc 24.99</h3></div>
+                                    <div class="insight-hour">Last 24hrs </div>
+                                </div>
+                                <div class="insight-circle">
+                                    <svg class="insight-income">
+                                        <circle cx="38" cy="38" r="30"></circle>
+                                    </svg>
+                                    <div class="insight-percentage"> 78% </div>
                                 </div>
                             </div>
                         </div>
+                        <!--------------------------------------------------------->
+                        <!------------------ RECENT ORDERS ----------------------->
+                        <div class="recent-orders-wrapper">
+                            <div class="recent-orders-container">
+                                <div class="order-header">
+                                    <h3> Recent Orders </h3>
+                                    <div class="sell-all-btn recent-orders-all"> Sell All </div>
+                                </div>
+                                <div class="orders-container">
+                                    <div class="recent-orders">
+                                        <table>
+                                            <thead>
+                                                <th></th>
+                                                <th> Product Name </th>
+                                                <th> Products UID </th>
+                                                <th> Payment </th>
+                                                <th> status </th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="recent-photo"><div class="photo"><img src="./img/svg/user-red.svg" alt=""></div></td>
+                                                    <td> Fordable Mini drone </td>
+                                                    <td> #12223 </td>
+                                                    <td> Due </td>
+                                                    <td class="color-yellow"> Pending </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="recent-photo"><div class="photo"><img src="./img/svg/user-red.svg" alt=""></div></td>
+                                                    <td> Fordable Mini drone </td>
+                                                    <td> #12223 </td>
+                                                    <td> Due </td>
+                                                    <td class="color-yellow"> Pending </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="recent-photo"><div class="photo"><img src="./img/svg/user-red.svg" alt=""></div></td>
+                                                    <td> Fordable Mini drone </td>
+                                                    <td> #12223 </td>
+                                                    <td> Refunded </td>
+                                                    <td class="color-red"> Declined </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="recent-photo"><div class="photo"><img src="./img/svg/user-red.svg" alt=""></div></td>
+                                                    <td> Fordable Mini drone </td>
+                                                    <td> #12223 </td>
+                                                    <td> Paid </td>
+                                                    <td class="color-green"> Delivered </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--------------------------------------------------------->
+                        <!------------------ RECENT CUSTOMERS ----------------------->
+                        <div class="recent-customers-wrapper">
+                            <div class="recent-customer-container">
+                                <div class="customer-header">
+                                    <h3> Recent Customers </h3>
+                                    <div class="sell-all-btn recent-customer-all"> Sell All </div>
+                                </div>
+                                <div class="customer-contents">
+                                    <div class="recent-customer">
+                                        <table>
+                                            <thead>
+                                                <th> Photo </th>
+                                                <th> User Name</th>
+                                                <th> Email </th>
+                                                <th> Date </th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="user-photo"><div class="photo"><img src="./img/svg/user-red.svg" alt=""></div></td>
+                                                    <td> Daniel Ali </td>
+                                                    <td> opd@gmail.com </td>
+                                                    <td class=""> 23 Jan, 2020 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="user-photo"><div class="photo"><img src="./img/svg/user-red.svg" alt=""></div></td>
+                                                    <td> Daniel Ali </td>
+                                                    <td> ali@yahoo.com </td>
+                                                    <td class=""> 23 Jan, 2020 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="user-photo"><div class="photo"><img src="./img/svg/user-red.svg" alt=""></div></td>
+                                                    <td> Daniel Ali </td>
+                                                    <td>  ali@yahoo.com </td>
+                                                    <td class=""> 23 Jan, 2020 </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="user-photo"><div class="photo"><img src="./img/svg/user-red.svg" alt=""></div></td>
+                                                    <td> Daniel Ali </td>
+                                                    <td> daniel@hotmail.com </td>
+                                                    <td class=""> 23 Jan, 2020 </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!----------------------------------------------------------->
                     </div>
-                    <!--------------------------------------------------------->
                 </div>
             </div>
             <!--------------------------------------------------------->
             <!------------------- CUSTOMERS SECTION ------------------->
-            <div class="customer-container" data-slide="customer">
+            <div class="page-sections page-switch customer-container" data-slide="1">
                 <div class="main-content">
                     <div class="header"><h2> Customers </h2></div>
-                    <div class="customers-wrapper">
-
+                    <div class="main-wrap">
+                    <!------------- RECENT CUSTOMER ------------------->
+                        <div class="update-customer">           
+                            <div class="customer-header">
+                                <h3> Updates </h3>
+                                <div class="color-indicator">
+                                    <div>New user</div><div>Checkout Info</div>
+                                </div>
+                            </div>
+                            <div class="customer-update-content">
+                                <div class="update-container">
+                                    <div class="row">
+                                        <div class="de color-client"></div>
+                                        <div class="de-message">
+                                            <p> 
+                                                <em>Bryant Goddin</em> has signed in as new client with <em>opd@gmail.com</em> as email
+                                            </p>
+                                            <div>
+                                                <div class="de-time">Tue 08hr : 34min </div> ||
+                                                <div class="de-date"> Tue 23, May, 2022 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="de color-bill"></div>
+                                        <div class="de-message">
+                                            <p> 
+                                                <em> Redman Green </em> has has made order
+                                            </p>
+                                            <div>
+                                                <div class="de-time">Tue 08hr : 34min </div> ||
+                                                <div class="de-date"> Tue 23, May, 2022 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!------------------------------------------------->
+                    <!------------- SIGNED USER DETAILS ------------------->
+                    <div class="update-customer">           
+                        <div class="customer-header">
+                            <h3> Client Checkout  </h3>
+                        </div>
+                        <div class="checkout-update-content">
+                            <div class="checkout-container">
+                                <div class="table-row">
+                                    <div>
+                                        <ul class="tr-1">
+                                            <li><span class="i i-1"></span> First Name: <span> Daniel </span></li>
+                                            <li><span class="i i-2"></span> Last Name: <span> Ail </span></li>
+                                            <li><span class="i i-3"></span> Email : <span> example@domain.com </span></li>
+                                            <li><span class="i i-4"></span> Number : <span> 0246220037 </span></li>
+                                            <li><span class="i i-5"></span> Company : <span> None </span></li>
+                                            <li><span class="i i-6"></span> Region : <span> Ashanti </span></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <ul class="tr-2">
+                                            <li><span class="i i-7"></span> City / Town : <span> Obuasi </span></li>
+                                            <li><span class="i i-8"></span> Digital Address : <span> A0-232-3232 </span></li>
+                                            <li><span class="i i-9"></span> Residential Address : <span> Brahabebome </span></li>
+                                            <li><span class="i i-10"></span> Delivery Method : <span> Vehicle </span></li>
+                                            <li><span class="i i-11"></span> Payment Method : <span> MTN momo </span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-------------------------------------------------------->
+                    <!------------- SIGNED USER DETAILS ------------------->
+                    <div class="update-customer">           
+                        <div class="customer-header">
+                            <h3> Client Checkout  </h3>
+                        </div>
+                        <div class="user-update-content">
+                            <div class="user-container">
+                                s
+                            </div>
+                        </div>
+                    </div>
+                    <!------------------------------------------------------>
                     </div>
                 </div>
             </div>
             <!------------------------------------------------------------>
             <!------------------- ORDERS SECTION ------------------->
             <!--
-            <div class="customer-container" data-slide="customer">
+            <div class="page-sections page-switch customer-container" data-slide="2">
                 <div class="main-content">
                     <div class="header"><h2> Orders </h2></div>
                     <div class="orders-wrapper">
@@ -174,7 +309,55 @@
                     </div>
                 </div>
             </div>
-            -->
+        -->
+            <!------------------------------------------------------------>
+            <!------------------- ANALYTICS SECTION ------------------->
+            <!--
+            <div class="page-sections page-switch customer-container" data-slide="3">
+                <div class="main-content">
+                    <div class="header"><h2> Analytics </h2></div>
+                    <div class="analytics-wrapper">
+                        
+                    </div>
+                </div>
+            </div>
+        -->
+            <!------------------------------------------------------------>
+            <!------------------- MESSAGE SECTION ------------------->
+            <!--
+            <div class=" page-sections page-switch customer-container" data-slide="4">
+                <div class="main-content">
+                    <div class="header"><h2> Messages </h2></div>
+                    <div class="message-wrapper">
+                        
+                    </div>
+                </div>
+            </div>
+        -->
+            <!------------------------------------------------------------>
+            <!------------------- REPORT SECTION ------------------->
+            <!--
+            <div class="page-sections page-switch customer-container" data-slide="5">
+                <div class="main-content">
+                    <div class="header"><h2> Report </h2></div>
+                    <div class="report-wrapper">
+                        
+                    </div>
+                </div>
+            </div>
+        -->
+            <!------------------------------------------------------------>
+            <!------------------- DATABASE SECTION ------------------->
+            <!--
+            <div class="page-sections page-switch customer-container" data-slide="6">
+                <div class="main-content">
+                    <div class="header"><h2> Database </h2></div>
+                    <div class="database-wrapper">
+                        
+                    </div>
+                </div>
+            </div>
+        -->
             <!------------------------------------------------------------>
         </div>
         <!------------------- ADMIN SECTION ---------------------------->
@@ -196,20 +379,26 @@
         <!------------------ RECENT UPDATE  ---------------------------->
         <div class="summary-content-container">
             <div class="recent-update-wrapper">
-                <div class="summary-header"><h3> Recent Updates </h3></div>
+                <div class="summary-header"><h3> RealTime Updates </h3></div>
                 <div class="recent-update-container">
-                    <div>
+                    <div class="row">
                         <div class="update-image-wrap"><img src="./img/control-center/1.webp" alt=""></div>
                         <div class="update-content">
                             <p><em> Daniel Ali</em> payment status his order of product name</p>
-                            <div class="update-time"> 8 minutes ago </div>
+                            <div class="note">
+                                <div class="update-time"> 8 minutes ago </div>
+                                <div class="category"> Category: <em>Order</em></div>
+                            </div>
                         </div>
                     </div>
-                    <div>
+                    <div class="row">
                         <div class="update-image-wrap"><img src="./img/control-center/1.webp" alt=""></div>
                         <div class="update-content">
                             <p><em> Daniel Ali</em> payment status his order of product name</p>
-                            <div class="update-time"> 8 minutes ago </div>
+                            <div class="note">
+                                <div class="update-time"> 8 minutes ago </div>
+                                <div class="category"> Category: <em>Order</em></div>
+                            </div>
                         </div>
                     </div>
                 </div>

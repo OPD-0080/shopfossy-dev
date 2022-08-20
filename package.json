@@ -17,15 +17,16 @@
   },
   "homepage": "https://github.com/OPD-0080/master#readme",
   "devDependencies": {
-    "moment": "^2.29.4",
-    "morgan": "^1.10.0"
+    "nodemon": "^2.0.19"
   },
   "dependencies": {
     "axios": "^0.27.2",
     "bcrypt": "^5.0.1",
     "express": "^4.18.1",
-    "firebase-tools": "^11.7.0",
+    "firebase-tools": "^1.2.0",
     "http": "^0.0.1-security",
+    "moment": "^2.29.4",
+    "morgan": "^1.10.0",
     "pg": "^8.7.3",
     "socket.io": "^4.5.1"
   }

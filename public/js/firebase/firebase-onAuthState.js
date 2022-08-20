@@ -10,7 +10,7 @@ const alertVerification = document.querySelector(".verification-alert-wrap");
 const verifyBtn = alertVerification.querySelector(".verify-btn");
 const verifyText = alertVerification.querySelector(".v-text");
 const userBtnWrapper = document.querySelector(".user-btns");
-const btnOff = userBtnWrapper.querySelector(".off");
+const btnOff = userBtnWrapper.querySelectorAll(".off");
 const btnOn = userBtnWrapper.querySelector(".in");
 const imageText = document.querySelector(".image-text");
 // ...
@@ -65,12 +65,16 @@ function onAuthState() {
           // ...
           
           // activating buttons 
-          btnOff.classList.add("show");
+          btnOff.forEach(el => {
+            el.classList.add("show");
+          })
           btnOn.classList.add("show");
           // ...
 
       } else {
-        btnOff.classList.remove("show");
+        btnOff.forEach(el => {
+          el.classList.remove("show");
+        })
         btnOn.classList.remove("show");
       }
   });

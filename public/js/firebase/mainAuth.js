@@ -12,7 +12,7 @@ const verifyText = alertVerification.querySelector(".v-text");
 const imageText = document.querySelector(".image-text");
 const signInBtn = document.querySelector(".sign-in-btn");
 const userBtnWrapper = document.querySelector(".user-btns");
-const btnOff = userBtnWrapper.querySelector(".off");
+const btnOff = userBtnWrapper.querySelectorAll(".off");
 const btnOn = userBtnWrapper.querySelector(".in");
 var formOverlay = document.querySelector(".sign-in-overlay");
 // ...
@@ -37,7 +37,9 @@ function onAuthState() {
             // ...
 
             // activating & deactivate buttons 
-            btnOff.classList.add("show");
+            btnOff.forEach(el => {
+              el.classList.add("show")
+            });
             btnOn.classList.add("show");
             // ...
 
