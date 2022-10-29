@@ -386,6 +386,9 @@ body {
                                                     border: 1px solid $cc-tertiary-background;
                                                     &::first-letter {text-transform: uppercase}
                                                 }
+                                                .user-email {
+                                                    &::first-letter {text-transform: lowercase}
+                                                }
                                                 .recent-photo {
                                                     width: 100%;
                                                     height: 40px;
@@ -487,6 +490,9 @@ body {
                                                     border: 1px solid $cc-tertiary-background;
                                                     &::first-letter {text-transform: uppercase}
                                                 }
+                                                .user-email {
+                                                    &::first-letter {text-transform: lowercase}
+                                                }
                                                 .user-photo {
                                                     width: 100%;
                                                     height: 40px;
@@ -561,6 +567,7 @@ body {
                     scrollbar-width: thin;
                     height: 90vh; // !! important
 
+                    // CUSTOMER SECTION
                     .update-customer {
                         position: relative;
                         top: 0px;
@@ -568,7 +575,6 @@ body {
                         width: 100%;
                         margin-top: $margin-s;
 
-                        
                         .customer-header {
                             display: flex;
                             justify-content: space-between;
@@ -719,6 +725,21 @@ body {
                                     display: grid;
                                     grid-template-columns: repeat(2, 1fr);
                                     grid-gap: 1rem;
+                                    margin-top: 5px;
+                                    position: relative;
+                                    padding: 5px;
+                                    box-sizing: border-box;
+                                    border: 2px solid $cc-secondary-background;
+                                    overflow: hidden;
+
+                                    .time {
+                                        position: absolute;
+                                        bottom: 0px;
+                                        right: 0px;
+                                        background: $cc-red;
+                                        padding: 3px;
+                                        font-size: $font-vs;
+                                    }
 
                                     div {
                                         ul {
@@ -728,6 +749,8 @@ body {
                                                 padding: 5px;
                                                 color: $cc-color-post;
                                                 margin-left: 25px;
+
+                                                &::first-letter {text-transform: uppercase;}
 
                                                 span {
                                                     margin-left: $margin-vs;
@@ -754,9 +777,433 @@ body {
                                                 .i-8 {background-image: url("../img/icons/location-white.png")}
                                                 .i-9 {background-image: url("../img/icons/location-white.png")}
                                                 .i-10 {background-image: url("../img/svg/bag-white.svg")}
-                                                .i-11 {background-image: url("../img/svg/shield-white.svg")}
+                                                .i-11 {background-image: url("../img/svg/secure-payment-white.svg")}
                                             
                                             }    
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .new-user-update-content {
+                            position: relative;
+                            top: 0px;
+                            left: 0px;
+                            width: 100%;
+                            //min-height: 30vh; // important !!
+                            max-height: 80vh;
+                            background: $cc-secondary-background;
+                            margin-top: $margin-vs;
+                            @include border-20;
+                            display: flex;
+                            justify-content: center;
+                            align-items: flex-start;
+                            overflow-y: scroll;
+                            overflow-x: hidden;
+
+                            .new-user-container {
+                                position:relative;
+                                width: 95%;
+                                top: 0px;
+                                left: 0px;
+                                margin: 5px;
+                                background: $cc-tertiary-background;
+                                @include border-10;
+
+                                table {
+                                    width: 100%;
+                                    thead {
+                                        margin: 20px;
+                                        th {
+                                            &::first-letter {text-transform: uppercase;}
+                                            padding: 10px;
+                                            font-size: small;
+                                        }
+                                    }
+                                    tbody {
+                                        tr {
+                                            line-height: 2rem;
+                                            td {
+                                                text-align: center;
+                                                font-size: smaller;
+                                                border: 1px solid $cc-tertiary-background;
+                                                &::first-letter {text-transform: uppercase}
+                                            }
+                                            .user-email {
+                                                &::first-letter {text-transform: lowercase}
+                                            }
+                                            .user-log-photo {
+                                                width: 100%;
+                                                height: 40px;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+
+                                                .photo {
+                                                    width: 30px;
+                                                    height: 30px;
+                                                    background: $cc-main-color;
+                                                    @include border-10;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;
+
+                                                    img {
+                                                        position: relative;
+                                                        width: 30px;
+                                                        height: 30px;
+                                                        background: transparent;
+                                                        @include border-10;
+                                                        object-fit: cover;
+                                                    }
+                                                }
+                                            }
+                                            .color-yellow {color: $cc-color-yellow}
+                                            .color-red {color: $cc-color-lightRed}
+                                            .color-green {color: $cc-color-lightgreen}
+                                            .recent-order-btn {
+                                                color: $cc-color-lightblue;
+                                                cursor: pointer;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    //  ORDER SECTION
+                    .update-order {
+                        position: relative;
+                        top: 0px;
+                        left: 0px;
+                        width: 100%;
+                        margin-top: $margin-s;
+
+                        .customer-header {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            .color-indicator{
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-size: $font-vs;
+                                margin: 5px;
+
+                                div {
+                                    position: relative;
+                                    margin-left: 20px;
+
+                                    &::before {
+                                        content: "";
+                                        position: absolute;
+                                        top: 0px;
+                                        left: 0px;
+                                        width: 10px;
+                                        height: 100%;
+                                        @include transform(-12px, 0px)
+                                    }
+                                    &:nth-child(1)::before {
+                                        background: $cc-red;
+                                    }
+                                    &:nth-child(2)::before {
+                                        background: $cc-orange;
+                                    }
+                                }
+                            }
+                        }
+                        .order-update-content {
+                            position: relative;
+                            top: 0px;
+                            left: 0px;
+                            width: 100%;
+                            //min-height: 30vh; // important !!
+                            max-height: 45vh;
+                            background: $cc-secondary-background;
+                            @include border-20;
+
+                            .update-container {
+                                width: 100%;
+                                position: relative;
+                                top: 0px;
+                                left: 0px;
+                                margin-top: $margin-vs;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: flex-start;
+                                align-items: center;
+                                padding: 2px;
+                                box-sizing: border-box;
+                                overflow-y: scroll;
+                                overflow-x: hidden;
+
+                                .row {
+                                    position: relative;
+                                    top: 0px;
+                                    left: 0px;
+                                    width: 90%;
+                                    margin: 5px;
+                                    @include border-20;
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                    background: $cc-tertiary-background;
+                                
+                                    .de {
+                                        position: relative;
+                                        top: 0px;
+                                        left: 0px;
+                                        width: 60px;
+                                        height: 40px;
+
+                                        &::before {
+                                            content: "";
+                                            position: absolute;
+                                            top: 0px;
+                                            right: 0px;
+                                            width: 40px;
+                                            height: 40px;
+                                            @include transform(20px, 0px);
+                                            background: $cc-tertiary-background;
+                                            @include border-circle;
+                                        }
+                                    }
+                                    .color-client {background: $cc-red;}
+                                    .color-bill {background: $cc-orange}
+                                    .de-message {
+                                        position: relative;
+                                        width: 80%;
+                                        margin-left: $margin-l;
+
+                                        p {
+                                            color: $cc-color-post;
+                                            font-size: $font-s;
+                                            margin-top: $margin-vs;
+                                            em {
+                                                font-style: none;
+                                                color: $cc-main-color;
+                                            }
+                                        }
+                                        div {
+                                            display: flex;
+                                            justify-content: flex-end;
+                                            align-items: center;
+                                            font-size: $font-vs;
+                                            margin-top: $margin-vs;
+                                            color: $cc-color-post;
+
+                                            div {margin: 5px;}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .products-ordered-update-content {
+                        position: relative;
+                        top: 0px;
+                        left: 0px;
+                        width: 100%;
+                        //min-height: 30vh; // important !!
+                        max-height: 100vh;
+                        background: $cc-secondary-background;
+                        margin-top: $margin-vs;
+                        @include border-20;
+                        display: flex;
+                        justify-content: center;
+                        align-items: flex-start;
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+
+                        .products-ordered-container {
+                            position:relative;
+                            width: 95%;
+                            top: 0px;
+                            left: 0px;
+                            margin: 5px;
+                            @include border-10;
+
+                            .single-product-wrap {
+                                position: relative;
+                                top: 0px;
+                                left: 0px;
+                                width: 100%;
+                                margin-top: $margin-s;
+                                border: 3px solid $cc-color-post;
+                                @include border-20;
+                                overflow: hidden;
+
+                                .product-ownership-wrap {
+                                    position: relative;
+                                    width: 95%;
+                                    display: flex;
+                                    justify-content: flex-end;
+                                    align-items: flex-end;
+                                    margin-top: $margin-vs;
+
+                                    .ownership-container {
+                                        position: relative;
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: flex-end;
+                                        align-items: center;
+
+                                        div {
+                                            position: relative;
+                                        }
+                                        .image-wrap {
+                                            width: 30px;
+                                            height: 30px;
+                                            background: white;
+                                            @include border-circle;
+                                            margin-left: $margin-vs;
+                                            margin-right: $margin-vs;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+
+                                            img {
+                                                position: relative;
+                                                width: 25px;
+                                                height: 25px;
+                                                object-fit: cover;
+                                                @include border-circle;
+                                            }
+                                        }
+                                        .image-text {
+                                            &::first-letter {text-transform: uppercase}
+                                            font-size: $font-s;
+                                            font-weight: bold;
+
+                                            em {font-style: normal; color: $cc-color-post}
+                                        }
+                                    }
+                                }
+                                .item-description-wrap {
+                                    width: 100%;
+                                    position: relative;
+                                    top: 0px;
+                                    left: 0px;
+
+                                    .row {
+                                        display: grid;
+                                        grid-template-columns: repeat(2, 1fr);
+                                        grid-gap: 1rem;
+                                        margin-top: 5px;
+                                        position: relative;
+                                        padding: 5px;
+                                        box-sizing: border-box;
+                                        overflow: hidden;
+        
+                                        div {
+                                            position: relative
+                                        }
+                                        .item-image-wrapper {
+                                            width: 90%;
+                                            background: $cc-tertiary-background;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            @include border-20;
+        
+                                            .item-wrap {
+                                                position: relative;
+                                                top: 0px;
+                                                left: 0px;
+                                                width: 120px;
+                                                height: 120px;
+                                                border: 5px solid $cc-main-color;
+                                                @include border-20;
+                                                margin: 10px;
+                                                -webkit-box-reflect: right -5px linear-gradient(transparent, rgba(0, 0, 0, 0.35));
+        
+                                                img {
+                                                    position: absolute;
+                                                    top: 0px;
+                                                    left: 0px;
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    object-fit: cover;
+                                                    @include border-20;
+                                                    -webkit-box-reflect: left -5px linear-gradient(transparent, rgba(0, 0, 0, 0.35));
+                                                }
+                                            }
+                                        }
+                                        .item-image-content-wrap {
+                                            position: relative;
+                                            top: 0px;
+                                            left: 0px;
+                                            width: 100%;
+        
+                                            .item-image-content {
+                                                li {
+                                                    font-size: $font-s;
+                                                    padding: 3px;
+                                                    color: $cc-color-post;
+                                                    position: relative;
+    
+                                                    &::first-letter {text-transform: uppercase;}
+    
+                                                    span {
+                                                        margin-left: $margin-vs;
+                                                        color: $cc-main-color;
+                                                    }
+                                                    .i {
+                                                        position: absolute;
+                                                        top: 4px;
+                                                        left: 0px;
+                                                        width: 20px;
+                                                        height: 20px;
+                                                        background: transparent;
+                                                        @include transform(-35px, 0px);
+                                                        background-size: cover;
+                                                        @include background-initializer;
+                                                    }
+                                                    .i-1 {background-image: url("../img/svg/hashtag-white.svg")}
+                                                    .i-2 {background-image: url("../img/svg/shirt-white.svg")}
+                                                    .i-3 {background-image: url("../img/svg/price-tag-white.svg")}
+                                                    .i-4 {background-image: url("../img/svg/hashtag-white.svg")}
+                                                    .i-5 {background-image: url("../img/svg/secure-payment-white.svg")}
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                .item-summation-wrapper {
+                                    position: relative;
+                                    top: 0px;
+                                    left: 0px;
+                                    width: 95%;
+                                    display: flex;
+                                    justify-content: flex-end;
+                                    align-items: flex-end;
+                                    margin-bottom: $margin-vs;
+
+                                    .item-summation-container {
+                                        position: relative;
+                                        top: 0px;
+                                        left: 0px;
+
+                                        .item-grand-total {
+                                            position: relative;
+                                            top: 0px;
+                                            left: 0px;
+
+                                            li {
+                                                font-size: $font-s;
+                                                font-weight: bolder;
+                                                color: $cc-color-post;
+
+                                                em {
+                                                    margin-left: 10px; 
+                                                    font-size: $font-l;
+                                                    font-style: normal;
+                                                    color: $cc-main-color;
+                                                }
+                                            }
+
                                         }
                                     }
                                 }

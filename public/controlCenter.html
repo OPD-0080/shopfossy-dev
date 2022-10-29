@@ -120,7 +120,7 @@
                                                 <th> Payment </th>
                                                 <th> status </th>
                                             </thead>
-                                            <tbody>
+                                            <tbody class="recent-orders-table-body">
                                                 <tr>
                                                     <td class="recent-photo"><div class="photo"><img src="./img/svg/user-red.svg" alt=""></div></td>
                                                     <td> Fordable Mini drone </td>
@@ -172,29 +172,29 @@
                                                 <th> Email </th>
                                                 <th> Date </th>
                                             </thead>
-                                            <tbody>
+                                            <tbody class="recent-customer-table-body">
                                                 <tr>
                                                     <td class="user-photo"><div class="photo"><img src="./img/svg/user-red.svg" alt=""></div></td>
                                                     <td> Daniel Ali </td>
-                                                    <td> opd@gmail.com </td>
+                                                    <td class="user-email"> opd@gmail.com </td>
                                                     <td class=""> 23 Jan, 2020 </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="user-photo"><div class="photo"><img src="./img/svg/user-red.svg" alt=""></div></td>
                                                     <td> Daniel Ali </td>
-                                                    <td> ali@yahoo.com </td>
+                                                    <td class="user-email"> ali@yahoo.com </td>
                                                     <td class=""> 23 Jan, 2020 </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="user-photo"><div class="photo"><img src="./img/svg/user-red.svg" alt=""></div></td>
                                                     <td> Daniel Ali </td>
-                                                    <td>  ali@yahoo.com </td>
+                                                    <td class="user-email">  ali@yahoo.com </td>
                                                     <td class=""> 23 Jan, 2020 </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="user-photo"><div class="photo"><img src="./img/svg/user-red.svg" alt=""></div></td>
                                                     <td> Daniel Ali </td>
-                                                    <td> daniel@hotmail.com </td>
+                                                    <td class="user-email"> daniel@hotmail.com </td>
                                                     <td class=""> 23 Jan, 2020 </td>
                                                 </tr>
                                             </tbody>
@@ -213,7 +213,7 @@
                 <div class="main-content">
                     <div class="header"><h2> Customers </h2></div>
                     <div class="main-wrap">
-                    <!------------- RECENT CUSTOMER ------------------->
+                        <!------------- RECENT CUSTOMER ------------------->
                         <div class="update-customer">           
                             <div class="customer-header">
                                 <h3> Updates </h3>
@@ -230,8 +230,8 @@
                                                 <em>Bryant Goddin</em> has signed in as new client with <em>opd@gmail.com</em> as email
                                             </p>
                                             <div>
-                                                <div class="de-time">Tue 08hr : 34min </div> ||
-                                                <div class="de-date"> Tue 23, May, 2022 </div>
+                                                <div class="de-time"> 08hr : 34min </div> ||
+                                                <div class="de-date"> Tue May 23, 2022 </div>
                                             </div>
                                         </div>
                                     </div>
@@ -242,74 +242,202 @@
                                                 <em> Redman Green </em> has has made order
                                             </p>
                                             <div>
-                                                <div class="de-time">Tue 08hr : 34min </div> ||
-                                                <div class="de-date"> Tue 23, May, 2022 </div>
+                                                <div class="de-time"> 08hr : 34min </div> ||
+                                                <div class="de-date"> Tue May 23, 2022 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    <!------------------------------------------------->
-                    <!------------- SIGNED USER DETAILS ------------------->
-                    <div class="update-customer">           
-                        <div class="customer-header">
-                            <h3> Client Checkout  </h3>
-                        </div>
-                        <div class="checkout-update-content">
-                            <div class="checkout-container">
-                                <div class="table-row">
-                                    <div>
-                                        <ul class="tr-1">
-                                            <li><span class="i i-1"></span> First Name: <span> Daniel </span></li>
-                                            <li><span class="i i-2"></span> Last Name: <span> Ail </span></li>
-                                            <li><span class="i i-3"></span> Email : <span> example@domain.com </span></li>
-                                            <li><span class="i i-4"></span> Number : <span> 0246220037 </span></li>
-                                            <li><span class="i i-5"></span> Company : <span> None </span></li>
-                                            <li><span class="i i-6"></span> Region : <span> Ashanti </span></li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <ul class="tr-2">
-                                            <li><span class="i i-7"></span> City / Town : <span> Obuasi </span></li>
-                                            <li><span class="i i-8"></span> Digital Address : <span> A0-232-3232 </span></li>
-                                            <li><span class="i i-9"></span> Residential Address : <span> Brahabebome </span></li>
-                                            <li><span class="i i-10"></span> Delivery Method : <span> Vehicle </span></li>
-                                            <li><span class="i i-11"></span> Payment Method : <span> MTN momo </span></li>
-                                        </ul>
+                        <!------------------------------------------------->
+                        <!------------- SIGNED USER DETAILS ------------------->
+                        <div class="update-customer">           
+                            <div class="customer-header">
+                                <h3> Client Checkout  </h3>
+                            </div>
+                            <div class="checkout-update-content">
+                                <div class="checkout-container">
+                                    <div class="table-row">
+                                        <div class="time client-time"> Tue 08hr : 34min || Sep 23, 2020 </div>
+                                        <div>
+                                            <ul class="tr-1">
+                                                <li><span class="i i-1"></span> First Name: <span> Daniel </span></li>
+                                                <li><span class="i i-2"></span> Last Name: <span> Ail </span></li>
+                                                <li><span class="i i-3"></span> Email : <span> example@domain.com </span></li>
+                                                <li><span class="i i-4"></span> Number : <span> 0246220037 </span></li>
+                                                <li><span class="i i-5"></span> Company : <span> None </span></li>
+                                                <li><span class="i i-6"></span> Region : <span> Ashanti </span></li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <ul class="tr-2">
+                                                <li><span class="i i-7"></span> City / Town : <span> Obuasi </span></li>
+                                                <li><span class="i i-8"></span> Digital Address : <span> A0-232-3232 </span></li>
+                                                <li><span class="i i-9"></span> Residential Address : <span> Brahabebome </span></li>
+                                                <li><span class="i i-10"></span> Delivery Method : <span> Vehicle </span></li>
+                                                <li><span class="i i-11"></span> Payment Method : <span> MTN momo </span></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-------------------------------------------------------->
-                    <!------------- SIGNED USER DETAILS ------------------->
-                    <div class="update-customer">           
-                        <div class="customer-header">
-                            <h3> Client Checkout  </h3>
-                        </div>
-                        <div class="user-update-content">
-                            <div class="user-container">
-                                s
+                        <!-------------------------------------------------------->
+                        <!------------- SIGNED USER DETAILS ------------------->
+                        <div class="update-customer">           
+                            <div class="customer-header">
+                                <h3> User Logs  </h3>
+                            </div>
+                            <div class="new-user-update-content">
+                                <div class="new-user-container">
+                                    <table>
+                                        <thead>
+                                            <th> Photo </th>
+                                            <th> User Name</th>
+                                            <th> Email </th>
+                                            <th> Date </th>
+                                            <th> Time </th>
+                                        </thead>
+                                        <tbody class="new-user-table-body">
+                                            <tr>
+                                                <td class="user-log-photo"><div class="photo"><img src="./img/svg/user-red.svg" alt=""></div></td>
+                                                <td> Daniel Ali </td>
+                                                <td class="user-email"> opd@gmail.com </td>
+                                                <td class=""> Jan 23, 2020 </td>
+                                                <td class="log-time"> 04hr : 23min 30s </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="user-log-photo"><div class="photo"><img src="./img/svg/user-red.svg" alt=""></div></td>
+                                                <td> Daniel Ali </td>
+                                                <td class="user-email"> ali@yahoo.com </td>
+                                                <td class=""> Jan 23, 2020 </td>
+                                                <td class="log-time"> 04hr : 23min 30s </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="user-log-photo"><div class="photo"><img src="./img/svg/user-red.svg" alt=""></div></td>
+                                                <td> Daniel Ali </td>
+                                                <td class="user-email">  ali@yahoo.com </td>
+                                                <td class=""> Jan 23, 2020 </td>
+                                                <td class="log-time"> 04hr : 23min 30s </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="user-log-photo"><div class="photo"><img src="./img/svg/user-red.svg" alt=""></div></td>
+                                                <td> Daniel Ali </td>
+                                                <td class="user-email"> daniel@hotmail.com </td>
+                                                <td class=""> Jan 23, 2020 </td>
+                                                <td class="log-time"> 04hr : 23min 30s </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!------------------------------------------------------>
+                        <!------------------------------------------------------>
                     </div>
                 </div>
             </div>
             <!------------------------------------------------------------>
             <!------------------- ORDERS SECTION ------------------->
-            <!--
+            
             <div class="page-sections page-switch customer-container" data-slide="2">
                 <div class="main-content">
                     <div class="header"><h2> Orders </h2></div>
-                    <div class="orders-wrapper">
-                        
+                    <div class="main-wrap">
+                        <!------------- RECENT ORDER ------------------->
+                        <div class="update-order">           
+                            <div class="customer-header">
+                                <h3> Updates </h3>
+                                <div class="color-indicator">
+                                    <div>Orders</div>
+                                </div>
+                            </div>
+                            <div class="order-update-content">
+                                <div class="update-container">
+                                    <div class="row">
+                                        <div class="de color-client"></div>
+                                        <div class="de-message">
+                                            <p> 
+                                                <em>Bryant Goddin</em> has make an order of <em>2</em> item(s)
+                                            </p>
+                                            <div>
+                                                <div class="de-time"> 08hr : 34min </div> ||
+                                                <div class="de-date"> Tue May 23, 2022 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!------------------------------------------------->
+                        <!------------- ORDER LOGS DETAILS ------------------->
+                        <div class="update-customer">           
+                            <div class="customer-header">
+                                <h3> Order Logs  </h3>
+                            </div>
+                            <div class="products-ordered-update-content">
+                                <div class="products-ordered-container">
+                                    <!------- SINGLE CLIENT ITEMS ------------>
+                                    <div class="single-product-wrap">
+                                        <div class="product-ownership-wrap">
+                                            <div class="ownership-container">
+                                                <div class="image-wrap"><img src="./img/svg/user-red.svg" alt=""></div>
+                                                <div class="image-text"><em> Client :</em> Daniel Ali </div>
+                                            </div>
+                                        </div>
+                                        <!------- SINGLE ITEMS ------------>
+                                        <div class="item-description-wrap">
+                                            
+                                            <div class="row">
+                                                <div class="item-image-wrapper">
+                                                    <div class="item-wrap"><img src="./img/control-center/1.webp" alt=""></div>
+                                                </div>
+                                                <div class="item-image-content-wrap">
+                                                    <ul class="item-image-content">
+                                                        <li><span class="i i-1"></span> item UID (#): <span> ER-2322 </span></li>
+                                                        <li><span class="i i-2"></span> Item Name: <span> Pokeman Hat </span></li>
+                                                        <li><span class="i i-3"></span> Price : <span> 18.99 </span></li>
+                                                        <li><span class="i i-4"></span> Quantity : <span> 2 </span></li>
+                                                        <li><span class="i i-5"></span> Sub-Total : <span> 36.99 </span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="item-image-wrapper">
+                                                    <div class="item-wrap"><img src="./img/control-center/1.webp" alt=""></div>
+                                                </div>
+                                                <div class="item-image-content-wrap">
+                                                    <ul class="item-image-content">
+                                                        <li><span class="i i-1"></span> item UID (#): <span> ER-2322 </span></li>
+                                                        <li><span class="i i-2"></span> Item Name: <span> Pokeman Hat </span></li>
+                                                        <li><span class="i i-3"></span> Price : <span> 18.99 </span></li>
+                                                        <li><span class="i i-4"></span> Quantity : <span> 2 </span></li>
+                                                        <li><span class="i i-5"></span> Sub-Total : <span> 36.99 </span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-------------------------------------------------->
+                                        </div>
+                                        <!----------- ITEMS SUMMATION ------------------->
+                                        <div class="item-summation-wrapper">
+                                            <div class="item-summation-container">
+                                                <ul class="item-grand-total">
+                                                    <li> Grand Total : <em>GHc 125.99 </em></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!------------------------------------------------>
+                                    </div>
+                                    <!-------------------------------->
+                                </div>
+                            </div>
+                        </div>
+                        <!------------------------------------------------------>
                     </div>
                 </div>
             </div>
-        -->
+        
             <!------------------------------------------------------------>
             <!------------------- ANALYTICS SECTION ------------------->
             <!--
