@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Site meta start here -->
+    <meta name="org" property="org: site_name" content="  ">
+    <meta name="org" property="org_local" content="en-US">
+    <meta name="author" property="name" content="Prince Obeng Donkor">
+    <meta name="author" property="contact" content="+233 24-622-0037 / +233 50-269-6901">
+    <meta name="author" property="email" content="obengprince0001@gmail.com">
+    <meta name="country" property="country_origin" content="Ghana">
+    <!-- Site meta start end -->
+    
+    <title>Shopfossy | EditProfile</title>
+
+    <!---- css here -->
+    <link rel="stylesheet" href="./css/user_profile.css">
+    <link rel="stylesheet" href="./css/@media_user_profile.css">
+</head>
+<body>
+    <div class="user-edited-overlay">
+        <div class="user-edited-wrapper">
+            <!------- RESTRICT PAGE NOTIFICATION  ----->    
+            <% if (userProfile !== undefined) { %>
+                <% if (userProfile == "") { %>
+                    <div class="restrict_page-wrapper">
+                        <div class="restrict-page-container">
+                            <div>
+                                <div class="restrict-msg"> Please SignIn </div>
+                                <div class="restrict-btn"> Redirect </div>
+                            </div>
+                        </div>
+                    </div>
+                <% } %> 
+            <% } %> 
+            <!------------------------------------------>
+            <div class="user-edited-close"><div class="i"></div></div>
+            <div class="user-update-content">
+                <div class="user-edited-header">
+                    <div class="header">
+                        <div>
+                            <div>Shopfossy</div><div>User Profile</div>
+                        </div>
+                    </div>
+                </div>
+                <!--------USER NOTIFICATION START-------------------->
+                <div class="user-edit-alert">
+                    <div class="i"></div>
+                    <div class="alert-text">Profile Update Required !</div>
+                </div>
+                <div class="user-confirm-alert">
+                    <div class="confirm-container">
+                        <div class="close-confirm-alert"></div>
+                        <div class="confirm-alert-text"></div>
+                        <div class="confirm-btn">Confirm</div>
+                        <form action="/deleteaccount" method="post" class="re-auth-container">
+                            <div class="re-auth-pass-wrap">
+                                <div class="i"><div class="i-pass"></div></div>
+                                <input type="text" class="re-auth-input" name="auth_password" id="">
+                            </div>
+                            <input type="text" readonly class="re-auth-btn" value="Authenticate" />
+                        </form>
+                    </div>
+                </div>
+                <!------------------------------------------>
+                <!--------PROFILE CONTENT START-------------------->
+                <div class="user-row user-edited-image cover-image">
+                    <form action="/uploadPhoto" method="post" class="edited-image-wrap" enctype="multipart/form-data">
+                        <!-----------EJS CODE -------->
+                        <% if (userProfile !== undefined) { %>
+                            <% if (userProfile == "") { %>
+                                <div class="edited-image-container">
+                                    <div class="upload-progress"></div>
+                                    <input class="image-file" name="imageUpload" type="file" hidden accept="image/png, image/jpeg, image/webp">
+                                    <input type="submit" class="image-submit" hidden>
+                                </div>
+                            <% } else { %>
+                                <% if (userProfile.pic == null) { %>
+                                    <div class="edited-image-container" data-user-pic="<%- userProfile.pic %>">
+                                        <div class="upload-progress"></div>
+                                        <input class="image-file" name="imageUpload" type="file" hidden accept="image/png, image/jpeg, image/webp">
+                                        <input type="submit" class="image-submit" hidden>
+                                    </div>
+                                <% } else { %>
+                                    <div class="edited-image-container"  data-user-pic="<%- userProfile.pic %>">
+                                        <div class="upload-progress"></div>
+                                        <input class="image-file" name="imageUpload" type="file" hidden accept="image/png, image/jpeg, image/webp">
+                                        <input type="submit" class="image-submit" hidden>
+                                    </div>
+                                <% } %>
+                            <% } %> 
+                        <% } else { %>
+                            <div class="edited-image-container">
+                                <div class="upload-progress"></div>
+                                <input class="image-file" type="file" hidden accept="image/png, image/jpeg, image/webp">
+                            </div>
+                        <% } %> 
+                        <!------------------------------>
+                    </form>
+                </div>
+                <div class="user-row user-edited-content">
+                    <form action="/editUserProfile" method="post" class="user-edited-content-container">
+                        <div class="content content-name" id="hover-name">
+                            <label for="name"> Full Name </label>
+                            <div class="content-section">
+                                <div class="verify-icon"></div>
+                                <div class="content-icon"><div class="i i-name"></div></div>
+                                <!-----------EJS CODE -------->
+                                <% if (userProfile !== undefined) { %>
+                                    <% if (userProfile == "") { %>
+                                        <input class="content-input user-name-tag" type="text" name="full_name" value="" min-length="3" readonly>
+                                    <% } else { %>
+                                        <% if (userProfile.full_name == null) { %>
+                                            <input class="content-input user-name-tag" type="text" name="full_name" min-length="3" value="" readonly>
+                                        <% } else { %>
+                                            <input class="content-input user-name-tag" type="text" name="full_name" min-length="3" value="<%- userProfile.full_name %>" readonly>
+                                        <% } %>
+                                    <% } %> 
+                                <% } else { %>
+                                    <input class="content-input user-name-tag" type="text" name="full_name" value="" min-length="3" readonly>
+                                <% } %> 
+                                <!-------------------------->
+                                <div class="content-btns">
+                                    <div class="btn edit-btn"><div class="i i-edit"></div><div class="i i-close"></div></div>
+                                    <div class="btn save-btn"><div class="i i-save"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content content-email">
+                            <label for="email"> Email </label>
+                            <div class="note"></div>
+                            <div class="content-section">
+                                <div class="verify-icon"></div>
+                                <div class="content-icon"><div class="i i-email"></div></div>
+                                <!-----------EJS CODE -------->
+                                <% if (userProfile !== undefined) { %>
+                                    <% if (userProfile == "") { %>
+                                        <input class="content-input user-email-tag" type="email" name="email" readonly value="">
+                                    <% } else { %>
+                                        <% if (userProfile.email == null) { %>
+                                            <input class="content-input user-email-tag" type="email" name="email" readonly value="">
+                                        <% } else { %>
+                                            <input class="content-input user-email-tag" type="email" name="email" readonly value="<%- userProfile.email %> ">
+                                        <% } %>
+                                    <% } %> 
+                                <% } else { %>
+                                    <input class="content-input user-email-tag" type="email" name="email" readonly value="">
+                                <% } %>  
+                                <!------------------------------>
+                                <div class="content-btns content-btn-off">
+                                    <div class="btn edit-btn"><div class="i i-edit"></div><div class="i i-close"></div></div>
+                                    <div class="btn save-btn"><div class="i i-save"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content content-tel">
+                            <label for="tel"> Phone Number </label>
+                            <div class="content-section">
+                                <div class="verify-icon"></div>
+                                <div class="content-icon"><div class="i i-tel"></div></div>
+                                <!-----------EJS CODE -------->
+                                <% if (userProfile !== undefined) { %>
+                                    <% if (userProfile == "") { %>
+                                        <input class="content-input user-tel-tag" type="tel" name="tel" maxlength="10" value="">
+                                    <% } else { %>
+                                        <% if (userProfile.tel == null) { %>
+                                            <input class="content-input user-tel-tag" type="tel" name="tel" maxlength="10" value="">
+                                        <% } else { %>
+                                            <input class="content-input user-tel-tag" type="tel" name="tel" maxlength="10" value="<%- userProfile.tel %>">
+                                        <% } %>
+                                    <% } %> 
+                                <% } else { %>
+                                    <input class="content-input user-tel-tag" type="tel" name="tel" maxlength="10" value="">
+                                <% } %>  
+                                <!------------------------------>
+                                <div class="content-btns">
+                                    <div class="btn edit-btn"><div class="i i-edit"></div><div class="i i-close"></div></div>
+                                    <div class="btn save-btn"><div class="i i-save"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content content-password">
+                            <label for="update-password"> Password </label>
+                            <div class="note"></div>
+                            <div class="content-section">
+                                <div class="verify-icon"></div>
+                                <div class="content-icon"><div class="i i-password"></div></div>
+                                <div class="password-eye">
+                                    <div class="e">
+                                        <div class="e-1"></div><div class="e-2"></div>
+                                    </div>
+                                </div>
+                                <input class="content-input user-password-tag" readonly type="password" name="user_password" value=".....">                   
+                                <div class="content-btns">
+                                    <div class="btn edit-btn"><div class="i i-edit"></div><div class="i i-close"></div></div>
+                                    <div class="btn save-btn"><div class="i i-save"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!----------------- HISTORY --------------------------------------->
+                    <div class="history-wrapper">
+                        <div class="history-container">
+                            <div class="header"><h3> Transactions </h2></div>
+                            <div class="history-row transaction-container">
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!------------------------------------------------------------------>
+                    <div class="content delete-btn content-delete">
+                        <div class="delete-wrap"> Delete Account </div>
+                    </div>
+                </div>
+                <!------------------------------------------>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module" src="./js/userProfile.js" async></script>
+
+</body>
+</html>

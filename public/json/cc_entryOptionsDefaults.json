@@ -1,0 +1,23 @@
+[
+    {
+        "id": "",
+        "company": "Select Company"
+    },
+    {
+        "id": "items-name-1",
+        "company": "company name A"
+    },
+    {
+        "id": "items-name-2",
+        "company": "company name B"
+    },
+    {
+        "id": "items-name-3",
+        "company": "company name C"
+    },
+    {
+        "id": "items-name-4",
+        "company": "company name D"
+    }
+    
+]

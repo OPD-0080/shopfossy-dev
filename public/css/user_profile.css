@@ -1,0 +1,729 @@
+*, html, body, ul, ol *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 100%;
+  background: #2e2e2e;
+  color: white;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.user-edited-overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.805);
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-edited-overlay .user-edited-wrapper {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+.user-edited-overlay .user-edited-wrapper .restrict_page-wrapper {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.805);
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-edited-overlay .user-edited-wrapper .restrict_page-wrapper .restrict-page-container {
+  position: absolute;
+  bottom: 0px;
+  width: 80%;
+  height: 40vh;
+  background: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-edited-overlay .user-edited-wrapper .restrict_page-wrapper .restrict-page-container div div {
+  margin: 20px;
+}
+.user-edited-overlay .user-edited-wrapper .restrict_page-wrapper .restrict-page-container div .restrict-msg {
+  font-size: 20px;
+  font-weight: bolder;
+}
+.user-edited-overlay .user-edited-wrapper .restrict_page-wrapper .restrict-page-container div .restrict-btn {
+  position: relative;
+  background: rgba(149, 6, 6, 0.498);
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid white;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  padding: 10px;
+  font-size: 13px;
+}
+.user-edited-overlay .user-edited-wrapper .restrict_page-wrapper .restrict-page-container div .restrict-btn:hover {
+  background: red;
+}
+.user-edited-overlay .user-edited-wrapper .restrict_page-wrapper.show {
+  display: flex;
+}
+.user-edited-overlay .user-edited-wrapper .user-edited-close {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.658);
+  z-index: 5;
+}
+.user-edited-overlay .user-edited-wrapper .user-edited-close .i {
+  width: 30px;
+  height: 30px;
+  background-image: url("../img/icons/close-white.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.user-edited-overlay .user-edited-wrapper .user-edited-close:hover {
+  box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.575);
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(128, 128, 128, 0.253);
+  /*display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;*/
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content div {
+  position: relative;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-header {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 550;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-header .header {
+  display: flex;
+  position: absolute;
+  right: 0px;
+  align-items: center;
+  width: 60%;
+  padding: 10px;
+  background: rgba(37, 27, 27, 0.548);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-header .header div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edit-alert {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  background: red;
+  padding: 3px;
+  font-size: 13px;
+  box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.644);
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  display: none;
+  z-index: 5;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edit-alert div {
+  position: relative;
+  margin: 5px;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edit-alert .i {
+  width: 20px;
+  height: 20px;
+  background: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../img/svg/alert-red.svg");
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edit-alert.alert {
+  display: flex;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.829);
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container {
+  position: relative;
+  background: red;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 85%;
+  padding: 20px;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container div {
+  margin: 10px;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .close-confirm-alert {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border: 2px solid white;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-image: url("../img/icons/close-white.png");
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .confirm-alert-text {
+  font-size: 20px;
+  font-weight: 550;
+  top: 20px;
+  margin-bottom: 30px;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .confirm-btn, .user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .re-auth-container .re-auth-btn {
+  padding: 15px;
+  border: 2px solid white;
+  cursor: pointer;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  display: block;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .confirm-btn.collapse, .user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .re-auth-container .collapse.re-auth-btn {
+  display: none;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .confirm-btn:hover, .user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .re-auth-container .re-auth-btn:hover, .user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .close-confirm-alert:hover {
+  background-color: rgb(179, 3, 3);
+  color: white;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .re-auth-container {
+  display: none;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .re-auth-container .re-auth-pass-wrap {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background: white;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .re-auth-container .re-auth-pass-wrap input {
+  position: relative;
+  padding: 15px 20px;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 550;
+  text-align: center;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .re-auth-container .re-auth-pass-wrap .i {
+  position: relative;
+  margin: 0px;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .re-auth-container .re-auth-pass-wrap .i div {
+  position: relative;
+  background: red;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-image: url("../img/icons/key.png");
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .re-auth-container .re-auth-btn {
+  text-align: center;
+  width: 100%;
+  font-size: 16px;
+  outline: none;
+  font-weight: 600;
+  color: rgb(179, 3, 3);
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert .confirm-container .re-auth-container.collapse {
+  display: block;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-confirm-alert.collapse {
+  display: flex;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image {
+  position: fixed;
+  top: 0px;
+  width: 40%;
+  flex-basis: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../img/index/banner/new-banner.webp");
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.505);
+  z-index: 1;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image div {
+  position: relative;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap {
+  position: relative;
+  width: 20rem;
+  height: 20rem;
+  background: white;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container {
+  width: 17rem;
+  height: 17rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background: black;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container .upload-progress {
+  position: relative;
+  font-size: 30px;
+  font-weight: 550;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container .upload-progress.collapse {
+  visibility: visible;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-image .edited-image-wrap .edited-image-container::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background: grey;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-image: url("../img/svg/camera.gif");
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content {
+  position: relative;
+  flex-basis: 60%;
+  width: 60%;
+  position: absolute;
+  right: 0px;
+  top: 3rem;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: 20px;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content {
+  position: relative;
+  width: 95%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .note {
+  position: absolute;
+  top: 15px;
+  right: 140px;
+  font-size: 11px;
+  color: rgb(255, 110, 110);
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .note.show {
+  color: rgb(9, 211, 9);
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content label {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+  font-size: 16px;
+  font-weight: 550;
+  margin-bottom: 10px;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  overflow: hidden;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .password-eye {
+  position: absolute;
+  right: 9rem;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  z-index: 2;
+  display: none;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .password-eye .e {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .password-eye .e div {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-size: cover;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .password-eye .e .e-1 {
+  background-image: url("../img/svg/eye-white.svg");
+  display: block;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .password-eye .e .e-1.visible {
+  display: none;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .password-eye .e .e-2 {
+  background-image: url("../img/svg/eye-off-white.svg");
+  display: none;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .password-eye .e .e-2.visible {
+  display: block;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .password-eye.off {
+  display: block;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .verify-icon {
+  position: absolute;
+  top: 10px;
+  right: 140px;
+  width: 30px;
+  height: 30px;
+  background: white;
+  z-index: 2;
+  visibility: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url("../img/icons/verify.png");
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .verify-icon.show {
+  visibility: visible;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-icon {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 50px;
+  height: 100%;
+  background: grey;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-icon .i {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-icon .i-name {
+  background-image: url("../img/icons/user.png");
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-icon .i-email {
+  background-image: url("../img/icons/email.png");
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-icon .i-tel {
+  background-image: url("../img/icons/phone-white.png");
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-icon .i-password {
+  background-image: url("../img/icons/key.png");
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-input {
+  position: relative;
+  width: 100%;
+  outline: none;
+  padding: 15px 60px;
+  font-size: 16px;
+  font-weight: 550;
+  background: grey;
+  color: white;
+  text-align: center;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-input::first-letter {
+  text-transform: uppercase;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-input.edit {
+  background: white;
+  text-align: left;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  color: black;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-section .content-input.edit .hover-name {
+  box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.582);
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns {
+  position: relative;
+  display: flex;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .btn {
+  width: 45px;
+  height: 45px;
+  background: grey;
+  margin: 0px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .btn .i {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .btn .i-close.close {
+  display: flex;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .btn .i-edit {
+  display: flex;
+  background-image: url("../img/icons/edit-white.png");
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .btn .i-edit.collapse {
+  display: none;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .btn .i-save {
+  background-image: url("../img/icons/thumb-white-up.png");
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .btn .i-close {
+  display: none;
+  background-image: url("../img/icons/close-white.png");
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .btn:hover {
+  background: rgba(128, 128, 128, 0.608);
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .save-btn {
+  visibility: hidden;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btns .save-btn.active {
+  visibility: visible;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .user-edited-content-container .content .content-btn-off {
+  visibility: hidden;
+  opacity: 0;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .history-wrapper {
+  position: relative;
+  top: 0px;
+  margin-top: 30px;
+  width: 100%;
+  background: #424141;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .history-wrapper .history-container {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .history-wrapper .history-container div {
+  position: relative;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .history-wrapper .history-container .header {
+  padding: 5px 20px;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .history-wrapper .history-container .header h3 {
+  font-weight: bolder;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .history-wrapper .history-container .transaction-container {
+  width: 100%;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .content-delete {
+  position: relative;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-edited-overlay .user-edited-wrapper .user-update-content .user-edited-content .content-delete .delete-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: rgb(218, 5, 5);
+  padding: 20px 30px 20px 30px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+.user-edited-overlay.show {
+  display: flex;
+}/*# sourceMappingURL=user_profile.css.map */

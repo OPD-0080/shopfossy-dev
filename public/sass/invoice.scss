@@ -1,0 +1,415 @@
+@import "./variables.scss";
+@import "./reset.scss";
+
+.invoice-wrapper {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    @include background-initializer;
+    background-size: cover;
+    background-image: url("../img/form/1.webp");
+    z-index: 10;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.502);
+    }
+
+    .invoice-container {
+        position: relative;
+        width: 90%;
+        height: 100%;
+        /*background: white;*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       /* background: peru;*/
+
+        .invoice-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: white;
+            overflow: hidden;
+            //overflow-x: hidden;
+            //overflow-y: scroll;
+
+            .invoice {
+                position: relative;
+                /*background: green;*/
+                width: 95%;
+                height: 100%;
+                margin-left: 2.5%;
+                margin-right: 2.5%;
+                display: flex;
+                flex-direction: row;
+
+                .invoice-structure-wrap {
+                    position: relative;
+                    width: 100%;
+
+                    .invoice-structure-container {
+                        position: relative;
+                        width: 90%;
+                        margin-left: 5%;
+                        margin-right: 5%;
+
+                        .watermark {
+                            position: fixed;
+                            z-index: 99;
+                            color: grey;
+                            top: 40%;
+                            left: 30%;
+                            opacity: 0.2;
+                            font-size: 70px;
+                            @include rotate(-45deg);
+                            user-select: none;
+                        }
+
+                        .invoice-header-wrap {
+                            position: relative;
+                            padding: 35px;
+                            border: 5px solid black;
+                            margin-top: 10px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            align-items: center;
+
+                            .row {
+
+                                div {
+                                    position: relative;
+                                    font-weight: bolder;
+                                    color: black;
+                                    
+    
+                                    span {
+                                        font-weight: 500;
+                                    }
+                                }
+                                div:nth-child(1) {
+                                    font-size: 3.2rem;
+                                    text-transform: uppercase;
+                                }
+                                div:nth-child(2) {
+                                    margin-top: 20px;
+                                    font-size: 15px;
+                                }
+                                div:nth-child(3), div:nth-child(4) {
+                                    font-size: 15px;
+                                }
+                                .page-redirect {
+                                    position: fixed;
+                                    top: 0px;
+                                    left: 0px;
+                                    width: 100%;
+                                    height: 100%;
+                                    background: rgba(0, 0, 0, 0.79);
+                                    z-index: 99;
+                                    display: none;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    .each {
+                                        position: absolute;
+                                        bottom: 0px;
+                                        background: red;
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: center;
+                                        align-items: center;
+                                        min-height: 40%;
+                                        max-height: 50%;
+                                        padding: 20px;
+                                        @include border(20px, 20px, 0px, 0px);
+
+                                        div {position: relative}
+                                        div:nth-child(1) {
+                                            width: 30px;
+                                            height: 30px;
+                                            background: $cc-main-color;
+                                            background-image: url("../img/svg/error-red.svg");
+                                            @include background-initializer;
+                                            background-size: cover;
+                                            @include border-circle;
+                                        }
+                                        div:nth-child(2) {
+                                            color: $cc-main-color;
+                                            text-align: center;
+                                            margin-top: $margin-vs;
+                                        }
+                                    }
+                                }
+                                .page-redirect.show {
+                                    display: flex;
+                                }
+                            }
+                        }
+                        .client-wrapper-media {
+                            position: relative;
+                            width: 100%;
+                            background: rgb(236, 236, 236);
+                            display: none;
+
+                            div {
+                                position: relative;
+                            }
+                            .header {
+                                position: relative;
+                                font-size: 20px;
+                                margin-bottom: 10px;
+                                margin-top: 5px;
+                                color: black;
+                                font-weight: 500;
+                            }
+                            .client-container-media {
+                                width: 100%;
+                                height: 100%;
+                                display: grid;
+                                grid-template-columns: repeat(2, 1fr);
+                                grid-gap: .1rem;
+
+                                li {
+                                    font-size: $font-vs;
+                                    margin: 2px;
+                                    color: black;
+                                    font-style: italic;
+                                }
+                            }
+                        }
+                        .invoice-payment-wrap {
+                            position: relative;
+                            margin-top: 20px;
+
+                            div {
+                                position: relative;
+                                line-height: 1.2rem;
+                                color: black;
+
+                                span {
+                                    font-weight: 500;
+                                    margin-right: 10px;
+                                }
+                                .in-status {
+                                    color: rgb(248, 36, 36);
+                                }
+                            }
+                            div:nth-child(1) {
+                                font-size: 20px;
+                            }
+                            div:nth-child(2) {
+                                margin-top: 20px;
+                            }
+                        }
+                        .invoice-table-wrap {
+                            position: relative;
+                            width: 100%;
+                            margin-top: 30px;
+
+                            div {
+                                position: relative;
+                            }
+                            .invoice-table-header {
+                                display: grid;
+                                grid-template-columns: 2fr 1fr 1fr 1fr;
+                                align-items: center;
+
+                                div {
+                                    color: black;
+                                    display: flex;
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                    font-size: 18px;
+                                }
+                            }
+                            hr {
+                                height: 1vh;
+                                background: black;
+                                border: none;
+                                margin-top: 10px;
+                                margin-bottom: 10px;
+                            }
+                            .invoice-item-wrap {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                align-items: center;
+                                width: 100%;
+
+                                .invoice-item-cell {
+                                    display: grid;
+                                    grid-template-columns: 2fr 1fr 1fr 1fr;
+                                    width: 100%;
+                                    background: rgb(236, 236, 236);
+                                    padding: 2px;
+                                    margin: 2px;
+
+                                    div {
+                                        color: black;
+                                        display: flex;
+                                        justify-content: flex-start;
+                                        align-items: center;
+                                        flex-direction: column;
+
+                                        span {
+                                            display: flex;
+                                            flex-direction: column;
+                                            justify-content: flex-start;
+                                            align-items: flex-start;
+                                        }
+                                    }
+                                }
+                            }
+                            .invoice-summation-wrap {
+                                width: 100%;
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-between;
+                                align-items: center;
+
+                                div {
+                                    color: black;
+                                }
+
+                                .summation-container {
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: flex-end;
+                                    align-items: center;
+
+                                    div {
+                                        position: relative;
+                                        text-transform: uppercase;
+                                        font-size: 12px;
+                                        margin: 5px;
+                                    }
+                                    div:nth-child(2) {
+                                        font-weight: bolder;
+                                    }
+                                    div:nth-child(3) {
+                                        font-size: 9px;
+                                    }
+                                }
+                                .summation-footer {
+                                    div {
+                                        font-size: 11px;
+                                        line-height: 1.1rem;
+                                    }
+                                    div:nth-child(1) {
+                                        margin-bottom: 5px;
+                                        margin-top: 10px;
+                                        font-weight: 550;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .invoice-client-logo {
+                position: relative;
+                width: 40%;
+                height: 100vh;
+                background: rgb(236, 236, 236);
+                overflow: hidden;
+
+                div {
+                    position: relative;
+                    color: black;
+                }
+                .logo-wrap {
+                    position: relative;
+                    padding: 20px;
+                    /*background: red;*/
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    align-items: center;
+                    border: 5px solid black;
+                    top: 10px;
+
+                    div {
+                        position: relative;
+                    }
+                    div:nth-child(1) {
+                        width: 100px;
+                        height: 100px;
+                        background: white;
+                        border-radius: 50%;
+                        -webkit-border-radius: 50%;
+                        -moz-border-radius: 50%;
+                        -ms-border-radius: 50%;
+                        -o-border-radius: 50%;
+                    }
+                }
+                .client-wrapper {
+                    width: 100%;
+                    margin-top: 30px;
+
+                    .client-container {
+                        position: relative;
+                        width: 90%;
+                        margin-left: 5%;
+                        margin-right: 5%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        flex-wrap: wrap;
+
+                        div {
+                            color: black;
+
+                            span {
+                                font-size: 13px;
+                            }
+                        }
+
+                        .client-name {
+                            font-size: 20px;
+                            font-weight: 550;
+                            letter-spacing: .1px;
+                            text-transform: uppercase;
+                            
+                            span {
+                                margin-right: 7px;
+                            }
+                        }
+                        .client-tel {
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                        }
+                        .client-others {
+                            margin-bottom: 10px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-start;
+
+                            span {
+                                line-height: 1.2rem;
+                            }
+                        }
+                        
+                    }
+                }
+            }
+            
+        }
+    }
+}
+.invoice-wrapper.on {
+    display: block;
+}

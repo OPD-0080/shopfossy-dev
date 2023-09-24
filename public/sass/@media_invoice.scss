@@ -1,0 +1,328 @@
+@import "./variables.scss";
+@import "./reset.scss";
+
+@media screen and (max-width: 667px) {
+    .invoice-wrapper {
+        .invoice-container {
+            .invoice-content {
+                .invoice {
+                    .invoice-client-logo {
+                        .logo-wrap {
+                            div:nth-child(2) {
+                                font-size: $font-s;
+                                top: 5px;
+                            }
+                        }
+                    }
+                    .invoice-structure-wrap {
+                        .invoice-structure-container {
+                            .watermark {
+                                top: 35%;
+                                left: -10%;
+                                font-size: 60px;
+                                @include rotate(-65deg);
+                            }
+                            .invoice-table-wrap {
+                                .invoice-table-header {
+                                    display: grid;
+                                    grid-template-columns: 3fr 1fr 1fr 1fr;
+                                    grid-gap: .1rem;
+                                }
+                                .invoice-item-wrap{
+                                    .invoice-item-cell {
+                                        display: grid;
+                                        grid-template-columns: 3fr 1fr 1fr 1fr;
+                                        grid-gap: .1rem;
+
+                                        div {
+                                            font-size: $font-s;
+                                        
+                                            span {
+                                                text-align: center;
+                                                width: 100%;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 480px) {
+    // INVOICE START
+    .invoice-wrapper {
+        .invoice-container {
+            .invoice-content {
+                .invoice {
+                    .invoice-client-logo {
+                        display: none;
+                    }
+                    .invoice-structure-wrap {
+                        .invoice-structure-container {
+                            .watermark {
+                                top: 35%;
+                                left: -10%;
+                                font-size: 60px;
+                                @include rotate(-65deg);
+                            }
+                            .invoice-header-wrap {
+                                div:nth-child(1) {
+                                    font-size: 2.5rem;
+                                }
+                                div:nth-child(2), div:nth-child(3), div:nth-child(4) {
+                                    font-size: $font-l;
+                                }
+                            }
+                            .client-wrapper-media {
+                                display: block;
+                            }
+                            .invoice-table-wrap {
+                                .invoice-table-header {
+                                    display: grid;
+                                    grid-template-columns: 3fr 1fr 1fr 1fr;
+                                    grid-gap: .1rem;
+                                }
+                                .invoice-item-wrap{
+                                    .invoice-item-cell {
+                                        display: grid;
+                                        grid-template-columns: 3fr 1fr 1fr 1fr;
+                                        grid-gap: .1rem;
+
+                                        div {
+                                            font-size: $font-s;
+                                        
+                                            span {
+                                                text-align: center;
+                                                width: 100%;
+                                            }
+                                        }
+                                    }
+                                }
+                                .invoice-summation-wrap {
+                                    flex-direction: column-reverse;
+
+                                    .summation-container {
+                                        div {
+                                            font-size: 12px;
+                                            margin: 5px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // INVOICE END
+}
+@media screen and (max-width: 414px) {
+    // INVOICE START
+    .invoice-wrapper {
+        .invoice-container {
+            .invoice-content {
+                .invoice {
+                    .invoice-client-logo {
+                        display: none;
+                    }
+                    .invoice-structure-wrap {
+                        .invoice-structure-container {
+                            .watermark {
+                                top: 35%;
+                                left: -10%;
+                                font-size: 60px;
+                                @include rotate(-65deg);
+                            }
+                            .invoice-header-wrap {
+                                div:nth-child(1) {
+                                    font-size: 2.5rem;
+                                }
+                                div:nth-child(2), div:nth-child(3), div:nth-child(4) {
+                                    font-size: $font-l;
+                                }
+                            }
+                            .client-wrapper-media {
+                                display: block;
+                            }
+                            .invoice-table-wrap {
+                                .invoice-table-header {
+                                    display: grid;
+                                    grid-template-columns: 3fr 1fr 1fr 1fr;
+                                    grid-gap: .1rem;
+                                }
+                                .invoice-item-wrap{
+                                    .invoice-item-cell {
+                                        display: grid;
+                                        grid-template-columns: 3fr 1fr 1fr 1fr;
+                                        grid-gap: .1rem;
+
+                                        div {
+                                            font-size: $font-s;
+                                        
+                                            span {
+                                                text-align: center;
+                                                width: 100%;
+                                            }
+                                        }
+                                    }
+                                }
+                                .invoice-summation-wrap {
+                                    flex-direction: column-reverse;
+
+                                    .summation-container {
+                                        div {
+                                            font-size: 12px;
+                                            margin: 5px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // INVOICE END
+} 
+@media screen and (max-width: 375px) {
+    .invoice-wrapper {
+        .invoice-container {
+            .invoice-content {
+                .invoice {
+                    .invoice-client-logo {
+                        display: none;
+                    }
+                    .invoice-structure-wrap {
+                        .invoice-structure-container {
+                            .watermark {
+                                top: 35%;
+                                left: -10%;
+                                font-size: 60px;
+                                @include rotate(-65deg);
+                            }
+                            .invoice-header-wrap {
+                                div:nth-child(1) {
+                                    font-size: 2.5rem;
+                                }
+                                div:nth-child(2), div:nth-child(3), div:nth-child(4) {
+                                    font-size: $font-l;
+                                }
+                            }
+                            .client-wrapper-media {
+                                display: block;
+                            }
+                            .invoice-table-wrap {
+                                .invoice-table-header {
+                                    display: grid;
+                                    grid-template-columns: 3fr 1fr 1fr 1fr;
+                                    grid-gap: .1rem;
+                                }
+                                .invoice-item-wrap{
+                                    .invoice-item-cell {
+                                        display: grid;
+                                        grid-template-columns: 3fr 1fr 1fr 1fr;
+                                        grid-gap: .1rem;
+
+                                        div {
+                                            font-size: $font-s;
+                                        
+                                            span {
+                                                text-align: center;
+                                                width: 100%;
+                                            }
+                                        }
+                                    }
+                                }
+                                .invoice-summation-wrap {
+                                    flex-direction: column-reverse;
+
+                                    .summation-container {
+                                        div {
+                                            font-size: 12px;
+                                            margin: 5px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 360px) {
+    // INVOICE START
+    .invoice-wrapper {
+        .invoice-container {
+            .invoice-content {
+                .invoice {
+                    .invoice-client-logo {
+                        display: none;
+                    }
+                    .invoice-structure-wrap {
+                        .invoice-structure-container {
+                            .watermark {
+                                top: 35%;
+                                left: -10%;
+                                font-size: 60px;
+                                @include rotate(-65deg);
+                            }
+                            .invoice-header-wrap {
+                                div:nth-child(1) {
+                                    font-size: 2.5rem;
+                                }
+                                div:nth-child(2), div:nth-child(3), div:nth-child(4) {
+                                    font-size: $font-l;
+                                }
+                            }
+                            .client-wrapper-media {
+                                display: block;
+                            }
+                            .invoice-table-wrap {
+                                .invoice-table-header {
+                                    display: grid;
+                                    grid-template-columns: 3fr 1fr 1fr 1fr;
+                                    grid-gap: .1rem;
+                                }
+                                .invoice-item-wrap{
+                                    .invoice-item-cell {
+                                        display: grid;
+                                        grid-template-columns: 3fr 1fr 1fr 1fr;
+                                        grid-gap: .1rem;
+
+                                        div {
+                                            font-size: $font-s;
+                                        
+                                            span {
+                                                text-align: center;
+                                                width: 100%;
+                                            }
+                                        }
+                                    }
+                                }
+                                .invoice-summation-wrap {
+                                    flex-direction: column-reverse;
+
+                                    .summation-container {
+                                        div {
+                                            font-size: 12px;
+                                            margin: 5px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // INVOICE END
+}

@@ -1,0 +1,28 @@
+[
+    {
+        "id": "items-name-1",
+        "uids": [
+            "Select Opt", "aid-0000-01", "aid-0000-02", "aid-0000-03", "aid-0000-04","aid-0000-05", "aid-0000-06", "aid-0000-07", "aid-0000-08", "aid-0000-09", "aid-0000-10"
+        ],
+        "item_type": [
+            "Select Opt", "cloth", "shoes", "belts"
+        ],
+        "item_madeBy": [
+            "Select Opt", "handmade", "machine-made"
+        ]
+        
+    },
+    {
+        "id": "items-name-2",
+        "uids": [
+            "Select Opt", "wsd-0000-01", "wsd-0000-02", "wsd-0000-03", "wsd-0000-04","wsd-0000-05", "wsd-0000-06", "wsd-0000-07", "wsd-0000-08", "wsd-0000-09", "wsd-0000-10"
+        ],
+        "item_type": [
+            "Select Opt", "shirt", "Watches", "Glasses"
+        ],
+        "item_madeBy": [
+            "Select Opt", "handmade", "machine-made"
+        ]
+        
+    }
+]

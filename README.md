@@ -1,1 +1,2 @@
-# shopfossy-dev
+# project-shopfossy-ejs
+ E-commence project

@@ -1,0 +1,4 @@
+download or use adobe photoshop to
+
+	create an image which is blur of low size and insert it html through the js file
+	specifically in the SRC attribute and NOT the data-src attribute 

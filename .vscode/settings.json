@@ -1,0 +1,42 @@
+{
+    "sqltools.connections": [
+        {
+            "pgOptions": {
+                "max": 20
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "askForPassword": true,
+            "driver": "PostgreSQL",
+            "database": "shopfossy",
+            "username": "opd",
+            "name": "shopfossy database"
+        },
+        {
+            "pgOptions": {
+                "max": 20
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "askForPassword": true,
+            "driver": "PostgreSQL",
+            "name": "shopfossy database",
+            "database": "shopfossy",
+            "username": "opd"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "askForPassword": true,
+            "driver": "PostgreSQL",
+            "name": "shopfossy database",
+            "database": "shopfossy",
+            "username": "opd"
+        }
+    ],
+    "editor.fontSize": 16.5,
+    "editor.fontLigatures": false
+}

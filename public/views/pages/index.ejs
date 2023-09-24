@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Site meta start here -->
+    <meta name="org" property="org: site_name" content="  ">
+    <meta name="org" property="org_local" content="en-US">
+    <meta name="author" property="name" content="Prince Obeng Donkor">
+    <meta name="author" property="contact" content="+233 24-622-0037 / +233 50-269-6901">
+    <meta name="author" property="email" content="obengprince0001@gmail.com">
+    <meta name="country" property="country_origin" content="Ghana">
+    <!-- Site meta start end -->
+    
+    <title>Shopfossy | Home</title>
+
+    <!-- CSS STYLESHEET HERE -->
+    <link rel="stylesheet" href="./css/landing-page.css" />
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/admin.css" defer>
+    <link rel="stylesheet" href="./css/userDashboard.css" defer>
+    <link rel="stylesheet" href="./css/@media_index.css">
+    <link rel="stylesheet" href="./css/@keyframes-landing.css" />
+    <link rel="stylesheet" href="./css/@keyframe-index.css">
+    <!-- For Android mobile -->
+    <link rel="manifest" href="./manifest.json">
+    <!--- for IOS Mobile -->
+    <link rel="apple-touch-icon" href="./img/logo/icons-96x96.png">
+    <meta name="theme-color" content="#2e2e2e">
+    <meta name="apple-mobile-web-app-status-bar" content="#2e2e2e">
+
+    <!-- plugins css start here -->
+    <link rel="stylesheet" href="./css/plugins/swiper.min.css" defer>
+    <!-- plugins css end here -->
+
+    <!-- Google Tag Manager -->
+     <!--
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-W3XSKX6');</script>
+    -->
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <!--
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W3XSKX6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    -->
+    <!-- End Google Tag Manager (noscript) -->
+    <!-------LANDING PAGE ------------>
+    <div class="landing-container">
+        <div class="landing-wrap">
+            <div class="loading">
+                <div class="loading-boxes"></div>
+                <div class="loading-boxes"></div>
+                <div class="loading-boxes"></div>
+            </div>
+        </div>
+    </div>
+    <!-------LANDING PAGE ------------>
+    <!-- NAVIGATION -->
+    <div class="navigation">
+        <nav>
+            <div class="nav-container">
+                <div class="media-hunburger"><div class="hun"></div></div>
+                <div class="nav-split logo">logo</div>
+                <div class="nav-split"><h1>Shopfossy</h1></div>
+                <div class="nav-split cart-nav-btn">
+                    <div class="overall-cart-btn"></div>
+                    <div class="cart-number">00</div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- NAVIGATION -->
+
+    <!-- CART SECTION START -->
+    <div class="cart-wrapper">
+        <div class="cart-container">
+            <div class="cart-empty-alert"><div><div></div></div><div>Cart Empty</div></div>
+            <!-- CART ITEM START -->
+            <!-- CART ITEM END -->
+        </div>
+        <div class="cart-total">GHC <span class="total-value"> 0.00 </span></div>
+        <div class="cart-clear-checkout">
+            <div class="clear-checkout cart-clear">clear cart</div>
+            <div class="clear-checkout cart-checkout">checkout</div>
+        </div>
+    </div>
+    <!-- CART SECTION END -->
+    <!-------- VERIFICATION ALERT START----------->
+    <!----------EJS CODE ----------->
+    <% if (userInfo !== undefined) { %>
+        <% if (userInfo == "") { %>
+            <div class="verification-alert-wrap">
+                <div class="i"></div><div class="v-text"><%- user_alert[0] %> ... !</div>
+                <div class="verify-btn">Send !</div>
+            </div>
+        <% } else { %>
+            <div class="verification-alert-wrap">
+                <div class="i"></div><div class="v-text"> </div>
+                <div class="verify-btn">Send !</div>
+            </div>
+        <% } %>
+    <% } %> 
+    <!------------------------------
+    <!-------- VERIFICATION ALERT END----------->
+    <!--------USER DASHBOARD START-------------------->
+    <div class="user-fixed-image-wrap">
+        <!----------EJS CODE ----------->
+        <% if (userInfo !== undefined) { %>
+            <% if (userInfo == "") { %>
+                <div class="image-user user-fixed-image" data-user-img="<%- userInfo.pic %>"></div>
+            <% } else { %>
+                <div class="image-user user-fixed-image" data-user-img="<%- userInfo.pic %>"></div>
+            <% } %>
+        <% } %> 
+        <!------------------------------>
+    </div>
+    <div class="user-dashboard-wrapper">
+        <div class="user-dashboard-container">
+            <div class="user-image-wrap">
+                <!----------EJS CODE ----------->
+                <% if (userInfo !== undefined) { %>
+                    <% if (userInfo == "") { %>
+                        <div class="image-user user-image" data-user-img2="<%- userInfo.pic %>"></div>
+                    <% } else { %>
+                        <div class="image-user user-image" data-user-img2="<%- userInfo.pic %>"></div>
+                    <% } %>
+                <% } %> 
+                <!------------------------------>
+            </div>
+            <div>
+                <!----------EJS CODE ----------->
+                <% if (userInfo !== undefined) { %>
+                    <% if (userInfo == "") { %>
+                        <div class="user user-name"> Not SignIn </div>
+                        <div class="user user-email"></div>
+                    <% } else { %>
+                        <div class="user user-name"><%- userInfo.name %></div>
+                        <div class="user user-email"><%- userInfo.email %></div>
+                    <% } %>
+                <% } %> 
+                <!------------------------------>
+                <div class="user-btns">
+                    <div class="dash-btn form-in-out-btn in signBtn sign-in-btn">
+                        <div class="i signBtn i-in"></div><div class="signBtn it-i"> Sign In </div>
+                    </div>
+                    <div class="dash-btn off signOutBtn sign-out-btn">
+                        <div class="i signOutBtn i-out"></div><div class="signOutBtn it-s"> Sign Out </div>
+                    </div>
+                    <div class="dash-btn off editBtn user-edit-btn">
+                        <div class="editBtn i i-edit"></div><div class="editBtn it-e"> Edit Profile </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------USER DASHBOARD END-------------------->
+    <!-- MAIN CONTENT START -->
+        <div class="main-section-A-wrapper" >
+            <!-- CATEGORIES SECTION START -->
+            <div class="main-section-A-container">
+                <div class="index-category-container">
+                    <div class="index-category">
+                        <ul class="category-wrap">
+                        </ul>
+                        <!--------ADMIN-------------------->
+                        <div class="admin-btn-container">
+                            <div class="admin-tip">Admin only</div>
+                            <div class="admin-btn">
+                                <div class="admin-icon"></div>
+                            </div>
+                        </div>
+                        <!--------ADMIN-------------------->
+                    </div>
+                </div>
+                <span class="index-overlay"></span>
+                <!-- CATEGORIES SECTION END  -->
+                <!-- FLAIR SECTION START -->
+                <div class="flare-wrapper">
+                    <div>
+                        <div class="image-slide-wrapper">
+                            <figure>
+                                <div class="img img1"></div><div class="img img2"></div>
+                                <div class="img img3"></div><div class="img img4"></div>
+                                <div class="img img5"></div><div class="img img6"></div>
+                            </figure>
+                            <div class="slide-dot-wrap"><div class="dot"></div></div>
+                            <div class="dot-overlay"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flare-pic-wrap">
+                            <div> banner here </div>
+                            <div>
+                                <video class="flare-video" poster="" autoplay muted loop>
+                                    <source src="./video/background-video.mp4" muted preload="metadata" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- FLAIR SECTION END -->
+            </div>
+        </div>
+        <!-- SUB NAVIGATION START -->
+        <div class="main-section-B-wrapper"> 
+            <div class="main-section-B-container">
+                <div>
+                    <div class="sec-B-icon"><div class="i i1"></div></div>
+                    <div class="sec-B-txt"><a href="#"><h1> Text </h1></a></div>
+                </div>
+                <div>
+                    <div class="sec-B-icon"><div class="i i2"></div></div>
+                    <div class="sec-B-txt"><a href="#"><h1> Text </h1></a></div>
+                </div>
+                <div>
+                    <div class="sec-B-icon"><div class="i i3"></div></div>
+                    <div class="sec-B-txt"><a href="#"><h1> Text </h1></a></div>
+                </div>
+                <div>
+                    <div class="sec-B-icon"><div class="i i4"></div></div>
+                    <div class="sec-B-txt"><a href="#"><h1> Text </h1></a></div>
+                </div>
+            </div>
+        </div>
+        <!-- SUB NAVIGATION END -->
+        <!-- PICK UP  SECTION START -->
+        <div class="main-section-C-wrapper">
+            <h1 class="C-split"> our pick for you </h1>
+            <div class="C-split">
+                <div class="section-C-nav">
+                    <ul class="C-nav">
+                        <!-- only write CATEGORIES inside the div tag -->
+                        <li class="C-list C-red active" data-id="1"><div class="i" data-id="1"><div class="is" data-id="1"></div></div><h2 class="t" data-id="1"> list </h2> </li>
+                        <li class="C-list C-white" data-id="2"><div class="i" data-id="2"><div class="is" data-id="2"></div></div><h2 class="t" data-id="2"> list </h2> </li>
+                        <li class="C-list C-green" data-id="3"><div class="i" data-id="3"><div class="is" data-id="3"></div></div><h2 class="t" data-id="3"> list </h2> </li>
+                        <li class="C-list C-blue" data-id="4"><div class="i" data-id="4"><div class="is" data-id="4"></div></div><h2 class="t" data-id="4"> list </h2> </li>
+                    </ul>
+                </div>
+                <div class="C-images-wrap">
+                    <div class="wrap real-slide">
+                        <div class="C-image-container show1 C-color">
+                            <div class="C-wrap CA">
+                                <div>
+                                    <h2> banner title </h2>
+                                    <p> 
+                                        100% Australian goods 100% Grade A clothings. We offer you the best
+                                        100% Australian goods 100% Grade A clothings. We offer you the best
+                                    </p>
+                                    <a href="./company-name-1"> See all </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrap slide" data-id="1">
+                        <div class="C-image-container show1 C-color1">
+                            <div class="C-wrap CB">
+                                <div>
+                                    <h2> banner title </h2>
+                                    <p> 
+                                        100% Australian goods 100% Grade A clothings. We offer you the best
+                                        100% Australian goods 100% Grade A clothings. We offer you the best
+                                    </p>
+                                    <a href="./company-name-1"> See all </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrap slide" data-id="2">
+                        <div class="C-image-container show2 C-color2">
+                            <div class="C-wrap CC">
+                                <div>
+                                    <h2> banner title </h2>
+                                    <p> 
+                                        100% Australian goods 100% Grade A clothings. We offer you the best
+                                        100% Australian goods 100% Grade A clothings. We offer you the best
+                                    </p>
+                                    <a href="./company-name-2"> See all </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrap slide" data-id="3">
+                        <div class="C-image-container show3 C-color3">
+                            <div class="C-wrap CD">
+                                <div>
+                                    <h2> banner title </h2>
+                                    <p> 
+                                        100% Australian goods 100% Grade A clothings. We offer you the best
+                                        100% Australian goods 100% Grade A clothings. We offer you the best
+                                    </p>
+                                    <a href=""> See all </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrap slide" data-id="4">
+                        <div class="C-image-container show4 C-color4">
+                            <div class="C-wrap CE">
+                                <div>
+                                    <h2> banner Title </h2>
+                                    <p> 
+                                        100% Australian goods 100% Grade A clothings. We offer you the best
+                                        100% Australian goods 100% Grade A clothings. We offer you the best
+                                    </p>
+                                    <a href=""> See all </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- PICK UP SECTION END -->
+        <!-- QUOTE SECTION START -->
+        <div class="main-section-D-wrapper">
+            <div class="D-section-container">
+                <div class="card-cover">
+                    <div class="D-cards"> 
+                        <div class="card-image"><div class="card-img1"></div></div>
+                        <div class="card-des">
+                            <div class="card-header"><h3> 3 Days Return </h3></div>
+                            <p>
+                                if product items have problems
+                            </p>
+                        </div>
+                    </div>
+                    <div class="D-cards"> 
+                        <div class="card-image"><div class="card-img2"></div></div>
+                        <div class="card-des">
+                            <div class="card-header"><h3> Secure Payment </h3></div>
+                            <p> 100% secure of payment on order </p>
+                        </div>
+                    </div>
+                    <div class="D-cards"> 
+                        <div class="card-image"><div class="card-img3"></div></div>
+                        <div class="card-des">
+                            <div class="card-header"><h3> Instant Delivery </h3></div>
+                            <p> For all orders depending on location </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-section-E-wrapper">
+            <div class="E-section-container">
+                <div class="row">
+                    <div>
+                        <div class="header-1"> best 2022 collection <span>____</span></div>
+                        <div class="header-2-wrap">
+                            <div> Big Dazzle </div><div><span>After</span> Dark </div>
+                        </div>
+                        <div class="content">  
+                            100% Australian goods 100% Grade A clothings. We offer you the best
+                            100% Australian goods 100% Grade A clothings. We offer you the best
+                        </div>
+                    </div>
+                </div>
+                <div class="row-img">
+                    <div class="img"></div>
+                </div>
+            </div>
+        </div>
+        <!-- QUOTE SECTION START -->
+        <!-- TRENDING SECTION START -->
+        <div class="main-section-F-wrapper">
+            <div class="F-title"> ...top trending... </div>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><a href="#" style="background-image:url(./img/index/slide/1.webp)"></a><span>check it out</span></div>
+                    <div class="swiper-slide"><a href="#" style="background-image:url(./img/index/slide/2.webp)"></a><span>check it out</span></div>
+                    <div class="swiper-slide"><a href="#" style="background-image:url(./img/index/slide/3.webp)"></a><span>check it out</span></div>
+                    <div class="swiper-slide"><a href="#" style="background-image:url(./img/index/slide/4.webp)"></a><span>check it out</span></div>
+                    <div class="swiper-slide"><a href="#" style="background-image:url(./img/index/slide/5.webp)"></a><span>check it out</span></div>
+                    <div class="swiper-slide"><a href="#" style="background-image:url(./img/index/slide/6.webp)"></a><span>check it out</span></div>
+                    <div class="swiper-slide"><a href="#" style="background-image:url(./img/index/slide/7.webp)"></a><span>check it out</span></div>
+                    <div class="swiper-slide"><a href="#" style="background-image:url(./img/index/slide/8.webp)"></a><span>check it out</span></div>
+                    <div class="swiper-slide"><a href="#" style="background-image:url(./img/index/slide/9.webp)"></a><span>check it out</span></div>
+                    <div class="swiper-slide"><a href="#" style="background-image:url(./img/index/slide/10.webp)"></a><span>check it out</span></div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <!-- TRENDING SECTION END -->
+        <!-- SUBSCRIPTION SECTION START -->
+        <div class="main-section-G-wrapper">
+            <div class="G-wrapper">
+                <div class="G-title"> for exclusive news on products and other personalization !</div>
+                <div class="G-input-wrap">
+                    <input type="text" placeholder="Enter your Email">
+                    <div class="submit"> subscribe </div>
+                </div>
+            </div>
+        </div>
+        <!-- SUBSCRIPTION SECTION END -->
+
+    <!-- MAIN CONTENT END -->
+    <!-- RESET BUTTON START -->
+        <div class="reset-btn-wrap">
+            <div class="reset-btn-container"><a href="#top"></a></div>
+        </div>
+    <!-- RESET BUTTON END -->
+    <!-- FOOTER START -->
+    <footer>
+        <div class="footer-wrapper">
+            <div class="footer-section">
+                <div class="footer-header">let us help you</div>
+                <ul class="footer-help"></ul>
+            </div>
+            <div class="footer-section">
+                <div class="footer-header">about e-commence</div>
+                <ul class="footer-about"></ul>
+            </div>
+            <div class="footer-section">
+                <div class="footer-header">services</div>
+                <ul class="footer-services"></ul>
+            </div>
+            <div class="footer-section">
+                <div class="footer-header">social media</div>
+                <div class="media-wrap">
+                    <!-- url of each social media is link in footer.js -->
+                    <div class="facebook"></div>
+                    <div class="twitter"></div>
+                    <div class="instagram"></div>
+                    <div class="youtube"></div>
+                </div>
+            </div>
+        </div>
+        <!-- FOOT NOTE START -->
+        <div class="foot-note-wrapper">
+            <div>Shopfossy</div>
+            <div class="F-note"></div>
+            <div class="F-designer"></div>
+        </div>
+        <!-- FOOT NOTE END -->
+    </footer>
+    <!-- FOOTER END -->
+    <div class="errorMessage">
+        <div class="i"></div><div class="err-text"></div>
+    </div>
+
+    
+    <!--<script src="./js/sw-register.js"></script>-->
+    
+    <script src="./js/landing-page.js"></script>
+    <script src="./js/index.js" type="module"></script>
+    <script src="./js/admin_icon.js" defer></script>
+    <script src="./js/userDashBoard.js"></script>
+    <script src="./js/notification.js"></script>
+    <script src="./js/footer.js"></script>
+    
+    <!-- plugins for js start here -->
+    <script src="./js/plugins/Swiper.min.js" defer></script>
+    <script src="./js/plugins/setup.js" defer></script>
+    
+    <!--<script src="./js/plugins/firebase-app-init.js" type="module" async></script>-->
+    <!--<script src="./js/firebase/firebase-main.js" type="module" async></script>--->
+    <!---<script type="module" src="./js/userProfile.js" async></script>-->
+   
+    <!-- plugins for js end here -->
+</body>
+</html>

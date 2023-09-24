@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Shopfossy | Register </title>
+
+    <link rel="stylesheet" href="./css/sign-in.css" >
+    <link rel="stylesheet" href="./css/@media_index.css" >
+
+    <!-- For Android mobile -->
+    <link rel="manifest" href="./manifest.json">
+    <!--- for IOS Mobile -->
+    <link rel="apple-touch-icon" href="./img/logo/icons-96x96.png">
+    <meta name="theme-color" content="#2e2e2e">
+    <meta name="apple-mobile-web-app-status-bar" content="#2e2e2e">
+
+</head>
+<body>
+    <!-- LOGO-->
+    <div class="logo-wrapper"><div></div></div>
+    <!----->
+    <!-- SIGN-IN SECTION START -->
+    <div class="sign-in-overlay" data-server="<% if (typeof notification !== "undefined") { %> <%- alert_class %>  <% } %>">
+        <div class="signIn-wrapper">
+            <div class="sign-image-wrap">
+                <div><div class="image-user image-text"></div></div>
+            </div>
+            <div class="signIn-header"> LogIn </div>
+            <div class="error-alert-wrap">
+                <div class="alert-icon"></div>
+                <div class="error-message">Alert message here </div>
+            </div>
+            <div class="form-page-wrap">
+                <div class="signIn-content signLogWrap">
+                    <%- include ("../partials/register/create_user.ejs") %> 
+                </div>
+                <div class="logIn-content signLogWrap">
+                    <%- include ("../partials/register/signIn-reset.ejs") %>
+                </div>
+            </div>
+            <div class="notification-wrapper">
+                <div class="alert-icon"></div>
+                <!---EJS CODE ---->
+                <% if (typeof notification !== "undefined") { %> 
+                    <% notification.forEach(el => { %><div class="note"><%- el %> </div><% }) %>
+                <% } %>
+                <!------------->
+            </div>
+        </div>
+    </div>
+    <!-- SIGN-IN SECTION END -->
+
+
+
+    <!--js here-->
+    <script src="../../js/signLog-nav.js"></script>
+    <script src="../../js/register_checker.js"></script>
+
+</body>
+</html>

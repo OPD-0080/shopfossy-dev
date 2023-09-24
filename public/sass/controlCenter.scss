@@ -1,0 +1,2738 @@
+@import './variables.scss';
+@import './reset.scss';
+body {
+    background: $cc-primary-background;
+    color: $cc-main-color;
+    overflow: hidden;
+}
+.sidebar-nav-wrapper {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 15%;
+    height: 100vh;
+    background: $cc-secondary-background;
+    overflow: hidden;
+
+    .sidebar-nav-container {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        overflow: hidden; // will be changed later
+
+        .sidebar-logo {
+            position: relative;
+            top: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            div {
+                position: relative;
+                margin-left: 20px;
+            }
+            .logo-wrap {
+                width: 40px;
+                height: 40px;
+                background: $cc-main-color;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+                .logo {
+                    width: 35px;
+                    height: 35px;
+                    //background: red;
+                }
+            }
+        }
+        .sidebar-content-wrap {
+            position: relative;
+            width: 100%;
+            margin-top: $margin-l;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .sidebar-content-container {
+                position: relative;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 90vh;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: column;
+
+                .sidebar {
+                    width: 90%;
+                    position: relative;
+                    top: 0px;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    
+                    li {
+                        position: relative;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        padding: 8px;
+                        //background: green;
+                        width: 100%;
+                        cursor: pointer;
+                        font-size: smaller;
+                        text-align: center;
+
+                        &:hover {
+                            background: $primary-sidebar-inside;
+                            @include trans-01s;
+                        }
+                        &::first-letter {
+                            text-transform: uppercase;
+                        }
+
+                        div {
+                            margin: 5px;
+                        }
+                        .i {
+                            position: relative;
+                            width: 30px;
+                            height: 30px;
+                            background: $cc-main-color;
+                            margin-right: 10px;
+                            @include border-circle;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            div {
+                                @include border-circle;
+                                background-size: contain;
+                                @include background-initializer;
+                                width: 20px;
+                                height: 20px;
+                            }
+                            .i-1 {
+                                background-image: url("../img/svg/microsoft-red.svg");
+                            }
+                            .i-2 {
+                                background-image: url("../img/svg/user-red.svg");
+                            }
+                            .i-3 {
+                                background-image: url("../img/svg/handbag-red.svg");
+                            }
+                            .i-4 {
+                                background-image: url("../img/svg/line-chart-red.svg");
+                            }
+                            .i-5 {
+                                background-image: url("../img/svg/mail-red.svg");
+                            }
+                            .i-6 {
+                                background-image: url("../img/svg/error-red.svg");
+                            }
+                            .i-7 {
+                                background-image: url("../img/svg/database-red.svg");
+                            }
+                            .i-8 {
+                                background-image: url("../img/svg/logout-red.svg");
+                            }
+                        }
+                        &:hover .i {
+                            left: 5px;
+                            @include trans-05s;
+                        }
+                        .message-count {
+                            font-size: smaller;
+                            padding: 5px;
+                            @include border-20;
+                            background: $cc-red;
+                            margin-left: 10px;
+                        }
+                    }
+                    li.active {
+                        position: relative;
+                        top: 0px;
+                        height: 100%;
+                        background: $primary-sidebar-inside;
+                    }
+                }
+                .sidebar-base-content {
+                    @extend .sidebar;
+                }
+            }
+        }
+    }
+}
+.main-content-wrapper {
+    position: absolute;
+    width: 85%;
+    right: 0px;
+    //background: green;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+
+    .main-content-container {
+        width: 72%;
+        //background: red;
+        overflow: hidden;
+        background: $cc-secondary-deepGreen;
+
+        .prompt-user-reload {
+            position: fixed;
+            width: 40%;
+            padding: 5px 10px;
+            background: green;
+            top: -100px;
+            left: 0px;
+            font-size: $font-s;
+            font-weight: bolder;
+            @include transformX(90%);
+            z-index: 50;
+            @include trans-05s;
+            @include border-20;
+
+            .reload-content {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0px;
+
+                div:nth-child(1) {
+                    width: 30px;
+                    height: 30px;
+                    background: white;
+                    margin-right: 15px;
+                    background-image: url("../img/svg/alert-red.svg");
+                    @include background-initializer;
+                    background-size: contain;
+                }
+            }
+        }
+        .prompt-user-reload.drop {
+           // @include transformY(0px);
+            top: 0px;
+           // @include trans-05s;
+            background: red;
+        }
+
+        .page-sections {
+            height: 100vh; //! important
+            z-index: 10;
+        }
+
+        .dashboard-container {
+            width: 100%;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            visibility: visible; // comment this part fro development only
+            opacity: 1; // comment this part fro development only
+            //visibility: hidden;
+            //opacity: 0;
+            @include trans-05s;
+
+            .main-content {
+                width: 100%;
+                margin-top: $margin-s;
+                padding: 0px 20px 0px 20px;
+                box-sizing: border-box;
+                
+                .header {
+                    padding: 0px;
+                    margin-bottom: $margin-vs;
+                    box-sizing: border-box;
+                }
+                .main-wrap {
+                    position: relative;
+                    width: 100%;
+                    overflow-y: scroll;
+                    overflow-x: hidden;
+                    scrollbar-width: thin;
+                    height: 90vh; // !! important
+
+                    .insight-cards-container {
+                        position: relative;
+                        width: 100%;
+                        margin-top: $margin-l;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+        
+                        .insight-cards {
+                            background: $cc-secondary-background;
+                            width: 32%;
+                            @include border-20;
+                            display: flex;
+                            justify-content: center;
+                            align-items: flex-start;
+                            flex-direction: row;
+    
+                            div {
+                                padding: 10px 5px;
+                            }
+                            .insight-content {
+                                width: 60%;
+                                overflow: hidden;
+    
+                                .insight-logo {
+                                    width: 40px;
+                                    margin-top: $margin-s;
+                                    height: 40px;
+                                    @include border-circle;
+                                    background: $cc-main-color;
+                                    margin-left: 20px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+    
+                                    .card-logo {
+                                        width: 30px;
+                                        height: 30px;
+                                        @include border-circle;
+                                        background-size: cover;
+                                        @include background-initializer;
+                                    }
+                                    .logo-1 {background-image: url("../img/svg/donut-chart-red.svg");}
+                                    .logo-2 {background-image: url("../img/svg/bar-chart-red.svg");}
+                                    .logo-3 {background-image: url("../img/svg/line-chart-red.svg");}
+                                }
+                                .insight-header {
+                                    width: 100%;
+                                    font-size: smaller;
+                                    font-weight: 550;
+                                }
+                                .insight-hour {
+                                    font-size: 10px;
+                                    color: $cc-color-post;
+                                }
+                            }
+                            .insight-circle {
+                                width: 40%;
+                                position: relative;
+                                top: 20px;
+                                overflow: hidden;
+    
+                                .insight-percentage {
+                                    position: absolute;
+                                    top: 40px;
+                                    left: 25px;
+                                    font-size: $font-vs;
+                                    color: $cc-color-post;
+                                }
+    
+                                svg {
+                                    position: relative;
+                                    top: 5px;
+                                    left: 0px;
+                                    height: 100px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+    
+                                    circle {
+                                        fill: none;
+                                        stroke-width: 14px;
+                                        stroke-linecap: round;
+                                        @include transform(0px, 5px);
+                                    }
+                                }
+                                .insight-sales circle {
+                                    stroke-dasharray: 130;
+                                    stroke: yellow;
+                                    stroke-dashoffset: -10;
+                                }
+                                .insight-expenses circle {
+                                    stroke-dasharray: 200;
+                                    stroke: red;
+                                    stroke-dashoffset: 50;
+                                }
+                                .insight-income circle {
+                                    stroke-dasharray: 160;
+                                    stroke: blue;
+                                    stroke-dashoffset: -30;
+                                }
+                            }
+                        }
+                    }
+                    .recent-orders-wrapper {
+                        position: relative;
+                        width: 100%;
+                        margin-top: $margin-l;
+                        
+                        .recent-orders-container {
+                            position: relative;
+                            top: 0px;
+                            left: 0px;
+                            width: 100%;
+                            overflow: hidden;
+    
+                            .order-header {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+    
+                                .sell-all-btn {
+                                    padding: 7px 20px 7px 20px;
+                                    font-size: $font-vs;
+                                    cursor: pointer;
+                                    border: 2px solid $cc-secondary-background;
+                                    @include border-20;
+    
+                                    &:hover {
+                                        background: $cc-secondary-background;
+                                        @include trans-01s;
+                                    }
+                                }
+                            }
+                            .orders-container {
+                                margin-top: $margin-s;
+                                position: relative;
+                                width: 100%;
+                                min-height: 35vh;
+                                max-height: 45vh;
+                                background: $cc-secondary-background;
+                                @include border-20;
+    
+                                .recent-orders {
+                                    width: 100%;
+                                    padding: 10px;
+    
+                                    table {
+                                        width: 100%;
+                                        thead {
+                                            margin: 20px;
+                                            th {
+                                                &::first-letter {text-transform: uppercase;}
+                                                padding: 10px;
+                                                font-size: small;
+                                            }
+                                        }
+                                        tbody {
+                                            tr {
+                                                line-height: 2rem;
+                                                td {
+                                                    text-align: center;
+                                                    font-size: smaller;
+                                                    border: 1px solid $cc-tertiary-background;
+                                                    &::first-letter {text-transform: uppercase}
+                                                }
+                                                .user-email {
+                                                    &::first-letter {text-transform: lowercase}
+                                                }
+                                                .recent-photo {
+                                                    width: 100%;
+                                                    height: 40px;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;
+    
+                                                    .photo {
+                                                        width: 100%;
+                                                        height: 30px;
+                                                        background: $cc-main-color;
+                                                        @include border-10;
+                                                        display: flex;
+                                                        justify-content: center;
+                                                        align-items: center;
+    
+                                                        img {
+                                                            position: relative;
+                                                            width: 30px;
+                                                            height: 30px;
+                                                            background: transparent;
+                                                            @include border-10;
+                                                            object-fit: cover;
+                                                        }
+                                                    }
+                                                }
+                                                .color-yellow {color: $cc-color-yellow}
+                                                .color-red {color: $cc-color-lightRed}
+                                                .color-green {color: $cc-color-lightgreen}
+                                                .recent-order-btn {
+                                                    color: $cc-color-lightblue;
+                                                    cursor: pointer;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .recent-customers-wrapper {
+                        position: relative;
+                        width: 100%;
+                        margin-top: $margin-l;
+                        
+                        .recent-customer-container {
+                            position: relative;
+                            top: 0px;
+                            left: 0px;
+                            width: 100%;
+                            overflow: hidden;
+    
+                            .customer-header {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            }
+                            .sell-all-btn {
+                                padding: 7px 20px 7px 20px;
+                                font-size: $font-vs;
+                                cursor: pointer;
+                                border: 2px solid $cc-secondary-background;
+                                @include border-20;
+    
+                                &:hover {
+                                    background: $cc-secondary-background;
+                                    @include trans-01s;
+                                }
+                            }
+                            .customer-contents {
+                                margin-top: $margin-s;
+                                position: relative;
+                                width: 100%;
+                                min-height: 35vh;
+                                max-height: 45vh;
+                                background: $cc-secondary-background;
+                                @include border-20;
+    
+                                .recent-customer {
+                                    width: 100%;
+                                    padding: 10px;
+    
+                                    table {
+                                        width: 100%;
+                                        thead {
+                                            margin: 20px;
+                                            th {
+                                                &::first-letter {text-transform: uppercase;}
+                                                padding: 10px;
+                                                font-size: small;
+                                            }
+                                        }
+                                        tbody {
+                                            tr {
+                                                line-height: 2rem;
+                                                td {
+                                                    text-align: center;
+                                                    font-size: smaller;
+                                                    border: 1px solid $cc-tertiary-background;
+                                                    &::first-letter {text-transform: uppercase}
+                                                }
+                                                .user-email {
+                                                    &::first-letter {text-transform: lowercase}
+                                                }
+                                                .user-photo {
+                                                    width: 100%;
+                                                    height: 40px;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;
+    
+                                                    .photo {
+                                                        width: 50px;
+                                                        height: 30px;
+                                                        background: $cc-main-color;
+                                                        @include border-10;
+                                                        display: flex;
+                                                        justify-content: center;
+                                                        align-items: center;
+    
+                                                        img {
+                                                            position: relative;
+                                                            width: 30px;
+                                                            height: 30px;
+                                                            background: transparent;
+                                                            @include border-10;
+                                                            background-position: cover;
+                                                            @include background-initializer;
+                                                            background-image: url("../img/svg/user-red.svg");
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .dashboard-container.off {
+            visibility: hidden;
+            opacity: 0;
+            @include trans-05s;
+        }
+        .customer-container {
+            width: 70%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100vh;
+            overflow: hidden;
+            background: $cc-secondary-deepGreen;
+            visibility: hidden; // comment this part for development only
+            opacity: 0; // comment this part for development only
+            z-index: 2;
+            @include trans-01s;
+
+            .main-content {
+                width: 100%;
+                margin-top: $margin-s;
+                padding: 0px 20px 0px 20px;
+                
+                .header {
+                    padding: 0px;
+                    margin-bottom: $margin-vs;
+                    box-sizing: border-box;
+                }
+                .main-wrap {
+                    position: relative;
+                    width: 100%;
+                    overflow-y: scroll;
+                    overflow-x: hidden;
+                    scrollbar-width: thin;
+                    height: 90vh; // !! important
+
+                    // CUSTOMER SECTION
+                    .update-customer {
+                        position: relative;
+                        top: 0px;
+                        left: 0px;
+                        width: 100%;
+                        margin-top: $margin-s;
+
+                        .customer-header {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            .color-indicator{
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-size: $font-vs;
+                                margin: 5px;
+
+                                div {
+                                    position: relative;
+                                    margin-left: 20px;
+
+                                    &::before {
+                                        content: "";
+                                        position: absolute;
+                                        top: 0px;
+                                        left: 0px;
+                                        width: 10px;
+                                        height: 100%;
+                                        @include transform(-12px, 0px)
+                                    }
+                                    /*&:nth-child(1)::before {
+                                        background: $cc-main-color;
+                                    }*/
+                                    &:nth-child(1)::before {
+                                        background: $cc-color-yellow;
+                                    }
+                                    &:nth-child(2)::before {
+                                        background: $cc-red;
+                                    }
+                                }
+                            }
+                        }
+                        .customer-update-content {
+                            position: relative;
+                            top: 0px;
+                            left: 0px;
+                            width: 100%;
+                            //min-height: 30vh; // important !!
+                            max-height: 45vh;
+                            background: $cc-secondary-background;
+                            @include border-20;
+                            overflow-y: scroll;
+                            overflow-x: hidden;
+                            
+
+                            .update-container {
+                                width: 100%;
+                                position: relative;
+                                top: 0px;
+                                left: 0px;
+                                margin-top: $margin-vs;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: flex-start;
+                                align-items: center;
+                                padding: 2px;
+                                box-sizing: border-box;
+                                
+
+                                .row {
+                                    position: relative;
+                                    top: 0px;
+                                    left: 0px;
+                                    width: 90%;
+                                    margin: 5px;
+                                    @include border-20;
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                    background: $cc-tertiary-background;
+                                
+                                    .de {
+                                        position: relative;
+                                        top: 0px;
+                                        left: 0px;
+                                        width: 60px;
+                                        height: 40px;
+
+                                        &::before {
+                                            content: "";
+                                            position: absolute;
+                                            top: 0px;
+                                            right: 0px;
+                                            width: 40px;
+                                            height: 40px;
+                                            @include transform(20px, 0px);
+                                            background: $cc-tertiary-background;
+                                            @include border-circle;
+                                        }
+                                    }
+                                    .color-client {background: $cc-red;}
+                                    .color-bill {background: $cc-orange}
+                                    .de-message {
+                                        position: relative;
+                                        width: 80%;
+                                        margin-left: $margin-l;
+
+                                        p {
+                                            color: $cc-color-post;
+                                            font-size: $font-s;
+                                            margin-top: $margin-vs;
+                                            &::first-letter {text-transform: uppercase;}
+                                            em {
+                                                font-style: none;
+                                                color: $cc-main-color;
+
+                                                &::first-letter {text-transform: uppercase;}
+                                            }
+                                            
+                                        }
+                                        div {
+                                            display: flex;
+                                            justify-content: flex-end;
+                                            align-items: center;
+                                            font-size: $font-vs;
+                                            margin-top: $margin-vs;
+                                            color: $cc-color-post;
+
+                                            div {margin: 5px;}
+                                        }
+                                    }
+                                }
+                                .no-update-wrapper {
+                                    position: relative;
+                                    padding: 10px;
+                                    
+                                    ul {
+                                        position: relative;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        
+                                        li {
+                                            margin: 5px;
+                                            font-size: $font-s;
+                                        }
+                                        .i {
+                                            width: 40px;
+                                            height: 40px;
+                                            box-sizing: border-box;
+                                            background: white;
+                                            @include border-10;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .checkout-update-content {
+                            position: relative;
+                            top: 0px;
+                            left: 0px;
+                            width: 100%;
+                            //min-height: 30vh; // important !!
+                            max-height: 80vh;
+                            background: $cc-secondary-background;
+                            margin-top: $margin-vs;
+                            @include border-20;
+                            display: flex;
+                            justify-content: center;
+                            align-items: flex-start;
+                            overflow-y: scroll;
+                            overflow-x: hidden;
+
+                            .checkout-container {
+                                position:relative;
+                                width: 95%;
+                                top: 0px;
+                                left: 0px;
+                                margin: 5px;
+                                background: $cc-tertiary-background;
+                                @include border-10;
+
+                                .table-row {
+                                    display: grid;
+                                    grid-template-columns: repeat(2, 1fr);
+                                    grid-gap: 1rem;
+                                    margin-top: 5px;
+                                    position: relative;
+                                    padding: 5px;
+                                    box-sizing: border-box;
+                                    border: 2px solid $cc-secondary-background;
+                                    overflow: hidden;
+
+                                    .time {
+                                        position: absolute;
+                                        bottom: 0px;
+                                        right: 0px;
+                                        background: $cc-red;
+                                        padding: 3px;
+                                        font-size: $font-vs;
+                                    }
+
+                                    div {
+                                        ul {
+                                            li { 
+                                                position: relative;
+                                                font-size: $font-s;
+                                                padding: 5px;
+                                                color: $cc-color-post;
+                                                margin-left: 25px;
+
+                                                &::first-letter {text-transform: uppercase;}
+
+                                                span {
+                                                    margin-left: $margin-vs;
+                                                    color: $cc-main-color;
+                                                    &::first-letter { text-transform: uppercase; }
+                                                }
+                                                .i {
+                                                    position: absolute;
+                                                    top: 4px;
+                                                    left: 0px;
+                                                    width: 20px;
+                                                    height: 20px;
+                                                    background: transparent;
+                                                    @include transform(-30px, 0px);
+                                                    background-size: cover;
+                                                    @include background-initializer;
+                                                    &::first-letter { text-transform: uppercase; }
+                                                }
+                                                .i-1 {background-image: url("../img/icons/user.png")}
+                                                .i-2 {background-image: url("../img/icons/user.png")}
+                                                .i-3 {background-image: url("../img/icons/email.png")}
+                                                .i-4 {background-image: url("../img/icons/phone-white.png")}
+                                                .i-5 {background-image: url("../img/svg/home-white.svg")}
+                                                .i-6 {background-image: url("../img/icons/region-white.png")}
+                                                .i-7 {background-image: url("../img/icons/city-white.png")}
+                                                .i-8 {background-image: url("../img/icons/location-white.png")}
+                                                .i-9 {background-image: url("../img/icons/location-white.png")}
+                                                .i-10 {background-image: url("../img/svg/bag-white.svg")}
+                                                .i-11 {background-image: url("../img/svg/secure-payment-white.svg")}
+                                            
+                                            }    
+                                        }
+                                    }
+                                }
+                                .no-update-wrapper {
+                                    position: relative;
+                                    padding: 10px;
+                                    
+                                    ul {
+                                        position: relative;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        
+                                        li {
+                                            margin: 5px;
+                                            font-size: $font-s;
+                                        }
+                                        .i {
+                                            width: 40px;
+                                            height: 40px;
+                                            box-sizing: border-box;
+                                            background: white;
+                                            @include border-10;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .new-user-update-content {
+                            position: relative;
+                            top: 0px;
+                            left: 0px;
+                            width: 100%;
+                            //min-height: 30vh; // important !!
+                            max-height: 80vh;
+                            background: $cc-secondary-background;
+                            margin-top: $margin-vs;
+                            @include border-20;
+                            display: flex;
+                            justify-content: center;
+                            align-items: flex-start;
+                            overflow-y: scroll;
+                            overflow-x: hidden;
+
+                            .new-user-container {
+                                position:relative;
+                                width: 95%;
+                                top: 0px;
+                                left: 0px;
+                                margin: 5px;
+                                background: $cc-tertiary-background;
+                                @include border-10;
+
+                                table {
+                                    width: 100%;
+                                    thead {
+                                        margin: 20px;
+                                        th {
+                                            &::first-letter {text-transform: uppercase;}
+                                            padding: 10px;
+                                            font-size: small;
+                                        }
+                                    }
+                                    tbody {
+                                        tr {
+                                            line-height: 2rem;
+                                            td {
+                                                text-align: center;
+                                                font-size: smaller;
+                                                border: 1px solid $cc-tertiary-background;
+                                                &::first-letter {text-transform: uppercase}
+                                            }
+                                            .user-email {
+                                                &::first-letter {text-transform: lowercase}
+                                            }
+                                            .user-log-photo {
+                                                width: 100%;
+                                                height: 40px;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+
+                                                .photo {
+                                                    width: 30px;
+                                                    height: 30px;
+                                                    background: $cc-main-color;
+                                                    @include border-10;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;
+
+                                                    img {
+                                                        position: relative;
+                                                        width: 30px;
+                                                        height: 30px;
+                                                        background: transparent;
+                                                        @include border-10;
+                                                        object-fit: cover;
+                                                    }
+                                                }
+                                            }
+                                            .color-yellow {color: $cc-color-yellow}
+                                            .color-red {color: $cc-color-lightRed}
+                                            .color-green {color: $cc-color-lightgreen}
+                                            .recent-order-btn {
+                                                color: $cc-color-lightblue;
+                                                cursor: pointer;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    // ....
+                    //  ORDER SECTION
+                    .update-order {
+                        position: relative;
+                        top: 0px;
+                        left: 0px;
+                        width: 100%;
+                        margin-top: $margin-s;
+
+                        .customer-header {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            .color-indicator{
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-size: $font-vs;
+                                margin: 5px;
+
+                                div {
+                                    position: relative;
+                                    margin-left: 20px;
+
+                                    &::before {
+                                        content: "";
+                                        position: absolute;
+                                        top: 0px;
+                                        left: 0px;
+                                        width: 10px;
+                                        height: 100%;
+                                        @include transform(-12px, 0px)
+                                    }
+                                    /*&:nth-child(1)::before {
+                                        background: $cc-main-color;
+                                    }*/
+                                    &:nth-child(1)::before {
+                                        background: $cc-color-yellow;
+                                    }
+                                    &:nth-child(2)::before {
+                                        background: $cc-red;
+                                    }
+                                }
+                            }
+                        }
+                        .order-update-content {
+                            position: relative;
+                            top: 0px;
+                            left: 0px;
+                            width: 100%;
+                            //min-height: 30vh; // important !!
+                            max-height: 45vh;
+                            background: $cc-secondary-background;
+                            @include border-20;
+                            overflow-y: scroll;
+                            overflow-x: hidden;
+                            margin-top: $margin-vs;
+                            z-index: 2;
+
+                            .update-container {
+                                width: 100%;
+                                position: relative;
+                                top: 0px;
+                                left: 0px;
+                                margin-top: $margin-vs;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: flex-start;
+                                align-items: center;
+                                padding: 2px;
+                                box-sizing: border-box;
+                                height: 100%;
+
+                                .row {
+                                    position: relative;
+                                    top: 0px;
+                                    left: 0px;
+                                    width: 90%;
+                                    margin: 5px;
+                                    @include border-20;
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                    background: $cc-tertiary-background;
+                                
+                                    .de {
+                                        position: relative;
+                                        top: 0px;
+                                        left: 0px;
+                                        width: 60px;
+                                        height: 40px;
+
+                                        &::before {
+                                            content: "";
+                                            position: absolute;
+                                            top: 0px;
+                                            right: 0px;
+                                            width: 40px;
+                                            height: 40px;
+                                            @include transform(20px, 0px);
+                                            background: $cc-tertiary-background;
+                                            @include border-circle;
+                                        }
+                                    }
+                                    .color-client {
+                                        background: $cc-red; 
+                                        @include trans-01s;
+                                    }
+                                    .color-client.new {
+                                        background: $cc-color-yellow;
+                                        @include trans-01s;
+                                    }
+                                    .color-client.very-new {
+                                        background: $cc-main-color;
+                                        @include trans-01s;
+                                    }
+                                    .color-client.old {
+                                        background: $cc-red;
+                                        @include trans-01s;
+                                    }
+                                    .color-bill {background: $cc-orange}
+                                    .de-message {
+                                        position: relative;
+                                        width: 80%;
+                                        margin-left: $margin-l;
+                                        
+                                        p {
+                                            color: $cc-color-post;
+                                            font-size: $font-s;
+                                            margin-top: $margin-vs;
+                                            &::first-letter {text-transform: uppercase;}
+                                            em {
+                                                font-style: none;
+                                                color: $cc-main-color;
+                                                &::first-letter {text-transform: uppercase;}
+                                            }
+                                        }
+                                        div {
+                                            display: flex;
+                                            justify-content: flex-end;
+                                            align-items: center;
+                                            font-size: $font-vs;
+                                            margin-top: $margin-vs;
+                                            color: $cc-color-post;
+
+                                            div {margin: 5px;}
+                                        }
+                                    }
+                                }
+                                .no-update-wrapper {
+                                    position: relative;
+                                    padding: 10px;
+                                    
+                                    ul {
+                                        position: relative;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        
+                                        li {
+                                            margin: 5px;
+                                            font-size: $font-s;
+                                        }
+                                        .i {
+                                            width: 40px;
+                                            height: 40px;
+                                            box-sizing: border-box;
+                                            background: white;
+                                            @include border-10;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .products-ordered-update-content {
+                        position: relative;
+                        top: 0px;
+                        left: 0px;
+                        width: 100%;
+                        //min-height: 30vh; // important !!
+                        max-height: 80vh;
+                        background: $cc-secondary-background;
+                        margin-top: $margin-vs;
+                        @include border-20;
+                        display: flex;
+                        justify-content: center;
+                        align-items: flex-start;
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+
+                        .products-ordered-container {
+                            position:relative;
+                            width: 95%;
+                            top: 0px;
+                            left: 0px;
+                            margin: 5px;
+                            @include border-10;
+                           
+
+                            .single-product-wrap {
+                                position: relative;
+                                top: 0px;
+                                left: 0px;
+                                width: 100%;
+                                margin-top: $margin-s;
+                                border: 3px solid $cc-color-post;
+                                @include border-20;
+                                overflow: hidden;
+
+                                .product-ownership-wrap {
+                                    position: relative;
+                                    width: 95%;
+                                    display: flex;
+                                    justify-content: flex-end;
+                                    align-items: flex-end;
+                                    margin-top: $margin-vs;
+
+                                    .ownership-container {
+                                        position: relative;
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: flex-end;
+                                        align-items: center;
+
+                                        div {
+                                            position: relative;
+                                            display: flex;
+                                            flex-direction: row;
+                                            justify-content: flex-end;
+                                            align-items: center;
+                                            margin-right: $margin-vs;
+
+                                            .image-wrap {
+                                                width: 30px;
+                                                height: 30px;
+                                                background: white;
+                                                @include border-circle;
+                                                margin-left: $margin-vs;
+                                                margin-right: $margin-vs;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+    
+                                                img {
+                                                    position: relative;
+                                                    width: 25px;
+                                                    height: 25px;
+                                                    object-fit: cover;
+                                                    @include border-circle;
+                                                }
+                                            }
+                                            .image-text {
+                                                &::first-letter {text-transform: uppercase}
+                                                font-size: $font-s;
+                                                font-weight: bold;
+    
+                                                em {
+                                                    font-style: normal; color: $cc-color-post;
+                                                    margin-right: $margin-xvs;
+                                                    &::first-letter {text-transform: uppercase}
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                .item-description-wrap {
+                                    width: 100%;
+                                    position: relative;
+                                    top: 0px;
+                                    left: 0px;
+
+                                    .row {
+                                        display: grid;
+                                        grid-template-columns: repeat(2, 1fr);
+                                        grid-gap: 1rem;
+                                        margin-top: 5px;
+                                        position: relative;
+                                        padding: 5px;
+                                        box-sizing: border-box;
+                                        overflow: hidden;
+        
+                                        div {
+                                            position: relative
+                                        }
+                                        .item-image-wrapper {
+                                            width: 90%;
+                                            background: $cc-tertiary-background;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            @include border-20;
+
+                                            ul {
+                                                li {
+                                                    .item-wrap {
+                                                        position: relative;
+                                                        top: 0px;
+                                                        left: 0px;
+                                                        width: 120px;
+                                                        height: 120px;
+                                                        border: 5px solid $cc-main-color;
+                                                        @include border-20;
+                                                        margin: 10px;
+                                                        -webkit-box-reflect: right -5px linear-gradient(transparent, rgba(0, 0, 0, 0.35));
+                
+                                                        img {
+                                                            position: absolute;
+                                                            top: 0px;
+                                                            left: 0px;
+                                                            width: 100%;
+                                                            height: 100%;
+                                                            object-fit: cover;
+                                                            @include border-20;
+                                                            -webkit-box-reflect: left -5px linear-gradient(transparent, rgba(0, 0, 0, 0.35));
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .item-image-content-wrap {
+                                            position: relative;
+                                            top: 0px;
+                                            left: 0px;
+                                            width: 100%;
+        
+                                            .item-image-content {
+                                                li {
+                                                    font-size: $font-s;
+                                                    padding: 3px;
+                                                    color: $cc-color-post;
+                                                    position: relative;
+                                                    display: flex;
+
+    
+                                                    &::first-letter {text-transform: uppercase;}
+    
+                                                    span {
+                                                        margin-left: $margin-vs;
+                                                        color: $cc-main-color;
+                                                    }
+                                                    .i-data {
+                                                        li {
+                                                            color: $cc-main-color;
+                                                            margin-left: $margin-vs;
+                                                        }
+                                                    }
+                                                    .p-color {
+                                                        background: red;
+                                                        padding: 0px 10px 0px 0px;
+                                                    }
+                                                    .i {
+                                                        position: absolute;
+                                                        top: 4px;
+                                                        left: 0px;
+                                                        width: 20px;
+                                                        height: 20px;
+                                                        background: transparent;
+                                                        @include transform(-35px, 0px);
+                                                        background-size: cover;
+                                                        @include background-initializer;
+                                                    }
+                                                    .i-1 {background-image: url("../img/svg/hashtag-white.svg")}
+                                                    .i-2 {background-image: url("../img/svg/shirt-white.svg")}
+                                                    .i-3 {background-image: url("../img/svg/price-tag-white.svg")}
+                                                    .i-4 {background-image: url("../img/svg/hashtag-white.svg")}
+                                                    .i-5 {background-image: url("../img/svg/truck-white.svg")}
+                                                    .i-6 {background-image: url("../img/svg/secure-payment-white.svg")}
+                                                    .i-7 {background-image: url("../img/svg/secure-payment-white.svg")}
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                .item-summation-wrapper {
+                                    position: relative;
+                                    top: 0px;
+                                    left: 0px;
+                                    width: 95%;
+                                    display: flex;
+                                    justify-content: flex-end;
+                                    align-items: flex-end;
+                                    margin-bottom: $margin-vs;
+
+                                    .item-summation-container {
+                                        position: relative;
+                                        top: 0px;
+                                        left: 0px;
+
+                                        .item-grand-total {
+                                            position: relative;
+                                            top: 0px;
+                                            left: 0px;
+
+                                            li {
+                                                font-size: $font-s;
+                                                font-weight: bolder;
+                                                color: $cc-color-post;
+
+                                                em {
+                                                    margin-left: 10px; 
+                                                    font-size: $font-l;
+                                                    font-style: normal;
+                                                    color: $cc-main-color;
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                }
+                            }
+                            .no-update-wrapper {
+                                position: relative;
+                                padding: 10px;
+                                
+                                ul {
+                                    position: relative;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    
+                                    li {
+                                        margin: 5px;
+                                        font-size: $font-s;
+                                    }
+                                    .i {
+                                        width: 40px;
+                                        height: 40px;
+                                        box-sizing: border-box;
+                                        background: white;
+                                        @include border-10;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .payment-logs-wrapper {
+                        position: relative;
+                        top: 0px;
+                        left: 0px;
+                        width: 100%;
+                        //min-height: 30vh; // important !!
+                        max-height: 100vh;
+                        background: $cc-secondary-background;
+                        margin-top: $margin-vs;
+                        @include border-20;
+                        display: flex;
+                        justify-content: center;
+                        align-items: flex-start;
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+
+                        .payment-logs-container {
+                            position:relative;
+                            width: 95%;
+                            top: 0px;
+                            left: 0px;
+                            margin: 5px;
+                            @include border-10;
+                            //padding: 10px;
+    
+                            table {
+                                width: 100%;
+                                thead {
+                                    margin: 20px;
+                                    th {
+                                        &::first-letter {text-transform: uppercase;}
+                                        padding: 10px;
+                                        font-size: small;
+                                    }
+                                }
+                                tbody {
+                                    tr {
+                                        line-height: 2rem;
+                                        td {
+                                            text-align: center;
+                                            font-size: smaller;
+                                            border: 1px solid $cc-tertiary-background;
+                                            &::first-letter {text-transform: uppercase}
+                                        }
+                                        .user-email {
+                                            &::first-letter {text-transform: lowercase}
+                                        }
+                                        .recent-photo {
+                                            width: 100%;
+                                            height: inherit;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            padding: 5px;
+
+                                            ul {
+                                                li {
+                                                    padding: 3px;
+                                                    
+                                                    .photo {
+                                                        width: 100%;
+                                                        height: 30px;
+                                                        background: $cc-main-color;
+                                                        @include border-10;
+                                                        display: flex;
+                                                        justify-content: center;
+                                                        align-items: center;
+        
+                                                        img {
+                                                            position: relative;
+                                                            width: 30px;
+                                                            height: 30px;
+                                                            background: transparent;
+                                                            @include border-10;
+                                                            object-fit: cover;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .color-yellow {color: $cc-color-yellow}
+                                        .color-red {color: $cc-color-lightRed}
+                                        .color-green {color: $cc-color-lightgreen}
+                                        .recent-order-btn {
+                                            color: $cc-color-lightblue;
+                                            cursor: pointer;
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                    // ....
+                    // MESSAGE SECTION
+                    .update-message {
+                        position: relative;
+                        top: 0px;
+                        left: 0px;
+                        width: 100%;
+                        margin-top: $margin-s;
+
+                        .customer-header {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            .color-indicator{
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-size: $font-vs;
+                                margin: 5px;
+
+                                div {
+                                    position: relative;
+                                    margin-left: 20px;
+
+                                    &::before {
+                                        content: "";
+                                        position: absolute;
+                                        top: 0px;
+                                        left: 0px;
+                                        width: 10px;
+                                        height: 100%;
+                                        @include transform(-12px, 0px)
+                                    }
+                                    /*&:nth-child(1)::before {
+                                        background: $cc-main-color;
+                                    }*/
+                                    &:nth-child(1)::before {
+                                        background: $cc-color-yellow;
+                                    }
+                                    &:nth-child(2)::before {
+                                        background: $cc-red;
+                                    }
+                                }
+                            }
+                        }
+                        .message-update-content {
+                            position: relative;
+                            top: 0px;
+                            left: 0px;
+                            width: 100%;
+                            //min-height: 30vh; // important !!
+                            max-height: 45vh;
+                            background: $cc-secondary-background;
+                            @include border-20;
+
+                            .update-container {
+                                width: 100%;
+                                position: relative;
+                                top: 0px;
+                                left: 0px;
+                                margin-top: $margin-vs;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: flex-start;
+                                align-items: center;
+                                padding: 2px;
+                                box-sizing: border-box;
+                                overflow-y: scroll;
+                                overflow-x: hidden;
+
+                                .row {
+                                    position: relative;
+                                    top: 0px;
+                                    left: 0px;
+                                    width: 90%;
+                                    margin: 5px;
+                                    @include border-20;
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                    background: $cc-tertiary-background;
+                                
+                                    .de {
+                                        position: relative;
+                                        top: 0px;
+                                        left: 0px;
+                                        width: 60px;
+                                        height: 40px;
+
+                                        &::before {
+                                            content: "";
+                                            position: absolute;
+                                            top: 0px;
+                                            right: 0px;
+                                            width: 40px;
+                                            height: 40px;
+                                            @include transform(20px, 0px);
+                                            background: $cc-tertiary-background;
+                                            @include border-circle;
+                                        }
+                                    }
+                                    .color-client {background: $cc-red;}
+                                    .color-bill {background: $cc-orange}
+                                    .de-message {
+                                        position: relative;
+                                        width: 80%;
+                                        margin-left: $margin-l;
+
+                                        p {
+                                            color: $cc-color-post;
+                                            font-size: $font-s;
+                                            margin-top: $margin-vs;
+                                            &::first-letter {text-transform: uppercase;}
+                                            em {
+                                                font-style: none;
+                                                color: $cc-main-color;
+                                                &::first-letter {text-transform: uppercase;}
+                                            }
+                                        }
+                                        div {
+                                            display: flex;
+                                            justify-content: flex-end;
+                                            align-items: center;
+                                            font-size: $font-vs;
+                                            margin-top: $margin-vs;
+                                            color: $cc-color-post;
+
+                                            div {margin: 5px;}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    // FOR MESSAGE SECTION 
+                    .message-wrapper {
+                        
+                    }
+                    // ...............
+                    // FOR DATABASE SECTION 
+                    
+                    .db-wrapper {
+                        position: relative;
+                        width: 100%;
+
+                        .db-container {
+                            position: relative;
+                            top: 0px;
+                            left: 0px;
+                            width: 100%;
+
+                            .db-menu {
+                                position: absolute;
+                                right: 0px;
+
+                                .menu {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    
+                                    li {
+                                        //padding: 7px 12px;
+                                        font-size: small;
+                                        text-transform: uppercase;
+                                        position: relative;
+                                        margin: 3px;
+                                        cursor: pointer;
+                                        border: 3px solid $cc-secondary-background;
+                                        @include border-10;
+
+                                        select {
+                                            height: inherit;
+                                            width: inherit;
+                                            padding: 7px 10px;
+                                            text-decoration: none;
+                                            border: none;
+                                            outline: none;
+                                            background: transparent;
+                                            color: white;
+
+                                            option {
+                                                padding: 15px 10px;
+                                                font-size: small;
+                                                background: $cc-secondary-background;
+                                                border: $cc-secondary-background;
+                                            }
+                                        }
+                                        button {
+                                            outline: none;
+                                            padding: 7px 10px;
+                                            background: transparent;
+                                            @include border-10;
+                                            color: $cc-main-color;
+                                            cursor: pointer;
+                                            border-color: none;
+                                            text-transform:  lowercase;
+
+                                            &::first-letter {
+                                                text-transform: uppercase;
+                                            }
+                                        }
+                                        .preview-btn {
+                                            
+                                            @extend button
+                                        }
+                                    }
+                                    /*li:nth-child(3) {
+                                        padding: 7px 10px;
+                                        border: 3px solid rgba(255, 0, 0, 0.500);
+                                        background: rgba(255, 0, 0, 0.500);
+                                    }*/
+                                    /*.db-menu-tables-wrap {
+                                        select {
+                                            height: inherit;
+                                            width: inherit;
+                                            padding: 7px 10px;
+                                            text-decoration: none;
+                                            border: none;
+                                            outline: none;
+                                            background: transparent;
+                                            color: white;
+
+                                            option {
+                                                padding: 15px 10px;
+                                                font-size: small;
+                                                background: $cc-secondary-background;
+                                                
+                                            }
+                                        }
+                                    }*/
+                                }
+                            }
+                            .db-entry-wrapper {
+                                position: relative;
+                                width: 99%;
+                                top: 3rem;
+                                
+                                .db-entry-container {
+                                    position: relative;
+                                    width: 100%;
+                                    //background: red;
+
+                                    .db-alert {
+                                        background: $cc-alert-red;
+                                        font-size: small;
+                                        position: fixed;
+                                        top: 0px;
+                                        padding: 8px 10px;
+                                        right: 30%;
+                                        z-index: 3;
+                                        display: none;
+                                        justify-content: center;
+                                        align-items: center;
+                                        @include border-10;
+                                        @include trans-05s;
+                                        
+                                        &.active {
+                                            display: flex;
+                                        }
+                                        
+                                        div {
+                                            font-size: small;
+                                        }
+
+                                        .i {
+                                            width: 30px;
+                                            height: 30px;
+                                            background: white;
+                                            margin-right: $margin-s;
+                                            @include background-initializer;
+                                            @include border-10;
+                                            background-size: cover;
+                                            background-image: url("../img/svg/alert-red.svg");
+                                        }
+                                    }
+
+                                    .db-entries {
+                                        position: relative;
+                                        width: 100%;
+                                        
+                                        .entry-row {
+                                            margin: $margin-vs;
+                                            background: $cc-secondary-background;
+                                            position: relative;
+                                            @include border-10;
+
+                                            .db-heading {
+                                                position: relative;
+                                                margin: $margin-l;
+                                                top: 10px;
+                                                display: flex;
+                                                justify-content: space-between;
+
+                                                .file-ids-wrap{
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;
+
+                                                    div {
+                                                        font-size: small;
+                                                    }
+
+                                                    .file-num {
+                                                        margin-left: $margin-s;
+                                                        padding: 5px 8px;
+                                                        background: $cc-secondary-deepGreen;
+                                                        @include border-20;
+                                                        font-style: italic;
+                                                    }
+                                                }
+                                                .upload-switch {
+                                                    font-size: small;
+                                                    padding: 7px 10px;
+                                                    border: 3px solid $cc-secondary-deepGreen;
+                                                    background: transparent;
+                                                    cursor: pointer;
+                                                    @include border-10;
+                                                    visibility: hidden;
+                                                    opacity: 0;
+
+                                                    &.activate {
+                                                        visibility: visible;
+                                                        opacity: 1;
+                                                    }
+                                                }
+                                            }
+                                            .entry-content-container {
+                                                position: relative;
+                                                width: 100%;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                flex-wrap: wrap;
+
+
+                                                .entry {
+                                                    width: 95%;
+                                                    display: grid;
+                                                    grid-template-columns: repeat(3, 1fr);
+                                                    grid-gap: 1rem;
+                                                    margin-bottom: $margin-s;
+
+                                                    div {
+                                                        display: flex;
+                                                        flex-direction: column;
+                                                        
+                                                        label {
+                                                            font-size: small;
+                                                            color: rgba(255, 255, 255, 0.728);
+                                                            margin-bottom: $margin-vs;
+                                                        }
+                                                        input {
+                                                            border: 3px solid $cc-primary-background;
+                                                            border-top-color: transparent;
+                                                            border-left-color: transparent;
+                                                            border-right-color: transparent;
+                                                            background: transparent;
+                                                            padding: 5px 10px;
+                                                            outline: none;
+                                                            color: $cc-main-color;
+                                                            text-align: center;
+
+                                                            &:hover {
+                                                                background: transparent;
+                                                            }
+                                                        }
+                                                        select {
+                                                            padding: 5px 10px;
+                                                            color: $cc-main-color;
+                                                            background: transparent;
+                                                            outline: none;
+                                                            border: 3px solid $cc-primary-background;
+                                                            border-top-color: transparent;
+                                                            border-left-color: transparent;
+                                                            border-right-color: transparent;
+                                                            text-align: center;
+
+                                                            option {
+                                                                background: $cc-secondary-deepGreen;
+                                                                border: $cc-secondary-deepGreen;
+                                                                text-align: center;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                .des-entries {
+                                                    width: 95%;
+                                                    display: grid;
+                                                    grid-template-columns: repeat(1, 1fr);
+                                                    grid-gap: 1rem;
+                                                    margin-bottom: $margin-s;
+
+                                                    div {
+                                                        display: flex;
+                                                        flex-direction: column;
+
+                                                        label {
+                                                            font-size: small;
+                                                            color: rgba(255, 255, 255, 0.728);
+                                                            margin-bottom: $margin-vs;
+                                                        }
+                                                        textarea {
+                                                            border: 3px solid $cc-primary-background;
+                                                            border-top-color: transparent;
+                                                            border-left-color: transparent;
+                                                            border-right-color: transparent;
+                                                            background: transparent;
+                                                            padding: 5px 10px;
+                                                            outline: none;
+                                                            color: $cc-main-color;
+                                                            overflow: hidden;
+                                                            resize: none;
+                                                            text-align: center;
+                                                        }
+                                                        thead {
+                                                            th {
+                                                                font-size: small;
+                                                                color:rgba(255, 255, 255, 0.728);
+                                                            }
+                                                        }
+                                                        tbody {
+                                                            .table-cols {
+                                                                margin: $margin-l;
+                                                                width: 100%;
+                                                                //background: red;
+
+                                                                &.active {
+                                                                    
+                                                                }
+                                                                td {
+                                                                    &:nth-child(1) {
+                                                                        text-align: center;
+                                                                        font-size: small;
+                                                                    }
+                                                                    &:nth-child(2) {
+                                                                        width: 35%;
+                                                                        //background: green;
+                                                                    }
+                                                                    &:nth-child(3) {
+                                                                        width: 55%;
+                                                                        //background: orange;
+                                                                    }
+                                                                    &:nth-child(4) {
+                                                                        .tb-delete-btn {
+                                                                            width: 30px;
+                                                                            height: 30px;
+                                                                           // background: white;
+                                                                            margin-left: 5px;
+                                                                            margin-right: 5px;
+                                                                            @include background-initializer;
+                                                                            background-size: contain;
+                                                                            background-image: url("../img/svg/delete-red.svg");
+                                                                            @include border-10;
+                                                                            cursor: pointer;
+                                                                        }
+                                                                    }
+                                                                    input {
+                                                                        border: 3px solid $cc-primary-background;
+                                                                        border-top-color: transparent;
+                                                                        border-left-color: transparent;
+                                                                        border-right-color: transparent;
+                                                                        background: transparent;
+                                                                        padding: 5px 10px;
+                                                                        outline: none;
+                                                                        color: $cc-main-color;
+                                                                        width: 100%;
+                                                                        text-align: center;
+                                                                    }
+                                                                    textarea {
+                                                                        border: 3px solid $cc-primary-background;
+                                                                        border-top-color: transparent;
+                                                                        border-left-color: transparent;
+                                                                        border-right-color: transparent;
+                                                                        background: transparent;
+                                                                        padding: 5px 10px;
+                                                                        outline: none;
+                                                                        color: $cc-main-color;
+                                                                        width: 100%;
+                                                                        overflow: hidden;
+                                                                        resize: none;
+                                                                        text-align: center;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                        .table-btns {
+                                                            position: relative;
+                                                            width: 100%;
+                                                            margin-top: $margin-vl;
+                                                            display: flex;
+                                                            flex-direction: row;
+                                                            justify-content: right;
+
+                                                            div {
+                                                                width: 30px;
+                                                                height: 30px;
+                                                                margin-right: $margin-s;
+                                                                //background-color: white;
+                                                                @include background-initializer;
+                                                                @include border-circle;
+                                                                background-size: cover;
+                                                                object-fit: cover;
+                                                                cursor: pointer;
+                                                            }
+                                                            .table-addon-btn {
+                                                                background-image: url("../img/svg/add-red.svg");
+                                                                visibility: visible;
+                                                                opacity: 1;
+                                                                
+                                                                &.deactivate {
+                                                                    visibility: hidden;
+                                                                    opacity: 0; 
+                                                                }
+                                                            }
+                                                            .table-delete-btn {
+                                                                background-image: url("../img/svg/subtract-red.svg");
+                                                                visibility: hidden;
+                                                                opacity: 0; 
+
+                                                                &.activate {
+                                                                    visibility: visible;
+                                                                    opacity: 1;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                    .tables-entries-wrap {
+
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .entry-photo-wrap {
+                                            .entry-photo-preview {
+                                                width: 100%;
+                                                position: relative;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                
+                                                .photo-upload-cover {
+                                                    width: 400px;
+                                                    height: 80px;
+                                                    background: $cc-secondary-deepGreen;
+                                                    border: 2px dotted $cc-secondary-background;
+                                                    margin-bottom: $margin-s;
+                                                    display: flex;
+                                                    flex-direction: column;
+                                                    justify-content: center;
+                                                    align-items: center;
+                                                    cursor: pointer;
+                                                    @include border-10;
+
+                                                    &.deactivate {
+                                                        display: none;
+                                                    }
+                                                    div {
+                                                        position: relative;
+                                                    }
+                                                    .upload-input {
+                                                        display: none; 
+                                                    }
+                                                    .upload-content {
+                                                        width: 100%;
+                                                        display: flex;
+                                                        flex-direction: row;
+                                                        justify-content: center;
+                                                        align-items: center;
+                                                        background: transparent;
+
+                                                        div {
+                                                            font-size: $font-s;
+                                                        }
+                                                        #i {
+                                                            background-image: url("../img/svg/camera.gif");
+                                                            background-size: contain;
+                                                            @include background-initializer;
+                                                            width: 100px;
+                                                            height: 70px;
+                                                            @include border-circle;
+                                                        }
+                                                    }
+                                                    
+                                                }
+                                                .photos {
+                                                    position: relative;
+                                                    //display: flex;
+                                                    flex-direction: row;
+                                                    justify-content: space-between;
+                                                    align-items: center;
+                                                    display: none; // will be deleted soon
+
+                                                    &.preview {
+                                                        display: flex;
+                                                    }
+                                                    .photo {
+                                                        width: 100px;
+                                                        height: 80px;
+                                                        background: $cc-secondary-deepGreen;
+                                                        margin: $margin-xvs;
+                                                        @include border-10;
+                                                        @include background-initializer;
+                                                        background-size: cover;
+                                                        object-fit: cover;
+                                                        position: relative;
+                                                        
+                                                        img {
+                                                            position: relative;
+                                                            width: 100%;
+                                                            height: 100%;
+                                                            object-fit: cover;
+                                                            @include border-10;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            .entry-photo-btn {
+                                                padding: 10px 15px;
+                                                background: $cc-secondary-deepGreen;
+                                                border: 2px solid white;
+                                                display: none;;
+                                            }
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .preview-submit-wrapper {
+                        position: fixed;
+                        height: 90vh;
+                        width: 55%;
+                        bottom: 0px;
+                        @include transformX(0%);
+                        background: #000000ce;
+                        z-index: 4;
+                        @include transformY(100rem);
+
+                        &.collapse {
+                            @include transformY(0rem);
+                            @include trans-05s;
+                        }
+
+                        .form-preview-submit {
+                            position: relative;
+                            padding: 10px 15px;
+                            height: 90vh;
+                            width: 100%;
+                            overflow: hidden;
+
+                            .preview-close-btn {
+                                position: absolute;
+                                top: 10px;
+                                right: 10px;
+                                width: 35px;
+                                height: 35px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                background: white;
+                                @include border-circle;
+                                cursor: pointer;
+
+                                .i {
+                                    position: relative;
+                                    background-image: url("../img/svg/close-red.svg");
+                                    @include background-initializer;
+                                    background-size: cover;
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+                            .preview-content-wrapper {
+                                position: relative;
+                                width: 100%;
+                                height: 70vh;
+                                margin-top: $margin-l;
+                                overflow-x: hidden;
+                                overflow-y: scroll;
+
+                                .preview-content-container {
+                                    .preview-empty-content {
+                                        position: relative;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        height: 100%;
+
+                                        .empty-preview {
+                                            font-size: large;
+                                            font-weight: 500;
+                                        }
+                                    }
+                                    .preview-headers {
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: space-between;
+                                        align-items: center;
+
+                                        ul {
+                                            margin-right: $margin-s;
+
+                                            li {
+                                                font-size: $font-s;
+                                                color: rgba(255, 255, 255, 0.77);
+
+                                                span {
+                                                    margin-left: $margin-s;
+                                                    color: white;
+                                                }
+                                            }
+                                        }
+                                        div:nth-child(1) {
+                                            display: flex;
+                                            flex-direction: row-reverse;
+                                            justify-content: center;
+                                            align-items: center;
+
+                                            .preview-collapse {
+                                                width: 30px; 
+                                                height: 30px;
+                                                @include background-initializer;
+                                                background-size: cover;
+                                                background-image: url("../img/icons/arrow-white.png");
+                                                @include rotate(180deg);
+                                                margin-left: $margin-s;
+                                                cursor: pointer;
+                                                @include trans-01s;
+
+                                                &.activate {
+                                                    @include rotate(0deg);
+                                                    @include trans-01s;
+                                                }
+                                            }
+                                            .i {
+                                                position: relative;
+                                                width: 35px;
+                                                height: 35px;
+                                                background: white;
+                                                @include border-20;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                margin-right: $margin-s;
+
+                                                div {
+                                                    width: 25px;
+                                                    height: 25px;
+                                                    @include background-initializer;
+                                                    background-size: cover;
+                                                    background-image: url("../img/svg/file-red.svg");
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .show-preview-content {
+                                        position: relative;
+                                        width: 95%;
+                                       // background: red;
+                                        margin-right: 2.5%;
+                                        margin-left: 2.5%;
+                                        padding: 10px;
+
+                                        .show-content {
+                                            position: relative;
+                                            width: 100%;
+
+                                            .show-content-headers {
+                                                display: flex;
+                                                flex-direction: row-reverse;
+                                                justify-content: flex-end;
+                                                align-items: center;
+                                                margin-left: $margin-xl;
+                                                margin-top: $margin-s;
+
+                                                .preview-collapse {
+                                                    width: 30px; 
+                                                    height: 30px;
+                                                    @include background-initializer;
+                                                    background-size: cover;
+                                                    background-image: url("../img/icons/arrow-white.png");
+                                                    @include rotate(180deg);
+                                                    margin-left: $margin-s;
+                                                    cursor: pointer;
+                                                    @include trans-01s;
+
+                                                    &.activate {
+                                                        @include rotate(0deg);
+                                                        @include trans-01s;
+                                                    }
+                                                }
+                                            }
+                                            .show-data-content {
+                                                display: flex;
+                                                flex-direction: row;
+                                                justify-content:center;
+                                                align-items: center;
+
+                                                .show-data-image {
+                                                    position: relative;
+                                                    width: 80px;
+                                                    height: 70px;
+                                                    background: white;
+                                                    margin-right: $margin-l;
+                                                    margin-left: -120px;
+                                                    @include border-20;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;
+
+                                                    .i {
+                                                        width: 80px;
+                                                        height: 70px;
+                                                        background: red;
+                                                        @include border-20;
+
+                                                        img {
+                                                            width: 100%;
+                                                            height: 100%;
+                                                            object-fit: contain;
+                                                            @include border-20;
+                                                        }
+                                                    }
+                                                }
+                                                ul {
+                                                    li {
+                                                        font-size: $font-s;
+                                                        color: rgba(255, 255, 255, 0.77);
+
+                                                        span {
+                                                            color: white;
+                                                            margin-left: $margin-s;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                    }
+                                }
+                            }
+                            .preview-submit-btn {
+                                position: absolute;
+                                bottom: 10px;
+                                right: 20px;
+                                padding: 10px;
+                                background: $cc-secondary-deepGreen;
+                                @include border-20;
+                                color: $cc-main-color;
+                                cursor: pointer;
+                                border-color: hidden;
+                                display: block;
+
+                                &.hide {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .customer-container.switch {
+            visibility: visible;
+            opacity: 1;
+            @include trans-05s;
+        }
+    }
+    .admin-banner-wrapper {
+        position: fixed;
+        //background: palevioletred;
+        top: 0px;
+        min-width: 20%;
+        max-width: 23%;
+        right: 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        //padding: 0px;
+        overflow: hidden;
+        z-index: 5;
+
+        div {
+            margin: $margin-vs;
+        }
+        .admin-section {
+            div {
+                margin: 0px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .admin-img-wrap {
+                    width: 40px;
+                    height: 40px;
+                    @include border-circle;
+                    background: $cc-main-color;
+                    margin-left: $margin-vs;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    img {
+                        position: relative;
+                        top: 0px;
+                        left: 0px;
+                        background-size: cover;
+                        @include background-initializer;
+                        object-fit: cover;
+                        width: 35px;
+                        height: 35px;
+                        @include border-circle;
+                    }
+                }
+                .admin-tex {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    font-size: $font-s;
+                    
+                    em {color: $cc-color-lightblue; font-size: $font-vs;}
+                    span {
+                        em {@extend em}
+                    }
+                }
+            }
+        }
+        .theme-toggle-wrap {
+            position: relative;
+            z-index: 3;
+            //background: green;
+            .toggle-wrap {
+                position: relative;
+                width: 70px;
+                height: 35px;
+                background:  $cc-main-color;
+                @include border-20;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                //padding: 0px 10px 0px 10px;
+
+                div {
+                    position: relative;
+                    width: 50%;
+                    height: 100%;
+                    margin: 0px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 2;
+
+                    &:nth-child(1) {
+                        div {
+                            width: 20px;
+                            height: 20px;
+                            background-image: url("../img/svg/moon-red.svg");
+                            background-position: contain;
+                            @include background-initializer;
+                        }
+                    }
+                    &:nth-child(2) {
+                        div {
+                            width: 20px;
+                            height: 20px;
+                            background-image: url("../img/svg/sun-red.svg");
+                            background-position: contain;
+                            @include background-initializer;
+                        }
+                    }
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    width: 50%;
+                    height: 100%;
+                    margin-bottom: 2px;
+                    background: rgb(168, 168, 168);
+                    @include border-20;
+                    z-index: 5;
+                    @include trans-01s;
+                    //visibility: hidden;
+                }
+            }
+        }
+        .theme-toggle-wrap.shift .toggle-wrap::before {
+            left: 50%;
+            @include trans-01s;
+        }
+    }
+    .summary-content-container {
+        position: fixed;
+        right: 0px;
+        top: 0px;
+        width: 23%;
+        height: 100vh;
+        //background: orange;
+        overflow: hidden;
+
+        .recent-update-wrapper {
+            position: relative;
+            width: 100%;
+            top: 70px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+
+            .summary-header {
+                width: 100%;
+                padding: 10 10px;
+                margin-left: $margin-s;
+                h3 {
+                    font-size: large;
+                }
+            }
+            .recent-update-container {
+                position: relative;
+                width: 95%;
+                height: 50vh;
+                margin-top: $margin-s;
+                //background: $cc-secondary-background;
+                background: green;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                @include border-20;
+                margin-bottom: $margin-s;
+                margin-left: $margin-vs;
+                overflow-y: scroll;
+                overflow-x: hidden;
+
+                .cell {
+                    position: relative;
+                    top: 0px;
+                    width: 100%;
+                    background: green;
+                    height: initial;
+
+                    .row-wrap {
+                        position: relative;
+                        width: 100%;
+                        margin-top: $margin-l;
+                        margin-bottom: $margin-l;
+    
+                        .row {
+                            position: relative;
+                            width: 98%; 
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            padding: 3px;
+                            background: $cc-tertiary-background;
+                            margin-top: $margin-vs;
+                            @include border-20;
+        
+                            .update-image-wrap {
+                                position: relative;
+                                width: 45px;
+                                height: 40px;
+                                background: $cc-main-color;
+                                margin-right: $margin-vs;
+                                @include border-circle;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+        
+                                img {
+                                    position: relative;
+                                    top: 0px;
+                                    left: 0px;
+                                    width: 35px;
+                                    height: 30px;
+                                    @include border-circle;
+                                }
+                            }
+                            .update-content {
+                                position: relative;
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: flex-start;
+                                flex-direction: column;
+                                font-size: smaller;
+                                flex-direction: column;
+                                color: $cc-color-post;
+        
+                                p {
+                                    &::first-letter {text-transform: uppercase;}
+                                    em { 
+                                        color: $cc-main-color;
+                                        font-style: normal;
+                                    }
+                                }
+        
+                                .note {
+                                    width: 100%;
+                                    margin-top: $margin-vs;
+                                    display: flex;
+                                    align-items: flex-end;
+                                    justify-content: space-between;
+                                    padding: 5px;
+                                    
+                                    div {
+                                        font-size: $font-vs;
+                                    }
+                                
+                                }
+                            }
+                        }
+                        .row.notify {
+                            background: rgba(193, 127, 5, 0.800);
+                        }
+                    }
+                    .time-status {
+                        position: position;
+                        top: 0px;
+                        left: 0px;
+                        text-align: center;
+                        padding: 3px 10px 3px 10px;
+                        background: red;
+                        font-size: $font-vs;
+                        font-weight: bolder;
+                        @include border-20;
+                    }
+                    .time-today, .time-yesterday {display: none}
+                    .time-today.show, .time-yesterday.show {display: block}
+                }
+                .no-update-wrapper {
+                    position: relative;
+                    padding: 10px;
+                    
+                    ul {
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        
+                        li {
+                            margin: 5px;
+                            font-size: $font-s;
+                        }
+                        .i {
+                            width: 40px;
+                            height: 40px;
+                            box-sizing: border-box;
+                            background: white;
+                            @include border-10;
+                        }
+                    }
+                }
+            }
+            .recent-update-container.show .today::before{
+                display: block;
+            }
+            .recent-update-container.show .yesterday::before{
+                display: block;
+            }
+        }
+        .sale-analytics-wrapper {
+            position: relative;
+            //background: green;
+            width: 95%;
+            margin-top: $margin-vs;
+
+            .sale-analytics-container {
+                position: relative;
+                width: 95%;
+                margin-left: $margin-vs;
+
+                div {
+                    position: relative;
+                    top: 0px;
+                    left: 0px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    background: $cc-secondary-background;
+                    padding: 1px;
+                    @include border-20;
+                    margin: 5px;
+
+                    .sale-image-wrap {
+                        width: 40px;
+                        height: 40px;
+                        background: $cc-main-color;
+                        margin-right: $margin-vs;
+                        @include border-circle;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: relative;
+
+                        .image {
+                            position: relative;
+                            width: 30px;
+                            height: 30px;
+                            @include background-initializer;
+                            background-position: cover;
+                            @include border-circle;
+                        }
+                        .img-1 {
+                            
+                            background-image: url("../img//svg/cart-red.svg");
+                        }
+                        .img-2 {
+                            background-image: url("../img/svg/user-red.svg");
+                        }
+                    }
+                    .sale-header {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        flex-direction: column;
+                        div {
+                            font-size: $font-s;
+                            &:nth-child(2) {
+                                font-size: $font-vs;
+                                color: $cc-color-post;
+                            }
+                        }
+                    }
+                    .sale-calc {
+                        font-size: $font-vs;
+                        width: 60%;
+                    }
+                }
+            }
+        }
+    }
+}

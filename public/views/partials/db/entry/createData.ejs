@@ -1,0 +1,432 @@
+<!--------------- ENTRY SECTION -------------------------------->
+<div class="form-section" data-menu-respond="1">
+    <div class="entry-close-button"><div class="i"></div></div>
+    <div class="form-wrapper" id="create-form-wrapper">
+        <div class="header"><h2> Add New Data </h2></div>
+
+
+        <form action="/db_createData" class="form db-container" method="post" enctype="multipart/form-data">
+            <!------- ALERT SECTION ------------------------->
+            <div class="db-alert"><div class="i"></div><div class="db-alert-text"></div></div>
+            <!------------------------------------------------>
+            <!------- FOR MENU SECTION -------------->
+            <div class="db-menu-container">
+                <div class="db-menu">
+                    <ul class="menu">
+                        <li class="db-menu-tables-wrap">
+                            <select class="select-tags cc_company" id="select-company">
+                            
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!----------------------------------------------->
+            <!------------ ENTRIES -------------------->
+            <div class="sub-header"><h3> Entry </h3></div>
+            <div class="row create-row">
+                <div class="entry-row">
+                    <label for="uid" class="label" id="1">
+                        <h4>  UID </h4>
+                        <div class="tips" data-info="1"></div>
+                        <div class="tips-content" data-tip="1">
+                            <p>
+                                " UID " referes to the Unique Identity of the item. Must be mixture of Number and letters.
+                                This is  REQUIRED
+                            </p>
+                        </div>
+                    </label>
+                    <select name="uid" id="uid" class="cc_uid">
+                        
+                    </select>
+                </div>
+                <div class="entry-row">
+                    <label for="title" class="label">
+                        <h4>  Cover Tittle </h4>
+                        <div class="tips" data-info="2"></div>
+                        <div class="tips-content" data-tip="2">
+                            <p>
+                                Give a general title of the item in question. Must be very brief. This is required.
+                                This is  REQUIRED
+                            </p>
+                        </div>
+                    </label>
+                    <input type="text" placeholder="Enter Here ..." name="title" class="entry" id="tittle" minlength="3" maxlength="50">
+                </div>
+                <div class="entry-row">
+                    <label for="seller" class="label">
+                        <h4>  Seller </h4>
+                        <div class="tips" data-info="3"></div>
+                        <div class="tips-content" data-tip="3">
+                            <p>
+                                This refers to the company that item belongs to.
+                                This is  REQUIRED
+                            </p>
+                        </div>
+                    </label>
+                    <input type="text" name="seller" class="entry" id="seller" readonly>
+                </div>
+                <div class="entry-row">
+                    <label for="price" class="label">
+                        <h4>  Unit Price  (GHS)</h4>
+                        <div class="tips" data-info="4"></div>
+                        <div class="tips-content" data-tip="4">
+                            <p>
+                                This refers to the price of the item in question.
+                                This is  REQUIRED
+                            </p>
+                        </div>
+                    </label>
+                    <input type="text" placeholder="Enter Here ..." name="price" class="entry" id="price" maxlength="5">
+                </div>
+                <div class="entry-row">
+                    <label for="priceDel" class="label" id="priceDel">
+                        <h4>  Reduced Price (Optional) </h4>
+                        <div class="tips" data-info="5"></div>
+                        <div class="tips-content" data-tip="5">
+                            <p>
+                                This refers to the item price deduction. By default is set to 00. Set new price is there is any.
+                                This is  OPTIONAL
+                            </p>
+                        </div>
+                    </label>
+                    <input type="text" placeholder="Enter Here ..." name="priceDel" class="entry" id="priceDel" value="00" maxlength="5">
+                </div>
+                <div class="entry-row">
+                    <label for="priceFtr" class="label">
+                        <h4>  Price Range </h4>
+                        <div class="tips" data-info="6"></div>
+                        <div class="tips-content" data-tip="6">
+                            <p>
+                                This refers to what range does the price fall within. This value depends on the unit price value set.
+                                " price < GHS 50 =  Low", " price > GHS 50 =  HIGH".
+                                This is  REQUIRED
+                            </p>
+                        </div>
+                    </label>
+                    <input type="text" name="priceFtr" class="entry" id="priceFtr" maxlength="2" readonly>
+                </div>
+                <div class="entry-row">
+                    <label for="starRated" class="label" id="7">
+                        <h4>  Star Rated </h4>
+                        <div class="tips" data-info="7"></div>
+                        <div class="tips-content" data-tip="7">
+                            <p>
+                                This indicates the item in question effeciency as regard to it function.
+                                lower: 0 - 1 , Average: 2 - 3 , High: 4 - 5.
+                                This is  REQUIRED
+                            </p>
+                        </div>
+                    </label>
+                    <select name="starRated" id="starRated" class="cc_starRated">
+                        <option value=""> Select Opt </option>
+                        <option value="0"> 0 </option>
+                        <option value="1"> 1 </option>
+                        <option value="2"> 2 </option>
+                        <option value="3"> 3 </option>
+                        <option value="4"> 4 </option>
+                        <option value="5"> 5 </option>
+                    </select>
+                </div>
+                <div class="entry-row">
+                    <label for="categoryAll" class="label">
+                        <h4>  Category </h4>
+                        <div class="tips" data-info="8"></div>
+                        <div class="tips-content" data-tip="8">
+                            <p>
+                                By default is set to value " all ".
+                                This is  REQUIRED
+                            </p>
+                        </div>
+                    </label>
+                    <input type="text" name="categoryAll" class="entry" id="categoryAll" value="all" maxlength="2" readonly>
+                </div>
+                <div class="entry-row">
+                    <label for="subCategory" class="label" id="9">
+                        <h4>  Item Type </h4>
+                        <div class="tips" data-info="9"></div>
+                        <div class="tips-content" data-tip="9">
+                            <p>
+                                This refers to type of category the item in question falls.
+                                This is  REQUIRED
+                            </p>
+                        </div>
+                    </label>
+                    <select name="subCategory" id="cc_subCategory" class="cc_subCategory">
+                        
+                    </select>
+                </div>
+                <div class="entry-row">
+                    <label for="stockStatus" class="label" id="10">
+                        <h4>  Stock Status </h4>
+                        <div class="tips" data-info="10"></div>
+                        <div class="tips-content" data-tip="10">
+                            <p>
+                                This refers to as whether the item in question is in Low, Medium, High quantity.
+                                This is  REQUIRED
+                            </p>
+                        </div>
+                    </label>
+                    <select name="stockStatus" id="stockStatus" class="cc_stockStatus">
+                        <option value=""> Select Opt </option>
+                        <option value="low"> Low </option>
+                        <option value="medium"> Medium </option>
+                        <option value="high"> High </option>
+                    </select>
+                </div>
+                <div class="entry-row">
+                    <label for="madeBy" class="label" id="11">
+                        <h4>  Item Made-By </h4>
+                        <div class="tips" data-info="11"></div>
+                        <div class="tips-content" data-tip="11">
+                            <p>
+                                Is the item in question made by a " machine " from a factory or  " man " in person.
+                                This is  REQUIRED
+                            </p>
+                        </div>
+                    </label>
+                    <select name="madeBy" id="madeBy" class="cc_madeBy">
+                        
+                    </select>
+                </div>
+                <div class="entry-row">
+                    <label for="material" class="label">
+                        <h4>  Material </h4>
+                        <div class="tips" data-info="12"></div>
+                        <div class="tips-content" data-tip="12">
+                            <p>
+                                What Kind of material(s) is the item made of.
+                                This is  OPTIONAL
+                            </p>
+                        </div>
+                    </label>
+                    <input type="text" name="material" class="entry" id="material" placeholder="Enter here ..."  maxlength="50">
+                </div>
+                <div class="entry-row">
+                    <label for="dimension" class="label">
+                        <h4>  Dimension </h4>
+                        <div class="tips" data-info="13"></div>
+                        <div class="tips-content" data-tip="13">
+                            <p>
+                                This refers to the width and the hight of the item in question. Format " ww x hh "
+                                This is  OPTIONAL 
+                            </p>
+                        </div>
+                    </label>
+                    <input type="text" name="dimension" class="entry" id="dimension" placeholder="Format [ w x h ]" maxlength="50">
+                </div>
+                <div class="entry-row">
+                    <label for="shipCost" class="label">
+                        <h4>  Shipment Cost Status </h4>
+                        <div class="tips" data-info="14"></div>
+                        <div class="tips-content" data-tip="14">
+                            <p>
+                                Is the item in question " Free " or " Paid " for it to be delivered. For paid delivery " > GHS 50 ".
+                                For Free delievery " < GHS 50 ". This is  REQUIRED
+                            </p>
+                        </div>
+                    </label>
+                    <input type="text" name="shipCost" class="entry" id="shipCost" maxlength="50" readonly>
+                </div>
+                <div class="entry-row">
+                    <label for="returnStatus" class="label" id="11">
+                        <h4>  Item Return Status </h4>
+                        <div class="tips" data-info="15"></div>
+                        <div class="tips-content" data-tip="15">
+                            <p>
+                                " Accepted " indicated that item purchased can be return.
+                                " Not Accepted " indicated that item purchased cannot be return.  
+                                This is  REQUIRED
+                            </p>
+                        </div>
+                    </label>
+                    <select name="returnStatus" id="returnStatus" class="cc_returnStatus">
+                        <option value=""> Select Opt </option>
+                        <option value="accepted"> Accepted </option>
+                        <option value="not accpeted"> Not Accepted </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row-des">
+                <div class="entry-row">
+                    <label for="description" class="label" id="description">
+                        <h4>  Description Summary </h4>
+                        <div class="tips" data-info="16"></div>
+                        <div class="tips-content" data-tip="16">
+                            <p>
+                                Give a summary of item in question as regards to the main function(s) and others. This is  REQUIRED
+                            </p>
+                        </div>
+                    </label>
+                    <textarea name="description" id="description" cols="70" rows="5" placeholder="Enter here ..."></textarea>
+                </div>
+                <div class="entry-row">
+                    <label for="detail_description" class="label" id="detail_description">
+                        <h4>  Item Detail Description </h4>
+                        <div class="tips" data-info="17"></div>
+                        <div class="tips-content" data-tip="17">
+                            <p>
+                                Give detail information of the item in question if there is any. This can be optional
+                            </p>
+                        </div>
+                    </label>
+                    <div class="tables-entries-wrap">
+                        <table class="table-row">
+                            <thead>
+                                <th></th>
+                                <th> Parameters </th>
+                                <th> Details </th>
+                            </thead>
+                            <tbody class="table-columns-container">
+                                
+                            </tbody>
+                        </table>
+                        <div class="table-btns"> 
+                            <div class="table-addon-btn"><div class="tb-addon i-a"></div></div>
+                            <div class="table-delete-btn"><div class="tb-delete i-d"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--------------------------------------------------->
+            <!----------- UPLOADING IMAGES  -------------------->
+            <div class="sub-header"><h3> Photo </h3></div>
+            <div class="entry-row entry-photo-wrap">
+                <div class="db-heading">
+                    <div class="upload-switch"> switch </div>
+                </div>
+                <div class="row entry-photo-preview">
+                    <div class="photo-upload-cover">
+                        <div class="upload-input"><input type="file" name="cc_upload_image" id="photo-upload" multiple></div>
+                        <div class="upload-content">
+                            <div>Upload Images (6 max)</div><div id="i"></div>
+                        </div>
+                    </div>
+                    <ul class="photos">
+                    </ul>
+                </div>
+                <input type="" class="row entry-photo-btn" >
+            </div>
+            <!---------------------------------------------------------->
+
+
+            <div class="button-wrapper">
+                <div class="buttons">
+                    <input type="submit" class="btn" value="Save">
+                    <div class="btn"> Cancel </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--------------------------------------------------------------->
+<!---------------------- PREVIEW SECTION -------------------------->
+<div class="form-section" data-menu-respond="2">
+    <div class="entry-close-button"><div class="i"></div></div>
+    <div class="form-wrapper" id="create-form-wrapper">
+        <div class="header"><h2> Preview Data </h2></div>
+
+
+        <form action="/submitCreateData" class="form db-container" method="post" enctype="multipart/form-data">
+            <div class="db-preview">
+                <div class="preview-content-wrapper">
+                    <div class="preview-content-container">
+                        <% if (preview !== undefined || preview !== null) { %>
+                            <% if (preview.length == 0) { %>
+                                <div class="preview-empty-content">
+                                    <div class="empty-preview"> Data is Empty </div>
+                                </div>
+                            <% } else { %>
+
+                                <% preview.forEach(data => { %>
+                                    <!-------- SINGLE CATEGORY DATA SECTION -------------->
+                                    <div class="show-preview-wrap">
+                                        <div class="preview-headers">
+                                            <div>
+                                                <div class="preview-collapse" data-arrow="1"></div>
+                                                <h5> <%- data.company %> </h5>
+                                                <div class="file-icon"><div class="i"></div></div>
+                                            </div>
+                                            <div class="sub-headers">
+                                                <ul>
+                                                    <li> Total : <span> <%- data.JSON_total %> </span></li>
+                                                    <li> Used : <span> <%- data.JSON_used_data %> </span></li>
+                                                    <li> Remainig : <span> <%- data.JSON_remaining_data %> </span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <% let arr = [] %>
+                                        <% data.JSON_main.forEach(main => { %>
+                                            <% data.JSON_des.forEach(des => { %>
+                                                <% if (main.id == des.id) { %>
+                                                    <% arr.push({main,des}) %>
+                                                <% } %>
+                                            <% }) %>
+                                        <% }) %>
+                                        <%# console.log("UI..ooo...", arr) %>
+                                        <div class="single-preview-content">
+                                            <% arr.forEach(el => { %>
+                                                <div class="show-preview-content" data-content="<%- el.main.id %>">
+                                                    <div class="show-content show-main-content" id="show-main-content">
+                    
+                                                        <div class="show-data-content">
+                                                            <div class="show-data-image"><div><img src="../img/upload_image_pending/<%- el.main.imgUrl %>" alt=""></div></div>
+                                                            <ul class="show-data ">
+                                                                <li> UID :  <span> <%- el.main.UID %> </span></li>
+                                                                <li> Cover Titile :  <span> <%- el.main.tittle %> </span></li>
+                                                                <li> Seller :  <span> <%- el.main.seller %> </span></li>
+                                                                <li> Price ( GHS ):  <span> <%- el.main.price %> </span></li>
+                                                                <li> Reduced Price :  <span> <%- el.main.priceDel %> </span></li>
+                                                                <li> Star Rated :  <span> <%- el.main.starRated %> </span></li>
+                                                                <li> Category :  <span> <%- el.main.categoryAll %> </span></li>
+                                                                <li> Item Type :  <span> <%- el.main.subCategory %> </span></li>
+                                                                <li> Stock Status :  <span> <%- el.des.stockStatus %> </span></li>
+                                                                <li> Material Type :  <span> <%- el.des.material %> </span></li>
+                                                                <li> Item Made-By :  <span> <%- el.des.madeBy %> </span></li>
+                                                                <li> Item Dimension :  <span> <%- el.des.dimension %> </span></li>
+                                                                <li> Shipment Cost Status :  <span> <%- el.des.shipCost %> </span></li>
+                                                                <li> Item Return Status :  <span> <%- el.des.returnStatus %> </span></li>
+                                                                <li> Description Summary :  <span> <%- el.des.description %> </span></li>
+                                                                <% if (el.des.tb_para_1 !== "") { %> <li> <%- el.des.tb_para_1 %> :  <span> <%- el.des.tb_det_1 %> </span></li> <% } else { %>  <% } %>
+                                                                <% if (el.des.tb_para_2 !== "") { %> <li> <%- el.des.tb_para_2 %> :  <span> <%- el.des.tb_det_2 %> </span></li> <% } else { %>  <% } %>
+                                                                <% if (el.des.tb_para_3 !== "") { %> <li> <%- el.des.tb_para_3 %> :  <span> <%- el.des.tb_det_3 %> </span></li> <% } else { %>  <% } %>
+                                                                <% if (el.des.tb_para_4 !== "") { %> <li> <%- el.des.tb_para_4 %> :  <span> <%- el.des.tb_det_4 %> </span></li> <% } else { %>  <% } %>
+                                                                <% if (el.des.tb_para_5 !== "") { %> <li> <%- el.des.tb_para_5 %> :  <span> <%- el.des.tb_det_5 %> </span></li> <% } else { %>  <% } %>
+                                                                <% if (el.des.tb_para_6 !== "") { %> <li> <%- el.des.tb_para_6 %> :  <span> <%- el.des.tb_det_6 %> </span></li> <% } else { %>  <% } %>
+                                                                <% if (el.des.tb_para_7 !== "") { %> <li> <%- el.des.tb_para_7 %> :  <span> <%- el.des.tb_det_7 %> </span></li> <% } else { %>  <% } %>
+                                                                <% if (el.des.tb_para_8 !== "") { %> <li> <%- el.des.tb_para_8 %> :  <span> <%- el.des.tb_det_8 %> </span></li> <% } else { %>  <% } %>
+                                                                <% if (el.des.tb_para_9 !== "") { %> <li> <%- el.des.tb_para_9 %> :  <span> <%- el.des.tb_det_9 %> </span></li> <% } else { %>  <% } %>
+                                                                <% if (el.des.tb_para_10 !== "") { %> <li> <%- el.des.tb_para_10 %> :  <span> <%- el.des.tb_det_10 %> </span></li> <% } else { %>  <% } %>
+                                                                <% if (el.des.tb_para_11 !== "") { %> <li> <%- el.des.tb_para_11 %> :  <span> <%- el.des.tb_det_11 %> </span></li> <% } else { %>  <% } %>
+                                                                <% if (el.des.tb_para_12 !== "") { %> <li> <%- el.des.tb_para_12 %> :  <span> <%- el.des.tb_det_12 %> </span></li> <% } else { %>  <% } %>
+                                                                <% if (el.des.tb_para_13 !== "") { %> <li> <%- el.des.tb_para_13 %> :  <span> <%- el.des.tb_det_13 %> </span></li> <% } else { %>  <% } %>
+                                                                <% if (el.des.tb_para_14 !== "") { %> <li> <%- el.des.tb_para_14 %> :  <span> <%- el.des.tb_det_14 %> </span></li> <% } else { %>  <% } %>
+                                                                <% if (el.des.tb_para_15 !== "") { %> <li> <%- el.des.tb_para_15 %> :  <span> <%- el.des.tb_det_15 %> </span></li> <% } else { %>  <% } %>
+                                                            
+                                                            </ul> 
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            <% }) %>
+                                        </div>
+                                    </div>
+                                    <!---------------------------------------------------->
+                                <% }) %>
+                                
+                            <% } %>
+                        <% } %>
+                    </div>
+                </div>
+
+            </div>
+            <div class="button-wrapper">
+                <div class="buttons" id="buttons">
+                    <input type="submit" class="btn" value="Save">
+                    <div class="btn"> Cancel </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!---------------------------------------------------------------->

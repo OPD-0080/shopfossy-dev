@@ -1,0 +1,188 @@
+*, html, body, ul, ol *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 100%;
+  background: #2e2e2e;
+  color: white;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.close-wrap {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  margin-top: 20px;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  visibility: hidden; /*later can be changed*/
+}
+.close-wrap div {
+  width: 40px;
+  height: 40px;
+  background-image: url("../img/icons/close-white.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.d-banner-wrap {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  height: 100vh;
+  width: 40%;
+  background: #0606cf;
+  z-index: 3;
+  overflow: hidden;
+}
+.d-banner-wrap .database-banner {
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  background: white;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+}
+.d-banner-wrap .database-banner img {
+  width: 700px;
+  height: 500px;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+}
+.d-banner-wrap .database-banner .database-icon1 {
+  position: relative;
+  top: -200px;
+  left: -200px;
+  z-index: 4;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+}
+.d-banner-wrap .database-banner .database-icon1.i1-active {
+  z-index: 4;
+  animation: database-animate-1 2s ease;
+  -webkit-animation: database-animate-1 2s ease;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+}
+.d-banner-wrap .database-banner .database-icon2 {
+  position: absolute;
+  top: -200px;
+  left: -1000px;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+}
+.d-banner-wrap .database-banner .database-icon2.i2-active {
+  animation: database-animate-2 2s 1s ease;
+  -webkit-animation: database-animate-2 2s 1s ease;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+}
+.d-banner-wrap .database-banner.banner-active {
+  animation: database-animate-banner 1s 0.5s ease;
+  -webkit-animation: database-animate-banner 1s 0.5s ease;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+}
+
+.database-wrapper {
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+.database-wrapper .database-container {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 60%;
+  height: 100vh;
+  background: #000085;
+  color: white;
+  overflow: hidden;
+}
+.database-wrapper .database-container .logo {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 120px;
+  height: 80px;
+  background: white;
+  margin-left: 10px;
+}
+.database-wrapper .database-container .logo div {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../img/logo/logo.jpg");
+}
+.database-wrapper .database-container .database-title {
+  position: absolute;
+  left: 25%;
+  top: 20px;
+  font-weight: 600;
+  font-size: 20px;
+}
+.database-wrapper .database-container .database-title div {
+  position: relative;
+}
+.database-wrapper .database-container .database-title::first-letter {
+  text-transform: uppercase;
+}/*# sourceMappingURL=database-style.css.map */

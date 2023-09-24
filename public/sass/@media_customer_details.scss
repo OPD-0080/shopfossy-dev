@@ -1,0 +1,928 @@
+@import './variables.scss';
+
+
+// LANDSCAPE ORIENTATION START
+@media screen and (max-width: 896px)   {
+    .form-banner-container {
+        .overlay {
+            .form-close {
+                top: 5px;
+                right: 5px;
+                z-index: 10;
+            }
+            .form-wrapper {
+                width: 85%;
+
+                .form-container {
+                    .form-content {
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+                        height: 85%;
+
+                        div {
+                            .custom-select {
+                                select {
+                                    text-align: left;
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
+                            label {
+                                font-size: $font-s;
+                            }
+                            .agree-container {
+                                p {
+                                    font-size: $font-vs;
+                                }
+                            }
+                            .form-btn-wrap {
+                                .form-btn {
+                                    width: 100%;
+                                    font-size: $font-l;
+                                    margin-bottom: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 869px)   {
+    .form-banner-container {
+        .overlay {
+            .form-close {
+                top: 5px;
+                right: 5px;
+                z-index: 10;
+            }
+            .form-wrapper {
+                width: 85%;
+
+                .form-container {
+                    .form-content {
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+                        height: 85%;
+
+                        div {
+                            .custom-select {
+                                select {
+                                    text-align: left;
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
+                            label {
+                                font-size: $font-s;
+                            }
+                            .agree-container {
+                                p {
+                                    font-size: $font-vs;
+                                }
+                            }
+                            .form-btn-wrap {
+                                .form-btn {
+                                    width: 100%;
+                                    font-size: $font-l;
+                                    margin-bottom: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 812px)   {
+    .form-banner-container {
+        .overlay {
+            .form-close {
+                top: 5px;
+                right: 5px;
+                z-index: 10;
+            }
+            .form-wrapper {
+                width: 85%;
+
+                .form-container {
+                    .form-content {
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+                        height: 85%;
+
+                        div {
+                            .custom-select {
+                                select {
+                                    text-align: left;
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
+                            label {
+                                font-size: $font-s;
+                            }
+                            .agree-container {
+                                p {
+                                    font-size: $font-vs;
+                                }
+                            }
+                            .form-btn-wrap {
+                                .form-btn {
+                                    width: 100%;
+                                    font-size: $font-l;
+                                    margin-bottom: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 740px)   {
+    .form-banner-container {
+        .overlay {
+            .form-close {
+                top: 5px;
+                right: 5px;
+                z-index: 10;
+            }
+            .form-wrapper {
+                width: 85%;
+
+                .form-container {
+                    .form-content {
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+                        height: 85%;
+
+                        div {
+                            .custom-select {
+                                select {
+                                    text-align: left;
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
+                            label {
+                                font-size: $font-s;
+                            }
+                            .agree-container {
+                                p {
+                                    font-size: $font-vs;
+                                }
+                            }
+                            .form-btn-wrap {
+                                .form-btn {
+                                    width: 100%;
+                                    font-size: $font-l;
+                                    margin-bottom: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 736px)   {
+    .form-banner-container {
+        .overlay {
+            .form-close {
+                top: 5px;
+                right: 5px;
+                z-index: 10;
+            }
+            .form-wrapper {
+                width: 85%;
+
+                .form-container {
+                    .form-content {
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+                        height: 85%;
+
+                        div {
+                            .custom-select {
+                                select {
+                                    text-align: left;
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
+                            label {
+                                font-size: $font-s;
+                            }
+                            .agree-container {
+                                p {
+                                    font-size: $font-vs;
+                                }
+                            }
+                            .form-btn-wrap {
+                                .form-btn {
+                                    width: 100%;
+                                    font-size: $font-l;
+                                    margin-bottom: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 667px) {
+    .form-banner-container {
+        .overlay {
+            .form-close {
+                top: 5px;
+                right: 5px;
+                z-index: 10;
+            }
+            .form-wrapper {
+                width: 85%;
+
+                .form-container {
+                    .form-content {
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+                        height: 85%;
+
+                        div {
+                            .custom-select {
+                                select {
+                                    text-align: left;
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
+                            label {
+                                font-size: $font-s;
+                            }
+                            .agree-container {
+                                p {
+                                    font-size: $font-vs;
+                                }
+                            }
+                            .form-btn-wrap {
+                                .form-btn {
+                                    width: 100%;
+                                    font-size: $font-l;
+                                    margin-bottom: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 640px) {
+    .form-banner-container {
+        .overlay {
+            .form-close {
+                top: 5px;
+                right: 5px;
+                z-index: 10;
+            }
+            .form-wrapper {
+                width: 85%;
+
+                .form-container {
+                    .form-content {
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+                        height: 85%;
+
+                        div {
+                            .custom-select {
+                                select {
+                                    text-align: left;
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
+                            label {
+                                font-size: $font-s;
+                            }
+                            .agree-container {
+                                p {
+                                    font-size: $font-vs;
+                                }
+                            }
+                            .form-btn-wrap {
+                                .form-btn {
+                                    width: 100%;
+                                    font-size: $font-l;
+                                    margin-bottom: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// LANDSCAPE ORIENTATION END
+
+// PORTRAIT ORIENTATION START
+@media screen and (max-width: 540px) {
+    .form-banner-container {
+        .overlay {
+            justify-content: center;
+            align-items: center;
+
+            .form-close {
+                top: 5px;
+                right: 5px;
+                z-index: 10;
+            }
+            .form-wrapper {
+                position: relative;
+                width: 97%;
+                //height: 95vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .form-container {
+                    .form-content {
+                        height: 90%;
+                        grid-template-columns: repeat(1, 1fr);
+                        grid-template-areas: 
+                            'f1'
+                            'f2'
+                            'f3'
+                            'f4'
+                            'f5'
+                            'f6'
+                            'f7'
+                            'f8'
+                            'f9'
+                            'f10'
+                            'f11'
+                        ;
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+
+                        div {
+                            .custom-select {
+                                select {
+                                    text-align: left;
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
+                            label {
+                                font-size: $font-s;
+                            }
+                            input {
+                                text-align: left;
+                                font-size: $font-l;
+                            }
+                            select {
+                                text-align: left;
+                                font-size: $font-l
+                            }
+                            .agree-container {
+                                input[type="checkbox"] {
+                                    width: 25px;
+                                    height: 25px;
+                                }
+                                p {
+                                    font-size: $font-vs;
+                                    width: 90%;
+                                    margin-left: 5%;
+                                    margin-right: 5%;
+                                }
+                            }
+                            .form-btn-wrap {
+                                .form-btn {
+                                    width: 100%;
+                                    font-size: $font-l;
+                                    margin-bottom: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 480px) {
+    .form-banner-container {
+        .overlay {
+            justify-content: center;
+            align-items: center;
+
+            .form-close {
+                top: 5px;
+                right: 5px;
+                z-index: 10;
+            }
+            .form-wrapper {
+                position: relative;
+                width: 97%;
+                //height: 95vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .form-container {
+                    .form-content {
+                        height: 90%;
+                        grid-template-columns: repeat(1, 1fr);
+                        grid-template-areas: 
+                            'f1'
+                            'f2'
+                            'f3'
+                            'f4'
+                            'f5'
+                            'f6'
+                            'f7'
+                            'f8'
+                            'f9'
+                            'f10'
+                            'f11'
+                        ;
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+
+                        div {
+                            .custom-select {
+                                select {
+                                    text-align: left;
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
+                            label {
+                                font-size: $font-s;
+                            }
+                            input {
+                                text-align: left;
+                                font-size: $font-l;
+                            }
+                            select {
+                                text-align: left;
+                                font-size: $font-l
+                            }
+                            .agree-container {
+                                input[type="checkbox"] {
+                                    width: 25px;
+                                    height: 25px;
+                                }
+                                p {
+                                    font-size: $font-vs;
+                                    width: 90%;
+                                    margin-left: 5%;
+                                    margin-right: 5%;
+                                }
+                            }
+                            .form-btn-wrap {
+                                .form-btn {
+                                    width: 100%;
+                                    font-size: $font-l;
+                                    margin-bottom: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 414px) {
+    .form-banner-container {
+        .overlay {
+            justify-content: center;
+            align-items: center;
+
+            .form-close {
+                top: 5px;
+                right: 5px;
+                z-index: 10;
+            }
+            .form-wrapper {
+                position: relative;
+                width: 97%;
+                //height: 95vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .form-container {
+                    .form-content {
+                        height: 90%;
+                        grid-template-columns: repeat(1, 1fr);
+                        grid-template-areas: 
+                            'f1'
+                            'f2'
+                            'f3'
+                            'f4'
+                            'f5'
+                            'f6'
+                            'f7'
+                            'f8'
+                            'f9'
+                            'f10'
+                            'f11'
+                        ;
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+
+                        div {
+                            .custom-select {
+                                select {
+                                    text-align: left;
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
+                            label {
+                                font-size: $font-s;
+                            }
+                            input {
+                                text-align: left;
+                                font-size: $font-l;
+                            }
+                            select {
+                                text-align: left;
+                                font-size: $font-l
+                            }
+                            .agree-container {
+                                input[type="checkbox"] {
+                                    width: 25px;
+                                    height: 25px;
+                                }
+                                p {
+                                    font-size: $font-vs;
+                                    width: 90%;
+                                    margin-left: 5%;
+                                    margin-right: 5%;
+                                }
+                            }
+                            .form-btn-wrap {
+                                .form-btn {
+                                    width: 100%;
+                                    font-size: $font-l;
+                                    margin-bottom: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 412px) {
+    .form-banner-container {
+        .overlay {
+            justify-content: center;
+            align-items: center;
+
+            .form-close {
+                top: 5px;
+                right: 5px;
+                z-index: 10;
+            }
+            .form-wrapper {
+                position: relative;
+                width: 97%;
+                //height: 95vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .form-container {
+                    .form-content {
+                        height: 90%;
+                        grid-template-columns: repeat(1, 1fr);
+                        grid-template-areas: 
+                            'f1'
+                            'f2'
+                            'f3'
+                            'f4'
+                            'f5'
+                            'f6'
+                            'f7'
+                            'f8'
+                            'f9'
+                            'f10'
+                            'f11'
+                        ;
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+
+                        div {
+                            .custom-select {
+                                select {
+                                    text-align: left;
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
+                            label {
+                                font-size: $font-s;
+                            }
+                            input {
+                                text-align: left;
+                                font-size: $font-l;
+                            }
+                            select {
+                                text-align: left;
+                                font-size: $font-l
+                            }
+                            .agree-container {
+                                input[type="checkbox"] {
+                                    width: 25px;
+                                    height: 25px;
+                                }
+                                p {
+                                    font-size: $font-vs;
+                                    width: 90%;
+                                    margin-left: 5%;
+                                    margin-right: 5%;
+                                }
+                            }
+                            .form-btn-wrap {
+                                .form-btn {
+                                    width: 100%;
+                                    font-size: $font-l;
+                                    margin-bottom: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 375px) {
+    // FORM SECTION START
+    .form-banner-container {
+        .overlay {
+            justify-content: center;
+            align-items: flex-start;
+
+            .form-close {
+                top: 5px;
+                right: 5px;
+                z-index: 10;
+            }
+            .form-wrapper {
+                position: relative;
+                width: 97%;
+                height: 97vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .form-container {
+                    .form-content {
+                        height: 90%;
+                        grid-template-columns: repeat(1, 1fr);
+                        grid-template-areas: 
+                            'f1'
+                            'f2'
+                            'f3'
+                            'f4'
+                            'f5'
+                            'f6'
+                            'f7'
+                            'f8'
+                            'f9'
+                            'f10'
+                            'f11'
+                        ;
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+
+                        div {
+                            .custom-select {
+                                select {
+                                    text-align: left;
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
+                            label {
+                                font-size: $font-s;
+                            }
+                            input {
+                                text-align: left;
+                                font-size: $font-l;
+                            }
+                            select {
+                                text-align: left;
+                                font-size: $font-l
+                            }
+                            .agree-container {
+                                input[type="checkbox"] {
+                                    width: 25px;
+                                    height: 25px;
+                                }
+                                p {
+                                    font-size: $font-vs;
+                                    width: 90%;
+                                    margin-left: 5%;
+                                    margin-right: 5%;
+                                }
+                            }
+                            .form-btn-wrap {
+                                .form-btn {
+                                    width: 100%;
+                                    font-size: $font-l;
+                                    margin-bottom: 10px;
+                                }
+                            }
+                        }
+                    }
+                    .summary-wrapper {
+                        .summary-content {
+                            div {
+                                .summary-cell-customer {
+                                    span {
+                                        .label {
+                                            font-size: $font-vs;
+                                        }
+                                        div:nth-child(2) {
+                                            div {
+                                                font-size: $font-vs;
+                                                color: red;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 360px) {
+    // FORM SECTION START
+    .form-banner-container {
+        .overlay {
+            justify-content: center;
+            align-items: flex-start;
+
+            .form-close {
+                top: 5px;
+                right: 5px;
+                z-index: 10;
+            }
+            .form-wrapper {
+                position: relative;
+                width: 97%;
+                height: 97vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .form-container {
+                    .form-content {
+                        height: 90%;
+                        grid-template-columns: repeat(1, 1fr);
+                        grid-template-areas: 
+                            'f1'
+                            'f2'
+                            'f3'
+                            'f4'
+                            'f5'
+                            'f6'
+                            'f7'
+                            'f8'
+                            'f9'
+                            'f10'
+                            'f11'
+                        ;
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+
+                        div {
+                            .custom-select {
+                                select {
+                                    text-align: left;
+                                    text-align: center;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                option {
+                                    text-align: center
+                                }
+                            }
+                            label {
+                                font-size: $font-s;
+                            }
+                            input {
+                                text-align: left;
+                                font-size: $font-l;
+                            }
+                            select {
+                                text-align: left;
+                                font-size: $font-l
+                            }
+                            .agree-container {
+                                input[type="checkbox"] {
+                                    width: 25px;
+                                    height: 25px;
+                                }
+                                p {
+                                    font-size: $font-vs;
+                                    width: 90%;
+                                    margin-left: 5%;
+                                    margin-right: 5%;
+                                }
+                            }
+                            .form-btn-wrap {
+                                .form-btn {
+                                    width: 100%;
+                                    font-size: $font-l;
+                                    margin-bottom: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // FORM SECTION END
+}
+// PORTRAIT ORIENTATION END

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "klevatin-business",
+  "private_key_id": "a5225b4b862246b46fa651a886dfabe75e10e98b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDEMxP3GvocETYB\n+H+mmj2jDaQwF9ff3UAseBje3E6IkErp4YtF8Ss9MlANOoRsul70LIZMMWQFiQEj\n+59FdxAPp1UvVTK2oSWzehVGVqeEW7uJN7H1KkccpK6XOnh3282EJGe70FLIxGvO\nyCJ5y1TPScD93eoTn1dIn1xV+RpVqtGYR8EuQepZX2hOjYvAYmo6K8wlE/tx+GlR\nIpAFpB1X1dXOPRhxRCO52FByKZ3koZ4NPJ0eZXmohxWgJAQp1+m6AsExB0LqLeA5\nbu9k/Z2nfESO8yxhaf606aHzpPx2j6WP5pZcalMOz4/qyDDBMVT9bELU5eblu3P3\nGNAdI54fAgMBAAECggEALGQSJFqqNCeAvLloyF0ljPrNJ0R9x1zb5DPYDLRz4Fol\nWP168Xw7eEEl85hF1gPk8AIS8LJMGySAaY/I3YKu05vcnjT8oG2dhhodLij1BfFr\nYQSE8x95r3VjOzwzfYrx2PATuF7OHDa03bhSdJQYwD3DuKy5BW+L5BaKYblWyALU\ns3jf3HrqxGeTNpVes/7VijpLH1t71vaPOPR1O74L6C7V7ngLO6xGr5bLrKl1yKhs\nhJ+DTTQXTJcFTGvSgFl6AN9wdXywIJXXzyzb+L0/pv58vG5h7uX7petkUyNa5br/\nTlWCYbjQqGl9VBshssgWTvRz7kbpJHckdAIvi8OLgQKBgQDj4yvLGMkp9AnY1GwW\ndI1zZWvADvpxiIbi+ZGOmdVD9jVTvAECqVht2wCRALjiUlPPWwaocG9++unvHewe\nlaFasDOU18eFk54kHlqsmHo2WUMKFg6FcqVarckP+urdB0FqV39ZEpDNjEMpvMj6\nqyg/g5rZjcYX5pXOjIM9TLt9TwKBgQDcZy8aG+pL+Y/9lpKfd6hTa5OwNcCsmyih\nWjI4Llu8D+IlcPLsNmxBt2J/x9AhHrsbVUHnehu+3JpJUuTWhW9acberm4Z/Kdi5\nDLQTvg8aKblEgSBYziyHpX66MGTM5B6zf0/0To8+FQ23OhL/+u8HrkE8exOGtAGm\nmuEzRcC+MQKBgQC8u9b4NIXeJgvFtV/zVQIVUSjk/kKyppS4BGNli8gRqiZOPAVG\nNARVrywP614zqmVY9RVViRD+REZcUBbO2bOxjP6bRf4rha9SUIVeLkYBHvojr1LF\neMazi/xaLMA44BpwPRjuJy8f3Qt+1KhK2lfSCmfDx+QIxWLKlprWuOcKhwKBgBUQ\n57efI23PlKuwUKNdVIFkruEQwjG9QszpShOEmtAG1J6vhQh+yyoc1RVRi9sejNO3\n+mydhzle7IBFpAm9Bz+lzuBgJSLSZRyK0ktwxxDBHCwoC2dxjWAJuWsiZQAQbb7K\nVGINgDN237C7pEVDPsWFKkcVnHArlFzQQOYdrKaBAoGAezyDwnmCDPtGxbmT8b2K\ncNr+G7og16lyLTI8jMG188I6/4BYKIbxhSI8uStTyO8bZE/9+VIp3FJ34q76IRm/\nUK+bN42jsfd1OxPfm7le9+pmaD/LeMxaUINFppTXxsCKtJo1tn+Ou4CTUoMEHSQx\n7Zn/uRdKz7Y+M8DTYPDpVhA=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-awstw@klevatin-business.iam.gserviceaccount.com",
+  "client_id": "115625876375972510802",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-awstw%40klevatin-business.iam.gserviceaccount.com"
+}

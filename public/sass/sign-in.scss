@@ -1,0 +1,593 @@
+@import "./reset.scss";
+@import "./variables.scss";
+
+
+.logo-wrapper {
+    position: fixed;
+    top: 0px;
+    left: 20px;
+    width: 70px;
+    height: 70px;
+    background: grey;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div {
+        background-image: url("../img/logo/logo.webp");
+        background-size: cover;
+        @include background-initializer;
+        width: 60px;
+        height: 60px;
+    }
+}
+.sign-in-overlay {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    @include background-initializer;
+    background-size: cover;
+    background-image: url("../img/index/banner/new-banner.webp");
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    .signIn-wrapper {
+        position: relative;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.585);
+        backdrop-filter: blur(10px);
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        div {
+            position: relative;
+        }
+        .sign-image-wrap {
+            position: relative;
+            width: 90px;
+            height: 90px;
+            @include border-circle;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            div {
+                position: relative;
+                top: 0px;
+                left: 0px;
+                @include border-circle;
+                width: 80px;
+                height: 80px;
+                background: grey;
+                font-size: 16px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                div {
+                    font-size: 40px;
+                    font-weight: 550;
+                }
+                .image-user {
+                    @include border-circle;
+                    @include background-initializer;
+                    background-size: contain;
+                    width: 70px;
+                    height: 70px;
+                }
+                .image-text {
+                    @include border-circle;
+                    @include background-initializer;
+                    background-size: contain;
+                    background-image: url("../img/icons/user.png");
+                    z-index: 2;
+                }
+                .image-text.change {
+                    @include border-circle;
+                    @include background-initializer;
+                    background-size: contain;
+                    background-image: url("../img/icons/key.png");
+                    z-index: 2;
+                }
+            }
+        }
+        .signIn-header {
+            font-size: $font-xl;
+            margin-top: $margin-vs;
+        }
+        .error-alert-wrap {
+            position: relative;
+            top: 0px;
+            background: rgb(199, 3, 3);
+            padding: 5px;
+            font-size: $font-s;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: $margin-xvs;
+            opacity: 0;
+            visibility: hidden;
+            //display: none;
+            @include trans-05s;
+
+            div {
+                position: relative;
+            }
+            .alert-icon {
+                position: relative;
+                width: 30px;
+                height: 30px;
+                background: white;
+                margin-right: 10px;
+                @include background-initializer;
+                background-size: cover;
+                object-fit: cover;
+                background-image: url("../img/svg/error.svg");
+                @include border-circle;
+            }
+            .error-message {
+                margin-right: 10px;
+            }
+            .error-message::first-letter {
+                text-transform: uppercase;
+            }
+        }
+        .error-alert-wrap.color-change {
+            background: green;
+        }
+        .error-alert-wrap.show {
+            opacity: 1;
+            visibility: visible;
+            //display: block;
+            @include trans-05s;
+        }
+        .form-page-wrap {
+            .signIn-content {
+                margin-top: $margin-vs;
+                display: none; // will be remove later
+                @include trans-05s;
+    
+                .signIn-container {
+                    position: relative;
+    
+                    div {
+                        position: relative;
+                        display: flex;
+                        justify-content: flex-start;
+                        flex-direction: column;
+                        align-items: center;
+                        margin-top: 3px;
+                        overflow: hidden;
+                        box-sizing: border-box;
+    
+                        .input {
+                            padding: 10px 50px;
+                            outline: none;
+                            border: none;
+                            font-size: 16px;
+                            font-weight: 550;
+                        }
+                        input[type="submit"] {
+                            padding: 20px 30px 20px 30px;
+                        }
+                        .input::first-letter {
+                            text-transform: uppercase;
+                        }
+                        .label-icon {
+                            position: absolute;
+                            top: 0px;
+                            left: 0px;
+                            width: 35px;
+                            height: 100%;
+                            background: grey;
+                            margin-top: 0px;
+    
+                            div {
+                                position: relative;
+                                width: 30px;
+                                height: 30px;
+                                @include background-initializer;
+                                background-size: cover;
+                                object-fit: cover;
+                            }
+                            .icon-user {
+                                background-image: url("../img/icons/user.png");
+                            }
+                            .icon-email {
+                                background-image: url("../img/icons/email.png");
+                            }
+                            .icon-password {
+                                background-image: url("../img/icons/key.png");
+                            }
+                        }
+                        .label-icon::before {
+                            content: "";
+                            position: absolute;
+                            top: 0px;
+                            right: 0px;
+                            height: 100%;
+                            width: 5px;
+                            background: red;
+                        }
+                        .pass-error {
+                            font-size: $font-vs;
+                            background: red;
+                            padding: 5px;
+                        }
+                        .s-error {
+                            display: none;
+                        }
+                        .s-error.show {
+                            display: block;
+                        }
+                    }
+                    .validate-color.green .label-icon::before {
+                        background: green;
+                    }
+                    .validate-color.yellow .label-icon::before {
+                        background: yellow;
+                    }
+                    .alt-logIn-wrap {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: $margin-s;
+    
+                        div {
+                            position: relative;
+                            margin-left: 30px;
+                        }
+                        .alt-btn {
+                            width: 40px;
+                            height: 40px;
+                            background: white;
+                            @include background-initializer;
+                            background-size: cover;
+                            object-fit: cover;
+                            @include border-circle;
+                            cursor: pointer;
+                        }
+                        .goggle-btn {
+                            background-image: url("../img/svg/goggle.svg")
+                        }
+                    }
+                    div:nth-child(6) {
+                        margin-top: $margin-vs;
+                    }
+                    div:nth-child(7) {
+                        margin-top: $margin-vs;
+                    }
+                    .back-arrow-wrap {
+                        margin-top: $margin-s;
+                        width: 50px;
+                        height: 50px;
+                        background: white;
+                        @include border-circle;
+                        float: right;
+                        cursor: pointer;
+    
+                        div {
+                            position: relative;
+                            width: 45px;
+                            height: 45px;
+                            background:grey;
+                            cursor: pointer;
+                            background-image: url("../img/icons/back-arrow.png");
+                            @include background-initializer;
+                            background-size: cover;
+                            object-fit: cover;
+                            @include rotate-right;
+                        }
+                    }
+                    
+                }
+            }
+            .signIn-content.collapse {
+                display: block;
+                @include trans-05s;
+            }
+            .logIn-content {
+                margin-top: $margin-vs;
+                display: block;
+                @include trans-05s;
+    
+                .logIn-container {
+                    position: relative;
+    
+                    .l-hidden {
+                        display: flex;
+                    }
+                    .l-hidden.show {
+                        display: none;
+                    }
+    
+                    div {
+                        position: relative;
+                        display: flex;
+                        justify-content: flex-start;
+                        flex-direction: column;
+                        align-items: center;
+                        margin-top: 3px;
+                        overflow: hidden;
+                        box-sizing: border-box;
+    
+                        .input {
+                            padding: 10px 50px;
+                            outline: none;
+                            border: none;
+                            font-size: 16px;
+                            font-weight: 550;
+                        }
+                        input[type="submit"] {
+                            padding: 20px 30px 20px 30px
+                        }
+                        .input::first-letter {
+                            text-transform: uppercase;
+                        }
+                        .label-icon {
+                            position: absolute;
+                            top: 0px;
+                            left: 0px;
+                            width: 35px;
+                            height: 100%;
+                            background: grey;
+                            margin-top: 0px;
+                            z-index: 2;
+    
+                            div {
+                                position: relative;
+                                width: 30px;
+                                height: 30px;
+                                @include background-initializer;
+                                background-size: cover;
+                                object-fit: cover;
+                            }
+                            .icon-email {
+                                background-image: url("../img/icons/email.png");
+                            }
+                            .icon-password {
+                                background-image: url("../img/icons/key.png");
+                            }
+                        }
+                        .label-icon::before {
+                            content: "";
+                            position: absolute;
+                            top: 0px;
+                            right: 0px;
+                            height: 100%;
+                            width: 5px;
+                            background: red;
+                        }
+                        .l-hidden {
+                            display: flex;
+                        }
+                        .l-hidden.show {
+                            display: none;
+                        }
+                    }
+                    div:nth-child(6) {
+                        margin-top: $margin-vs;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: $font-vs;
+    
+                        span {
+                            position: relative;
+                            margin: 5px;
+                        }
+                        .logIn-btn {
+                            padding: 10px;
+                            background: red;
+                            margin: 4px;
+                            @include border-20;
+                            box-sizing: border-box;
+                            cursor: pointer;
+                        } 
+                    }
+                    .validate-color.green .label-icon::before {
+                        background: green;
+                    }
+                    .validate-color.yellow .label-icon::before {
+                        background: yellow;
+                    }
+                    .logIn-submit-wrap {
+                        margin-top: $margin-vs;
+    
+                        .l-visible {
+                            display: none;
+                        }
+                        .l-visible.show {
+                            display: flex;
+                        }
+                    }
+                    .reset-password-wrap {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: $margin-vs;
+    
+                        div {
+                            position: relative;
+                            font-size: $font-vs;
+                        }
+                        .reset-pass-btn {
+                            background: red;
+                            padding: 10px;
+                            margin: 4px;
+                            @include border-20;
+                            box-sizing: border-box;
+                            cursor: pointer;
+                        }
+                    }
+                    .alt-logIn-wrap {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: $margin-s;
+    
+                        div {
+                            position: relative;
+                            margin: 5px;
+                        }
+                        .alt-btn {
+                            width: 40px;
+                            height: 40px;
+                            background: white;
+                            @include background-initializer;
+                            background-size: cover;
+                            object-fit: cover;
+                            @include border-circle;
+                            cursor: pointer;
+                        }
+                        .goggle-btn {
+                            background-image: url("../img/svg/goggle.svg");
+                        }
+                        .facebook-btn {
+                            background-image: url("../img/svg/facebook.svg");
+                        }
+                        .twitter-btn {
+                            background-image: url("../img/svg/twitter.svg");
+                        }
+                        .apple-btn {
+                            background-image: url("../img/svg/apple.svg");
+                        }
+                    }
+                    .back-arrow-wrap-reset {
+                        margin-top: $margin-s;
+                        width: 50px;
+                        height: 50px;
+                        background: white;
+                        @include border-circle;
+                        float: right;
+                        cursor: pointer;
+    
+                        div {
+                            position: relative;
+                            width: 45px;
+                            height: 45px;
+                            background:grey;
+                            cursor: pointer;
+                            background-image: url("../img/icons/back-arrow.png");
+                            @include background-initializer;
+                            background-size: cover;
+                            object-fit: cover;
+                            @include rotate-right;
+                        }
+                    }
+                    .l-visible {
+                        display: none;
+                    }
+                    .l-visible.show {
+                        display: flex;
+                    }
+                }
+            }
+            .logIn-content.show {
+                display: none;
+                @include trans-05s;
+            }
+        }
+        .notification-wrapper {
+            position: fixed;
+            bottom: 0px;
+            width: 80%;
+            background: rgb(202, 6, 6);
+            padding: 10px;
+            text-align:  center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include transformY(100px);
+            @include trans-05s;
+            
+            .alert-icon {
+                position: relative;
+                width: 30px;
+                height: 30px;
+                background: white;
+                margin-right: 10px;
+                @include background-initializer;
+                background-size: cover;
+                object-fit: cover;
+                background-image: url("../img/svg/error.svg");
+                @include border-circle;
+            }
+        }
+        .notification-wrapper.show {
+            @include transformY(0px);
+            @include trans-05s;
+        }
+    }
+}
+/*.sign-in-overlay.collapse {
+    @include shrink-out;
+    @include trans-01s;
+    opacity: 1;
+    display: flex;
+}*/
+.verification-alert-wrap {
+    position: fixed;
+    top: 50px;
+    left: 0px;
+    width: 100%;
+    padding: 1px;
+    background: rgba(255, 0, 0, 0.596);
+    z-index: 20;
+    //display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $font-s;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    display: none;
+    opacity: 0;
+
+    div {
+        position: relative;
+        margin: 5px;
+    }
+    div:nth-child(1) {
+        width: 25px;
+        height: 25px;
+        background: white;
+        background-image: url("../img/svg/alert-red.svg");
+        background-size: cover;
+        @include background-initializer;
+    }
+    .verify-btn {
+        padding: 5px 15px 5px 15px;
+        border: 2px solid white;
+        @include border-20;
+        @include trans-01s;
+        display: block;
+    }
+    .verify-btn.active {
+        display: none;
+    }
+    .verify-btn:hover {
+        background: rgba(255, 0, 0, 0.715);
+        @include trans-01s;
+    }
+}
+.verification-alert-wrap.color {
+    background: green;
+}
+.verification-alert-wrap.collapse {
+    display: flex;
+    @include trans-01s;
+    @include shrink-out;
+    opacity: 1;
+}

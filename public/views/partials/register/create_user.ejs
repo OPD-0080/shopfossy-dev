@@ -1,0 +1,27 @@
+<form method="post" action="/create_user" class="signIn-container">
+    <div class="validate-color">
+        <div class="label-icon"><div class="icon-user"></div></div>
+        <input type="text" name="user_name" class="input validate-signIn input-tags user-name" placeholder="User Name" minlength="3" required autocomplete="off">
+    </div>
+    <div class="validate-color">
+        <div class="label-icon"><div class="icon-email"></div></div>
+        <input type="email" name="email" class="input validate-signIn input-tags email s-email" placeholder="Email" required autocomplete="off">
+    </div>
+    <div class="validate-color">
+        <div class="label-icon"><div class="icon-password"></div></div>
+        <input type="password" name="new_password" class="input validate-signIn input-tags password" placeholder="Password" minlength="3" required autocomplete="off">
+    </div>
+    <div class="validate-color">
+        <div class="label-icon"><div class="icon-password"></div></div>
+        <input type="password" name="confirm_password" class="input validate-signIn input-tags confirm-password s-pass" placeholder="Confirm Password" minlength="3" required autocomplete="off">
+        <div class="pass-error s-error"></div>
+    </div>
+    <div>
+        <input type="submit" value="SignIn" class="input submitButtons">
+    </div>
+    <div class="alt-logIn-wrap">
+        <div> Or </div>
+        <div class="alt-btn goggle-btn"></div>
+    </div>
+    <div class="back-arrow-wrap l-hidden"><div class="back-arrow"></div></div>
+</form>

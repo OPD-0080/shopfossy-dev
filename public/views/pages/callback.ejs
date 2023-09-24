@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Shopfossy | Callback </title>
+
+    <link rel="stylesheet" href="./css/callback.css">
+</head>
+<body>
+    <div class="logo"></div>
+    <div class="banner-container"><div class="banner-text">... Redirecting To Home Page ...</div></div>
+    <form action="/redirectURL" method="post">
+        <input type="submit">
+    </form>
+    <script>
+        const overlay = document.querySelector("form");
+        const submit = document.querySelector("input");
+        overlay.style.visibility = "hidden";
+        setTimeout(() => {
+            submit.click()
+        }, 3000);
+    </script>
+</body>
+</html>

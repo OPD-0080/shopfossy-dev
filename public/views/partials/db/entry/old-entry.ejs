@@ -1,0 +1,301 @@
+<!------------- RECENT ORDER ------------------->
+<!--
+<div class="update-order">           
+    <div class="customer-header">
+        <h3> Updates </h3>
+        
+        <div class="color-indicator">
+            <!--<div>Very New</div>
+            <div>Very New</div>
+            <div>Old</div>
+        </div>
+        
+    </div>
+    <div class="order-update-content">
+        <div class="update-container">
+            <!-----EJS CODE ----
+            <%# if (update !== null || update !== "undefined") { %>
+                <%# if (update.container.storage.length !== 0) { %>
+                    <%# update.container.storage.map(a => { %>
+                        <%# update.container.ordered_storage.sort().reverse().map(b => { %>
+                            <%# if (a.checkout_code == b.checkout_code) { %>
+                                <%# const c = update.container.storage.find(data => {return data.checkout_code == b.checkout_code}) %> 
+                                <%# const d = update.container.ordered_storage.find(data => {return data.checkout_code == a.checkout_code}) %> 
+                                <%# const notification = [{c, d}] %>
+
+                                <%# notification.forEach(data=> { %>
+                                    <div class="row">
+                                        <div class="de color-client" notification-id="<%#- data.c.checkout_code %>" tag-time="<%#- data.c.time_created %>"></div>
+                                        <div class="de-message">
+                                            <p> 
+                                                <em><%#- data.c.first_name %> <%#- data.c.last_name %></em> has make an order of <em><%#- data.d.price.split(",").length %> </em> item(s)
+                                            </p>
+                                            <div>
+                                                <div class="de-time"> <%#- data.c.time_created %> </div> || <div class="de-date"> <%#- data.c.date_created %> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <%# }) %>
+                            <%# } %>
+                        <%# }) %> 
+                    <%# }) %> 
+                <%# } else { %>
+                    <div class="no-update-wrapper">
+                        <ul><li class="i"></li><li> No Data Entry Update </li></ul>
+                    </div>
+                <%# } %> 
+            <%# } %>
+            <!---------------------------
+        </div>
+    </div>
+</div>
+-->
+<!------------------------------------------------->
+<!-------------PREVIEW  AND  SUBMIT SECTION  ------------->
+<div class="preview-submit-wrapper">
+    <div class="preview-submit-comntainer">
+        <form action="" method="POST" class="form-preview-submit" id="form-preview-submit">
+            <h3> Preview </h3>
+            <div class="preview-close-btn"><div class="i"></div></div>
+            <div class="preview-content-wrapper">
+                <div class="preview-content-container">
+                    <!------------- EJS CODES SECTION  -------------------->
+                    <% if (databasePreview !== undefined || databasePreview !== null) { %>
+                        <% if (databasePreview == "404") { %>
+                            <div class="preview-empty-content">
+                                <div class="empty-preview"> Data is Empty </div>
+                            </div>
+                        <% } else { %>
+                            <div class="show-preview-wrap">
+
+                                
+                                <div class="preview-headers">
+                                    <div>
+                                        <div class="preview-collapse"></div>
+                                        <h5> Company Name </h5>
+                                        <div class="i file-icon"><div></div></div>
+                                    </div>
+                                    <div class="sub-headers">
+                                        <ul>
+                                            <li> Total : <span> 60 </span></li>
+                                            <li> Pending : <span> 40 </span></li>
+                                            <li> Remainig : <span> 20 </span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="show-preview-content">
+                                    <div class="show-content show-main-content" id="show-main-content">
+                                        <div class="show-content-headers">
+                                            <div class="preview-collapse" data-arrow="main"></div>
+                                            <h5> Main </h5>
+                                        </div>
+                                        <div class="show-data-content">
+                                            <div class="show-data-image"><div class="i"><img src="" alt=""></div></div>
+                                            <ul class="show-data show-data-main" data-content="main">
+                                                <li> Key :  <span> value </span></li>
+                                                <li> Key :  <span> value </span></li>
+                                                <li> Key :  <span> value </span></li>
+                                                <li> Key :  <span> value </span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+                    <% } %>
+                    <!---------------------------------------------------->
+                </div>
+            </div>
+
+
+            <button class="preview-submit-btn"> Submit To Database </button>
+        </form>
+    </div>
+</div>
+<!------------------------------------------------------->    
+<!------------- ENTRIES SECTION ------------------->
+<div class="db-wrapper">  
+    <form action="" method="post" class="db-container" enctype="multipart/form-data">
+        <!------- FOR MENU SECTION -------------->
+        <div class="db-menu-container">
+            <div class="db-menu">
+                <ul class="menu">
+                    <li class="db-swicth-route-url-wrap">
+                        <select class="select-tags cc-switch-url" id="select-router-url">
+                            <option value=""> Select Route </option>
+                            <option value="cc-createData"> Create Data </option>
+                            <option value="cc-modifyData"> Modify Data </option>
+                            <option value="cc-deleteData"> Delete Data </option>
+                        </select>
+                    </li>
+                    <li class="db-menu-tables-wrap">
+                        <select class="select-tags cc_company" id="select-company">
+                        
+                        </select>
+                    </li>
+                    <li class="db-buttons db-preview-btn"><button class="save-btn" id="save-btn"> Save </button></li>
+                    <li><div class="preview-btn" id="preview-btn"> Preview </div></li>
+                </ul>
+            </div>
+        </div>
+        <!---------------------------------------->
+        <!--------- FOR SINGLE COMPANY ------------>
+        <div class="db-entry-wrapper">
+            <div class="db-entry-container">
+                <div class="db-alert"><div class="i"></div><div class="db-alert-text"></div></div>
+                <!---------  FORM  ----------------------->
+                <div class="db-entries">
+                    <!----------- UPLOADING IMAGES  -------------------->
+                    <div class="entry-row entry-photo-wrap">
+                        <div class="db-heading">
+                            <h3>Upload Photo's</h3>
+                            <div class="upload-switch"> switch </div>
+                        </div>
+                        <div class="row entry-photo-preview">
+                            <div class="photo-upload-cover">
+                                <div class="upload-input"><input type="file" name="cc_upload_image" id="photo-upload" multiple></div>
+                                <div class="upload-content">
+                                    <div>Upload Images (6 max)</div><div id="i"></div>
+                                </div>
+                            </div>
+                            <ul class="photos">
+                            </ul>
+                        </div>
+                        <input type="" class="row entry-photo-btn" >
+                    </div>
+                    <!---------------------------------------------------------->
+                    <!---------------- ENTRIES ------------------------------->
+                    <div class="entry-row entry-content-wrap">
+                        <div class="db-heading">
+                            <h3>Entries</h3>
+                            <div class="file-ids-wrap">
+                                <div> File Data #: </div>
+                                <div class="file-num"> 50 </div>
+                            </div>
+                        </div>
+                        <div class="entry-content-container">
+                            <div class="entry">
+                                <div>
+                                    <label for="uid"> UID </label>
+                                    <select class="cc_uid" name="uid" id="uid">
+                                        
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="title"> Cover Title </label>
+                                    <input type="text" name="title" class="entry-input" id="title" minlength="3" maxlength="50">
+                                </div>
+                                <div>
+                                    <!---(READ ONLY MODE) auto fill in constantly after selected company opts -->
+                                    <label for="seller"> Seller </label>
+                                    <input type="text" name="seller" class="entry-input" id="seller" readonly>
+                                </div>
+                                <div>
+                                    <label for="price"> Unit Price (GHc) </label>
+                                    <input type="text" name="price" class="entry-input" id="price" maxlength="5">
+                                </div>
+                                <div>
+                                    <label for="PriceDel"> Reduced Price (Optional) </label>
+                                    <input type="text" name="priceDel" class="entry-input" id="priceDel" maxlength="5">
+                                </div>
+                                <div> <!-- auto select by math using price range after entering UNIT PRICE (READ ONLY MODE) -->
+                                    <label for="priceFtr"> Price Range </label>
+                                    <input type="text" name="priceFtr" class="entry-input" id="priceFtr" maxlength="2"readonly>
+                                </div>
+                                <div>
+                                    <label for="starRated"> Star Rated </label>
+                                    <select name="starRated" id="starRated">
+                                        <option value=""> Select Opt </option>
+                                        <option value="0"> 0 </option>
+                                        <option value="1"> 1 </option>
+                                        <option value="2"> 2 </option>
+                                        <option value="3"> 3 </option>
+                                        <option value="4"> 4 </option>
+                                        <option value="5"> 5 </option>
+                                    </select>
+                                </div>
+
+                                <div> <!-- auto fill with value "all" (READ ONLY MODE) -->
+                                    <label for="categoryAll"> Category </label>
+                                    <input type="text" name="categoryAll" class="entry-input" id="categoryAll" value="all" maxlength="20" readonly>
+                                </div>
+                                <div>
+                                    <label for="subCategory"> Item Type </label>
+                                    <select class="cc_subCategory" name="subCategory" id="subCategory">
+                                       
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="stockStatus"> Stock Status </label>
+                                    <select name="stockStatus" id="stockStatus">
+                                        <option value=""> Select Opt </option>
+                                        <option value="low"> Low </option>
+                                        <option value="medium"> Medium </option>
+                                        <option value="high"> High </option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="madeBy"> Item Made-By </label>
+                                    <select class="cc_madeBy" name="madeBy" id="madeBy">
+                                        
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="material"> Material Type </label>
+                                    <input type="text" name="material" class="entry-input" id="material" maxlength="20">
+                                </div>
+                                <div>
+                                    <label for="dimension"> Item Dimension(s) </label>
+                                    <input type="text" name="dimension" class="entry-input" id="dimension" maxlength="50">
+                                </div>
+                                <div>
+                                    <label for="shipCost"> Shipment Cost Status </label>
+                                    <input type="text" name="shipCost" class="entry-input" id="shipCost" maxlength="5" readonly>
+                                </div>
+                                <div>
+                                    <label for="returnStatus"> Item Returned Status </label>
+                                    <select name="returnStatus" id="returnStatus">
+                                        <option value=""> Select Opt </option>
+                                        <option value="accepted"> Accepted </option>
+                                        <option value="not accpeted"> Not Accepted </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="des-entries">
+                                <div>
+                                    <label for="description"> Description Summary </label>
+                                    <textarea name="description" class="entry-input" id="description" cols="10" rows="3" maxlength="250"></textarea>
+                                </div>
+                                <div class="tables-entries-wrap">
+                                    <table class="table-row">
+                                        <label for=""> Table Description Details </label>
+                                        <thead>
+                                            <th></th>
+                                            <th> Parameters </th>
+                                            <th> Details </th>
+                                        </thead>
+                                        <tbody class="table-columns-container">
+                                            
+                                        </tbody>
+                                    </table>
+                                    <div class="table-btns"> 
+                                        <div class="table-addon-btn"><div class="tb-addon i-a"></div></div>
+                                        <div class="table-delete-btn"><div class="tb-delete i-d"></div></div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!------------------------------------------------------------->
+                </div>
+                <!-------------------------------------------->
+                <!---------- MODIFY DATA --------------------->
+
+                <!--------------------------------------------->
+                
+            </div>
+        </div>
+        <!---------------------------------------->
+    </form>
+</div>

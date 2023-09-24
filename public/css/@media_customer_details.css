@@ -1,0 +1,627 @@
+@media screen and (max-width: 896px) {
+  .form-banner-container .overlay .form-close {
+    top: 5px;
+    right: 5px;
+    z-index: 10;
+  }
+  .form-banner-container .overlay .form-wrapper {
+    width: 85%;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 85%;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: left;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
+    font-size: 13px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container p {
+    font-size: 11px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .form-btn-wrap .form-btn {
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 869px) {
+  .form-banner-container .overlay .form-close {
+    top: 5px;
+    right: 5px;
+    z-index: 10;
+  }
+  .form-banner-container .overlay .form-wrapper {
+    width: 85%;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 85%;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: left;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
+    font-size: 13px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container p {
+    font-size: 11px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .form-btn-wrap .form-btn {
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 812px) {
+  .form-banner-container .overlay .form-close {
+    top: 5px;
+    right: 5px;
+    z-index: 10;
+  }
+  .form-banner-container .overlay .form-wrapper {
+    width: 85%;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 85%;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: left;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
+    font-size: 13px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container p {
+    font-size: 11px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .form-btn-wrap .form-btn {
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 740px) {
+  .form-banner-container .overlay .form-close {
+    top: 5px;
+    right: 5px;
+    z-index: 10;
+  }
+  .form-banner-container .overlay .form-wrapper {
+    width: 85%;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 85%;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: left;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
+    font-size: 13px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container p {
+    font-size: 11px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .form-btn-wrap .form-btn {
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 736px) {
+  .form-banner-container .overlay .form-close {
+    top: 5px;
+    right: 5px;
+    z-index: 10;
+  }
+  .form-banner-container .overlay .form-wrapper {
+    width: 85%;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 85%;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: left;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
+    font-size: 13px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container p {
+    font-size: 11px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .form-btn-wrap .form-btn {
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 667px) {
+  .form-banner-container .overlay .form-close {
+    top: 5px;
+    right: 5px;
+    z-index: 10;
+  }
+  .form-banner-container .overlay .form-wrapper {
+    width: 85%;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 85%;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: left;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
+    font-size: 13px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container p {
+    font-size: 11px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .form-btn-wrap .form-btn {
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .form-banner-container .overlay .form-close {
+    top: 5px;
+    right: 5px;
+    z-index: 10;
+  }
+  .form-banner-container .overlay .form-wrapper {
+    width: 85%;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 85%;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: left;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
+    font-size: 13px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container p {
+    font-size: 11px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .form-btn-wrap .form-btn {
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 540px) {
+  .form-banner-container .overlay {
+    justify-content: center;
+    align-items: center;
+  }
+  .form-banner-container .overlay .form-close {
+    top: 5px;
+    right: 5px;
+    z-index: 10;
+  }
+  .form-banner-container .overlay .form-wrapper {
+    position: relative;
+    width: 97%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content {
+    height: 90%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "f1" "f2" "f3" "f4" "f5" "f6" "f7" "f8" "f9" "f10" "f11";
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: left;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
+    font-size: 13px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div input {
+    text-align: left;
+    font-size: 16px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div select {
+    text-align: left;
+    font-size: 16px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type=checkbox] {
+    width: 25px;
+    height: 25px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container p {
+    font-size: 11px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .form-btn-wrap .form-btn {
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .form-banner-container .overlay {
+    justify-content: center;
+    align-items: center;
+  }
+  .form-banner-container .overlay .form-close {
+    top: 5px;
+    right: 5px;
+    z-index: 10;
+  }
+  .form-banner-container .overlay .form-wrapper {
+    position: relative;
+    width: 97%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content {
+    height: 90%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "f1" "f2" "f3" "f4" "f5" "f6" "f7" "f8" "f9" "f10" "f11";
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: left;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
+    font-size: 13px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div input {
+    text-align: left;
+    font-size: 16px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div select {
+    text-align: left;
+    font-size: 16px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type=checkbox] {
+    width: 25px;
+    height: 25px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container p {
+    font-size: 11px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .form-btn-wrap .form-btn {
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 414px) {
+  .form-banner-container .overlay {
+    justify-content: center;
+    align-items: center;
+  }
+  .form-banner-container .overlay .form-close {
+    top: 5px;
+    right: 5px;
+    z-index: 10;
+  }
+  .form-banner-container .overlay .form-wrapper {
+    position: relative;
+    width: 97%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content {
+    height: 90%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "f1" "f2" "f3" "f4" "f5" "f6" "f7" "f8" "f9" "f10" "f11";
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: left;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
+    font-size: 13px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div input {
+    text-align: left;
+    font-size: 16px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div select {
+    text-align: left;
+    font-size: 16px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type=checkbox] {
+    width: 25px;
+    height: 25px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container p {
+    font-size: 11px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .form-btn-wrap .form-btn {
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 412px) {
+  .form-banner-container .overlay {
+    justify-content: center;
+    align-items: center;
+  }
+  .form-banner-container .overlay .form-close {
+    top: 5px;
+    right: 5px;
+    z-index: 10;
+  }
+  .form-banner-container .overlay .form-wrapper {
+    position: relative;
+    width: 97%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content {
+    height: 90%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "f1" "f2" "f3" "f4" "f5" "f6" "f7" "f8" "f9" "f10" "f11";
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: left;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
+    font-size: 13px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div input {
+    text-align: left;
+    font-size: 16px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div select {
+    text-align: left;
+    font-size: 16px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type=checkbox] {
+    width: 25px;
+    height: 25px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container p {
+    font-size: 11px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .form-btn-wrap .form-btn {
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .form-banner-container .overlay {
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .form-banner-container .overlay .form-close {
+    top: 5px;
+    right: 5px;
+    z-index: 10;
+  }
+  .form-banner-container .overlay .form-wrapper {
+    position: relative;
+    width: 97%;
+    height: 97vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content {
+    height: 90%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "f1" "f2" "f3" "f4" "f5" "f6" "f7" "f8" "f9" "f10" "f11";
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: left;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
+    font-size: 13px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div input {
+    text-align: left;
+    font-size: 16px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div select {
+    text-align: left;
+    font-size: 16px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type=checkbox] {
+    width: 25px;
+    height: 25px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container p {
+    font-size: 11px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .form-btn-wrap .form-btn {
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div .summary-cell-customer span .label {
+    font-size: 11px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div .summary-cell-customer span div:nth-child(2) div {
+    font-size: 11px;
+    color: red;
+  }
+}
+@media screen and (max-width: 360px) {
+  .form-banner-container .overlay {
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .form-banner-container .overlay .form-close {
+    top: 5px;
+    right: 5px;
+    z-index: 10;
+  }
+  .form-banner-container .overlay .form-wrapper {
+    position: relative;
+    width: 97%;
+    height: 97vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content {
+    height: 90%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "f1" "f2" "f3" "f4" "f5" "f6" "f7" "f8" "f9" "f10" "f11";
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+    text-align: left;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select option {
+    text-align: center;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div label {
+    font-size: 13px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div input {
+    text-align: left;
+    font-size: 16px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div select {
+    text-align: left;
+    font-size: 16px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type=checkbox] {
+    width: 25px;
+    height: 25px;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container p {
+    font-size: 11px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .form-banner-container .overlay .form-wrapper .form-container .form-content div .form-btn-wrap .form-btn {
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}/*# sourceMappingURL=@media_customer_details.css.map */

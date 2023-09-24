@@ -1,0 +1,146 @@
+<!------------- RECENT CUSTOMER ------------------->
+<div class="update-customer">           
+    <div class="customer-header">
+        <h3> Updates </h3>
+        
+        <div class="color-indicator">
+            <!--<div>Very New</div>-->
+            <div>Very New</div>
+            <div>Old</div>
+        </div>
+        
+    </div>
+    <div class="customer-update-content">
+        <div class="update-container">
+            <!--------EJS CODE -------->
+            <!-----EJS CODE ----->
+            <% if (update !== null || update !== "undefined") { %>
+
+                <% if (update.container.storage.length !== 0) { %>
+                    <% update.container.storage.sort().reverse().map(a => { %>
+                        <% update.container.ordered_storage.sort().reverse().map(b => { %>
+                            <% if (a.checkout_code == b.checkout_code) { %>
+                                <% const c = update.container.storage.find(data => {return data.checkout_code == b.checkout_code}) %> 
+                                <% const d = update.container.ordered_storage.find(data => {return data.checkout_code == a.checkout_code}) %> 
+                                <% const notification = [{c, d}] %>
+                            
+                                <% notification.forEach(data=> { %>
+                                    <div class="row update-indicator" notification-id="<%- data.c.checkout_code %>" tag-time="<%- data.c.time_created %>">
+                                        <div class="de color-client"></div>
+                                        <div class="de-message">
+                                            <p> 
+                                                <em><%- data.c.first_name %> <%- data.c.last_name %></em> has checked out successfully
+                                            </p>
+                                            <div>
+                                                <div class="de-time"> <%- data.c.time_created %> </div> || <div class="de-date"> <%- data.c.date_created %> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <% }) %>
+                            <% } %>
+                        <% }) %> 
+                    <% }) %>
+                <% } else { %>
+                    <div class="no-update-wrapper">
+                        <ul><li class="i"></li><li> No Update Message </li></ul>
+                    </div>
+                <% } %> 
+            <% } %>
+            <!--------------------------------->
+        </div>
+    </div>
+</div>
+<!------------------------------------------------->
+<!------------- SIGNED USER DETAILS ------------------->
+<div class="update-customer">           
+    <div class="customer-header">
+        <h3> Client Checkout  </h3>
+    </div>
+    <div class="checkout-update-content">
+        <div class="checkout-container">
+            <!--------EJS CODE -------->
+            <% if (update !== null || update !== "undefined") { %>
+                <% if (update.container.storage.length !== 0) { %>
+                    <% update.container.storage.sort().map(el => { %> 
+                        <div class="table-row">
+                            <div class="time client-time"> <%- el.time_created %>  || <%- el.date_created %> </div>
+                            <div>
+                                <ul class="tr-1">
+                                    <li><span class="i i-1"></span> First Name: <span> <%- el.first_name %> </span></li>
+                                    <li><span class="i i-2"></span> Last Name: <span> <%- el.last_name %> </span></li>
+                                    <li><span class="i i-3"></span> Email : <span> <%- el.email %> </span></li>
+                                    <li><span class="i i-4"></span> Number : <span> <%- el.tel %> </span></li>
+                                    <li><span class="i i-5"></span> Company : <span> <%- el.company %> </span></li>
+                                    <li><span class="i i-6"></span> Region : <span> <%- el.region %> </span></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul class="tr-2">
+                                    <li><span class="i i-7"></span> City / Town : <span> <%- el.city %> </span></li>
+                                    <li><span class="i i-8"></span> Digital Address : <span> <%- el.digital %> </span></li>
+                                    <li><span class="i i-9"></span> Residential Address : <span> <%- el.residential %> </span></li>
+                                    <li><span class="i i-10"></span> Delivery Method : <span> <%- el.delivery %> </span></li>
+                                    <li><span class="i i-11"></span> Payment Method : <span> <%- el.payment %> </span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    <% }) %> 
+                <% } else { %>
+                    <div class="no-update-wrapper">
+                        <ul><li class="i"></li><li> No Checkout Update </li></ul>
+                    </div>
+                <% } %> 
+            <% } %>
+            
+        </div>
+    </div>
+</div>
+<!-------------------------------------------------------->
+<!------------- SIGNED USER DETAILS ------------------->
+<div class="update-customer">           
+    <div class="customer-header">
+        <h3> User Logs  </h3>
+    </div>
+    <div class="new-user-update-content">
+        <div class="new-user-container">
+            <table>
+                <thead>
+                    <th> Photo </th>
+                    <th> User Name</th>
+                    <th> Email </th>
+                    <th> Date </th>
+                    <th> Time </th>
+                </thead>
+                <tbody class="new-user-table-body">
+                    <!------- EJS CODE ------------>
+                    <% if (update !== null || update !== "undefined" || userLogs !== "undefined" || userLogs !== null) { %>
+                        <%# use FS to get images file path and display them in DOM  %>
+                        <% if (userLogs.length !== 0) { %>
+                            <% userLogs.sort().reverse().forEach(el => { %>
+                                <tr>
+                                    <td class="user-log-photo">
+                                        <div class="photo">
+                                            <% if (el.image.name.search("null") == -1) { %>
+                                                <img src="../uploaded_images/compress/<%- el.image.name %>" alt="">
+                                            <% } else if (el.image.name.search("null") == 0) { %>
+                                                <img src="../img/svg/user-red.svg" alt="">
+                                            <% } %> 
+                                        </div>
+                                    </td>
+                                    <td> <%- el.profile.user_name %>  </td>
+                                    <td class="user-email"> <%- el.profile.email %> </td>
+                                    <td class=""> <%- el.profile.date_created %> </td>
+                                    <td class="log-time"> <%- el.profile.time_created %> </td>
+                                </tr>
+                            <% }) %>
+                        <% } else { %>
+                            
+                        <% } %>
+                    <% } %> 
+                    <!------------------------------>    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!------------------------------------------------------>

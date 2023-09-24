@@ -1,0 +1,1360 @@
+*, html, body, ul, ol *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 100%;
+  background: #2e2e2e;
+  color: white;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  color: #ffffff;
+}
+
+.form-banner-container {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  z-index: 15;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-banner-container .overlay {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../img/form/1.webp");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-banner-container .overlay .form-close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  background: inherit;
+  background-image: url("../img/icons/close-white.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 3;
+}
+.form-banner-container .overlay .logo {
+  position: fixed;
+  top: 0px;
+  left: 20px;
+  width: 100px;
+  height: 80px;
+  background: #2e2e2e;
+  background-image: url("../img/logo/logo.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 3;
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+}
+.form-banner-container .overlay .logo.logo-visible {
+  z-index: 3;
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+}
+.form-banner-container .overlay .form-wrapper {
+  position: fixed;
+  z-index: 3;
+  width: 70%;
+  height: 100vh;
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  overflow: hidden;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+}
+.form-banner-container .overlay .form-wrapper .form-container {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.form-banner-container .overlay .form-wrapper .form-container .serial-code-wrapper {
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  font-size: 11px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.form-banner-container .overlay .form-wrapper .form-container .serial-code-wrapper input {
+  margin-left: 5px;
+  outline: none;
+  border: none;
+  color: white;
+  background: transparent;
+  width: 50%;
+}
+.form-banner-container .overlay .form-wrapper .form-container .user-alert {
+  position: absolute;
+  top: 0px;
+  background: red;
+  padding: 5px;
+  width: 100%;
+  font-size: 13px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-50px);
+  -webkit-transform: translateY(-50px);
+  -moz-transform: translateY(-50px);
+  -ms-transform: translateY(-50px);
+  -o-transform: translateY(-50px);
+  z-index: 3;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+.form-banner-container .overlay .form-wrapper .form-container .user-alert .icon {
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-banner-container .overlay .form-wrapper .form-container .user-alert .icon:before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: white;
+  background-image: url("../img/svg/alert-red.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.form-banner-container .overlay .form-wrapper .form-container .user-alert.on {
+  transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  visibility: visible;
+  opacity: 1;
+}
+.form-banner-container .overlay .form-wrapper .form-container .header-title, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title {
+  position: relative;
+  top: 0px;
+  height: 5vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.568);
+}
+.form-banner-container .overlay .form-wrapper .form-container .header-title div, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title div {
+  position: relative;
+  text-align: center;
+  font-weight: 550;
+  font-size: 20px;
+}
+.form-banner-container .overlay .form-wrapper .form-container .header-title div:nth-child(1), .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title div:nth-child(1) {
+  width: 25px;
+  height: 25px;
+  z-index: 2;
+  margin-left: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../img/icons/ok.png");
+  background-size: cover;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+.form-banner-container .overlay .form-wrapper .form-container .header-title .ok-1, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title .ok-1 {
+  opacity: 0;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+.form-banner-container .overlay .form-wrapper .form-container .header-title .ok-1.off, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title .ok-1.off {
+  opacity: 1;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+.form-banner-container .overlay .form-wrapper .form-container .header-title div:nth-child(3), .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title div:nth-child(3) {
+  width: 25px;
+  height: 25px;
+  z-index: 2;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../img/icons/edit.png");
+  background-size: cover;
+  background-color: white;
+  cursor: pointer;
+}
+.form-banner-container .overlay .form-wrapper .form-container .header-title div::first-letter, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title div::first-letter {
+  text-transform: uppercase;
+}
+.form-banner-container .overlay .form-wrapper .form-container .eds .edited-wrap {
+  visibility: hidden;
+}
+.form-banner-container .overlay .form-wrapper .form-container .eds.off .edited-wrap {
+  visibility: visible;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content {
+  position: relative;
+  width: 98%;
+  height: 92%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "f1 f2" "f3 f4" "f5 f6" "f7 f8" "f9 f9" "f10 f10" "f11 f11";
+  grid-gap: 1rem;
+  margin: 2% auto;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+  overflow: hidden;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div label {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  margin-left: 50px;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div label::first-letter {
+  text-transform: uppercase;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div input {
+  outline: none;
+  border: none;
+  padding: 10px 45px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  font-weight: bolder;
+  letter-spacing: 0.5px;
+  color: rgb(95, 95, 95);
+  text-align: center;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .icon {
+  position: absolute;
+  top: 0px;
+  background: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-left: 10px;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .icon .i {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .icon .i-name {
+  background-image: url("../img/icons/name.png");
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .icon .i-email {
+  background-image: url("../img/icons/mail.png");
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .icon .i-number {
+  background-image: url("../img/icons/phone.png");
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .icon .i-company {
+  background-image: url("../img/icons/company.png");
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .icon .i-region {
+  background-image: url("../img/icons/region.png");
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .icon .i-city {
+  background-image: url("../img/icons/city.png");
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .icon .i-location {
+  background-image: url("../img/icons/location-form.png");
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .arrow-wrap {
+  opacity: 0;
+  position: absolute;
+  top: 30px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .arrow-wrap .arrow {
+  position: relative;
+  top: 0px;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../img/icons/arrow-black.png");
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container input[type=checkbox] {
+  width: 25px;
+  height: 25px;
+  width: 5%;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container p {
+  font-size: 13px;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .agree-container p::first-letter {
+  text-transform: uppercase;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .form-btn-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .form-btn-wrap .form-btn {
+  position: relative;
+  background: black;
+  padding: 7px 25px;
+  font-size: 13px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .form-btn-wrap .fbtn1 {
+  pointer-events: none;
+  background: rgb(163, 163, 163);
+  color: rgba(0, 0, 0, 0.356);
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .form-btn-wrap .fbtn1.activated {
+  pointer-events: all;
+  background: black;
+  color: white;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .note {
+  font-size: 11px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 2px;
+  text-align: center;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .alert {
+  float: right;
+  margin-right: 10px;
+  top: 40px;
+  color: red;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background: red;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .alert.on {
+  visibility: hidden;
+  transition: 0.2s ease;
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select {
+  background: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select {
+  color: black;
+  border: none;
+  outline: none;
+  padding: 0px 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select select option {
+  background: white;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div .custom-select.on {
+  display: none;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(5) label div {
+  background: rgb(52, 228, 52);
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(7) .toggle-btn-wrap {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  width: 50px;
+  height: 22px;
+  transition: 0.1s ease;
+  -webkit-transition: 0.1s ease;
+  -moz-transition: 0.1s ease;
+  -ms-transition: 0.1s ease;
+  -o-transition: 0.1s ease;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 2px 0px 20px rgba(255, 255, 255, 0.767);
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(7) .toggle-btn-wrap .toggle-btn {
+  position: relative;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: red;
+  transition: 0.1s ease;
+  -webkit-transition: 0.1s ease;
+  -moz-transition: 0.1s ease;
+  -ms-transition: 0.1s ease;
+  -o-transition: 0.1s ease;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.882);
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(7) .toggle-btn-wrap .toggle-btn::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 25px;
+  height: 100%;
+  background: white;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: 0.1s ease;
+  -webkit-transition: 0.1s ease;
+  -moz-transition: 0.1s ease;
+  -ms-transition: 0.1s ease;
+  -o-transition: 0.1s ease;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(7) .toggle-btn-wrap .toggle-btn.active {
+  background: green;
+  transition: 0.1s ease;
+  -webkit-transition: 0.1s ease;
+  -moz-transition: 0.1s ease;
+  -ms-transition: 0.1s ease;
+  -o-transition: 0.1s ease;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(7) .toggle-btn-wrap.shift .toggle-btn::before {
+  left: 20px;
+  transition: 0.1s ease;
+  -webkit-transition: 0.1s ease;
+  -moz-transition: 0.1s ease;
+  -ms-transition: 0.1s ease;
+  -o-transition: 0.1s ease;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(7) .select-option-city {
+  display: block;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(7) .city-alt {
+  display: none;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content div:nth-child(7) .city-alt.on {
+  display: block;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content .notify {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 4px;
+  height: 100%;
+  background: rgb(255, 65, 65);
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content .notify.color {
+  background: rgb(52, 228, 52);
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content .f1 {
+  grid-area: f1;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content .f2 {
+  grid-area: f2;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content .f3 {
+  grid-area: f3;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content .f4 {
+  grid-area: f4;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content .f5 {
+  grid-area: f5;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content .f6 {
+  grid-area: f6;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content .f7 {
+  grid-area: f7;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content .f8 {
+  grid-area: f8;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content .f9 {
+  grid-area: f9;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content .f10 {
+  grid-area: f10;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content .f11 {
+  grid-area: f11;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-content.collapse {
+  height: 0%;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+}
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .header-title, .form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .delivery-method-wrapper .order-title {
+  position: relative;
+  top: 0px;
+  height: 5vh;
+  width: 100%;
+  box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.568);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .header-title div, .form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title div, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .delivery-method-wrapper .order-title div {
+  position: relative;
+  text-align: center;
+  font-weight: 550;
+  font-size: 20px;
+}
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .header-title div:nth-child(1), .form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title div:nth-child(1), .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .delivery-method-wrapper .order-title div:nth-child(1) {
+  width: 25px;
+  height: 25px;
+  z-index: 2;
+  margin-left: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../img/icons/ok.png");
+  background-size: cover;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .header-title .ok-2, .form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title .ok-2, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .delivery-method-wrapper .order-title .ok-2 {
+  opacity: 0;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .header-title .ok-2.off, .form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title .ok-2.off, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .delivery-method-wrapper .order-title .ok-2.off {
+  opacity: 1;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .header-title div:nth-child(3), .form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title div:nth-child(3), .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .delivery-method-wrapper .order-title div:nth-child(3) {
+  width: 25px;
+  height: 25px;
+  z-index: 2;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../img/icons/edit.png");
+  background-size: cover;
+  background-color: white;
+  cursor: pointer;
+}
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .header-title div::first-letter, .form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title div::first-letter, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .delivery-method-wrapper .order-title div::first-letter {
+  text-transform: uppercase;
+}
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .eds .edited-wrap {
+  visibility: hidden;
+}
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .eds.off .edited-wrap {
+  visibility: visible;
+}
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .delivery-content {
+  position: relative;
+  width: 98%;
+  height: 0vh;
+  visibility: hidden;
+  overflow: hidden;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+  margin-right: 1%;
+  margin-left: 1%;
+}
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .delivery-content .delivery-cell {
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+}
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .delivery-content .delivery-cell .radio-header {
+  position: absolute;
+  top: 3px;
+  left: 50px;
+  float: right;
+}
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .delivery-content .delivery-cell .delivery-check {
+  width: 25px;
+  height: 25px;
+}
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .delivery-content .delivery-cell .radio-content {
+  width: 100%;
+  background: green;
+  height: 0vh;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+  overflow: hidden;
+}
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .delivery-content .delivery-cell .radio-content.expand {
+  height: 20vh;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+}
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .delivery-content .delivery-cell .radio-uncheck {
+  position: absolute;
+  right: 5px;
+  top: 0px;
+  font-size: 13px;
+  background: black;
+  padding: 5px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  cursor: pointer;
+}
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .delivery-content .delivery-btn-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .delivery-content .delivery-btn-wrap .form-btn {
+  position: relative;
+  background: black;
+  padding: 7px 25px;
+  font-size: 13px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .delivery-content .delivery-btn-wrap .fbtn2 {
+  pointer-events: none;
+  background: rgb(163, 163, 163);
+  color: rgba(0, 0, 0, 0.356);
+}
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .delivery-content .delivery-btn-wrap .fbtn2.activated {
+  pointer-events: all;
+  background: black;
+  color: white;
+}
+.form-banner-container .overlay .form-wrapper .form-container .delivery-method-wrapper .delivery-content.collapse {
+  position: relative;
+  height: inherit;
+  visibility: visible;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+}
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  margin-top: 20px;
+}
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .header-title, .form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .payment-method-wrapper .order-title {
+  position: relative;
+  top: 0px;
+  height: 5vh;
+  width: 100%;
+  box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.568);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .header-title div, .form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title div, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .payment-method-wrapper .order-title div {
+  position: relative;
+  text-align: center;
+  font-weight: 550;
+  font-size: 20px;
+}
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .header-title div:nth-child(1), .form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title div:nth-child(1), .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .payment-method-wrapper .order-title div:nth-child(1) {
+  width: 25px;
+  height: 25px;
+  z-index: 2;
+  margin-left: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../img/icons/ok.png");
+  background-size: cover;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .header-title .ok-3, .form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title .ok-3, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .payment-method-wrapper .order-title .ok-3 {
+  opacity: 0;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .header-title .ok-3.off, .form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title .ok-3.off, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .payment-method-wrapper .order-title .ok-3.off {
+  opacity: 1;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .header-title div:nth-child(3), .form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title div:nth-child(3), .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .payment-method-wrapper .order-title div:nth-child(3) {
+  width: 25px;
+  height: 25px;
+  z-index: 2;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../img/icons/edit.png");
+  background-size: cover;
+  background-color: white;
+  cursor: pointer;
+}
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .header-title div::first-letter, .form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title div::first-letter, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .payment-method-wrapper .order-title div::first-letter {
+  text-transform: uppercase;
+}
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .eds .edited-wrap {
+  visibility: hidden;
+}
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .eds.off .edited-wrap {
+  visibility: visible;
+}
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .payment-content {
+  position: relative;
+  width: 98%;
+  height: 0vh;
+  visibility: hidden;
+  overflow: hidden;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+  margin-right: 1%;
+  margin-left: 1%;
+}
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .payment-content .payment-cell {
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+}
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .payment-content .payment-cell .radio-header {
+  position: absolute;
+  top: 3px;
+  left: 50px;
+  float: right;
+}
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .payment-content .payment-cell .payment-check {
+  width: 25px;
+  height: 25px;
+}
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .payment-content .payment-cell .radio-content {
+  width: 100%;
+  background: green;
+  height: 0vh;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+  overflow: hidden;
+}
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .payment-content .payment-cell .radio-content.expand {
+  height: 20vh;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+}
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .payment-content .payment-cell .radio-uncheck {
+  position: absolute;
+  right: 5px;
+  top: 0px;
+  font-size: 13px;
+  background: black;
+  padding: 5px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  cursor: pointer;
+}
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .payment-content .payment-btn-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .payment-content .payment-btn-wrap .form-btn {
+  position: relative;
+  background: black;
+  padding: 7px 25px;
+  font-size: 13px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .payment-content .payment-btn-wrap .fbtn3 {
+  pointer-events: none;
+  background: rgb(163, 163, 163);
+  color: rgba(0, 0, 0, 0.356);
+}
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .payment-content .payment-btn-wrap .fbtn3.activated {
+  pointer-events: all;
+  background: black;
+  color: white;
+}
+.form-banner-container .overlay .form-wrapper .form-container .payment-method-wrapper .payment-content.collapse {
+  position: relative;
+  height: inherit;
+  visibility: visible;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper {
+  position: relative;
+  left: 0px;
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .header-title, .form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title {
+  position: relative;
+  top: 0px;
+  height: 5vh;
+  width: 100%;
+  box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.568);
+  text-align: center;
+  font-weight: 550;
+  font-size: 20px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content {
+  position: relative;
+  margin: 10px 10px 0px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 98%;
+  height: 100%;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div {
+  position: relative;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(1) {
+  flex-grow: 0;
+  margin-right: 20px;
+  margin-left: 10px;
+  width: 100%;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(1) .summary-cell-customer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(1) .summary-cell-customer span {
+  position: relative;
+  margin-top: 8px;
+  width: 100%;
+  display: flex;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(1) .summary-cell-customer span div {
+  position: relative;
+  width: 100%;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(1) .summary-cell-customer span div:nth-child(2) {
+  font-size: 13px;
+  color: greenyellow;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(1) .summary-cell-customer.active {
+  height: initial;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(1) .summary-btn-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 100%;
+  top: 10px;
+  background: black;
+  padding: 7px 25px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(1) .summary-btn-wrap .form-btn {
+  position: relative;
+  background: black;
+  padding: 7px 25px;
+  font-size: 13px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(1) .summary-btn-wrap .fbtn {
+  pointer-events: none;
+  background: rgb(163, 163, 163);
+  color: rgba(0, 0, 0, 0.356);
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(1) .summary-btn-wrap .fbtn4.activated {
+  pointer-events: all;
+  background: black;
+  color: white;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) {
+  flex-grow: 0;
+  width: 100%;
+  margin: 0px;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper {
+  position: relative;
+  width: 100%;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper div {
+  position: relative;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-title {
+  box-shadow: none;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-content {
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.638);
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-content div {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  z-index: 2;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-content div .order-image-wrap {
+  position: relative;
+  width: 100px;
+  height: 60px;
+  background: grey;
+  border: 5px solid white;
+  overflow: hidden;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-content div .order-image-wrap input {
+  outline: none;
+  top: 0px;
+  left: 0px;
+  border: none;
+  background: transparent;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  width: 0%;
+  z-index: -1;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-content div .order-image-wrap img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-content div .ordered-des {
+  margin: 5px;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-content div .ordered-des ul li {
+  font-size: 13px;
+  width: 100%;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content div:nth-child(2) .item-ordered-wrapper .order-content div .ordered-des ul li input {
+  background: transparent;
+  color: white;
+  outline: none;
+  border: none;
+}
+.form-banner-container .overlay .form-wrapper .form-container .summary-wrapper .summary-content.collapse {
+  height: inherit;
+  visibility: visible;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  background: red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 3;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-footer div {
+  padding: 2px;
+  font-size: 13px;
+  position: relative;
+}
+.form-banner-container .overlay .form-wrapper .form-container .form-footer div span {
+  font-weight: bolder;
+  margin-left: 10px;
+}
+.form-banner-container .overlay .form-wrapper .request-signIn-page {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 5;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.form-banner-container .overlay .form-wrapper .request-signIn-page div .request-message {
+  font-size: 16px;
+  font-weight: 550;
+}
+.form-banner-container .overlay .form-wrapper .request-signIn-page div .request-btn {
+  margin-top: 30px;
+}
+.form-banner-container .overlay .form-wrapper .request-signIn-page div .request-btn a {
+  padding: 10px;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-banner-container .overlay .form-wrapper .request-signIn-page div .request-btn a .i {
+  width: 30px;
+  height: 30px;
+  background-image: url("../img/icons/arrow-white-down.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-right: 10px;
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+}
+.form-banner-container .overlay .form-wrapper .request-signIn-page.show {
+  display: flex;
+}
+.form-banner-container .overlay .online-status-wrap {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  width: 100%;
+  height: 4vh;
+  background: rgba(255, 255, 255, 0.822);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+}
+.form-banner-container .overlay .online-status-wrap div {
+  position: relative;
+  margin-left: 10px;
+}
+.form-banner-container .overlay .online-status-wrap .status-toggle {
+  width: 15px;
+  height: 15px;
+  box-shadow: 5px 5px 10px red;
+  background: red;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.form-banner-container .overlay .online-status-wrap .status-text {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: black;
+  font-weight: 550;
+}
+.form-banner-container .overlay .online-status-wrap .status-toggle.status {
+  background: green;
+  box-shadow: 5px 5px 10px green;
+}
+.form-banner-container .overlay .online-status-wrap.slide {
+  bottom: -50px;
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -ms-transition: 1s ease;
+  -o-transition: 1s ease;
+}
+.form-banner-container .overlay::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.559);
+  width: 100%;
+  height: 100%;
+}
+
+.hidden {
+  display: none;
+}/*# sourceMappingURL=customer_details.css.map */

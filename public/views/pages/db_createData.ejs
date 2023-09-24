@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Shopfossy | Database </title>
+
+    <link rel="stylesheet" href="../css/database.css">
+
+</head>
+<body>
+    <!---------- BANNER SECTION  -------->
+    <div class="banner-wrapper">
+        <div class="banner-container">
+            <div class="hunburger"></div>
+            <div class="header"><h3> Shopfossy Database Management System </h3></div>
+            <div class="admin-wrapper">
+                <div class="i"><img src="" alt=""></div>
+                <div class="i-content">Admin</div>
+            </div>
+        </div>
+    </div>
+    <!---------------------------------->
+    <!----------  SIDEBAR SECTION ------->
+    <%- include("../partials/db/db-sidebar.ejs") %>
+    <!---------------------------------->
+    <div class="overall-content-wrapper">
+        <!----------  BREEADER SECTION ------->
+        <%- include("../partials/db/output/output-create.ejs") %>
+        <!---------------------------------->
+    </div>
+    <!---------- ENTRY SECTION  -------------->
+    <div class="entry-overlay">
+        <!-------- ENTRY FOR BREEDERS  --------->
+        <%- include("../partials/db/entry/createData.ejs") %>
+        
+        <!--------------------------------------->
+    </div>
+    <!----------------------------------------->
+
+    <div class="footer-wrapper">
+        <div></div><div> Copyright © 2017 - 2023 </div><div class="tem">Team Shopfossy</div><div> LLC. All rights reserved. </div>
+    </div>
+
+
+    <!-------- JS SECTION ----------------->
+    <script src="../../js/controlCenter/db-UI-front.js" type="module"></script>
+    <!-------------------------------------->
+</body>
+</html>

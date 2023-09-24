@@ -1,0 +1,22 @@
+[debug] [2022-07-02T01:18:50.995Z] ----------------------------------------------------------------------
+[debug] [2022-07-02T01:18:50.998Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\OPD\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2022-07-02T01:18:50.998Z] CLI Version:   11.1.0
+[debug] [2022-07-02T01:18:50.998Z] Platform:      win32
+[debug] [2022-07-02T01:18:50.998Z] Node Version:  v17.1.0
+[debug] [2022-07-02T01:18:50.999Z] Time:          Sat Jul 02 2022 01:18:50 GMT+0000 (Greenwich Mean Time)
+[debug] [2022-07-02T01:18:50.999Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-07-02T01:18:51.085Z] Object "" in "firebase.json" has unknown property: {"additionalProperty":"rewrite"}
+[debug] [2022-07-02T01:18:51.093Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-07-02T01:18:51.093Z] > authorizing via signed-in user (obengprince0001@gmail.com)
+[debug] [2022-07-02T01:18:51.093Z] [iam] checking project shopfossy for permissions ["firebase.projects.get"]
+[debug] [2022-07-02T01:18:51.096Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/shopfossy:testIamPermissions [none]
+[debug] [2022-07-02T01:18:51.096Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/shopfossy:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-07-02T01:19:03.244Z] [iam] error while checking permissions, command may fail: FirebaseError: Failed to make request to https://cloudresourcemanager.googleapis.com/v1/projects/shopfossy:testIamPermissions
+[debug] [2022-07-02T01:19:03.246Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/shopfossy [none]
+[debug] [2022-07-02T01:19:15.311Z] Failed to make request to https://firebase.googleapis.com/v1beta1/projects/shopfossy
+[debug] [2022-07-02T01:19:36.401Z] FirebaseError: Failed to make request to https://firebase.googleapis.com/v1beta1/projects/shopfossy
+    at RetryOperation._fn (C:\Users\OPD\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:241:31)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project shopfossy. Please make sure the project exists and your account has permission to access it.

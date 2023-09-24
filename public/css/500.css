@@ -1,0 +1,86 @@
+*, html, body, ul, ol *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 100%;
+  background: #2e2e2e;
+  color: white;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  position: absolute;
+  width: 65px;
+  height: 75px;
+  left: 30px;
+  background: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo div {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 50px;
+  height: 50px;
+  background: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../img/logo/logo.webp");
+}
+
+.wrapper {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper .container {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  background: green;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.wrapper .container .row {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.wrapper .container .content div:nth-child(1) {
+  font-size: 50px;
+}
+.wrapper .container .content ul li:nth-child(1) {
+  line-height: 3rem;
+  font-size: 20px;
+  font-weight: 550;
+}
+.wrapper .container .content ul li:nth-child(3) {
+  font-size: 13px;
+  margin-top: 70px;
+}/*# sourceMappingURL=500.css.map */

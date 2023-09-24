@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Shopfossy | Invoice </title>
+
+    <!--  CSS -->
+    <link rel="stylesheet" href="./css/landing-page.css">
+    <link rel="stylesheet" href="./css/invoice.css">
+    <link rel="stylesheet" href="./css/@keyframes-landing.css">
+    <link rel="stylesheet" href="./css/@media_invoice.css">
+    <!---------->
+
+</head>
+<body>
+    <!-------LANDING PAGE ------------>
+    
+        <div class="landing-container">
+        <div class="landing-wrap">
+            <div class="loading">
+                <div class="loading-boxes"></div>
+                <div class="loading-boxes"></div>
+                <div class="loading-boxes"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-------LANDING PAGE ------------>
+    <!----------- INVOICE START ---------------->
+    <div class="invoice-wrapper">
+        <div class="invoice-container">
+            <div class="invoice-content">
+                <div class="invoice" id="element-to-print">
+                    <div class="invoice-client-logo">
+                        <div class="logo-wrap">
+                            <div></div>
+                            <div>E-Commence</div>
+                        </div>
+                        <div class="client-wrapper">
+                            <div class="client-container">
+                                <!--EJS CODE  -->
+                                <% if (data.clients !== null) { %>
+                                    <div class="client-name"><span><%= data.clients.firstName %></span><span><%= data.clients.lastName %></span></div>
+                                    <div class="client-tel"><span> <%= data.clients.tel %> </span></div>
+                                    <div class="client-others">
+                                        <span> <%= data.clients.residential %> </span>
+                                        <span> <%= data.clients.city %> </span>
+                                        <span> <%= data.clients.region %> </span>
+                                        <span> <%= data.clients.digital %> </span>
+                                    </div>
+                                    <div class="client-email"><span> <%= data.clients.email %> </span></div>
+                                <% } %>
+                                <!---------------->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="invoice-structure-wrap">
+                        <div class="invoice-structure-container">
+                            <h1 class="watermark"> screenshot </h1>
+                            <div class="invoice-header-wrap"> 
+                                <div class="row">
+                                    <% if (data.clients !== null) { %>
+                                        <div> Invoice </div>
+                                        <div>Serial Code: <span> <%= data.clients.serial %> </span></div>
+                                        <div>Date: <span><%= data.orders.date %> </span></div>
+                                        <div>Time Issued: <span> <%= data.orders.time %> </span></div>
+                                    <% } else if (data.clients == null) { %>
+                                        <div class="page-redirect <%= DOMClass %>">
+                                            <div class="each">
+                                                <div></div>
+                                                <div> Request data from checkout page </div>
+                                            </div>
+                                        </div>
+                                    <% } %> 
+                                </div>
+                            </div>
+                            <div class="client-wrapper-media">
+                                <div class="header"> Bill To </div>
+                                <ul class="client-container-media">
+                                    <% if (data.clients !== null) { %>
+                                        <li class="client-name"> <%= data.clients.firstName %></span><span><%= data.clients.lastName %></span> </li>
+                                        <li class="client-tel"> <%= data.clients.tel %> </li>
+                                        <li class="client-email"> <%= data.clients.email %> </li>
+                                        <li class="client-city"> <%= data.clients.city %> </li>
+                                        <li class="client-region"> <%= data.clients.region %> </li>
+                                        <li class="client-digital"> <%= data.clients.digital %> </li>
+                                    <% } %>
+                                <ul/>
+                            </div>
+                            <div class="invoice-payment-wrap">
+                                <% if (data.clients !== null) { %>
+                                    <div> Payment & Delivery Info </div>
+                                    <div><span> Payment Method:</span><em class="payment-status"> <%= data.clients.payment %> </em></div>
+                                    <div><span> Payment Status:</span><em class="in-status"> Awaiting </em></div>
+                                    <div><span> Acc. Name:</span><em> E-commence </em></div>
+                                    <div><span> Acc. No:</span><em> .... </em></div>
+                                    <div><span> Delivery Method:</span><em class="delivery-status in-status"> <%= data.clients.delivery %> </em></div>
+                                <% } %>
+                            </div>
+                            <div class="invoice-table-wrap">
+                                <div class="invoice-table-header">
+                                    <div><span> Items </span></div>
+                                    <div><span> Unit Cost </span></div>
+                                    <div><span> Qty </span></div>
+                                    <div><span> Amt </span></div>
+                                </div>
+                                <hr>
+                                <div class="invoice-item-wrap">
+                                    <!------ EJS CODE ------>
+                                    <% if (data.clients !== null) { %>
+                                        <div class="invoice-item-cell">
+                                            <div> 
+                                                <% if (data.orders.price.length == 5) { %>
+                                                    <span> <%- data.orders.title %>  </span>
+                                                <% } else if ((data.orders.price.length + 5) !== 5) { %>
+                                                    <% data.orders.title.map(el => { %>
+                                                        <span> <%- el %>  </span>
+                                                    <% }) %>
+                                                <% } %> 
+                                            </div>
+                                            <div>
+                                                <% if (data.orders.price.length == 5) { %>
+                                                    <span class="el-price"> <%- data.orders.price %>  </span>
+                                                <% } else if ((data.orders.price.length + 5) !== 5) { %>
+                                                    <% data.orders.price.map(el => { %>
+                                                        <span> <%- el %>  </span>
+                                                    <% }) %>
+                                                <% } %>  
+                                            </div>
+                                            <div> 
+                                                <% if (data.orders.price.length == 5) { %>
+                                                    <span class="el-amount"> <%- data.orders.amount %>  </span>
+                                                <% } else if ((data.orders.price.length + 5) !== 5) { %>
+                                                    <% data.orders.amount.map(el => { %>
+                                                        <span> <%- el %>  </span>
+                                                    <% }) %>
+                                                <% } %>  
+                                            </div>
+                                            <div> 
+                                                <% if (data.orders.price.length == 5) { %>
+                                                    <span> <%- data.orders.cost %>  </span>
+                                                <% } else if ((data.orders.price.length + 5) !== 5) { %>
+                                                    <% console.log(data.orders.cost) %> 
+                                                    <% data.orders.cost.map(el => { %>
+                                                        <span> <%- el %>  </span>
+                                                    <% }) %>
+                                                <% } %>  
+                                            </div>
+                                        </div>
+                                    <% } %>                 
+                                    <!---------------------->
+                                </div>
+                                <hr>
+                                <div class="invoice-summation-wrap">
+                                    <div class="summation-footer"> 
+                                        <div> Company Info </div>
+                                        <div> Email: <span> info@vybrant.com </span></div>
+                                        <div> or call us at 0246220037 </div>
+                                        <div> Location: <span> ##### </span> </div>
+                                    </div>
+                                    <div class="summation-container">
+                                        <div> Subtotal: <span>GHc</span><span class="subtotal i-total">
+                                            <% if (data.clients !== null) { %>
+                                                <%- data.orders.grand_total %>
+                                            <% } else if (data.clients == null) { %>
+                                                    0
+                                            <% } %> 
+                                        </span></div>
+                                        <!--
+                                        <div> Tax (15%): <span>GHc</span><span class="tax"> 5.80 </span></div>
+                                        -->
+                                        <div> Grand Total: <span>GHc</span><span class="grand-total i-total"> 
+                                            <% if (data.clients !== null) { %>
+                                                <%- data.orders.grand_total %>
+                                            <% } else if (data.clients == null) { %>
+                                                    0
+                                            <% } %> 
+                                        </span></div>
+                                        <div> * Taxes have already been added to price items * </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-------------------- INVOICE END -------------------->
+
+    <!------JS FILES -->
+    <script src="./js/landing-page.js"></script>
+    <script>
+        const error = document.querySelector(".page-redirect");
+        
+        if (error == null) {
+            console.log("Awaiting server responds");
+        }else {
+            error.classList.add("show");
+        }
+    </script>
+    <!------------------>
+</body>
+</html>

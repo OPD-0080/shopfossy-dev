@@ -1,0 +1,657 @@
+@import './reset.scss';
+@import './variables.scss';
+
+.user-edited-overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.805);
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //display: none;
+
+    .user-edited-wrapper {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+
+        .restrict_page-wrapper {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.805);
+            z-index: 5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .restrict-page-container {
+                position: absolute;
+                bottom: 0px;
+                width: 80%;
+                height: 40vh;
+                background: red;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                div {
+                    div {
+                        margin: 20px;
+                    }
+                    .restrict-msg {
+                        font-size: $font-vl;
+                        font-weight: bolder;
+                    }
+                    .restrict-btn {
+                        position: relative;
+                        background: rgba(149, 6, 6, 0.498);
+                        text-align: center;
+                        cursor: pointer;
+                        border: 2px solid white;
+                        @include border-20;
+                        padding: 10px;
+                        font-size: $font-s;
+
+                        &:hover {
+                            background: red;
+                        }
+                    }
+                }
+            }
+        }
+        .restrict_page-wrapper.show {
+            display: flex;
+        }
+
+        .user-edited-close {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            width: 40px;
+            height: 40px;
+            @include border-circle;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.658);
+            z-index: 5;
+            //display: none;
+
+            .i {
+                width: 30px;
+                height: 30px;
+                background-image: url("../img/icons/close-white.png");
+                @include background-initializer;
+                background-size: cover;
+                object-fit: cover;
+            }
+        }
+        .user-edited-close:hover {
+            box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.575);
+        }
+        .user-update-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background:rgba(128, 128, 128, 0.253);
+            /*display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;*/
+
+            div { position: relative; }
+
+            .user-edited-header {
+                position: relative;
+                top: 0px;
+                left: 0px;
+                text-align: center;
+                width: 100%;
+                font-size: $font-vl;
+                font-weight: 550;
+                
+                .header {
+                    display: flex;
+                    position: absolute;
+                    right: 0px;
+                    //justify-content: right;
+                    align-items: center;
+                    width: 60%;
+                    padding: 10px;
+                    background:rgba(37, 27, 27, 0.548);
+                        backdrop-filter: blur(5px);
+
+                    div {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+                }
+            }
+            .user-edit-alert {
+                position: fixed;
+                bottom: 0px;
+                left: 0px;
+                width: 100%;
+                background: red;
+                padding: 3px;
+                font-size: $font-s;
+                box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.644);
+                //display: flex;
+                justify-content: center;
+                align-items: center;
+                @include trans-05s;
+                display: none;
+                z-index: 5;
+
+                div {
+                    position: relative; 
+                    margin: 5px;
+                }
+
+                .i {
+                    width: 20px;
+                    height: 20px;
+                    background: white;
+                    @include background-initializer;
+                    background-size: cover;
+                    background-image: url("../img/svg/alert-red.svg");
+                }
+            }
+            .user-edit-alert.alert {
+                display: flex;
+                @include trans-05s;
+            }
+            .user-confirm-alert {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.829);
+                z-index: 5;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                display: none;
+                @include trans-05s;
+
+                .confirm-container {
+                    position: relative;
+                    background: red;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 85%;
+                    padding: 20px;
+
+                    div {
+                        margin: 10px;
+                    }
+
+                    .close-confirm-alert {
+                        position: absolute;
+                        top: 0px;
+                        right: 0px;
+                        border: 2px solid white;
+                        width: 40px;
+                        height: 40px;
+                        cursor: pointer;
+                        @include background-initializer;
+                        background-size: contain;
+                        @include border-circle;
+                        background-image: url("../img/icons/close-white.png");
+                    }
+                    .confirm-alert-text {
+                        font-size: $font-vl;
+                        font-weight: 550;
+                        top: 20px;
+                        margin-bottom: $margin-l
+                    }
+                    .confirm-btn {
+                        padding: 15px;
+                        border: 2px solid white;
+                        cursor: pointer;
+                        @include border-20;
+                        display: block;
+                    }
+                    .confirm-btn.collapse {
+                        display: none;
+                    }
+                    .confirm-btn:hover, .close-confirm-alert:hover {
+                        background-color: rgb(179, 3, 3);
+                        color: white;
+                    }
+                    .re-auth-container {
+                        display: none;
+
+
+                        .re-auth-pass-wrap {
+                            overflow: hidden;
+                            display: flex; // will be remove later
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: row;
+                            background: white;
+                            
+    
+                            input {
+                                position: relative;
+                                padding: 15px 20px;
+                                outline: none;
+                                border: none;
+                                font-size: $font-l;
+                                font-weight: 550;
+                                text-align: center;
+                            }
+                            .i {
+                                position: relative;
+                                margin: 0px;
+                                border: 1px solid white;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+    
+                                div {
+                                    position: relative;
+                                    background: red;
+                                    @include background-initializer;
+                                    background-size: cover;
+                                    width: 40px;
+                                    height: 40px;
+                                    object-fit: cover; 
+                                    background-image: url("../img/icons/key.png");
+                                }
+                            }
+                        }
+                        .re-auth-btn {
+                            @extend .confirm-btn;
+                            text-align: center;
+                            width: 100%;
+                            font-size: $font-l;
+                            outline: none;
+                            font-weight: 600;
+                            color:rgb(179, 3, 3);
+                        }
+                    }
+                    .re-auth-container.collapse {
+                        display: block;
+                    }
+                }
+            }
+            .user-confirm-alert.collapse {
+                display: flex;
+                @include trans-05s;
+            }
+            .user-edited-image { 
+                position: fixed;
+                top: 0px;
+                width: 40%;
+                flex-basis: 40%; 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                @include background-initializer;
+                background-size: cover;
+                background-image: url("../img/index/banner/new-banner.webp"); // will be deleted
+                
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    width: 100%;
+                    height: 100%;
+                    background:rgba(0, 0, 0, 0.505);
+                    z-index: 1;
+                    backdrop-filter: blur(5px);
+                }
+
+                div { position: relative }
+
+                .edited-image-wrap {
+                    position: relative;
+                    width: 20rem;
+                    height: 20rem;
+                    background: white;
+                    @include border-circle;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 3;
+
+                    .edited-image-container {
+                        width: 17rem;
+                        height: 17rem;
+                        @include border-circle;
+                        background: black;
+                        text-align: center;
+                        @include background-initializer;
+                        background-size: cover;
+                        z-index: 2;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        .upload-progress {
+                            position: relative;
+                            font-size: $font-xxl;
+                            font-weight: 550;
+                            //visibility: hidden;
+                        }
+                        .upload-progress.collapse {
+                            visibility: visible;
+                        }
+                    }
+                    .edited-image-container::before {
+                        content: "";
+                        position: absolute;
+                        bottom: 0px;
+                        right: 0px;
+                        width: 80px;
+                        height: 80px;
+                        @include border-circle;
+                        background: grey;
+                        @include background-initializer;
+                        background-size: contain;
+                        object-fit: contain;
+                        background-image: url("../img/svg/camera.gif");
+                    }
+                }
+            }
+            .user-edited-content { 
+                position: relative;
+                flex-basis: 60%; 
+                width: 60%;
+                position: absolute;
+                right: 0px;
+                top: 3rem;
+                
+                .user-edited-content-container {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    margin-left: $margin-s;
+
+                    .content {
+                        position: relative;
+                        width: 95%;
+                        display: flex;
+                        justify-content: space-around;
+                        flex-direction: column;
+                        margin-top: $margin-s;
+
+                        .note {
+                            position: absolute;
+                            top: 15px;
+                            right: 140px;
+                            font-size: $font-vs;
+                            color: rgb(255, 110, 110);
+                        }
+                        .note.show {
+                            color: rgb(9, 211, 9);
+                        }
+
+                        label {
+                            position: relative;
+                            top: 0px;
+                            left: 0px;
+                            z-index: 2;
+                            font-size: $font-l;
+                            font-weight: 550;
+                            margin-bottom: $margin-vs;
+                        }
+                        
+                        .content-section {
+                            position: relative;
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-around;
+                            align-items: center;
+                            flex-direction: row;
+                            overflow: hidden;
+
+                            .password-eye {
+                                position: absolute;
+                                right: 9rem;
+                                width: 30px;
+                                height: 30px;
+                                background-color: white;
+                                z-index: 2;
+                                display: none;
+
+                                .e {
+                                    position: relative;
+                                    width: 30px;
+                                    height: 30px;
+
+                                    div {
+                                        position: absolute;
+                                        top: 0px;
+                                        left: 0px;
+                                        width: 100%;
+                                        height: 100%;
+                                        box-sizing: border-box;
+                                        @include background-initializer;
+                                        @include border-circle;
+                                        background-size: cover;
+                                    }
+                                    .e-1 {
+                                        background-image: url("../img/svg/eye-white.svg");
+                                        display: block;
+
+                                        &.visible {
+                                            display: none;
+                                        }
+                                    }
+                                    .e-2 {
+                                        background-image: url("../img/svg/eye-off-white.svg");
+                                        display: none;
+
+                                        &.visible {
+                                            display: block;
+                                        }
+                                    }
+                                }
+                                &.off {
+                                    display: block;
+                                }
+                            }
+                            .verify-icon {
+                                position: absolute;
+                                top: 10px;
+                                right: 140px;
+                                width: 30px;
+                                height: 30px;
+                                background: white;
+                                z-index: 2;
+                                visibility: hidden;
+                                @include background-initializer;
+                                background-size: contain;
+                                background-image: url("../img/icons/verify.png");
+                            }
+                            .verify-icon.show {
+                                visibility: visible;
+                            }
+
+                            .content-icon {
+                                position: absolute;
+                                top: 0px;
+                                left: 0px;
+                                width: 50px;
+                                height: 100%;
+                                background: grey;
+                                z-index: 3;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+    
+                                .i {
+                                    position: relative;
+                                    width: 30px;
+                                    height: 30px;
+                                    @include background-initializer;
+                                    background-size: cover;
+                                    object-fit: cover;
+                                }
+                                .i-name {
+                                    background-image: url("../img/icons/user.png");
+                                }
+                                .i-email {
+                                    background-image: url("../img/icons/email.png");
+                                }
+                                .i-tel {
+                                    background-image: url("../img/icons/phone-white.png");
+                                }
+                                .i-password {
+                                    background-image: url("../img/icons/key.png");
+                                }
+                            }
+                            .content-input {
+                                position: relative;
+                                width: 100%;
+                                outline: none;
+                                padding: 15px 60px;
+                                font-size: $font-l;
+                                font-weight: 550;
+                                background: grey;
+                                color: white;
+                                text-align: center;
+                                @include trans-05s;
+                            }
+                            .content-input::first-letter {
+                                text-transform: uppercase;
+                            }
+                            .content-input.edit {
+                                background: white;
+                                text-align: left;
+                                @include trans-05s;
+                                color: black;
+                            }
+                            .content-input.edit .hover-name {
+                                box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.582);
+                                @include trans-05s;
+                            }
+                        }
+                        .content-btns {
+                            position: relative;
+                            display: flex;
+
+                            .btn{
+                                width: 45px;
+                                height: 45px;
+                                background: grey;
+                                margin: 0px 10px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                @include border-circle;
+
+                                .i {
+                                    background-size: cover;
+                                    @include background-initializer;
+                                    object-fit: cover;
+                                    width: 30px;
+                                    height: 30px;
+                                    @include border-circle;
+                                }
+                                .i-close.close { display: flex; }
+                                .i-edit { display: flex; background-image: url("../img/icons/edit-white.png"); }
+                                .i-edit.collapse { display: none }
+                                .i-save { background-image: url("../img/icons/thumb-white-up.png"); }
+                                .i-close {display: none; background-image: url("../img/icons/close-white.png");}
+
+                            }
+                            .btn:hover {
+                                background: rgba(128, 128, 128, 0.608);
+                            }
+                            .save-btn {
+                                visibility: hidden;
+                            }
+                            .save-btn.active {
+                                visibility: visible;
+                            }
+                        }
+                        .content-btn-off {
+                            visibility: hidden;
+                            opacity: 0;
+                        }
+                    }
+                }
+                .history-wrapper {
+                    position: relative;
+                    top: 0px;
+                    margin-top: $margin-l;
+                    width: 100%;
+                    background: $primary-sidebar-background;
+
+                    .history-container {
+                        position: relative;
+                        top: 0px;
+                        left: 0px;
+                        width: 100%;
+
+                        div {
+                            position: relative
+                        }
+
+                        .header {
+                            padding: 5px 20px;
+                            h3 {
+                                font-weight: bolder;
+                            }
+                        }
+                        .transaction-container {
+                            width: 100%;
+                            
+                        }
+                    }
+                }
+                .content-delete {
+                    position: relative;
+                    margin-top: $margin-l;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .delete-wrap {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        //border: 2px solid white;
+                        cursor: pointer;
+                        background: rgb(218, 5, 5);
+                        padding: 20px 30px 20px 30px;
+                        @include border-20;
+                        cursor: pointer;
+                        font-size: $font-s;
+                        border: none;
+                        outline: none;
+                        color: $cc-main-color;
+                    }
+                }
+            }
+        }
+    }   
+}
+.user-edited-overlay.show {
+    display: flex;
+}

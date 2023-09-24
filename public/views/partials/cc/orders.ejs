@@ -1,0 +1,316 @@
+<!------------- RECENT ORDER ------------------->
+<div class="update-order">           
+    <div class="customer-header">
+        <h3> Updates </h3>
+        
+        <div class="color-indicator">
+            <!--<div>Very New</div>-->
+            <div>Very New</div>
+            <div>Old</div>
+        </div>
+        
+    </div>
+    <div class="order-update-content">
+        <div class="update-container">
+            <!-----EJS CODE ----->
+            <% if (update !== null || update !== "undefined") { %>
+                <% if (update.container.storage.length !== 0) { %>
+                    <% update.container.storage.map(a => { %>
+                        <% update.container.ordered_storage.sort().reverse().map(b => { %>
+                            <% if (a.checkout_code == b.checkout_code) { %>
+                                <% const c = update.container.storage.find(data => {return data.checkout_code == b.checkout_code}) %> 
+                                <% const d = update.container.ordered_storage.find(data => {return data.checkout_code == a.checkout_code}) %> 
+                                <% const notification = [{c, d}] %>
+
+                                <% notification.forEach(data=> { %>
+                                    <div class="row">
+                                        <div class="de color-client" notification-id="<%- data.c.checkout_code %>" tag-time="<%- data.c.time_created %>"></div>
+                                        <div class="de-message">
+                                            <p> 
+                                                <em><%- data.c.first_name %> <%- data.c.last_name %></em> has make an order of <em><%- data.d.price.split(",").length %> </em> item(s)
+                                            </p>
+                                            <div>
+                                                <div class="de-time"> <%- data.c.time_created %> </div> || <div class="de-date"> <%- data.c.date_created %> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <% }) %>
+                            <% } %>
+                        <% }) %> 
+                    <% }) %> 
+                <% } else { %>
+                    <div class="no-update-wrapper">
+                        <ul><li class="i"></li><li> No Client Update </li></ul>
+                    </div>
+                <% } %> 
+            <% } %>
+            <!---------------->
+        </div>
+    </div>
+</div>
+<!------------------------------------------------->
+<!------------- ORDER LOGS DETAILS ------------------->
+<div class="update-customer">           
+    <div class="customer-header">
+        <h3> Order Logs  </h3>
+    </div>
+    <div class="products-ordered-update-content">
+        <div class="products-ordered-container">
+            <!-----EJS CODE ----->
+            <% if (update !== null || update !== "undefined" || realTime !== null || realTime !== "undefined") { %> 
+                <% if (update.container.storage.length !== 0) { %>
+                    <% update.container.storage.map(a => { %> 
+                        <% update.container.ordered_storage.sort().reverse().map(b => { %>
+                            <% if (a.checkout_code == b.checkout_code) { %>
+                                <% const aRes = update.container.storage.find(data => {return data.checkout_code == b.checkout_code}) %> 
+                                <% const bRes = update.container.ordered_storage.find(data => {return data.checkout_code == a.checkout_code}) %> 
+                                <% const singleClient = [{aRes, bRes}] %>
+                                <%# console.log(singleClient) %> 
+                                <% singleClient.forEach(data => { %>
+                                    <!------- SINGLE CLIENT ITEMS ------------------------------>
+                                    <div class="single-product-wrap">
+                                        <div class="product-ownership-wrap">
+                                            <div class="ownership-container">
+                                                <div>
+                                                    <% for( let i = 0; i < realTime.length; i++ ) { %>
+                                                        <% const el = realTime[i]; %>
+
+                                                        <% if (el.profile.checkout_code == data.aRes.checkout_code) { %>
+                                                            <%# console.log("From order logs",el) %> 
+                                                            <% if (el.image.name.search("null") == -1) { %>
+                                                                <div class="image-wrap"><img src="../uploaded_images/compress/<%- el.image.name %>" alt=""></div>
+                                                            <% } else if (el.image.name.search("null") == 0) { %>
+                                                                <div class="image-wrap"><img src="../img/svg/user-red.svg" alt=""></div>
+                                                            <% } %> 
+                                                        <% } %>
+                                                    <% } %>
+                                                    <div class="image-text"><em> Client : </em> <%- data.aRes.first_name %> <%- data.aRes.last_name %> </div>
+                                                </div>
+                                                <div>
+                                                    <div class="image-text"><em> Serial # : </em> <%- data.aRes.checkout_code %> </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!------- SINGLE ITEMS ------------>
+                                        <div class="item-description-wrap">
+                                            <!------- ITEM --------------------------->
+                                            <% if (data.bRes.title.split(",").length > 1) { %>
+                                                <div class="row">
+                                                    <div class="item-image-wrapper">
+                                                        <ul class=""> 
+                                                            <% data.bRes.img_url.split(",").forEach(data => { %>
+                                                                <li> 
+                                                                    <div class="item-wrap">
+                                                                        <img src="<%- `../../../${data.trim()}` %>"  alt=""> 
+                                                                    </div> 
+                                                                </li>
+                                                            <% }) %>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="item-image-content-wrap">
+                                                        <ul class="item-image-content">
+                                                            <li><span class="i i-1"></span> item UID (#): <ul class="i-data"> 
+                                                                <% data.bRes.product_code.split(",").forEach(data => { %>
+                                                                    <li> <%- data %>  </li>
+                                                                <% }) %>
+                                                            </ul></li>
+                                                            <li><span class="i i-2"></span> Item Name: <ul class="i-data">
+                                                                <% data.bRes.title.split(",").forEach(data => { %>
+                                                                    <li> <%- data %>  </li>
+                                                                <% }) %>
+                                                            </ul></li>
+                                                            <li><span class="i i-3"></span> Price : <ul class="i-data">
+                                                                <% data.bRes.price.split(",").forEach(data => { %>
+                                                                    <li> <%- data %>  </li>
+                                                                <% }) %>
+                                                            </ul></li>
+                                                            <li><span class="i i-4"></span> Quantity : <ul class="i-data">
+                                                                <% data.bRes.quantity.split(",").forEach(data => { %>
+                                                                    <li> <%- data %>  </li>
+                                                                <% }) %>
+                                                            </ul></li>
+                                                            <li><span class="i i-5"></span> Delivery by : <ul class="i-data"><li> <%- data.aRes.delivery %>  </li></ul></li>
+                                                            <li><span class="i i-6"></span> Payment by : <ul class="i-data p-color">
+                                                                <li> <%- data.aRes.payment %>  </li>
+                                                            </ul></li>
+                                                            <li><span class="i i-7"></span> Sub-Total : <ul class="i-data">
+                                                                <% let res = 0; let total = 0; %> 
+                                                                <% for( let i = 0; i < data.bRes.price.split(",").length; i++ ) { %>
+                                                                    <% const prices = data.bRes.price.split(",")[i]; %> 
+                                                                    <% const quantity = data.bRes.quantity.split(",")[i]; %>
+
+                                                                    <% res += prices * quantity %> 
+                                                                <% } %>
+                                                                <% total = res.toFixed(2) %>
+                                                                <li><%- total %></li> 
+                                                            </ul></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            <% } %>
+                                            <% if (data.bRes.title.split(",").length <= 1) { %>
+                                                <div class="row">
+                                                    <div class="item-image-wrapper">
+                                                        <ul class=""> 
+                                                            <li> 
+                                                                <div class="item-wrap">
+                                                                    <img src="<%- `../../../${data.bRes.img_url.trim()}` %>"  alt="">
+                                                                </div> 
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="item-image-content-wrap">
+                                                        <ul class="item-image-content">
+                                                            <li><span class="i i-1"></span> item UID (#): <ul class="i-data"><li><%- data.bRes.product_code %></li></ul></li>
+                                                            <li><span class="i i-2"></span> Item Name: <ul class="i-data"><li><%- data.bRes.title %></li></ul></li>
+                                                            <li><span class="i i-3"></span> Price : <ul class="i-data"><li><%- data.bRes.price %></li></ul></li>
+                                                            <li><span class="i i-4"></span> Quantity : <ul class="i-data"><li><%- data.bRes.quantity %></li></ul></li>
+                                                            <li><span class="i i-5"></span> Delivery by : <ul class="i-data"><li> <%- data.aRes.delivery %>  </li></ul></li>
+                                                            <li><span class="i i-6"></span> Payment by : <ul class="i-data p-color"><li> <%- data.aRes.payment %>  </li></ul></li>
+                                                            <li><span class="i i-7"></span> Sub-Total : <ul class="i-data"><li><%- (data.bRes.price * data.bRes.quantity).toFixed(2) %> </li></ul></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            <% } %>
+                                            <!-------------------------------------------------->
+                                        </div>
+                                        <!----------- ITEMS SUMMATION ------------------->
+                                        <div class="item-summation-wrapper">
+                                            <div class="item-summation-container">
+                                                <ul class="item-grand-total">
+                                                    <!----- EJS CODE ------->
+                                                    <% if (data.bRes.title.split(",").length > 1) { %>
+                                                        <% let res = 0; let total = 0; %> 
+                                                        <% for( let i = 0; i < data.bRes.price.split(",").length; i++ ) { %>
+                                                            <% const prices = data.bRes.price.split(",")[i]; %> 
+                                                            <% const quantity = data.bRes.quantity.split(",")[i]; %>
+
+                                                            <% res += prices * quantity %> 
+                                                        <% } %>
+                                                        <% total = res.toFixed(2) %>
+                                                        <li> Grand Total : <em>GHc <%- total %> </em></li>
+                                                    <% } %>
+                                                    <% if (data.bRes.title.split(",").length <= 1) { %>
+                                                        <li> Grand Total : <em>GHc <%- (data.bRes.price * data.bRes.quantity).toFixed(2) %> </em></li>
+                                                    <% } %>
+                                                    <!----------------------->
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!------------------------------------------------>
+                                    </div>
+                                    <!------------------------------------------------------------------->
+                                <% }) %> 
+
+                                <%# console.log(singleClient) %>  
+                            <% } %>
+                        <% }) %> 
+                    <% }) %> 
+                <% } else { %>
+                    <div class="no-update-wrapper">
+                        <ul><li class="i"></li><li> No Order Update </li></ul>
+                    </div>
+                <% } %> 
+            <% } %> 
+            <!------------------------>
+            
+        </div>
+    </div>
+</div>
+<!------------------------------------------------------>
+<!------------- ORDER LOGS DETAILS ------------------->
+<!--
+    To the Payment Logs section:
+        NB:  there will be a very simple UI for Delivery
+            In the UI will be:
+                1. a column for verification of random code generated by the server store in database
+-->
+<div class="update-customer">           
+    <div class="customer-header">
+        <h3> Payment Logs  </h3>
+    </div>
+    <div class="payment-logs-wrapper">
+        <div class="payment-logs-container">
+            <table>
+                <thead>
+                    <th></th>
+                    <th> Product Name </th>
+                    <th> Products UID(#)</th>
+                    <th> Payment </th>
+                    <th> status </th>
+                </thead>
+                <tbody class="recent-orders-table-body">
+                    <!-----EJS CODE ----->
+                    <% if (update !== null || update !== "undefined" || realTime !== null || realTime !== "undefined") { %> 
+                        <% if (update.container.storage.length !== 0) { %>
+                            <% update.container.storage.map(a => { %> 
+                                <% update.container.ordered_storage.sort().reverse().map(b => { %>
+                                    <% if (a.checkout_code == b.checkout_code) { %>
+                                        <% const aRes = update.container.storage.find(data => {return data.checkout_code == b.checkout_code}) %> 
+                                        <% const bRes = update.container.ordered_storage.find(data => {return data.checkout_code == a.checkout_code}) %> 
+                                        <% const singleClient = [{aRes, bRes}] %>
+
+                                        <% singleClient.forEach(data => { %>
+                                            <!------- ITEM --------------------------->
+                                            <% if (data.bRes.title.split(",").length > 1) { %>
+                                                <tr>
+                                                    <td class="recent-photo">
+                                                        <ul class=""> 
+                                                            <% data.bRes.img_url.split(",").forEach(data => { %>
+                                                                <li> 
+                                                                    <div class="photo"><img src="<%- `../../../${data.trim()}` %>"  alt=""> </div>
+                                                                </li>
+                                                            <% }) %>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                            <% data.bRes.title.split(",").forEach(data => { %>
+                                                                <li> <%- data %>  </li> 
+                                                            <% }) %>
+                                                        </ul>
+                                                    </td>
+                                                    <td> 
+                                                        <ul>
+                                                            <% data.bRes.product_code.split(",").forEach(data => { %>
+                                                                <li> <%- data %>  </li> 
+                                                            <% }) %>
+                                                        </ul>
+                                                    </td>
+                                                    <td> Awaiting </td>
+                                                    <td class="color-yellow"> Pending </td>
+                                                </tr>
+                                            <% } %> 
+                                            <% if (data.bRes.title.split(",").length <= 1) { %>
+                                                <tr>
+                                                    <td class="recent-photo">
+                                                        <ul>
+                                                            <% data.bRes.img_url.split(",").forEach(data => { %>
+                                                                <li> 
+                                                                    <div class="photo"><img src="<%- `../../../${data.trim()}` %>"  alt=""> </div>
+                                                                </li>
+                                                            <% }) %>
+                                                        </ul>
+                                                    </td>
+                                                    <td> <%- data.bRes.title %> </td>
+                                                    <td> <%- data.bRes.product_code %> </td>
+                                                    <td> Awaiting </td>
+                                                    <td class="color-yellow"> Pending </td>
+                                                </tr>
+                                            <% } %> 
+                                            <!----------------------------------------->
+                                            
+                                        <% }) %> 
+                                    <% } %>
+                                <% }) %>
+                            <% }) %>
+                        <% } else { %>
+                            
+                        <% } %> 
+                    <% } %>  
+                    <!---------------------------> 
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

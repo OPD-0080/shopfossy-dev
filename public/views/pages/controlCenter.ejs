@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Site meta start here -->
+    <meta name="org" property="org: site_name" content="  ">
+    <meta name="org" property="org_local" content="en-US">
+    <meta name="author" property="name" content="Prince Obeng Donkor">
+    <meta name="author" property="contact" content="+233 24-622-0037 / +233 50-269-6901">
+    <meta name="author" property="email" content="obengprince0001@gmail.com">
+    <meta name="country" property="country_origin" content="Ghana">
+    <!-- Site meta start end -->
+
+    <title> Shopfossy | Control Center </title>
+
+    <!-- CSS STYLESHEET HERE -->
+    <link rel="stylesheet" href="../css/controlCenter.css">
+
+</head>
+<body>
+    <!------------- SIDE BAR NAVIGATION ------------->
+    <div class="sidebar-nav-wrapper">
+        <div class="sidebar-nav-container">
+            <!--------- LOGO --------------->
+            <div class="sidebar-logo">
+                <div class="logo-wrap"><span class="logo"></span></div>
+                <div><h3>Shopfossy</h3></div>
+            </div>
+            <!------------------------------>
+            <div class="sidebar-content-wrap">
+                <div class="sidebar-content-container">
+                    <%- include ("../partials/cc/side_bar.ejs") %> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------------------------------------->
+    <!-------------- MAIN SECTION --------------->
+    <div class="main-content-wrapper">
+        <div class="main-content-container">
+            <!------------- ALERT USER TO RELOAD THE PAGE WHEN UPDATE FOUND ------------->
+            <div class="prompt-user-reload">
+                <div class="reload-content">
+                    <div class="i"></div>
+                    <div>... Reload for UPDATE ...</div>
+                </div>
+            </div>
+            <!------------------------------------------------------------------------>
+            <!-------------- DASHBOARD SECTION --------------->
+            <div class="page-sections dashboard-container" data-slide="dashboard">
+                <div class="main-content">
+                    <div class="header"><h2> Dashboard </h2></div>
+                    <div class="main-wrap">
+                        <%- include ("../partials/cc/dashboard.ejs") %> 
+                    </div>
+                </div>
+            </div>
+            <!--------------------------------------------------------->
+            <!------------------- CUSTOMERS SECTION ------------------->
+        
+            <div class="page-sections page-switch customer-container" data-slide="1">
+                <div class="main-content">
+                    <div class="header"><h2> Customers </h2></div>
+                    <div class="main-wrap">
+                        <%- include ("../partials/cc/customers.ejs") %> 
+                    </div>
+                </div>
+            </div>
+            
+            <!------------------------------------------------------------>
+            <!------------------- ORDERS SECTION ------------------->
+            
+            <div class="page-sections page-switch customer-container" data-slide="2">
+                <div class="main-content">
+                    <div class="header"><h2> Orders </h2></div>
+                    <div class="main-wrap">
+                        <%- include ("../partials/cc/orders.ejs") %> 
+                    </div>
+                </div>
+            </div>
+            <!------------------------------------------------------------>
+            <!------------------- ANALYTICS SECTION ------------------->
+            <!--
+            <div class="page-sections page-switch customer-container" data-slide="3">
+                <div class="main-content">
+                    <div class="header"><h2> Analytics </h2></div>
+                    <div class="analytics-wrapper">
+                        
+                    </div>
+                </div>
+            </div>
+        -->
+            <!------------------------------------------------------------>
+            <!------------------- MESSAGE SECTION ------------------->
+            <!--
+            <div class=" page-sections page-switch customer-container" data-slide="4">
+                <div class="main-content">
+                    <div class="header"><h2> Messages </h2></div>
+                    <div class="main-wrap">
+                        <%#- include ("../partials/cc/message.ejs") %> 
+                    </div>
+                </div>
+            </div>
+        -->
+            <!------------------------------------------------------------>
+            <!------------------- REPORT SECTION ------------------->
+            <!--
+            <div class="page-sections page-switch customer-container" data-slide="5">
+                <div class="main-content">
+                    <div class="header"><h2> Report </h2></div>
+                    <div class="report-wrapper">
+                        
+                    </div>
+                </div>
+            </div>
+        -->
+            <!------------------------------------------------------------>
+        </div>
+        <!------------------- ADMIN SECTION ---------------------------->
+        <div class="admin-banner-wrapper">
+            <div class="theme-toggle-wrap">
+                <div class="toggle-wrap">
+                    <div class="i"><div class="i"></div></div>
+                    <div class="i"><div class="i"></div></div>
+                </div>
+            </div>
+            <div class="admin-section">
+                <div>
+                    <div class="admin-tex"><span><em>Hey!</em> Daniel</span><em>Admin</em></div>
+                    <div class="admin-img-wrap"><img src="../img/control-center/user.webp" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <!-------------------------------------------------------------->
+        <!------------------ RECENT UPDATE  ---------------------------->
+        <div class="summary-content-container">
+            <div class="recent-update-wrapper">
+                <%- include ("../partials/cc/realTime_update.ejs") %> 
+                <%- include ("../partials/cc/sales_analytics.ejs") %>
+            </div>
+        </div>
+        <!--------------------------------------------------------------->
+    </div>
+    <!------------------------------------------------->
+
+
+    <!----------js------------->
+    <script src="../js/controlCenter/controlCenter-front.js" type="module"></script>
+    <script src="../js/controlCenter/color-notification.js"></script>
+    <script type="module" src="../js/controlCenter/server-responds.js"></script>
+</body>
+</html>

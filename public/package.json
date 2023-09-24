@@ -1,0 +1,60 @@
+{
+  "name": "e-commence-new-edition",
+  "version": "1.0.0",
+  "description": "shopfossy",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -e ejs,js,css,scss",
+    "server": "nodemon index.js",
+    "start": "nodemon func_checkout.js",
+    "dev-pg": "nodemon pg-cred.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OPD-0080/master.git"
+  },
+  "author": "Prince Obeng Donkor (OPD)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OPD-0080/master/issues"
+  },
+  "homepage": "https://github.com/OPD-0080/master#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "base64url": "^3.0.1",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
+    "express-flash": "^0.0.2",
+    "express-pg-session": "^1.1.0",
+    "express-session": "^1.17.3",
+    "filepond": "^4.30.4",
+    "firebase-tools": "^1.2.0",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.4",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "node-localstorage": "^2.2.1",
+    "passport": "^0.6.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "passport-oauth2": "^1.6.1",
+    "pg": "^8.7.3",
+    "sessionstorage": "^0.1.0",
+    "sharp": "^0.31.1",
+    "socket.io": "^4.5.2",
+    "store2": "^2.14.2",
+    "web-push": "^3.5.0"
+  }
+}

@@ -1,0 +1,12 @@
+How to fix the error fatal: The remote end hung up unexpectedly
+	SOLUTION: git config http.postBuffer 524288000   // for http protocol
+			git config ssh.postBuffer 524288000 // ssh protocol
+
+
+
+TO SWITCH GIT REPO FROM "main" OR "master" TO any other name prefered
+	SOLUTION:   git branch -m master <type here prefered name>
+		    git branch -m main <type here prefered name>
+
+TO SWITCH GIT HEAD DIR TO THE PREFERED NAME
+	SOLUTION:   git symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/<type here the prefered name>  

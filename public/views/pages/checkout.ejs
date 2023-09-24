@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Shopfossy | Customer Details </title>
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="./css/customer_details.css">
+    <link rel="stylesheet" href="./css/landing-page.css">
+    <link rel="stylesheet" href="./css/@keyframes-landing.css">
+    <link rel="stylesheet" href="./css/@media_customer_details.css">
+    <!-- For Android mobile -->
+    <link rel="manifest" href="./manifest.json">
+    <!--- for IOS Mobile -->
+    <link rel="apple-touch-icon" href="./img/logo/icons-96x96.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#2e2e2e">
+    <meta name="theme-color" content="#2e2e2e">
+
+    <!-- Google Tag Manager -->
+    <!--
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-W3XSKX6');</script>
+    -->
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <!--
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W3XSKX6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    -->
+    
+    <!-- End Google Tag Manager (noscript) -->
+    <!-------LANDING PAGE ------------>
+    <div class="landing-container">
+        <div class="landing-wrap">
+            <div class="loading">
+                <div class="loading-boxes"></div>
+                <div class="loading-boxes"></div>
+                <div class="loading-boxes"></div>
+            </div>
+        </div>
+    </div>
+    <!-------LANDING PAGE ------------>
+    <div class="cart-empty-alert"><div><div></div></div><div>Cart Empty</div></div>
+    <!-------FORM SECTION START ------------>
+    <div class="form-banner-container">
+        <div class="overlay">
+            <div class="logo"></div>
+            <div class="form-wrapper">
+                <!---------- REQUEST SIGN IN PAGE START ------------>
+                <% if (typeof warning_class !== undefined) { %>
+                    <div class="request-signIn-page" data-authStatus="
+                        <% if (user_alert !== undefined) { %> <%- user_alert %> <% } else { %> <%- "" %>  <% } %>">
+                        <div>
+                            <div class="request-message"> SIGN IN TO ORDER </div>
+                            <div class="request-btn"><a href="./register"><div class="i"></div><div>Redirect...</div></a></div>
+                        </div>
+                    </div>
+                <% } %>
+                <!----------------------------------------------->
+                <!---------- CUSTOMER DETAILS START ------------>
+                <form action="/checkout" method="POST" class="form-container <% if (typeof server_alert_class !== "undefined") { %> <%= server_alert_class %>  <% } %> ">
+                    <div class="serial-code-wrapper"></div>
+                    <div class="header-title form-title eds">
+                        <div class="ok-wrap ok-1"></div>
+                        <div> Billed To </div>
+                        <div class="edited-wrap edit-1"></div>
+                    </div>
+
+
+                    <div class="user-alert" name="user_alert" id="user_alert">
+                        <div class="icon"></div>
+                        <div class="error" id="error">
+                            <% if (typeof notification !== "undefined") { %>
+                                <%= notification  %>
+                            <% } %>
+                        </div>
+                    </div>
+                    <!--------- CUSTOMER FORM START ------------>
+                    <div class="form-content" id="form">
+                        <div class="f1">
+                            <label for="name"> First Name <div class="notify"></div></label>
+                            <input name="first_name" type="text" class="first-name validation" placeholder="Enter here" minlength="3" maxlength="50" required>
+                            <div class="icon"><div class="i i-name"></div></div>
+                        </div>
+                        <div class="f2">
+                            <label for="name"> Last Name <div class="notify"></div></label>
+                            <input name="last_name" type="text" class="last-name validation" placeholder="Enter here" minlength="3" maxlength="50" required>
+                            <div class="icon"><div class="i i-name"></div></div>
+                        </div>
+                        <div class="f3">
+                            <label for="email"> Email <div class="notify"></div></label>
+                            <input name="email" type="email" class="email validation" value="<%- parameters.curr_email %>" placeholder="example@domain.com" required>
+                            <div class="icon"><div class="i i-email"></div></div>
+                        </div>
+                        <div class="f4">
+                            <label for="tel"> Phone Number <div class="notify"></div></label>
+                            <input name="tel" type="tel" class="tel validation" placeholder="Enter here" minlength="3" maxlength="10" required>
+                            <div class="icon"><div class="i i-number"></div></div>
+                        </div>
+                        <div class="f5">
+                            <label for="company"> Company (option) <div class="notify"></div></label>
+                            <input name="company" type="text" class="company" placeholder="Enter here" value="None">
+                            <div class="icon"><div class="i i-company"></div></div>
+                        </div>
+                        <div class="f6">
+                            <label for="region"> Region <div class="notify"></div></label>
+                            <div class="custom-select">
+                                <select class="select-option-region validation" name="region" id="">
+                                    <option class="select-option-region" id="select-default-color" value="" required>Select Option..</option>
+                                    <option class="select-option-region" value="Ashanti">Ashanti</option>
+                                    <option class="select-option-region" value="Central">Central</option>
+                                    <option class="select-option-region" value="Greater Accra">Greater Accra</option>
+                                    <option class="select-option-region" value="Western">Western</option>
+                                    <option class="select-option-region" value="Eastern">Eastern</option>
+                                    <option class="select-option-region" value="Ahafo">Ahafo</option>
+                                    <option class="select-option-region" value="Northern">Northern</option>
+                                    <option class="select-option-region" value="Upper East">Upper East</option>
+                                    <option class="select-option-region" value="Upper West">Upper West</option>
+                                </select>
+                            </div>
+                            <div class="icon"><div class="i i-region"></div></div>
+                        </div>
+                        <div class="f7">
+                            <label for="town"> City / Town <div class="notify"></div></label>
+                            <div class="icon"><div class="i i-city"></div></div>
+                            <div class="custom-select">
+                                <select class="select-option-city citySel validation" name="city" id="" required>
+                                
+                                </select>
+                            </div>
+                            <input type="text" class="city-alt" name="city_alt" value="Not Specified" minlength="2" required>
+                            <div class="toggle-btn-wrap"><div class="toggle-btn"></div></div>
+                            <div class="note"> * Activate button if options not found, Enter Manually !* </div>
+                        </div>
+                        <div class="f8">
+                            <label for="digital"> Digital Address <div class="notify"></div></label>
+                            <input name="digital" type="text" class="digital validation" value="Not Specified" placeholder="Enter here" maxlength="9">
+                            <div class="icon"><div class="i i-location"></div></div>
+                            <div class="note">* Eg: AO#######*</div>
+                        </div>
+                        <div class="f9">
+                            <label for="residential"> Residential Address <div class="notify"></div></label>
+                            <input name="resident" type="text" class="residential validation" placeholder="Enter here" minlength="3" required>
+                            <div class="icon"><div class="i i-location"></div></div>
+                            <div class="note">* may include landmarks *</div>
+                        </div>
+                        <div class="f10">
+                            <label for="agreement"> Agreement </label>
+                            <div class="agree-container">
+                                <input name="agree" type="checkbox" class="agreement validation" value="Agree Terms & Conditions" required>
+                                <p> Accept terms % Conditions</p>
+                            </div>
+                        </div>
+                        <div class="f11">
+                            <div class="form-btn-wrap"><div class="form-btn fbtn1">Proceed to Next</div></div>
+                            
+                            <!--<div class="form-btn-wrap"><input name="" type="submit" class="form-btn" value="Submit"/></div>-->
+                        </div>
+                    </div>
+                    <!--------- CUSTOMER FORM END ------------>
+                    <!--------- DELIVERY METHOD START ------------>
+                    <div class="delivery-method-wrapper">
+                        <div class="header-title delivery-title eds">
+                            <div class="ok-wrap ok-2"></div>
+                            <div> Delivery Method </div>
+                            <div class="edited-wrap edit-2"></div>
+                        </div>
+                        <div class="delivery-content">
+                            <div class="delivery-cell">
+                                <input name="delivery" type="checkbox" class="delivery-check radio_1" value="Delivery 1">
+                                <div class="radio-header"> Delivery 1 </div>
+                                <div class="radio-content">
+                                    1
+                                </div>
+                            </div>
+                            <div class="delivery-cell">
+                                <input name="delivery" type="checkbox" class="delivery-check radio_2" value="Delivery 2">
+                                <div class="radio-header"> Delivery 2 </div>
+                                <div class="radio-content">
+                                    2
+                                </div>
+                            </div>
+                            <div class="delivery-btn-wrap"><div class="form-btn fbtn2">Proceed to Next</div></div>
+                        </div>
+                    </div>
+                    <!--------- DELIVERY METHOD END ------------>
+                    <!--------- PAYMENT METHOD START ------------>
+                    <div class="payment-method-wrapper">
+                        <div class="header-title payment-title eds">
+                            <div class="ok-wrap ok-3"></div>
+                            <div> Payment Method </div>
+                            <div class="edited-wrap edit-3"></div>
+                        </div>
+                        <div class="payment-content">
+                            <div class="payment-cell">
+                                <input name="payment" type="checkbox" class="payment-check radio_1" value="payment 1">
+                                <div class="radio-header"> Payment 1 </div>
+                                <div class="radio-content">
+                                    1
+                                </div>
+                            </div>
+                            <div class="payment-cell">
+                                <input name="payment" type="checkbox" class="payment-check radio_2" value="payment 2">
+                                <div class="radio-header"> Payment 2 </div>
+                                <div class="radio-content">
+                                    2
+                                </div>
+                            </div>
+                            <div class="payment-btn-wrap"><div class="form-btn fbtn3">Proceed to Next</div></div>
+                        </div>
+                    </div>
+
+                    <!--------- PAYMENT METHOD END ------------>
+                    <!--------- SUMMARY INFO START ------------>
+                    <div class="summary-wrapper">
+                        <div class="header-title summary-title"> Summary </div>
+                        <div class="summary-content">
+                            <div>
+                                <div class="summary-cell-customer">
+                                    <span>
+                                        <div class="label">Full Name :</div>
+                                        <div>
+                                            <div class="first-name fst_name"> ... </div>
+                                            <div class="last-name lst_name"> ... </div>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <div class="label"> Email : </div>
+                                        <div class="email s-email"> ... </div>
+                                    </span>
+                                    <span>
+                                        <div class="label"> Phone Number : </div>
+                                        <div>
+                                            <div>(+233)</div>
+                                            <div class="number s-tel"> ... </div>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <div class="label"> Company : </div>
+                                        <div class="company s-company"> ... </div>
+                                    </span>
+                                    <span>
+                                        <div class="label"> Region : </div>
+                                        <div class="region s-region"> ... </div>
+                                    </span>
+                                    <span>
+                                        <div class="label"> City / Town : </div>
+                                        <div class="city s-city"> ... </div>
+                                    </span>
+                                    <span>
+                                        <div class="label"> Residential Address : </div>
+                                        <div class="location s-residential"> ... </div>
+                                    </span>
+                                    <span>
+                                        <div class="label"> Digital Address : </div>
+                                        <div class="location s-digital"> ... </div>
+                                    </span>
+                                    <span>
+                                        <div class="label"> Delivery Method : </div>
+                                        <div class="delivery s-delivery"> ... </div>
+                                    </span>
+                                    <span>
+                                        <div class="label"> Payment Method : </div>
+                                        <div class="payment s-payment"> ... </div>
+                                    </span>
+                                </div>
+                                <input type="submit" class="summary-btn-wrap"><div class="form-btn fbtn4"></div></input>
+                            </div>
+                            <div>
+                                <div class="item-ordered-wrapper">
+                                    <div class="order-title"> Preview Orders </div>
+                                    <div class="order-content"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--------- SUMMARY INFO END ------------>
+                    <div class="form-footer">
+                        <div> Items : <span  class="item-total cart-number">00</span></div>
+                        <div> Total : GHc <span class="grand-total total-value">00</span></div>
+                    </div>
+                </form>
+                <!---------- CUSTOMER DETAILS END ------------>
+            </div>
+        </div>
+    </div>
+    <!-------FORM SECTION START ------------>
+    <!-------HIDDEN TAGS START ------------>
+    <div class="hidden cart-container"></div>
+    <div class="hidden cart-checkout"></div>
+    <div class="hidden products-wrapper"></div>
+    <div class="hidden showing-profiling"></div>
+    <div class="hidden cart-clear"></div>
+    <!-------HIDDEN TAGS END ------------>
+    
+
+
+    <!-------JS START ------------>
+    <!-- plugins for js start here -->
+    <!--
+    <script src="./js/sw-register.js"></script>
+    -->
+    <script src="./js/landing-page.js"></script>
+    <script src="./js/serverMessage/server-checkout.js"></script>
+    <!--<script src="./js/plugins/firebase-app-init.js" type="module" async></script>-->
+    <script src="./js/customer_details.js" type="module"></script>
+    <!--
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></scrip>
+    -->
+</body>
+</html>

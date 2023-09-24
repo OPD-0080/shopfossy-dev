@@ -1,0 +1,731 @@
+*, html, body, ul, ol *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 100%;
+  background: #2e2e2e;
+  color: white;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo-wrapper {
+  position: fixed;
+  top: 0px;
+  left: 20px;
+  width: 70px;
+  height: 70px;
+  background: grey;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-wrapper div {
+  background-image: url("../img/logo/logo.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 60px;
+  height: 60px;
+}
+
+.sign-in-overlay {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../img/index/banner/new-banner.webp");
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.sign-in-overlay .signIn-wrapper {
+  position: relative;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.585);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.sign-in-overlay .signIn-wrapper div {
+  position: relative;
+}
+.sign-in-overlay .signIn-wrapper .sign-image-wrap {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sign-in-overlay .signIn-wrapper .sign-image-wrap div {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  background: grey;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sign-in-overlay .signIn-wrapper .sign-image-wrap div div {
+  font-size: 40px;
+  font-weight: 550;
+}
+.sign-in-overlay .signIn-wrapper .sign-image-wrap div .image-user {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 70px;
+  height: 70px;
+}
+.sign-in-overlay .signIn-wrapper .sign-image-wrap div .image-text {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url("../img/icons/user.png");
+  z-index: 2;
+}
+.sign-in-overlay .signIn-wrapper .sign-image-wrap div .image-text.change {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url("../img/icons/key.png");
+  z-index: 2;
+}
+.sign-in-overlay .signIn-wrapper .signIn-header {
+  font-size: 23px;
+  margin-top: 10px;
+}
+.sign-in-overlay .signIn-wrapper .error-alert-wrap {
+  position: relative;
+  top: 0px;
+  background: rgb(199, 3, 3);
+  padding: 5px;
+  font-size: 13px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+.sign-in-overlay .signIn-wrapper .error-alert-wrap div {
+  position: relative;
+}
+.sign-in-overlay .signIn-wrapper .error-alert-wrap .alert-icon {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: white;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-image: url("../img/svg/error.svg");
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.sign-in-overlay .signIn-wrapper .error-alert-wrap .error-message {
+  margin-right: 10px;
+}
+.sign-in-overlay .signIn-wrapper .error-alert-wrap .error-message::first-letter {
+  text-transform: uppercase;
+}
+.sign-in-overlay .signIn-wrapper .error-alert-wrap.color-change {
+  background: green;
+}
+.sign-in-overlay .signIn-wrapper .error-alert-wrap.show {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content {
+  margin-top: 10px;
+  display: none;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content .signIn-container {
+  position: relative;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content .signIn-container div {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content .signIn-container div .input {
+  padding: 10px 50px;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 550;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content .signIn-container div input[type=submit] {
+  padding: 20px 30px 20px 30px;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content .signIn-container div .input::first-letter {
+  text-transform: uppercase;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content .signIn-container div .label-icon {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 35px;
+  height: 100%;
+  background: grey;
+  margin-top: 0px;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content .signIn-container div .label-icon div {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content .signIn-container div .label-icon .icon-user {
+  background-image: url("../img/icons/user.png");
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content .signIn-container div .label-icon .icon-email {
+  background-image: url("../img/icons/email.png");
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content .signIn-container div .label-icon .icon-password {
+  background-image: url("../img/icons/key.png");
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content .signIn-container div .label-icon::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 5px;
+  background: red;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content .signIn-container div .pass-error {
+  font-size: 11px;
+  background: red;
+  padding: 5px;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content .signIn-container div .s-error {
+  display: none;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content .signIn-container div .s-error.show {
+  display: block;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content .signIn-container .validate-color.green .label-icon::before {
+  background: green;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content .signIn-container .validate-color.yellow .label-icon::before {
+  background: yellow;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content .signIn-container .alt-logIn-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content .signIn-container .alt-logIn-wrap div {
+  position: relative;
+  margin-left: 30px;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content .signIn-container .alt-logIn-wrap .alt-btn {
+  width: 40px;
+  height: 40px;
+  background: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  cursor: pointer;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content .signIn-container .alt-logIn-wrap .goggle-btn {
+  background-image: url("../img/svg/goggle.svg");
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content .signIn-container div:nth-child(6) {
+  margin-top: 10px;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content .signIn-container div:nth-child(7) {
+  margin-top: 10px;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content .signIn-container .back-arrow-wrap {
+  margin-top: 20px;
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  float: right;
+  cursor: pointer;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content .signIn-container .back-arrow-wrap div {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  background: grey;
+  cursor: pointer;
+  background-image: url("../img/icons/back-arrow.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .signIn-content.collapse {
+  display: block;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content {
+  margin-top: 10px;
+  display: block;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container {
+  position: relative;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container .l-hidden {
+  display: flex;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container .l-hidden.show {
+  display: none;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container div {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container div .input {
+  padding: 10px 50px;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 550;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container div input[type=submit] {
+  padding: 20px 30px 20px 30px;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container div .input::first-letter {
+  text-transform: uppercase;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container div .label-icon {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 35px;
+  height: 100%;
+  background: grey;
+  margin-top: 0px;
+  z-index: 2;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container div .label-icon div {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container div .label-icon .icon-email {
+  background-image: url("../img/icons/email.png");
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container div .label-icon .icon-password {
+  background-image: url("../img/icons/key.png");
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container div .label-icon::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 5px;
+  background: red;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container div .l-hidden {
+  display: flex;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container div .l-hidden.show {
+  display: none;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container div:nth-child(6) {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container div:nth-child(6) span {
+  position: relative;
+  margin: 5px;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container div:nth-child(6) .logIn-btn {
+  padding: 10px;
+  background: red;
+  margin: 4px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container .validate-color.green .label-icon::before {
+  background: green;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container .validate-color.yellow .label-icon::before {
+  background: yellow;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container .logIn-submit-wrap {
+  margin-top: 10px;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container .logIn-submit-wrap .l-visible {
+  display: none;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container .logIn-submit-wrap .l-visible.show {
+  display: flex;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container .reset-password-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container .reset-password-wrap div {
+  position: relative;
+  font-size: 11px;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container .reset-password-wrap .reset-pass-btn {
+  background: red;
+  padding: 10px;
+  margin: 4px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container .alt-logIn-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container .alt-logIn-wrap div {
+  position: relative;
+  margin: 5px;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container .alt-logIn-wrap .alt-btn {
+  width: 40px;
+  height: 40px;
+  background: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  cursor: pointer;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container .alt-logIn-wrap .goggle-btn {
+  background-image: url("../img/svg/goggle.svg");
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container .alt-logIn-wrap .facebook-btn {
+  background-image: url("../img/svg/facebook.svg");
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container .alt-logIn-wrap .twitter-btn {
+  background-image: url("../img/svg/twitter.svg");
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container .alt-logIn-wrap .apple-btn {
+  background-image: url("../img/svg/apple.svg");
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container .back-arrow-wrap-reset {
+  margin-top: 20px;
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  float: right;
+  cursor: pointer;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container .back-arrow-wrap-reset div {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  background: grey;
+  cursor: pointer;
+  background-image: url("../img/icons/back-arrow.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container .l-visible {
+  display: none;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content .logIn-container .l-visible.show {
+  display: flex;
+}
+.sign-in-overlay .signIn-wrapper .form-page-wrap .logIn-content.show {
+  display: none;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+.sign-in-overlay .signIn-wrapper .notification-wrapper {
+  position: fixed;
+  bottom: 0px;
+  width: 80%;
+  background: rgb(202, 6, 6);
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(100px);
+  -webkit-transform: translateY(100px);
+  -moz-transform: translateY(100px);
+  -ms-transform: translateY(100px);
+  -o-transform: translateY(100px);
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+.sign-in-overlay .signIn-wrapper .notification-wrapper .alert-icon {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: white;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-image: url("../img/svg/error.svg");
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.sign-in-overlay .signIn-wrapper .notification-wrapper.show {
+  transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+
+/*.sign-in-overlay.collapse {
+    @include shrink-out;
+    @include trans-01s;
+    opacity: 1;
+    display: flex;
+}*/
+.verification-alert-wrap {
+  position: fixed;
+  top: 50px;
+  left: 0px;
+  width: 100%;
+  padding: 1px;
+  background: rgba(255, 0, 0, 0.596);
+  z-index: 20;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: none;
+  opacity: 0;
+}
+.verification-alert-wrap div {
+  position: relative;
+  margin: 5px;
+}
+.verification-alert-wrap div:nth-child(1) {
+  width: 25px;
+  height: 25px;
+  background: white;
+  background-image: url("../img/svg/alert-red.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.verification-alert-wrap .verify-btn {
+  padding: 5px 15px 5px 15px;
+  border: 2px solid white;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  transition: 0.1s ease;
+  -webkit-transition: 0.1s ease;
+  -moz-transition: 0.1s ease;
+  -ms-transition: 0.1s ease;
+  -o-transition: 0.1s ease;
+  display: block;
+}
+.verification-alert-wrap .verify-btn.active {
+  display: none;
+}
+.verification-alert-wrap .verify-btn:hover {
+  background: rgba(255, 0, 0, 0.715);
+  transition: 0.1s ease;
+  -webkit-transition: 0.1s ease;
+  -moz-transition: 0.1s ease;
+  -ms-transition: 0.1s ease;
+  -o-transition: 0.1s ease;
+}
+
+.verification-alert-wrap.color {
+  background: green;
+}
+
+.verification-alert-wrap.collapse {
+  display: flex;
+  transition: 0.1s ease;
+  -webkit-transition: 0.1s ease;
+  -moz-transition: 0.1s ease;
+  -ms-transition: 0.1s ease;
+  -o-transition: 0.1s ease;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  opacity: 1;
+}/*# sourceMappingURL=sign-in.css.map */
