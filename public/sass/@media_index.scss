@@ -456,16 +456,6 @@
                             @include border-20;
                             z-index: 2;
                             justify-content: flex-start;
-
-                            .admin-icon::after {
-                                content: "Admin Dashboard";
-                                position: absolute;
-                                font-size: $font-s;
-                                top: 3px;
-                                left: 160px;
-                                width: 100%;
-                                height: 100%;
-                            }
                         }
                     }
                 }
@@ -795,16 +785,6 @@
                             @include border-20;
                             z-index: 2;
                             justify-content: flex-start;
-
-                            .admin-icon::after {
-                                content: "Admin Dashboard";
-                                position: absolute;
-                                font-size: $font-s;
-                                top: 3px;
-                                left: 160px;
-                                width: 100%;
-                                height: 100%;
-                            }
                         }
                     }
                 }
@@ -2221,16 +2201,6 @@
                             @include border-20;
                             z-index: 2;
                             justify-content: flex-start;
-
-                            .admin-icon::after {
-                                content: "Admin Dashboard";
-                                position: absolute;
-                                font-size: $font-s;
-                                top: 3px;
-                                left: 140px;
-                                width: 100%;
-                                height: 100%;
-                            }
                         }
                     }
                 }
@@ -3603,16 +3573,6 @@
                             @include border-20;
                             z-index: 2;
                             justify-content: flex-start;
-
-                            .admin-icon::after {
-                                content: "Admin Dashboard";
-                                position: absolute;
-                                font-size: $font-s;
-                                top: 3px;
-                                left: 140px;
-                                width: 100%;
-                                height: 100%;
-                            }
                         }
                     }
                 }
@@ -5121,16 +5081,6 @@
                             @include border-20;
                             z-index: 2;
                             justify-content: flex-start;
-
-                            .admin-icon::after {
-                                content: "Admin Dashboard";
-                                position: absolute;
-                                font-size: $font-s;
-                                top: 3px;
-                                left: 110px;
-                                width: 100%;
-                                height: 100%;
-                            }
                         }
                     }
                 }
@@ -5568,16 +5518,6 @@
                             @include border-20;
                             z-index: 2;
                             justify-content: flex-start;
-
-                            .admin-icon::after {
-                                content: "Admin Dashboard";
-                                position: absolute;
-                                font-size: $font-s;
-                                top: 3px;
-                                left: 110px;
-                                width: 100%;
-                                height: 100%;
-                            }
                         }
                     }
                 }
@@ -6008,15 +5948,6 @@
                             z-index: 2;
                             justify-content: flex-start;
 
-                            .admin-icon::after {
-                                content: "Admin Dashboard";
-                                position: absolute;
-                                font-size: $font-s;
-                                top: 0px;
-                                left: 110px;
-                                width: 100%;
-                                height: 100%;
-                            }
                         }
                     }
                 }

@@ -1,8 +1,7 @@
 *, html, body, ul, ol *::after, *::before {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -37,20 +36,12 @@ body {
   margin-right: 20px;
   margin-top: 20px;
   z-index: 3;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  visibility: hidden;
-  /*later can be changed*/
+  visibility: hidden; /*later can be changed*/
 }
-
 .close-wrap div {
   width: 40px;
   height: 40px;
@@ -70,7 +61,6 @@ body {
   z-index: 3;
   overflow: hidden;
 }
-
 .d-banner-wrap .database-banner {
   position: absolute;
   bottom: -100px;
@@ -89,7 +79,6 @@ body {
   -ms-transition: 1s ease;
   -o-transition: 1s ease;
 }
-
 .d-banner-wrap .database-banner img {
   width: 700px;
   height: 500px;
@@ -99,7 +88,6 @@ body {
   -ms-transition: 1s ease;
   -o-transition: 1s ease;
 }
-
 .d-banner-wrap .database-banner .database-icon1 {
   position: relative;
   top: -200px;
@@ -111,7 +99,6 @@ body {
   -ms-transition: 1s ease;
   -o-transition: 1s ease;
 }
-
 .d-banner-wrap .database-banner .database-icon1.i1-active {
   z-index: 4;
   animation: database-animate-1 2s ease;
@@ -122,7 +109,6 @@ body {
   -ms-transition: 1s ease;
   -o-transition: 1s ease;
 }
-
 .d-banner-wrap .database-banner .database-icon2 {
   position: absolute;
   top: -200px;
@@ -133,7 +119,6 @@ body {
   -ms-transition: 1s ease;
   -o-transition: 1s ease;
 }
-
 .d-banner-wrap .database-banner .database-icon2.i2-active {
   animation: database-animate-2 2s 1s ease;
   -webkit-animation: database-animate-2 2s 1s ease;
@@ -143,10 +128,9 @@ body {
   -ms-transition: 1s ease;
   -o-transition: 1s ease;
 }
-
 .d-banner-wrap .database-banner.banner-active {
-  animation: database-animate-banner 1s .5s ease;
-  -webkit-animation: database-animate-banner 1s .5s ease;
+  animation: database-animate-banner 1s 0.5s ease;
+  -webkit-animation: database-animate-banner 1s 0.5s ease;
   transition: 1s ease;
   -webkit-transition: 1s ease;
   -moz-transition: 1s ease;
@@ -159,7 +143,6 @@ body {
   top: 0px;
   left: 0px;
 }
-
 .database-wrapper .database-container {
   position: relative;
   top: 0px;
@@ -170,7 +153,6 @@ body {
   color: white;
   overflow: hidden;
 }
-
 .database-wrapper .database-container .logo {
   position: relative;
   top: 0px;
@@ -180,7 +162,6 @@ body {
   background: white;
   margin-left: 10px;
 }
-
 .database-wrapper .database-container .logo div {
   position: absolute;
   top: 0px;
@@ -192,7 +173,6 @@ body {
   background-position: center;
   background-image: url("../img/logo/logo.jpg");
 }
-
 .database-wrapper .database-container .database-title {
   position: absolute;
   left: 25%;
@@ -200,11 +180,9 @@ body {
   font-weight: 600;
   font-size: 20px;
 }
-
 .database-wrapper .database-container .database-title div {
   position: relative;
 }
-
 .database-wrapper .database-container .database-title::first-letter {
   text-transform: uppercase;
-}
+}/*# sourceMappingURL=database-style.css.map */
